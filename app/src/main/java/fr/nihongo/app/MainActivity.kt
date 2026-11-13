@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.getValue
@@ -27,19 +28,24 @@ internal sealed interface UpdateUiState {
 class MainActivity : ComponentActivity() {
     private val worker: ExecutorService = Executors.newSingleThreadExecutor()
     private var updateState by mutableStateOf<UpdateUiState>(UpdateUiState.Idle)
+    private var progressSnapshot by mutableStateOf<ProgressSnapshot?>(null)
     private var pendingInstallerUri: Uri? = null
     private var pendingInstallRelease: GitHubRelease? = null
     private val releaseClient = GitHubReleaseClient()
+    private val progressStore by lazy { ProgressStore(applicationContext) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        progressSnapshot = progressStore.snapshot()
         setContent {
             MainScreen(
                 appVersion = BuildConfig.VERSION_NAME,
                 updateState = updateState,
+                progress = progressSnapshot ?: progressStore.snapshot(),
                 onCheckUpdates = ::checkForUpdates,
                 onDownloadUpdate = ::downloadUpdate,
-                onRetryInstallPermission = ::retryInstallPermission
+                onRetryInstallPermission = ::retryInstallPermission,
+                onAnswer = ::recordAnswer
             )
         }
     }
@@ -117,7 +123,7 @@ class MainActivity : ComponentActivity() {
             try {
                 startActivity(
                     Intent(
-                        Intent.ACTION_MANAGE_UNKNOWN_APP_SOURCES,
+                        Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES,
                         Uri.parse("package:$packageName")
                     )
                 )
@@ -135,6 +141,14 @@ class MainActivity : ComponentActivity() {
         val uri = pendingInstallerUri ?: return
         requestInstallation(uri, pendingInstallRelease ?: return)
     }
+
+    private fun recordAnswer(exercise: ParticleExercise, wasCorrect: Boolean): String? =
+        try {
+            progressSnapshot = progressStore.recordAnswer(exercise, wasCorrect)
+            null
+        } catch (exception: Exception) {
+            exception.message ?: "La réponse n’a pas pu être enregistrée."
+        }
 
     private fun launchInstaller(uri: Uri, release: GitHubRelease? = null) {
         try {

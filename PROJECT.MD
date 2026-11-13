@@ -48,6 +48,23 @@ Pour être détectée et installable, chaque Release devra avoir un tag de versi
 
 Pour recevoir ensuite les mises à jour, la première installation sur l’appareil doit être un APK **Release** signé avec cette clé. Une version de développement signée avec la clé debug d’Android ne pourra pas être remplacée par une Release signée avec une autre clé.
 
+Le workflow GitHub Actions `.github/workflows/release-android.yml` teste le projet et fabrique une Release signée lors de la création d’un tag `vMAJEUR.MINEUR.CORRECTIF`. Il publie un seul fichier `app-release.apk` ainsi que son empreinte SHA-256 ; le mécanisme de mise à jour vérifie cette empreinte avant de proposer l’installation.
+
+Avant le premier lancement du workflow, ajouter dans les secrets **Settings > Secrets and variables > Actions** du dépôt :
+
+- `NIHONGO_KEYSTORE_BASE64` : contenu Base64 du fichier keystore de signature ;
+- `NIHONGO_KEYSTORE_PASSWORD` : mot de passe du keystore ;
+- `NIHONGO_KEY_ALIAS` : alias de la clé ;
+- `NIHONGO_KEY_PASSWORD` : mot de passe de la clé.
+
+Créer d’abord le keystore avec **Build > Generate Signed Bundle / APK > APK > Create new** dans Android Studio, et le conserver ainsi que ses mots de passe en lieu sûr. Pour copier sa version Base64 dans le presse-papiers Windows avant de l’ajouter au secret `NIHONGO_KEYSTORE_BASE64` :
+
+```powershell
+[Convert]::ToBase64String([IO.File]::ReadAllBytes("C:\chemin\nihongo-release.jks")) | Set-Clipboard
+```
+
+Le keystore ne doit jamais être commité ou transmis dans le dépôt. Après avoir configuré ces secrets et envoyé les changements sur GitHub, créer et pousser un tag tel que `v0.1.1` pour déclencher la publication. La toute première installation Release sur le téléphone doit remplacer la version de développement, qui est signée différemment ; désinstaller celle-ci efface les données locales de l’application.
+
 ### Menu des modes de jeu
 
 Au lancement, l’application affiche un menu présentant les modes disponibles. Le premier mode est jouable ; les modes qui ne sont pas encore développés peuvent être indiqués comme à venir.
@@ -57,13 +74,14 @@ Au lancement, l’application affiche un menu présentant les modes disponibles.
 Ces règles s’appliquent à toutes les phrases et à tous les contenus japonais affichés dans l’application, quel que soit le mode de jeu :
 
 - colorer le vocabulaire en bleu, les particules en vert, les verbes en orange et les marqueurs grammaticaux en violet ;
-- permettre de toucher chaque mot ou élément pour afficher une bulle contenant sa traduction ou son explication en français ;
+- permettre de toucher chaque mot ou élément pour afficher une fenêtre popup superposée à la phrase, sans déplacer le jeu ;
+- afficher dans cette fenêtre le mot en japonais, sa lecture en rōmaji et sa traduction ou explication en français ;
 - permettre de parcourir chaque phrase mot à mot, sans afficher nécessairement sa traduction complète d’emblée ;
 - conserver la lisibilité des phrases et permettre de sélectionner individuellement chacun de leurs éléments ;
 - fournir une légende et un retour visuel ou textuel à la sélection afin que les catégories ne soient pas identifiées uniquement par la couleur ;
 - rendre les annotations, traductions et explications disponibles hors ligne pour les contenus installés.
 
-Les données de contenu japonais doivent pouvoir inclure les éléments ou unités annotés individuellement (texte japonais, catégorie grammaticale et traduction ou explication en français). Cette structure doit être réutilisable par tous les modes de jeu.
+Les données de contenu japonais doivent pouvoir inclure les éléments ou unités annotés individuellement (texte japonais, rōmaji, catégorie grammaticale et traduction ou explication en français). Cette structure doit être réutilisable par tous les modes de jeu.
 
 ### Jeu de particules — première version
 
@@ -106,39 +124,41 @@ Le format des données et leur stratégie de versionnement restent à définir l
 1. La personne ouvre l’application et arrive sur l’écran d’accueil.
 2. Elle peut demander une recherche de nouvelle version du logiciel depuis l’application.
 3. Si une version est disponible, l’application présente son numéro et ses notes de version, puis propose de la télécharger et de lancer l’installation avec confirmation Android.
-4. Une fois le socle en place, la personne pourra accéder au menu des modes de jeu, lancer le jeu de particules et consulter ses résultats.
+4. Depuis l’écran d’accueil, la personne lance le jeu de particules, répond aux exercices et consulte ses statistiques.
 5. L’application et les contenus déjà installés restent utilisables hors ligne.
 
-## Première étape — socle et mise à jour du logiciel
+## Première version — socle et premier jeu
 
 La première livraison doit comprendre :
 
 - une application Android installable et versionnée ;
-- un écran d’accueil et une structure de navigation extensible ;
+- un écran d’accueil présentant le jeu de particules et la progression ;
+- dix exercices de particules accessibles hors ligne ;
+- l’affichage coloré des catégories et une popup de traduction mot à mot indiquant le japonais, le rōmaji et le français ;
+- les corrections et l’enregistrement local des réponses ;
+- un écran de statistiques avec les notions à réviser et maîtrisées ;
+- une navigation extensible vers les futurs modes de jeu ;
 - un accès à la recherche manuelle des mises à jour depuis les Releases GitHub du projet ;
 - l’affichage du numéro de version installée, de la version disponible et des notes de version ;
 - le téléchargement contrôlé du paquet Android et le passage par la confirmation d’installation du système ;
 - des messages explicites en cas d’absence de mise à jour, d’absence de réseau ou d’échec ;
-- le maintien du fonctionnement de la version installée hors ligne.
+- le maintien du fonctionnement du jeu et des contenus installés hors ligne.
 
-Le menu complet, le jeu de particules, les statistiques et la mise à jour des exercices seront réalisés dans les étapes suivantes, sur le socle validé.
-
-## Critères d’acceptation de la première étape
+## Critères d’acceptation de la première version
 
 - L’application Android peut être compilée, installée et lancée avec un numéro de version identifiable.
+- Le jeu de particules est accessible depuis le menu principal et propose une série de questions jouable hors ligne.
+- Chaque mot ou élément japonais est coloré selon sa catégorie et ouvre au toucher une popup superposée présentant le japonais, le rōmaji et le français.
+- Chaque réponse reçoit une correction ; les réponses restent enregistrées après fermeture de l’application.
+- Les statistiques distinguent les notions à réviser de celles maîtrisées.
 - Une personne peut déclencher une recherche de version depuis l’application.
 - L’application distingue une version déjà à jour d’une version plus récente et présente les notes de version disponibles.
 - Le téléchargement d’une version publiée est contrôlé et l’installation requiert la confirmation du système Android.
 - Un échec de mise à jour est signalé sans supprimer ni désactiver la version installée.
 - L’application installée reste lançable sans connexion Internet.
 
-## Étape suivante — premier jeu
-
-Après validation du socle, le premier jeu doit comprendre un menu des modes de jeu, un ensemble initial d’exercices de particules, les règles communes d’affichage et de traduction, les corrections, l’enregistrement local des résultats et un écran de statistiques élémentaire. Le jeu et les contenus déjà installés doivent fonctionner hors ligne.
-
-## Évolutions possibles
+## Étapes suivantes
 
 - Ajouter d’autres jeux et thèmes de vocabulaire ou de grammaire.
-- Proposer des séances de révision ciblées sur les notions moins maîtrisées.
-- Enrichir les statistiques et les options de progression.
-- Améliorer la gestion des versions et l’affichage des nouveautés disponibles.
+- Permettre la mise à jour indépendante des contenus pédagogiques depuis GitHub.
+- Enrichir les séances de révision et les statistiques.

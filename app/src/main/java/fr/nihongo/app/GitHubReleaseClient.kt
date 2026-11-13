@@ -2,6 +2,8 @@ package fr.nihongo.app
 
 import org.json.JSONObject
 import java.net.HttpURLConnection
+import java.net.URI
+import java.net.URISyntaxException
 import java.net.URL
 
 internal data class ReleaseAsset(
@@ -56,7 +58,7 @@ internal class GitHubReleaseClient {
         }
     }
 
-    private fun parseRelease(json: JSONObject): GitHubRelease {
+    internal fun parseRelease(json: JSONObject): GitHubRelease {
         if (json.optBoolean("draft") || json.optBoolean("prerelease")) {
             throw IllegalStateException("La dernière publication GitHub est une préversion non prise en charge.")
         }
@@ -74,28 +76,40 @@ internal class GitHubReleaseClient {
                 else "La publication GitHub contient plusieurs APK ; un seul fichier APK est attendu."
             )
         val digest = asset.optString("digest")
-        if (!digest.startsWith("sha256:")) {
+        val sha256 = digest.removePrefix("sha256:")
+        if (!digest.startsWith("sha256:") || !SHA256_PATTERN.matches(sha256)) {
             throw IllegalStateException("GitHub ne fournit pas d’empreinte SHA-256 pour cet APK.")
         }
         val url = asset.optString("browser_download_url")
-        if (!url.startsWith("https://")) {
-            throw IllegalStateException("L’adresse de téléchargement de l’APK n’est pas sécurisée.")
+        val uri = try {
+            URI(url)
+        } catch (_: URISyntaxException) {
+            null
+        }
+        if (uri?.scheme != "https" ||
+            uri.host != GITHUB_HOST ||
+            uri.path?.startsWith(RELEASES_DOWNLOAD_PATH) != true
+        ) {
+            throw IllegalStateException("L’adresse de téléchargement ne correspond pas à une Release GitHub du projet.")
         }
 
         return GitHubRelease(
             tag = tag,
-            title = json.optString("name").ifBlank { tag },
+            title = json.optString("name").takeIf { it.isNotBlank() && it != "null" } ?: tag,
             notes = json.optString("body").trim(),
             version = version,
             apk = ReleaseAsset(
                 name = asset.optString("name"),
                 downloadUrl = url,
-                sha256 = digest.removePrefix("sha256:").lowercase()
+                sha256 = sha256.lowercase()
             )
         )
     }
 
     private companion object {
+        const val GITHUB_HOST = "github.com"
+        const val RELEASES_DOWNLOAD_PATH = "/radiogrange47-ux/Apk_Nihongo/releases/download/"
+        val SHA256_PATTERN = Regex("^[a-fA-F0-9]{64}$")
         const val RELEASES_URL =
             "https://api.github.com/repos/radiogrange47-ux/Apk_Nihongo/releases/latest"
     }
