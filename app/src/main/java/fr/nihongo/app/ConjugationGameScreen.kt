@@ -246,6 +246,7 @@ internal fun ConjugationGameScreen(
                             WordCategory.PARTICLE -> Color(0xFF81C784)
                             WordCategory.GRAMMAR_MARKER -> Color(0xFFCE93D8)
                             WordCategory.VOCABULARY -> Color(0xFF64B5F6)
+                            WordCategory.ADJECTIVE -> Color(0xFFFF8A80)
                         },
                         style = MaterialTheme.typography.titleLarge
                     )
@@ -273,6 +274,7 @@ private fun ConjugationPhrase(
                 WordCategory.PARTICLE -> Color(0xFF81C784)
                 WordCategory.VERB -> Color(0xFFFFB74D)
                 WordCategory.GRAMMAR_MARKER -> Color(0xFFCE93D8)
+                WordCategory.ADJECTIVE -> Color(0xFFFF8A80)
             }
             Text(
                 token.japanese,

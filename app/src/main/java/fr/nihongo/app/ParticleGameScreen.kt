@@ -68,7 +68,8 @@ private val wordColorLegend = listOf(
     WordColorLegend(WordCategory.VOCABULARY, "Vocabulaire", Color(0xFF64B5F6)),
     WordColorLegend(WordCategory.PARTICLE, "Particules", Color(0xFF81C784)),
     WordColorLegend(WordCategory.VERB, "Verbes", Color(0xFFFFB74D)),
-    WordColorLegend(WordCategory.GRAMMAR_MARKER, "Grammaire", Color(0xFFCE93D8))
+    WordColorLegend(WordCategory.GRAMMAR_MARKER, "Grammaire", Color(0xFFCE93D8)),
+    WordColorLegend(WordCategory.ADJECTIVE, "Adjectifs", Color(0xFFFF8A80))
 )
 
 @Composable
@@ -103,6 +104,7 @@ internal fun ParticleGameScreen(
             )
         )
     }
+    val displayedChoices = remember(exercise.id) { exercise.choices.shuffled() }
 
     fun advanceToNextQuestion() {
         questionIndex++
@@ -188,7 +190,7 @@ internal fun ParticleGameScreen(
             }
         }
 
-        exercise.choices.chunked(2).forEach { rowChoices ->
+        displayedChoices.chunked(2).forEach { rowChoices ->
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(12.dp)

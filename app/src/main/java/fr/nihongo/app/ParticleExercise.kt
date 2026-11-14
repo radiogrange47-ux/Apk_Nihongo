@@ -4,7 +4,8 @@ internal enum class WordCategory {
     VOCABULARY,
     PARTICLE,
     VERB,
-    GRAMMAR_MARKER
+    GRAMMAR_MARKER,
+    ADJECTIVE
 }
 
 internal enum class LearningGame(val title: String) {

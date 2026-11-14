@@ -68,6 +68,7 @@ internal fun VocabularyGameScreen(
             )
         )
     }
+    val displayedChoices = remember(question.id) { question.choices.shuffled() }
     var showReading by remember(question.id) { mutableStateOf(false) }
     var feedback by remember { mutableStateOf<String?>(null) }
     var feedbackTranslation by remember { mutableStateOf<String?>(null) }
@@ -147,7 +148,7 @@ internal fun VocabularyGameScreen(
             }
         }
 
-        question.choices.chunked(2).forEach { choices ->
+        displayedChoices.chunked(2).forEach { choices ->
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(12.dp)
