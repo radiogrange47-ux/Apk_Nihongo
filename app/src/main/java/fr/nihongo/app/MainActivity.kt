@@ -74,6 +74,8 @@ class MainActivity : ComponentActivity() {
                 extraAttempts = extraAttempts,
                 questionMasteryThreshold = questionMasteryThreshold,
                 sessionQuestionCount = sessionQuestionCount,
+                selectedQuestionBanks = learningSettingsStore.selectedQuestionBanks(),
+                onQuestionBanksChange = ::setSelectedQuestionBanks,
                 onCheckUpdates = ::checkForUpdates,
                 onDownloadUpdate = ::downloadUpdate,
                 onCheckQuestionUpdates = ::checkForQuestionUpdates,
@@ -283,6 +285,10 @@ class MainActivity : ComponentActivity() {
         } catch (exception: Exception) {
             exception.message ?: "Le nombre de questions n’a pas pu être enregistré."
         }
+
+    private fun setSelectedQuestionBanks(value: Set<QuestionBank>) {
+        learningSettingsStore.setSelectedQuestionBanks(value)
+    }
 
     private fun resetMasteryCounters(): String? =
         try {

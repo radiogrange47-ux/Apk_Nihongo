@@ -8,13 +8,16 @@ import java.util.zip.ZipInputStream
 
 internal class QuestionCatalogLoader(private val context: Context) {
     fun loadBundled(): QuestionCatalog {
-        val files = QuestionCatalogCodec.fileNames.associateWith { name ->
-            context.assets.open(name).use { it.readBounded(MAX_JSON_BYTES).toString(Charsets.UTF_8) }
-        }
         val manifest = context.assets.open(MANIFEST_FILE).use {
             it.readBounded(MAX_JSON_BYTES).toString(Charsets.UTF_8)
         }
-        return QuestionCatalogCodec.parse(manifest, files)
+        val names = org.json.JSONObject(manifest).getJSONArray("files").let { files ->
+            (0 until files.length()).map { files.getString(it) }
+        }
+        val dataFiles = names.associateWith { name ->
+            context.assets.open(name).use { it.readBounded(MAX_JSON_BYTES).toString(Charsets.UTF_8) }
+        }
+        return QuestionCatalogCodec.parse(manifest, dataFiles)
     }
 
     fun loadArchive(archive: File): QuestionCatalog {
@@ -25,7 +28,8 @@ internal class QuestionCatalogLoader(private val context: Context) {
         ZipInputStream(archive.inputStream().buffered()).use { zip ->
             while (true) {
                 val entry = zip.nextEntry ?: break
-                require(!entry.isDirectory && entry.name in ALLOWED_FILES) {
+                require(!entry.isDirectory &&
+                    (entry.name == MANIFEST_FILE || QuestionCatalogCodec.isValidFileName(entry.name))) {
                     "Le paquet contient un fichier inattendu."
                 }
                 require(entry.name !in entries) { "Le paquet contient un fichier en double." }
@@ -33,7 +37,7 @@ internal class QuestionCatalogLoader(private val context: Context) {
                 zip.closeEntry()
             }
         }
-        require(entries.keys == ALLOWED_FILES) {
+        require(MANIFEST_FILE in entries) {
             "Le paquet est incomplet ou contient des fichiers inconnus."
         }
         return QuestionCatalogCodec.parse(
@@ -46,7 +50,6 @@ internal class QuestionCatalogLoader(private val context: Context) {
         const val MANIFEST_FILE = "manifest.json"
         const val MAX_JSON_BYTES = 2L * 1024L * 1024L
         const val MAX_ARCHIVE_BYTES = 20L * 1024L * 1024L
-        val ALLOWED_FILES = (QuestionCatalogCodec.fileNames + MANIFEST_FILE).toSet()
     }
 }
 
@@ -62,7 +65,8 @@ internal class QuestionDataStore(
     fun loadOrSeed(): QuestionCatalog {
         if (currentArchive.exists()) {
             return try {
-                loader.loadArchive(currentArchive).also(progressStore::synchronizeQuestions)
+                preferBundledWhenNewer(loader.loadArchive(currentArchive))
+                    .also(progressStore::synchronizeQuestions)
             } catch (currentFailure: Exception) {
                 if (!backupArchive.isFile) throw currentFailure
                 val backup = loader.loadArchive(backupArchive)
@@ -72,7 +76,7 @@ internal class QuestionDataStore(
                         currentFailure
                     )
                 }
-                backup.also(progressStore::synchronizeQuestions)
+                preferBundledWhenNewer(backup).also(progressStore::synchronizeQuestions)
             }
         }
 
@@ -81,10 +85,17 @@ internal class QuestionDataStore(
             if (!replaceFile(backupArchive, currentArchive)) {
                 throw IllegalStateException("Impossible de restaurer la sauvegarde des questions.")
             }
-            return backup.also(progressStore::synchronizeQuestions)
+            return preferBundledWhenNewer(backup).also(progressStore::synchronizeQuestions)
         }
 
         return loader.loadBundled().also(progressStore::synchronizeQuestions)
+    }
+
+    private fun preferBundledWhenNewer(installedCatalog: QuestionCatalog): QuestionCatalog {
+        val bundledCatalog = loader.loadBundled()
+        val installedVersion = requireNotNull(ReleaseVersion.parse(installedCatalog.contentVersion))
+        val bundledVersion = requireNotNull(ReleaseVersion.parse(bundledCatalog.contentVersion))
+        return if (bundledVersion > installedVersion) bundledCatalog else installedCatalog
     }
 
     fun installArchive(archive: File, expectedVersion: String): QuestionCatalog {

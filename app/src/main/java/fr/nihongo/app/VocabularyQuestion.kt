@@ -8,7 +8,8 @@ internal data class VocabularyQuestion(
     val answer: String,
     val choices: List<String>,
     override val level: String? = null,
-    override val source: String? = null
+    override val source: String? = null,
+    override val bank: QuestionBank = QuestionBank.JLPT5
 ) : LearningQuestion {
     override val prompt: String
         get() = "$kanji\n$hiragana"

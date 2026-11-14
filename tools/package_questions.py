@@ -10,12 +10,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 QUESTION_DIR = ROOT / "questions"
 SCHEMA_VERSION = 1
-EXPECTED_FILES = {
-    "particles.json",
-    "vocabulary.json",
-    "verbs.json",
-    "conjugation.json",
-}
+VALID_BANKS = {"JLPT5", "COURSE", "JLPT4"}
+VALID_GAME_FILES = {"particles.json", "vocabulary.json", "verbs.json", "conjugation.json"}
+FOLDER_BANKS = {"JLPT5": "JLPT5", "Mes cours": "COURSE", "JLPT4": "JLPT4"}
 CATEGORIES = {"VOCABULARY", "PARTICLE", "VERB", "GRAMMAR_MARKER"}
 VERSION_PATTERN = re.compile(r"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$")
 
@@ -64,7 +61,11 @@ def validate_bank(filename, questions):
         require(question["id"] not in ids, f"{filename} contains duplicate id {question['id']}")
         ids.add(question["id"])
 
-        if filename in ("vocabulary.json", "verbs.json"):
+        require(question.get("bank") in VALID_BANKS, f"{label} has an unknown bank")
+        game_file = Path(filename).name
+        expected_bank = FOLDER_BANKS.get(Path(filename).parent.name, "JLPT5")
+        require(question["bank"] == expected_bank, f"{label} bank does not match its folder")
+        if game_file in ("vocabulary.json", "verbs.json"):
             for field in ("kanji", "hiragana"):
                 text(question.get(field), f"{label} {field}")
             text(question.get("answer"), f"{label} answer")
@@ -73,7 +74,7 @@ def validate_bank(filename, questions):
             question_tokens = tokens(question, label)
             text(question.get("translation"), f"{label} translation")
             text(question.get("explanation"), f"{label} explanation")
-            if filename == "particles.json":
+            if game_file == "particles.json":
                 index = question.get("missingTokenIndex")
                 require(isinstance(index, int) and not isinstance(index, bool) and
                         0 <= index < len(question_tokens), f"{label} has an invalid missingTokenIndex")
@@ -104,14 +105,22 @@ def load_questions():
     require(isinstance(version, str) and VERSION_PATTERN.fullmatch(version),
             "contentVersion must use MAJOR.MINOR.PATCH")
     files = manifest.get("files")
-    require(isinstance(files, list) and len(files) == len(EXPECTED_FILES) and
-            set(files) == EXPECTED_FILES, "manifest.json must list the four question files exactly once")
+    require(isinstance(files, list) and files and len(set(files)) == len(files),
+            "manifest.json must list question files without duplicates")
+    for filename in files:
+        path = Path(filename)
+        valid_location = (len(path.parts) == 1 or
+                          (len(path.parts) == 2 and path.parts[0] in FOLDER_BANKS))
+        require(valid_location and path.name in VALID_GAME_FILES,
+                f"{filename} is not a supported question file")
     data = {}
     for filename in files:
         path = QUESTION_DIR / filename
         questions = json.loads(path.read_text(encoding="utf-8"))
         validate_bank(filename, questions)
         data[filename] = questions
+    require({Path(filename).name for filename in files} == VALID_GAME_FILES,
+            "manifest.json must include at least one file for each mini-game")
     require(
         len(set(question["id"] for bank in data.values() for question in bank)) ==
         sum(len(bank) for bank in data.values()),

@@ -34,12 +34,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
@@ -67,7 +64,6 @@ internal fun ConjugationGameScreen(
     var wrongAnswers by remember { mutableIntStateOf(0) }
     var selectedToken by remember { mutableStateOf<PhraseToken?>(null) }
     var feedback by remember { mutableStateOf<String?>(null) }
-    var feedbackTranslation by remember { mutableStateOf<String?>(null) }
     var feedbackCorrect by remember { mutableStateOf(false) }
     var saveError by remember { mutableStateOf<String?>(null) }
     val questionDeck = remember(questions) { QuestionDeck(questions) }
@@ -130,6 +126,11 @@ internal fun ConjugationGameScreen(
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     fontStyle = FontStyle.Italic
                 )
+                Text(
+                    question.translation,
+                    color = MaterialTheme.colorScheme.onSurface,
+                    fontStyle = FontStyle.Italic
+                )
                 if (feedback != null) {
                     Card(
                         modifier = Modifier.fillMaxWidth(),
@@ -139,14 +140,7 @@ internal fun ConjugationGameScreen(
                         )
                     ) {
                         Text(
-                            text = buildAnnotatedString {
-                                append(feedback.orEmpty())
-                                feedbackTranslation?.let { translation ->
-                                    withStyle(SpanStyle(fontStyle = FontStyle.Italic)) {
-                                        append(translation)
-                                    }
-                                }
-                            },
+                            text = feedback.orEmpty(),
                             modifier = Modifier.padding(14.dp),
                             color = if (feedbackCorrect) Color(0xFF8EE6B5) else Color(0xFFFF9999)
                         )
@@ -187,7 +181,6 @@ internal fun ConjugationGameScreen(
                                 if (correct) {
                                     feedbackCorrect = true
                                     feedback = "✓  "
-                                    feedbackTranslation = question.translation
                                     advance()
                                 } else {
                                     feedbackCorrect = false
@@ -201,7 +194,6 @@ internal fun ConjugationGameScreen(
                                     } else {
                                         "Ce n’est pas « $ending ». Réessaie. "
                                     }
-                                    feedbackTranslation = if (shouldAdvance) question.translation else null
                                     if (shouldAdvance) advance()
                                 }
                             },

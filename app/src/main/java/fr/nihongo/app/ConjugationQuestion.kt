@@ -12,7 +12,8 @@ internal data class ConjugationQuestion(
     val translation: String,
     val explanation: String,
     override val level: String? = null,
-    override val source: String? = null
+    override val source: String? = null,
+    override val bank: QuestionBank = QuestionBank.JLPT5
 ) : LearningQuestion {
     override val prompt: String
         get() = tokens.mapIndexed { index, token ->

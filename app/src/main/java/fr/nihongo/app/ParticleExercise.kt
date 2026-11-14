@@ -14,11 +14,18 @@ internal enum class LearningGame(val title: String) {
     CONJUGATION("Conjugaison")
 }
 
+internal enum class QuestionBank(val title: String) {
+    JLPT5("JLPT5"),
+    COURSE("Mes cours"),
+    JLPT4("JLPT4")
+}
+
 internal interface LearningQuestion {
     val id: String
     val topic: String
     val level: String?
     val source: String?
+    val bank: QuestionBank
     val prompt: String
 }
 
@@ -45,7 +52,8 @@ internal data class ParticleExercise(
     val explanation: String,
     val translation: String,
     override val level: String? = null,
-    override val source: String? = null
+    override val source: String? = null,
+    override val bank: QuestionBank = QuestionBank.JLPT5
 ) : LearningQuestion {
     override val prompt: String
         get() = tokens.mapIndexed { index, token ->

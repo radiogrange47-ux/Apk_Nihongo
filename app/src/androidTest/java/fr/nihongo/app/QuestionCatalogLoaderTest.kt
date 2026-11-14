@@ -19,20 +19,25 @@ class QuestionCatalogLoaderTest {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         val catalog = QuestionCatalogLoader(context).loadBundled()
 
-        assertEquals("1.1.0", catalog.contentVersion)
-        assertEquals(22, catalog.particles.size)
-        assertEquals(67, catalog.vocabulary.size)
-        assertEquals(65, catalog.verbs.size)
-        assertEquals(22, catalog.conjugation.size)
+        assertEquals("1.2.0", catalog.contentVersion)
+        assertEquals(22, catalog.particles.count { it.bank == QuestionBank.JLPT5 })
+        assertEquals(67, catalog.vocabulary.count { it.bank == QuestionBank.JLPT5 })
+        assertEquals(65, catalog.verbs.count { it.bank == QuestionBank.JLPT5 })
+        assertEquals(22, catalog.conjugation.count { it.bank == QuestionBank.JLPT5 })
+        assertEquals(14, catalog.particles.count { it.bank == QuestionBank.COURSE })
+        assertEquals(81, catalog.vocabulary.count { it.bank == QuestionBank.COURSE })
+        assertEquals(24, catalog.verbs.count { it.bank == QuestionBank.COURSE })
+        assertEquals(14, catalog.conjugation.count { it.bank == QuestionBank.COURSE })
         assertTrue(catalog.particles.all { it.choices.size == 6 })
         assertTrue(catalog.vocabulary.all { it.choices.size == 6 })
         assertTrue(catalog.verbs.all { it.choices.size == 6 })
         assertTrue(catalog.conjugation.all { it.choices.size == 6 })
-        assertEquals(176, catalog.allQuestionIds().values.flatten().size)
+        assertEquals(309, catalog.allQuestionIds().values.flatten().size)
         assertTrue(
             LearningGame.values().all { game ->
                 catalog.questionsFor(game).all {
-                    it.level == "JLPT N5" && !it.source.isNullOrBlank()
+                    it.bank == QuestionBank.COURSE ||
+                        (it.level == "JLPT N5" && !it.source.isNullOrBlank())
                 }
             }
         )
@@ -40,19 +45,23 @@ class QuestionCatalogLoaderTest {
     }
 
     @Test
-    fun archiveLoadsOnlyWhenItContainsTheExpectedFlatFileSet() {
+    fun archiveLoadsOnlyWhenItContainsFilesListedInTheManifest() {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         val loader = QuestionCatalogLoader(context)
         val archive = File.createTempFile("questions-test", ".zip", context.cacheDir)
         try {
+            val manifest = context.assets.open("manifest.json").bufferedReader().use { it.readText() }
+            val files = org.json.JSONObject(manifest).getJSONArray("files").let { entries ->
+                (0 until entries.length()).map { entries.getString(it) }
+            }
             ZipOutputStream(archive.outputStream()).use { zip ->
-                (QuestionCatalogCodec.fileNames + "manifest.json").forEach { name ->
+                (files + "manifest.json").forEach { name ->
                     zip.putNextEntry(ZipEntry(name))
                     context.assets.open(name).use { it.copyTo(zip) }
                     zip.closeEntry()
                 }
             }
-            assertEquals("1.1.0", loader.loadArchive(archive).contentVersion)
+            assertEquals("1.2.0", loader.loadArchive(archive).contentVersion)
 
             ZipOutputStream(archive.outputStream()).use { zip ->
                 zip.putNextEntry(ZipEntry("../unexpected.json"))

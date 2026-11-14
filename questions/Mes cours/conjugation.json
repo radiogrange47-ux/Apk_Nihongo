@@ -1,0 +1,263 @@
+[
+  {
+    "id": "course-conj-taberu-masu",
+    "topic": "Présent poli affirmatif",
+    "contextFrench": "Action habituelle, à la forme polie affirmative.",
+    "tokens": [
+      { "japanese": "私", "hiragana": "わたし", "french": "je", "category": "VOCABULARY" },
+      { "japanese": "は", "hiragana": "は", "french": "marque le thème", "category": "PARTICLE" },
+      { "japanese": "パン", "hiragana": "ぱん", "french": "pain", "category": "VOCABULARY" },
+      { "japanese": "を", "hiragana": "を", "french": "marque l’objet", "category": "PARTICLE" },
+      { "japanese": "食べ", "hiragana": "たべ", "french": "manger", "category": "VERB" }
+    ],
+    "verbTokenIndex": 4,
+    "punctuation": "。",
+    "answerEnding": "ます",
+    "choices": ["ます", "ません", "ました", "ませんでした", "たいです", "ましょう"],
+    "translation": "Je mange du pain.",
+    "explanation": "ます forme le présent ou le futur poli affirmatif d’un verbe.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 01–02"
+  },
+  {
+    "id": "course-conj-taberu-masen",
+    "topic": "Présent poli négatif",
+    "contextFrench": "On nie une action au présent avec la forme polie.",
+    "tokens": [
+      { "japanese": "私", "hiragana": "わたし", "french": "je", "category": "VOCABULARY" },
+      { "japanese": "は", "hiragana": "は", "french": "marque le thème", "category": "PARTICLE" },
+      { "japanese": "肉", "hiragana": "にく", "french": "viande", "category": "VOCABULARY" },
+      { "japanese": "を", "hiragana": "を", "french": "marque l’objet", "category": "PARTICLE" },
+      { "japanese": "食べ", "hiragana": "たべ", "french": "manger", "category": "VERB" }
+    ],
+    "verbTokenIndex": 4,
+    "punctuation": "。",
+    "answerEnding": "ません",
+    "choices": ["ません", "ます", "ました", "ませんでした", "たいです", "ましょう"],
+    "translation": "Je ne mange pas de viande.",
+    "explanation": "ません est la forme polie négative au présent ou au futur.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 01"
+  },
+  {
+    "id": "course-conj-taberu-mashita",
+    "topic": "Passé poli affirmatif",
+    "contextFrench": "L’action est terminée ; on emploie le passé poli affirmatif.",
+    "tokens": [
+      { "japanese": "昨日", "hiragana": "きのう", "french": "hier", "category": "VOCABULARY" },
+      { "japanese": "すし", "hiragana": "すし", "french": "sushi", "category": "VOCABULARY" },
+      { "japanese": "を", "hiragana": "を", "french": "marque l’objet", "category": "PARTICLE" },
+      { "japanese": "食べ", "hiragana": "たべ", "french": "manger", "category": "VERB" }
+    ],
+    "verbTokenIndex": 3,
+    "punctuation": "。",
+    "answerEnding": "ました",
+    "choices": ["ました", "ます", "ません", "ませんでした", "たいです", "ましょう"],
+    "translation": "Hier, j’ai mangé des sushis.",
+    "explanation": "ました exprime une action terminée dans le passé, à la forme polie.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 01"
+  },
+  {
+    "id": "course-conj-taberu-masendeshita",
+    "topic": "Passé poli négatif",
+    "contextFrench": "L’action n’a pas eu lieu ; il faut le passé poli négatif.",
+    "tokens": [
+      { "japanese": "先週", "hiragana": "せんしゅう", "french": "la semaine dernière", "category": "VOCABULARY" },
+      { "japanese": "魚", "hiragana": "さかな", "french": "poisson", "category": "VOCABULARY" },
+      { "japanese": "を", "hiragana": "を", "french": "marque l’objet", "category": "PARTICLE" },
+      { "japanese": "食べ", "hiragana": "たべ", "french": "manger", "category": "VERB" }
+    ],
+    "verbTokenIndex": 3,
+    "punctuation": "。",
+    "answerEnding": "ませんでした",
+    "choices": ["ませんでした", "ました", "ません", "ます", "たいです", "ましょう"],
+    "translation": "La semaine dernière, je n’ai pas mangé de poisson.",
+    "explanation": "ませんでした combine la négation polie et le passé.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 01"
+  },
+  {
+    "id": "course-conj-iku-masu",
+    "topic": "Présent poli affirmatif",
+    "contextFrench": "Destination : l’université. Action au présent poli.",
+    "tokens": [
+      { "japanese": "大学", "hiragana": "だいがく", "french": "université", "category": "VOCABULARY" },
+      { "japanese": "へ", "hiragana": "へ", "french": "indique la direction", "category": "PARTICLE" },
+      { "japanese": "行き", "hiragana": "いき", "french": "aller", "category": "VERB" }
+    ],
+    "verbTokenIndex": 2,
+    "punctuation": "。",
+    "answerEnding": "ます",
+    "choices": ["ます", "ません", "ました", "ませんでした", "たいです", "ましょう"],
+    "translation": "Je vais à l’université.",
+    "explanation": "Le verbe 行く devient 行きます à la forme polie.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 01"
+  },
+  {
+    "id": "course-conj-iku-masen",
+    "topic": "Présent poli négatif",
+    "contextFrench": "On indique que l’on ne se rendra pas à l’école.",
+    "tokens": [
+      { "japanese": "明日", "hiragana": "あした", "french": "demain", "category": "VOCABULARY" },
+      { "japanese": "学校", "hiragana": "がっこう", "french": "école", "category": "VOCABULARY" },
+      { "japanese": "へ", "hiragana": "へ", "french": "indique la direction", "category": "PARTICLE" },
+      { "japanese": "行き", "hiragana": "いき", "french": "aller", "category": "VERB" }
+    ],
+    "verbTokenIndex": 3,
+    "punctuation": "。",
+    "answerEnding": "ません",
+    "choices": ["ません", "ます", "ました", "ませんでした", "たいです", "ましょう"],
+    "translation": "Demain, je ne vais pas à l’école.",
+    "explanation": "À la forme polie négative, 行きます devient 行きません.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 01"
+  },
+  {
+    "id": "course-conj-iku-mashita",
+    "topic": "Passé poli affirmatif",
+    "contextFrench": "Le déplacement au Japon a déjà eu lieu.",
+    "tokens": [
+      { "japanese": "昨日", "hiragana": "きのう", "french": "hier", "category": "VOCABULARY" },
+      { "japanese": "日本", "hiragana": "にほん", "french": "Japon", "category": "VOCABULARY" },
+      { "japanese": "へ", "hiragana": "へ", "french": "indique la direction", "category": "PARTICLE" },
+      { "japanese": "行き", "hiragana": "いき", "french": "aller", "category": "VERB" }
+    ],
+    "verbTokenIndex": 3,
+    "punctuation": "。",
+    "answerEnding": "ました",
+    "choices": ["ました", "ます", "ません", "ませんでした", "たいです", "ましょう"],
+    "translation": "Hier, je suis allé au Japon.",
+    "explanation": "行きました est le passé poli de 行きます.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 01"
+  },
+  {
+    "id": "course-conj-benkyou-tai",
+    "topic": "Exprimer un souhait",
+    "contextFrench": "On exprime ici le souhait d’étudier le japonais.",
+    "tokens": [
+      { "japanese": "日本語", "hiragana": "にほんご", "french": "japonais (langue)", "category": "VOCABULARY" },
+      { "japanese": "を", "hiragana": "を", "french": "marque l’objet", "category": "PARTICLE" },
+      { "japanese": "勉強し", "hiragana": "べんきょうし", "french": "étudier", "category": "VERB" }
+    ],
+    "verbTokenIndex": 2,
+    "punctuation": "。",
+    "answerEnding": "たいです",
+    "choices": ["たいです", "ます", "ません", "ました", "ませんでした", "ましょう"],
+    "translation": "Je veux étudier le japonais.",
+    "explanation": "On ajoute たいです à la base en ます pour exprimer « vouloir faire ».",
+    "bank": "COURSE",
+    "source": "Cours Yuki 01–02"
+  },
+  {
+    "id": "course-conj-ryokou-mashou",
+    "topic": "Proposer une action",
+    "contextFrench": "On propose à un ami de voyager ensemble.",
+    "tokens": [
+      { "japanese": "友達", "hiragana": "ともだち", "french": "ami", "category": "VOCABULARY" },
+      { "japanese": "と", "hiragana": "と", "french": "avec", "category": "PARTICLE" },
+      { "japanese": "旅行し", "hiragana": "りょこうし", "french": "voyager", "category": "VERB" }
+    ],
+    "verbTokenIndex": 2,
+    "punctuation": "。",
+    "answerEnding": "ましょう",
+    "choices": ["ましょう", "ます", "ません", "ました", "ませんでした", "たいです"],
+    "translation": "Voyageons avec un ami.",
+    "explanation": "ましょう sert à proposer de faire quelque chose ensemble.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 01"
+  },
+  {
+    "id": "course-conj-matsu-tekudasai",
+    "topic": "Demande polie",
+    "contextFrench": "On demande poliment à quelqu’un d’attendre ici.",
+    "tokens": [
+      { "japanese": "ここ", "hiragana": "ここ", "french": "ici", "category": "VOCABULARY" },
+      { "japanese": "で", "hiragana": "で", "french": "marque le lieu de l’action", "category": "PARTICLE" },
+      { "japanese": "待っ", "hiragana": "まっ", "french": "attendre", "category": "VERB" }
+    ],
+    "verbTokenIndex": 2,
+    "punctuation": "。",
+    "answerEnding": "てください",
+    "choices": ["てください", "てもいいです", "てはいけません", "ています", "ていました", "ていません"],
+    "translation": "Veuillez attendre ici, s’il vous plaît.",
+    "explanation": "てください transforme la forme en て en demande polie.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 03"
+  },
+  {
+    "id": "course-conj-tabete-mo-ii",
+    "topic": "Permission",
+    "contextFrench": "On demande si l’action est autorisée.",
+    "tokens": [
+      { "japanese": "ここ", "hiragana": "ここ", "french": "ici", "category": "VOCABULARY" },
+      { "japanese": "で", "hiragana": "で", "french": "marque le lieu de l’action", "category": "PARTICLE" },
+      { "japanese": "食べ", "hiragana": "たべ", "french": "manger", "category": "VERB" }
+    ],
+    "verbTokenIndex": 2,
+    "punctuation": "か。",
+    "answerEnding": "てもいいです",
+    "choices": ["てもいいです", "てはいけません", "てください", "ています", "ていました", "ていません"],
+    "translation": "Peut-on manger ici ?",
+    "explanation": "て suivi de もいいです indique qu’une action est permise.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 03–04"
+  },
+  {
+    "id": "course-conj-tabete-wa-ikenai",
+    "topic": "Interdiction",
+    "contextFrench": "Il est interdit de manger à cet endroit.",
+    "tokens": [
+      { "japanese": "ここ", "hiragana": "ここ", "french": "ici", "category": "VOCABULARY" },
+      { "japanese": "で", "hiragana": "で", "french": "marque le lieu de l’action", "category": "PARTICLE" },
+      { "japanese": "食べ", "hiragana": "たべ", "french": "manger", "category": "VERB" }
+    ],
+    "verbTokenIndex": 2,
+    "punctuation": "。",
+    "answerEnding": "てはいけません",
+    "choices": ["てはいけません", "てもいいです", "てください", "ています", "ていました", "ていません"],
+    "translation": "Il ne faut pas manger ici.",
+    "explanation": "てはいけません exprime une interdiction.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 03–04"
+  },
+  {
+    "id": "course-conj-tsukatte-imasu",
+    "topic": "Action en cours",
+    "contextFrench": "L’action est en train de se dérouler maintenant.",
+    "tokens": [
+      { "japanese": "カード", "hiragana": "カード", "french": "carte", "category": "VOCABULARY" },
+      { "japanese": "を", "hiragana": "を", "french": "marque l’objet", "category": "PARTICLE" },
+      { "japanese": "使っ", "hiragana": "つかっ", "french": "utiliser", "category": "VERB" }
+    ],
+    "verbTokenIndex": 2,
+    "punctuation": "。",
+    "answerEnding": "ています",
+    "choices": ["ています", "ていました", "ていません", "ていませんでした", "てください", "てもいいです"],
+    "translation": "Je suis en train d’utiliser la carte.",
+    "explanation": "ています décrit une action en cours ou un état qui se prolonge.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 04"
+  },
+  {
+    "id": "course-conj-matsu-teimashita",
+    "topic": "Action en cours dans le passé",
+    "contextFrench": "À ce moment-là, l’attente était en cours.",
+    "tokens": [
+      { "japanese": "先週", "hiragana": "せんしゅう", "french": "la semaine dernière", "category": "VOCABULARY" },
+      { "japanese": "友達", "hiragana": "ともだち", "french": "ami", "category": "VOCABULARY" },
+      { "japanese": "を", "hiragana": "を", "french": "marque l’objet", "category": "PARTICLE" },
+      { "japanese": "待っ", "hiragana": "まっ", "french": "attendre", "category": "VERB" }
+    ],
+    "verbTokenIndex": 3,
+    "punctuation": "。",
+    "answerEnding": "ていました",
+    "choices": ["ていました", "ています", "ていません", "ていませんでした", "てください", "てもいいです"],
+    "translation": "La semaine dernière, j’attendais un ami.",
+    "explanation": "ていました exprime une action en cours dans le passé.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 04"
+  }
+]

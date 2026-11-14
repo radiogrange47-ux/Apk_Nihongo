@@ -44,11 +44,25 @@ internal class LearningSettingsStore(context: Context) {
         }
     }
 
+    fun selectedQuestionBanks(): Set<QuestionBank> {
+        if (!preferences.contains(QUESTION_BANKS_KEY)) return setOf(QuestionBank.JLPT5)
+        return preferences.getString(QUESTION_BANKS_KEY, "").orEmpty().split(",").mapNotNull { name ->
+            QuestionBank.values().firstOrNull { it.name == name }
+        }.toSet()
+    }
+
+    fun setSelectedQuestionBanks(banks: Set<QuestionBank>) {
+        check(preferences.edit().putString(QUESTION_BANKS_KEY, banks.joinToString(",") { it.name }).commit()) {
+            "Impossible d’enregistrer les banques sélectionnées."
+        }
+    }
+
     private companion object {
         const val PREFERENCES_NAME = "learning_settings"
         const val EXTRA_ATTEMPTS_KEY = "extra_attempts"
         const val MASTERY_THRESHOLD_KEY = "question_mastery_threshold"
         const val SESSION_QUESTION_COUNT_KEY = "session_question_count"
+        const val QUESTION_BANKS_KEY = "selected_question_banks"
         const val LEGACY_SESSION_STREAK_KEY = "session_correct_streak"
         const val DEFAULT_EXTRA_ATTEMPTS = 1
         const val DEFAULT_MASTERY_THRESHOLD = 25

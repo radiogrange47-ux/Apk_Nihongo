@@ -10,6 +10,12 @@ internal data class QuestionCatalog(
     val verbs: List<VocabularyQuestion>,
     val conjugation: List<ConjugationQuestion>
 ) {
+    fun forBanks(banks: Set<QuestionBank>): QuestionCatalog = copy(
+        particles = particles.filter { it.bank in banks },
+        vocabulary = vocabulary.filter { it.bank in banks },
+        verbs = verbs.filter { it.bank in banks },
+        conjugation = conjugation.filter { it.bank in banks }
+    )
     fun questionsFor(game: LearningGame): List<LearningQuestion> = when (game) {
         LearningGame.PARTICLES -> particles
         LearningGame.VOCABULARY -> vocabulary
@@ -25,13 +31,6 @@ internal data class QuestionCatalog(
 
 internal object QuestionCatalogCodec {
     const val SCHEMA_VERSION = 1
-    val fileNames = listOf(
-        "particles.json",
-        "vocabulary.json",
-        "verbs.json",
-        "conjugation.json"
-    )
-
     fun parse(manifestText: String, dataFiles: Map<String, String>): QuestionCatalog {
         val manifest = JSONObject(manifestText)
         require(manifest.getInt("schemaVersion") == SCHEMA_VERSION) {
@@ -41,22 +40,52 @@ internal object QuestionCatalogCodec {
         require(ReleaseVersion.parse(contentVersion) != null) {
             "La version du contenu n’est pas valide."
         }
-        val manifestFiles = manifest.getJSONArray("files").stringValues()
-        require(manifestFiles.size == fileNames.size && manifestFiles.toSet() == fileNames.toSet()) {
-            "Le manifeste doit référencer exactement les quatre fichiers de questions."
+        val manifestFiles = manifest.getJSONArray("files").stringValues().map(::normalizedFileName)
+        require(manifestFiles.isNotEmpty() && manifestFiles.distinct().size == manifestFiles.size &&
+            manifestFiles.all(::isValidFileName)) {
+            "Le manifeste contient un chemin invalide ou un doublon."
         }
-        require(dataFiles.keys == fileNames.toSet()) {
+        val normalizedDataFiles = dataFiles.entries.associate { (name, content) ->
+            normalizedFileName(name) to content
+        }
+        require(normalizedDataFiles.keys == manifestFiles.toSet()) {
             "Le paquet ne contient pas exactement les fichiers annoncés."
         }
 
-        return QuestionCatalog(
-            contentVersion = contentVersion,
-            particles = dataFiles.getValue("particles.json").questionArray(::particle),
-            vocabulary = dataFiles.getValue("vocabulary.json").questionArray(::vocabulary),
-            verbs = dataFiles.getValue("verbs.json").questionArray(::vocabulary),
-            conjugation = dataFiles.getValue("conjugation.json").questionArray(::conjugation)
-        ).also(::validateCatalog)
+        val particles = mutableListOf<ParticleExercise>()
+        val vocabularyQuestions = mutableListOf<VocabularyQuestion>()
+        val verbQuestions = mutableListOf<VocabularyQuestion>()
+        val conjugationQuestions = mutableListOf<ConjugationQuestion>()
+        manifestFiles.forEach { path ->
+            val bank = bankForPath(path)
+            val content = normalizedDataFiles.getValue(path)
+            when (path.substringAfterLast('/')) {
+                "particles.json" -> particles += content.questionArray { particle(it, bank) }
+                "vocabulary.json" -> vocabularyQuestions += content.questionArray { vocabulary(it, bank) }
+                "verbs.json" -> verbQuestions += content.questionArray { vocabulary(it, bank) }
+                "conjugation.json" -> conjugationQuestions += content.questionArray { conjugation(it, bank) }
+            }
+        }
+        return QuestionCatalog(contentVersion, particles, vocabularyQuestions, verbQuestions, conjugationQuestions)
+            .also(::validateCatalog)
     }
+
+    fun isValidFileName(name: String): Boolean {
+        val path = normalizedFileName(name)
+        return path.count { it == '/' } == 1 &&
+            path.substringBefore('/') in setOf("JLPT5", "Mes cours", "JLPT4") &&
+            path.substringAfter('/') in setOf("particles.json", "vocabulary.json", "verbs.json", "conjugation.json")
+    }
+
+    private fun bankForPath(path: String): QuestionBank = when (path.substringBefore('/')) {
+        "JLPT5" -> QuestionBank.JLPT5
+        "Mes cours" -> QuestionBank.COURSE
+        "JLPT4" -> QuestionBank.JLPT4
+        else -> error("Banque de questions inconnue.")
+    }
+
+    private fun normalizedFileName(name: String): String =
+        if ('/' in name) name else "JLPT5/$name"
 
     private fun validateCatalog(catalog: QuestionCatalog) {
         val allQuestions = LearningGame.values().flatMap(catalog::questionsFor)
@@ -72,7 +101,7 @@ internal object QuestionCatalogCodec {
         }
     }
 
-    private fun particle(json: JSONObject) = ParticleExercise(
+    private fun particle(json: JSONObject, pathBank: QuestionBank) = ParticleExercise(
         id = json.getString("id"),
         topic = json.getString("topic"),
         tokens = json.getJSONArray("tokens").objectValues(::token),
@@ -82,10 +111,11 @@ internal object QuestionCatalogCodec {
         explanation = json.getString("explanation"),
         translation = json.getString("translation"),
         level = json.optionalText("level"),
-        source = json.optionalText("source")
+        source = json.optionalText("source"),
+        bank = json.optionalText("bank")?.let(QuestionBank::valueOf)?.also { require(it == pathBank) } ?: pathBank
     )
 
-    private fun vocabulary(json: JSONObject) = VocabularyQuestion(
+    private fun vocabulary(json: JSONObject, pathBank: QuestionBank) = VocabularyQuestion(
         id = json.getString("id"),
         topic = json.getString("topic"),
         kanji = json.getString("kanji"),
@@ -93,10 +123,11 @@ internal object QuestionCatalogCodec {
         answer = json.getString("answer"),
         choices = json.getJSONArray("choices").stringValues(),
         level = json.optionalText("level"),
-        source = json.optionalText("source")
+        source = json.optionalText("source"),
+        bank = json.optionalText("bank")?.let(QuestionBank::valueOf)?.also { require(it == pathBank) } ?: pathBank
     )
 
-    private fun conjugation(json: JSONObject) = ConjugationQuestion(
+    private fun conjugation(json: JSONObject, pathBank: QuestionBank) = ConjugationQuestion(
         id = json.getString("id"),
         topic = json.getString("topic"),
         contextFrench = json.getString("contextFrench"),
@@ -108,7 +139,8 @@ internal object QuestionCatalogCodec {
         translation = json.getString("translation"),
         explanation = json.getString("explanation"),
         level = json.optionalText("level"),
-        source = json.optionalText("source")
+        source = json.optionalText("source"),
+        bank = json.optionalText("bank")?.let(QuestionBank::valueOf)?.also { require(it == pathBank) } ?: pathBank
     )
 
     private fun token(json: JSONObject) = PhraseToken(

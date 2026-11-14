@@ -18,7 +18,6 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -37,7 +36,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.window.Dialog
 
 @Composable
 internal fun VocabularyGameScreen(
@@ -74,7 +72,6 @@ internal fun VocabularyGameScreen(
     var feedbackTranslation by remember { mutableStateOf<String?>(null) }
     var feedbackCorrect by remember { mutableStateOf(false) }
     var saveError by remember { mutableStateOf<String?>(null) }
-    var showWordDetails by remember { mutableStateOf(false) }
     fun advance() {
         questionIndex++
         wrongAnswers = 0
@@ -148,7 +145,6 @@ internal fun VocabularyGameScreen(
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .clickable { showWordDetails = true }
                         .padding(vertical = 12.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.spacedBy(4.dp)
@@ -244,23 +240,4 @@ internal fun VocabularyGameScreen(
         )
     }
 
-    if (showWordDetails) {
-        Dialog(onDismissRequest = { showWordDetails = false }) {
-            Surface(
-                shape = RoundedCornerShape(20.dp),
-                color = Color(0xFF151515),
-                border = BorderStroke(1.dp, Color(0xFF393939))
-            ) {
-                Column(
-                    modifier = Modifier.padding(horizontal = 18.dp, vertical = 14.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.spacedBy(4.dp)
-                ) {
-                    Text(question.kanji, style = MaterialTheme.typography.titleLarge, color = Color(0xFF64B5F6))
-                    Text(question.hiragana, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                    Text(question.answer, fontStyle = FontStyle.Italic)
-                }
-            }
-        }
-    }
 }

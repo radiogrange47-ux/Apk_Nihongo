@@ -158,10 +158,10 @@ Les exercices déjà installés, le jeu et les statistiques doivent rester acces
 
 Cette fonction est distincte de la mise à jour du logiciel. La personne peut demander à l’application de récupérer de nouveaux exercices ou des mises à jour du contenu pédagogique depuis le dépôt GitHub du projet. Cette action est manuelle et nécessite une connexion Internet.
 
-Les données sont maintenues dans le dossier `questions/` à la racine du dépôt :
+Les données sont maintenues dans `questions/`, classées d’abord par banque puis par mini-jeu. Chaque entrée JSON porte un champ `bank` (`JLPT5`, `COURSE` ou `JLPT4`) ; pour ajouter du contenu, placer les nouvelles questions dans le fichier du mini-jeu correspondant sous la banque choisie et ajouter le chemin au manifeste. Les banques actuellement disponibles sont `questions/JLPT5/`, `questions/Mes cours/` et `questions/JLPT4/`.
 
 - `manifest.json` décrit la version du format, la version du contenu et les fichiers attendus ;
-- `particles.json`, `vocabulary.json`, `verbs.json` et `conjugation.json` contiennent les questions de chaque mini-jeu ;
+- `JLPT5/particles.json`, `JLPT5/vocabulary.json`, `JLPT5/verbs.json` et `JLPT5/conjugation.json` contiennent les questions JLPT5 de chaque mini-jeu ;
 - chaque question possède un identifiant stable `id`, une notion `topic`, ses données de jeu et, facultativement, un niveau `level` et une provenance `source` ;
 - les nouvelles questions préparées pour le niveau N5 portent `level: "JLPT N5"` et une provenance qui précise que la sélection est pédagogique et non officielle ;
 - les mots japonais des phrases sont représentés par des éléments annotés (japonais, hiragana, français et catégorie grammaticale), réutilisables par tous les modes.
@@ -184,6 +184,12 @@ Les statistiques étant calculées à partir des questions actuellement install�
 Les fiches de cours sont une source de préparation du contenu, et non un format que l’application doit interpréter directement. Le processus prévu est : fournir ou sélectionner une source, transformer les notions en questions JSON adaptées aux quatre schémas, renseigner le niveau et la provenance lorsqu’ils sont connus, lancer la validation automatique, relire les réponses et distracteurs, puis publier une nouvelle version du contenu. L’assistance par IA peut accélérer la structuration, mais le contenu pédagogique doit être relu avant publication. Les sources protégées ne sont utilisées que dans les limites de leurs droits ; les ressources ouvertes ou les fiches fournies par la personne sont privilégiées.
 
 Les quatre schémas sont contrôlés automatiquement : identifiants non vides et uniques dans tout le jeu de données, six choix distincts avec la bonne réponse incluse, champs nécessaires présents et indices des éléments grammaticaux valides. Une question de vocabulaire peut par exemple inclure `id`, `topic`, `kanji`, `hiragana`, `answer`, `choices`, ainsi que les champs facultatifs `level` et `source`. Une question de phrase décrit chaque élément japonais séparément afin de permettre sa coloration et sa traduction au toucher. Une modification du contenu ne change pas `schemaVersion` ; une évolution incompatible du format exige une version de logiciel qui prend en charge le nouveau schéma.
+
+### Contenus pédagogiques
+
+### Contenu des cours Yuki
+
+La version de contenu `1.2.0` ajoute 133 questions issues des fiches 01 à 04 de cours : 14 en particules, 81 en vocabulaire, 24 en verbes et 14 en conjugaison. Elles sont rangées dans `questions/Mes cours/` et identifiées par `bank: "COURSE"`. La transcription des notes a été normalisée et les confusions repérées ont été corrigées, notamment `まだ` (« encore / pas encore ») et `また` (« de nouveau »), ainsi que la traduction d’`イギリス` par « Royaume-Uni ». Les notions de pronoms démonstratifs, de paiement, de politesse, de formes verbales et de demandes/interdictions sont également incluses.
 
 ### Contenu pédagogique JLPT N5
 

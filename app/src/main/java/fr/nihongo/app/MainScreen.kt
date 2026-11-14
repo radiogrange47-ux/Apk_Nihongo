@@ -68,6 +68,8 @@ internal fun MainScreen(
     extraAttempts: Int,
     questionMasteryThreshold: Int,
     sessionQuestionCount: Int,
+    selectedQuestionBanks: Set<QuestionBank>,
+    onQuestionBanksChange: (Set<QuestionBank>) -> Unit,
     onCheckUpdates: () -> Unit,
     onDownloadUpdate: (GitHubRelease) -> Unit,
     onCheckQuestionUpdates: () -> Unit,
@@ -83,12 +85,19 @@ internal fun MainScreen(
     var selectedGameNames by rememberSaveable {
         mutableStateOf(LearningGame.values().joinToString(",") { it.name })
     }
+    var selectedBankNames by rememberSaveable {
+        mutableStateOf(selectedQuestionBanks.joinToString(",") { it.name })
+    }
+    val activeBanks = selectedBankNames.split(",").mapNotNull { name ->
+        QuestionBank.values().firstOrNull { it.name == name }
+    }.toSet()
+    val activeCatalog = questionCatalog.forBanks(activeBanks)
     var sessionGameNames by rememberSaveable { mutableStateOf("") }
     var sessionGameIndex by rememberSaveable { mutableIntStateOf(0) }
     var questionsCompleted by rememberSaveable { mutableIntStateOf(0) }
     var sessionRound by rememberSaveable { mutableIntStateOf(0) }
     val selectedGames = LearningGame.values()
-        .filter { it.name in selectedGameNames.split(",") }
+        .filter { it.name in selectedGameNames.split(",") && activeCatalog.questionsFor(it).isNotEmpty() }
     val sessionGames = sessionGameNames.split(",")
         .mapNotNull { name -> LearningGame.values().firstOrNull { it.name == name } }
 
@@ -98,6 +107,14 @@ internal fun MainScreen(
         selectedGameNames = LearningGame.values()
             .filter { it.name in selected }
             .joinToString(",") { it.name }
+    }
+
+    fun updateBankSelection(bank: QuestionBank, checked: Boolean) {
+        val updated = activeBanks.toMutableSet().apply {
+            if (checked) add(bank) else remove(bank)
+        }
+        selectedBankNames = QuestionBank.values().filter { it in updated }.joinToString(",") { it.name }
+        onQuestionBanksChange(updated)
     }
 
     fun startSession() {
@@ -125,7 +142,7 @@ internal fun MainScreen(
             sessionGames.isNotEmpty() &&
             sessionGames.getOrNull(sessionGameIndex) == game
         ) {
-            val target = minOf(sessionQuestionCount, questionCatalog.questionsFor(game).size)
+            val target = minOf(sessionQuestionCount, activeCatalog.questionsFor(game).size)
             val update = LearningSessionRules.afterQuestion(
                 questionsCompleted = questionsCompleted,
                 gameIndex = sessionGameIndex,
@@ -142,7 +159,8 @@ internal fun MainScreen(
 
     val allSelectedQuestionsMastered = sessionGames.isNotEmpty() &&
         sessionGames.all { game ->
-            val gameQuestions = progress.questionsFor(game)
+            val selectedIds = activeCatalog.questionsFor(game).mapTo(hashSetOf()) { it.id }
+            val gameQuestions = progress.questionsFor(game).filter { it.questionId in selectedIds }
             gameQuestions.isNotEmpty() &&
                 gameQuestions.all { it.masteryCounter >= questionMasteryThreshold }
         }
@@ -170,6 +188,8 @@ internal fun MainScreen(
                 AppScreen.HOME -> HomeScreen(
                     progress = progress,
                     selectedGames = selectedGames,
+                    selectedBanks = activeBanks,
+                    onBankSelectionChange = ::updateBankSelection,
                     onGameSelectionChange = ::updateGameSelection,
                     onSelectAll = ::selectAllGames,
                     onSelectNone = ::selectNoGames,
@@ -189,7 +209,7 @@ internal fun MainScreen(
                         key(sessionRound, game) {
                             when (game) {
                                 LearningGame.PARTICLES -> ParticleGameScreen(
-                                    questions = questionCatalog.particles,
+                                    questions = activeCatalog.particles,
                                     onBack = { screen = AppScreen.HOME },
                                     onAnswer = sessionAnswer,
                                     onQuestionCompleted = completeSessionQuestion,
@@ -197,13 +217,13 @@ internal fun MainScreen(
                                     progress = progress,
                                     masteryThreshold = questionMasteryThreshold,
                                     completedQuestions = questionsCompleted,
-                                    seriesTarget = minOf(sessionQuestionCount, questionCatalog.particles.size),
+                                    seriesTarget = minOf(sessionQuestionCount, activeCatalog.particles.size),
                                     allQuestionsMastered = allSelectedQuestionsMastered
                                 )
 
                                 LearningGame.VOCABULARY -> VocabularyGameScreen(
                                     game = game,
-                                    questions = questionCatalog.vocabulary,
+                                    questions = activeCatalog.vocabulary,
                                     onBack = { screen = AppScreen.HOME },
                                     onAnswer = sessionAnswer,
                                     onQuestionCompleted = completeSessionQuestion,
@@ -211,13 +231,13 @@ internal fun MainScreen(
                                     progress = progress,
                                     masteryThreshold = questionMasteryThreshold,
                                     completedQuestions = questionsCompleted,
-                                    seriesTarget = minOf(sessionQuestionCount, questionCatalog.vocabulary.size),
+                                    seriesTarget = minOf(sessionQuestionCount, activeCatalog.vocabulary.size),
                                     allQuestionsMastered = allSelectedQuestionsMastered
                                 )
 
                                 LearningGame.VERBS -> VocabularyGameScreen(
                                     game = game,
-                                    questions = questionCatalog.verbs,
+                                    questions = activeCatalog.verbs,
                                     onBack = { screen = AppScreen.HOME },
                                     onAnswer = sessionAnswer,
                                     onQuestionCompleted = completeSessionQuestion,
@@ -225,12 +245,12 @@ internal fun MainScreen(
                                     progress = progress,
                                     masteryThreshold = questionMasteryThreshold,
                                     completedQuestions = questionsCompleted,
-                                    seriesTarget = minOf(sessionQuestionCount, questionCatalog.verbs.size),
+                                    seriesTarget = minOf(sessionQuestionCount, activeCatalog.verbs.size),
                                     allQuestionsMastered = allSelectedQuestionsMastered
                                 )
 
                                 LearningGame.CONJUGATION -> ConjugationGameScreen(
-                                    questions = questionCatalog.conjugation,
+                                    questions = activeCatalog.conjugation,
                                     onBack = { screen = AppScreen.HOME },
                                     onAnswer = sessionAnswer,
                                     onQuestionCompleted = completeSessionQuestion,
@@ -238,7 +258,7 @@ internal fun MainScreen(
                                     progress = progress,
                                     masteryThreshold = questionMasteryThreshold,
                                     completedQuestions = questionsCompleted,
-                                    seriesTarget = minOf(sessionQuestionCount, questionCatalog.conjugation.size),
+                                    seriesTarget = minOf(sessionQuestionCount, activeCatalog.conjugation.size),
                                     allQuestionsMastered = allSelectedQuestionsMastered
                                 )
                             }
@@ -287,6 +307,8 @@ internal fun MainScreen(
 private fun HomeScreen(
     progress: ProgressSnapshot,
     selectedGames: List<LearningGame>,
+    selectedBanks: Set<QuestionBank>,
+    onBankSelectionChange: (QuestionBank, Boolean) -> Unit,
     onGameSelectionChange: (LearningGame, Boolean) -> Unit,
     onSelectAll: () -> Unit,
     onSelectNone: () -> Unit,
@@ -308,6 +330,19 @@ private fun HomeScreen(
         Spacer(modifier = Modifier.height(16.dp))
         Text("にほんご", style = MaterialTheme.typography.headlineLarge, color = NihongoAccent)
         Text("Exercices", style = MaterialTheme.typography.titleLarge)
+        Text("Banques de questions", style = MaterialTheme.typography.titleMedium)
+        QuestionBank.values().forEach { bank ->
+            Row(
+                modifier = Modifier.fillMaxWidth().clickable {
+                    onBankSelectionChange(bank, bank !in selectedBanks)
+                }.padding(vertical = 4.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Checkbox(checked = bank in selectedBanks, onCheckedChange = { onBankSelectionChange(bank, it) })
+                Text(bank.title, style = MaterialTheme.typography.bodyLarge)
+            }
+        }
+        Text("Mini-jeux", style = MaterialTheme.typography.titleMedium)
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.End

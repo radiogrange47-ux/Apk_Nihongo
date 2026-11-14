@@ -1,0 +1,238 @@
+[
+  {
+    "id": "course-particle-wa-topic",
+    "topic": "は : thème de la phrase",
+    "tokens": [
+      { "japanese": "私", "hiragana": "わたし", "french": "moi / je", "category": "VOCABULARY" },
+      { "japanese": "は", "hiragana": "は", "french": "marque le thème", "category": "PARTICLE" },
+      { "japanese": "大学生", "hiragana": "だいがくせい", "french": "étudiant à l’université", "category": "VOCABULARY" },
+      { "japanese": "です", "hiragana": "です", "french": "être, forme polie", "category": "GRAMMAR_MARKER" }
+    ],
+    "missingTokenIndex": 1,
+    "choices": ["は", "が", "を", "に", "で", "も"],
+    "answer": "は",
+    "explanation": "は annonce le thème dont on parle : « moi, je suis étudiant à l’université ».",
+    "translation": "Je suis étudiant à l’université.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 01"
+  },
+  {
+    "id": "course-particle-wo-object",
+    "topic": "を : complément d’objet",
+    "tokens": [
+      { "japanese": "パン", "hiragana": "ぱん", "french": "pain", "category": "VOCABULARY" },
+      { "japanese": "を", "hiragana": "を", "french": "marque le complément d’objet", "category": "PARTICLE" },
+      { "japanese": "食べます", "hiragana": "たべます", "french": "manger, forme polie", "category": "VERB" }
+    ],
+    "missingTokenIndex": 1,
+    "choices": ["を", "は", "が", "に", "で", "へ"],
+    "answer": "を",
+    "explanation": "を marque ce qui est mangé : le pain.",
+    "translation": "Je mange du pain.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 01"
+  },
+  {
+    "id": "course-particle-de-action-place",
+    "topic": "で : lieu d’une action",
+    "tokens": [
+      { "japanese": "家", "hiragana": "いえ", "french": "maison", "category": "VOCABULARY" },
+      { "japanese": "で", "hiragana": "で", "french": "marque le lieu de l’action", "category": "PARTICLE" },
+      { "japanese": "勉強します", "hiragana": "べんきょうします", "french": "étudier, forme polie", "category": "VERB" }
+    ],
+    "missingTokenIndex": 1,
+    "choices": ["で", "に", "へ", "を", "は", "と"],
+    "answer": "で",
+    "explanation": "で indique où se déroule une action. Pour un lieu où l’on se trouve, on emploie souvent に.",
+    "translation": "J’étudie à la maison.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 01–02"
+  },
+  {
+    "id": "course-particle-ni-meet-person",
+    "topic": "に : personne rencontrée",
+    "tokens": [
+      { "japanese": "友達", "hiragana": "ともだち", "french": "ami", "category": "VOCABULARY" },
+      { "japanese": "に", "hiragana": "に", "french": "marque ici la personne rencontrée", "category": "PARTICLE" },
+      { "japanese": "会います", "hiragana": "あいます", "french": "rencontrer, forme polie", "category": "VERB" }
+    ],
+    "missingTokenIndex": 1,
+    "choices": ["に", "で", "を", "へ", "が", "も"],
+    "answer": "に",
+    "explanation": "Avec 会う, la personne que l’on rencontre est généralement marquée par に.",
+    "translation": "Je rencontre un ami.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 01"
+  },
+  {
+    "id": "course-particle-e-direction",
+    "topic": "へ : direction",
+    "tokens": [
+      { "japanese": "日本", "hiragana": "にほん", "french": "Japon", "category": "VOCABULARY" },
+      { "japanese": "へ", "hiragana": "へ", "french": "indique une direction", "category": "PARTICLE" },
+      { "japanese": "旅行します", "hiragana": "りょこうします", "french": "voyager, forme polie", "category": "VERB" }
+    ],
+    "missingTokenIndex": 1,
+    "choices": ["へ", "を", "は", "が", "で", "と"],
+    "answer": "へ",
+    "explanation": "へ indique la direction vers laquelle on se déplace. La particule se prononce e.",
+    "translation": "Je pars en voyage au Japon.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 01"
+  },
+  {
+    "id": "course-particle-mo-also",
+    "topic": "も : aussi",
+    "tokens": [
+      { "japanese": "私", "hiragana": "わたし", "french": "moi / je", "category": "VOCABULARY" },
+      { "japanese": "も", "hiragana": "も", "french": "aussi", "category": "PARTICLE" },
+      { "japanese": "行きます", "hiragana": "いきます", "french": "aller, forme polie", "category": "VERB" }
+    ],
+    "missingTokenIndex": 1,
+    "choices": ["も", "は", "が", "を", "に", "で"],
+    "answer": "も",
+    "explanation": "も remplace souvent は ou が et signifie « aussi ».",
+    "translation": "Moi aussi, j’y vais.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 01"
+  },
+  {
+    "id": "course-particle-no-possession",
+    "topic": "の : relation entre deux noms",
+    "tokens": [
+      { "japanese": "これ", "hiragana": "これ", "french": "ceci", "category": "VOCABULARY" },
+      { "japanese": "は", "hiragana": "は", "french": "marque le thème", "category": "PARTICLE" },
+      { "japanese": "私", "hiragana": "わたし", "french": "moi / je", "category": "VOCABULARY" },
+      { "japanese": "の", "hiragana": "の", "french": "relie deux noms, souvent pour la possession", "category": "PARTICLE" },
+      { "japanese": "本", "hiragana": "ほん", "french": "livre", "category": "VOCABULARY" },
+      { "japanese": "です", "hiragana": "です", "french": "être, forme polie", "category": "GRAMMAR_MARKER" }
+    ],
+    "missingTokenIndex": 3,
+    "choices": ["の", "は", "が", "を", "に", "で"],
+    "answer": "の",
+    "explanation": "私の本 signifie « mon livre » : の relie le possesseur au nom.",
+    "translation": "Ceci est mon livre.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 03"
+  },
+  {
+    "id": "course-particle-ni-frequency",
+    "topic": "に : fréquence",
+    "tokens": [
+      { "japanese": "一か月", "hiragana": "いっかげつ", "french": "un mois", "category": "VOCABULARY" },
+      { "japanese": "に", "hiragana": "に", "french": "marque ici une fréquence", "category": "PARTICLE" },
+      { "japanese": "一度", "hiragana": "いちど", "french": "une fois", "category": "VOCABULARY" },
+      { "japanese": "日本", "hiragana": "にほん", "french": "Japon", "category": "VOCABULARY" },
+      { "japanese": "へ", "hiragana": "へ", "french": "indique la direction", "category": "PARTICLE" },
+      { "japanese": "旅行します", "hiragana": "りょこうします", "french": "voyager, forme polie", "category": "VERB" }
+    ],
+    "missingTokenIndex": 1,
+    "choices": ["に", "で", "へ", "を", "と", "が"],
+    "answer": "に",
+    "explanation": "Dans une indication de fréquence comme 一か月に一度, に relie la période à la fréquence.",
+    "translation": "Je voyage au Japon une fois par mois.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 01–02"
+  },
+  {
+    "id": "course-particle-ga-question",
+    "topic": "が : sujet identifié",
+    "tokens": [
+      { "japanese": "どれ", "hiragana": "どれ", "french": "lequel", "category": "VOCABULARY" },
+      { "japanese": "が", "hiragana": "が", "french": "marque le sujet identifié", "category": "PARTICLE" },
+      { "japanese": "あなた", "hiragana": "あなた", "french": "vous / tu", "category": "VOCABULARY" },
+      { "japanese": "の", "hiragana": "の", "french": "marque ici la possession", "category": "PARTICLE" },
+      { "japanese": "本", "hiragana": "ほん", "french": "livre", "category": "VOCABULARY" },
+      { "japanese": "ですか", "hiragana": "ですか", "french": "forme polie de la question", "category": "GRAMMAR_MARKER" }
+    ],
+    "missingTokenIndex": 1,
+    "choices": ["が", "は", "を", "に", "で", "も"],
+    "answer": "が",
+    "explanation": "が marque ici l’élément recherché par どれ (« lequel »).",
+    "translation": "Lequel est votre livre ?",
+    "bank": "COURSE",
+    "source": "Cours Yuki 03"
+  },
+  {
+    "id": "course-particle-de-wait-place",
+    "topic": "で : lieu où l’on attend",
+    "tokens": [
+      { "japanese": "ここ", "hiragana": "ここ", "french": "ici", "category": "VOCABULARY" },
+      { "japanese": "で", "hiragana": "で", "french": "marque le lieu de l’action", "category": "PARTICLE" },
+      { "japanese": "待ちます", "hiragana": "まちます", "french": "attendre, forme polie", "category": "VERB" }
+    ],
+    "missingTokenIndex": 1,
+    "choices": ["で", "に", "は", "が", "を", "へ"],
+    "answer": "で",
+    "explanation": "待つ est une action effectuée à un endroit : on marque cet endroit par で.",
+    "translation": "J’attends ici.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 02"
+  },
+  {
+    "id": "course-particle-ni-reside",
+    "topic": "に : lieu où l’on réside",
+    "tokens": [
+      { "japanese": "東京", "hiragana": "とうきょう", "french": "Tokyo", "category": "VOCABULARY" },
+      { "japanese": "に", "hiragana": "に", "french": "marque le lieu où l’on réside", "category": "PARTICLE" },
+      { "japanese": "住んでいます", "hiragana": "すんでいます", "french": "habiter, forme polie", "category": "VERB" }
+    ],
+    "missingTokenIndex": 1,
+    "choices": ["に", "で", "へ", "を", "が", "と"],
+    "answer": "に",
+    "explanation": "住む décrit un état de résidence : le lieu où l’on habite est marqué par に.",
+    "translation": "J’habite à Tokyo.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 01"
+  },
+  {
+    "id": "course-particle-wo-request",
+    "topic": "を : objet demandé",
+    "tokens": [
+      { "japanese": "水", "hiragana": "みず", "french": "eau", "category": "VOCABULARY" },
+      { "japanese": "を", "hiragana": "を", "french": "marque le complément d’objet", "category": "PARTICLE" },
+      { "japanese": "お願いします", "hiragana": "おねがいします", "french": "je vous prie de…, s’il vous plaît", "category": "GRAMMAR_MARKER" }
+    ],
+    "missingTokenIndex": 1,
+    "choices": ["を", "は", "が", "に", "で", "も"],
+    "answer": "を",
+    "explanation": "を marque l’objet que l’on demande : ici, de l’eau.",
+    "translation": "De l’eau, s’il vous plaît.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 02–03"
+  },
+  {
+    "id": "course-particle-to-together",
+    "topic": "と : avec quelqu’un",
+    "tokens": [
+      { "japanese": "友達", "hiragana": "ともだち", "french": "ami", "category": "VOCABULARY" },
+      { "japanese": "と", "hiragana": "と", "french": "avec", "category": "PARTICLE" },
+      { "japanese": "日本語", "hiragana": "にほんご", "french": "japonais (langue)", "category": "VOCABULARY" },
+      { "japanese": "を", "hiragana": "を", "french": "marque l’objet", "category": "PARTICLE" },
+      { "japanese": "勉強します", "hiragana": "べんきょうします", "french": "étudier, forme polie", "category": "VERB" }
+    ],
+    "missingTokenIndex": 1,
+    "choices": ["と", "も", "は", "が", "に", "で"],
+    "answer": "と",
+    "explanation": "と signifie « avec » lorsqu’il relie une personne à une action faite ensemble.",
+    "translation": "J’étudie le japonais avec un ami.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 02"
+  },
+  {
+    "id": "course-particle-ni-destination",
+    "topic": "に : destination",
+    "tokens": [
+      { "japanese": "大学", "hiragana": "だいがく", "french": "université", "category": "VOCABULARY" },
+      { "japanese": "に", "hiragana": "に", "french": "marque ici la destination", "category": "PARTICLE" },
+      { "japanese": "行きます", "hiragana": "いきます", "french": "aller, forme polie", "category": "VERB" }
+    ],
+    "missingTokenIndex": 1,
+    "choices": ["に", "で", "を", "へ", "が", "の"],
+    "answer": "に",
+    "explanation": "に peut marquer le point d’arrivée. へ met davantage l’accent sur la direction.",
+    "translation": "Je vais à l’université.",
+    "bank": "COURSE",
+    "source": "Cours Yuki 01"
+  }
+]

@@ -1,0 +1,1028 @@
+[
+    {
+        "id":  "mizu-o-nomimasu",
+        "topic":  "を — complément d’objet",
+        "tokens":  [
+                       {
+                           "japanese":  "私",
+                           "hiragana":  "わたし",
+                           "french":  "moi / je",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "は",
+                           "hiragana":  "は",
+                           "french":  "marque le thème : « quant à moi »",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "水",
+                           "hiragana":  "みず",
+                           "french":  "eau",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "を",
+                           "hiragana":  "を",
+                           "french":  "marque l’objet que l’on boit",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "飲みます",
+                           "hiragana":  "のみます",
+                           "french":  "boire (forme polie)",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  3,
+        "choices":  [
+                        "は",
+                        "を",
+                        "に",
+                        "が",
+                        "で",
+                        "へ"
+                    ],
+        "answer":  "を",
+        "explanation":  "を marque l’objet direct du verbe. Ici, c’est l’eau que l’on boit.",
+        "translation":  "Je bois de l’eau.",
+        "level":  "JLPT N5",
+        "source":  "N5 pedagogical selection (unofficial)",
+        "bank":  "JLPT5"
+    },
+    {
+        "id":  "neko-ga-imasu",
+        "topic":  "が — sujet / existence",
+        "tokens":  [
+                       {
+                           "japanese":  "猫",
+                           "hiragana":  "ねこ",
+                           "french":  "chat",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "が",
+                           "hiragana":  "が",
+                           "french":  "marque le sujet qui existe",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "います",
+                           "hiragana":  "います",
+                           "french":  "être / se trouver (être vivant)",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "が",
+                        "を",
+                        "で",
+                        "へ",
+                        "は",
+                        "に"
+                    ],
+        "answer":  "が",
+        "explanation":  "が marque ici l’être vivant dont on indique l’existence : le chat.",
+        "translation":  "Il y a un chat.",
+        "level":  "JLPT N5",
+        "source":  "N5 pedagogical selection (unofficial)",
+        "bank":  "JLPT5"
+    },
+    {
+        "id":  "pan-o-tabemasu",
+        "topic":  "を — complément d’objet",
+        "tokens":  [
+                       {
+                           "japanese":  "毎朝",
+                           "hiragana":  "まいあさ",
+                           "french":  "chaque matin",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "パン",
+                           "hiragana":  "ぱん",
+                           "french":  "pain",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "を",
+                           "hiragana":  "を",
+                           "french":  "marque l’objet que l’on mange",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "食べます",
+                           "hiragana":  "たべます",
+                           "french":  "manger (forme polie)",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  2,
+        "choices":  [
+                        "を",
+                        "に",
+                        "も",
+                        "は",
+                        "が",
+                        "で"
+                    ],
+        "answer":  "を",
+        "explanation":  "を indique ce que l’on mange : le pain.",
+        "translation":  "Je mange du pain chaque matin.",
+        "level":  "JLPT N5",
+        "source":  "N5 pedagogical selection (unofficial)",
+        "bank":  "JLPT5"
+    },
+    {
+        "id":  "toshokan-de-hon-o-yomimasu",
+        "topic":  "で — lieu de l’action",
+        "tokens":  [
+                       {
+                           "japanese":  "図書館",
+                           "hiragana":  "としょかん",
+                           "french":  "bibliothèque",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "で",
+                           "hiragana":  "で",
+                           "french":  "indique le lieu où se déroule l’action",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "本",
+                           "hiragana":  "ほん",
+                           "french":  "livre",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "を",
+                           "hiragana":  "を",
+                           "french":  "marque l’objet que l’on lit",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "読みます",
+                           "hiragana":  "よみます",
+                           "french":  "lire (forme polie)",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "で",
+                        "に",
+                        "へ",
+                        "が",
+                        "を",
+                        "は"
+                    ],
+        "answer":  "で",
+        "explanation":  "で indique le lieu où une action se déroule : lire à la bibliothèque.",
+        "translation":  "Je lis un livre à la bibliothèque.",
+        "level":  "JLPT N5",
+        "source":  "N5 pedagogical selection (unofficial)",
+        "bank":  "JLPT5"
+    },
+    {
+        "id":  "tomodachi-ni-tegami-o-kakimasu",
+        "topic":  "に — destinataire",
+        "tokens":  [
+                       {
+                           "japanese":  "友達",
+                           "hiragana":  "ともだち",
+                           "french":  "ami(e)",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "に",
+                           "hiragana":  "に",
+                           "french":  "indique le destinataire",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "手紙",
+                           "hiragana":  "てがみ",
+                           "french":  "lettre",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "を",
+                           "hiragana":  "を",
+                           "french":  "marque ce que l’on écrit",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "書きます",
+                           "hiragana":  "かきます",
+                           "french":  "écrire (forme polie)",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "に",
+                        "で",
+                        "が",
+                        "と",
+                        "を",
+                        "は"
+                    ],
+        "answer":  "に",
+        "explanation":  "に indique le destinataire de la lettre : un ami ou une amie.",
+        "translation":  "J’écris une lettre à un(e) ami(e).",
+        "level":  "JLPT N5",
+        "source":  "N5 pedagogical selection (unofficial)",
+        "bank":  "JLPT5"
+    },
+    {
+        "id":  "densha-de-gakkou-e-ikimasu",
+        "topic":  "で — moyen de transport",
+        "tokens":  [
+                       {
+                           "japanese":  "電車",
+                           "hiragana":  "でんしゃ",
+                           "french":  "train",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "で",
+                           "hiragana":  "で",
+                           "french":  "indique le moyen de transport",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "学校",
+                           "hiragana":  "がっこう",
+                           "french":  "école",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "へ",
+                           "hiragana":  "へ",
+                           "french":  "indique la direction vers laquelle on va",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "行きます",
+                           "hiragana":  "いきます",
+                           "french":  "aller (forme polie)",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "で",
+                        "を",
+                        "の",
+                        "が",
+                        "に",
+                        "へ"
+                    ],
+        "answer":  "で",
+        "explanation":  "で indique le moyen utilisé pour se déplacer : le train.",
+        "translation":  "Je vais à l’école en train.",
+        "level":  "JLPT N5",
+        "source":  "N5 pedagogical selection (unofficial)",
+        "bank":  "JLPT5"
+    },
+    {
+        "id":  "tsukue-no-ue-ni-hon-ga-arimasu",
+        "topic":  "の — relation entre deux noms",
+        "tokens":  [
+                       {
+                           "japanese":  "机",
+                           "hiragana":  "つくえ",
+                           "french":  "bureau / table",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "の",
+                           "hiragana":  "の",
+                           "french":  "relie deux noms : « de »",
+                           "category":  "GRAMMAR_MARKER"
+                       },
+                       {
+                           "japanese":  "上",
+                           "hiragana":  "うえ",
+                           "french":  "dessus / haut",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "に",
+                           "hiragana":  "に",
+                           "french":  "indique l’emplacement",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "本",
+                           "hiragana":  "ほん",
+                           "french":  "livre",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "が",
+                           "hiragana":  "が",
+                           "french":  "marque ce qui se trouve à cet endroit",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "あります",
+                           "hiragana":  "あります",
+                           "french":  "être / se trouver (objet)",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "の",
+                        "を",
+                        "で",
+                        "と",
+                        "に",
+                        "が"
+                    ],
+        "answer":  "の",
+        "explanation":  "の relie 机 (bureau) et 上 (dessus) : « le dessus du bureau ».",
+        "translation":  "Il y a un livre sur le bureau.",
+        "level":  "JLPT N5",
+        "source":  "N5 pedagogical selection (unofficial)",
+        "bank":  "JLPT5"
+    },
+    {
+        "id":  "nihongo-mo-benkyou-shimasu",
+        "topic":  "も — ajouter une idée (« aussi »)",
+        "tokens":  [
+                       {
+                           "japanese":  "日本語",
+                           "hiragana":  "にほんご",
+                           "french":  "langue japonaise",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "も",
+                           "hiragana":  "も",
+                           "french":  "marque l’ajout : « aussi »",
+                           "category":  "GRAMMAR_MARKER"
+                       },
+                       {
+                           "japanese":  "勉強します",
+                           "hiragana":  "べんきょうします",
+                           "french":  "étudier (forme polie)",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "も",
+                        "を",
+                        "が",
+                        "に",
+                        "は",
+                        "で"
+                    ],
+        "answer":  "も",
+        "explanation":  "も remplace souvent は ou が pour ajouter un élément : le japonais aussi.",
+        "translation":  "J’étudie aussi le japonais.",
+        "level":  "JLPT N5",
+        "source":  "N5 pedagogical selection (unofficial)",
+        "bank":  "JLPT5"
+    },
+    {
+        "id":  "ringo-to-banana-o-kaimasu",
+        "topic":  "と — relier des noms (« et »)",
+        "tokens":  [
+                       {
+                           "japanese":  "りんご",
+                           "hiragana":  "りんご",
+                           "french":  "pomme",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "と",
+                           "hiragana":  "と",
+                           "french":  "relie deux noms : « et »",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "バナナ",
+                           "hiragana":  "ばなな",
+                           "french":  "banane",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "を",
+                           "hiragana":  "を",
+                           "french":  "marque ce que l’on achète",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "買います",
+                           "hiragana":  "かいます",
+                           "french":  "acheter (forme polie)",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "と",
+                        "に",
+                        "は",
+                        "が",
+                        "を",
+                        "で"
+                    ],
+        "answer":  "と",
+        "explanation":  "と relie ici deux noms : une pomme et une banane.",
+        "translation":  "J’achète une pomme et une banane.",
+        "level":  "JLPT N5",
+        "source":  "N5 pedagogical selection (unofficial)",
+        "bank":  "JLPT5"
+    },
+    {
+        "id":  "kouen-de-hashirimashita",
+        "topic":  "で — lieu de l’action",
+        "tokens":  [
+                       {
+                           "japanese":  "昨日",
+                           "hiragana":  "きのう",
+                           "french":  "hier",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "公園",
+                           "hiragana":  "こうえん",
+                           "french":  "parc",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "で",
+                           "hiragana":  "で",
+                           "french":  "indique le lieu où se déroule l’action",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "走りました",
+                           "hiragana":  "はしりました",
+                           "french":  "courir (passé poli)",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  2,
+        "choices":  [
+                        "で",
+                        "に",
+                        "を",
+                        "へ",
+                        "が",
+                        "は"
+                    ],
+        "answer":  "で",
+        "explanation":  "で indique le lieu de l’action : courir dans le parc.",
+        "translation":  "J’ai couru dans le parc hier.",
+        "level":  "JLPT N5",
+        "source":  "N5 pedagogical selection (unofficial)",
+        "bank":  "JLPT5"
+    },
+    {
+        "id":  "n5-particle-time-ni",
+        "topic":  "に — moment précis",
+        "tokens":  [
+                       {
+                           "japanese":  "七時",
+                           "hiragana":  "しちじ",
+                           "french":  "sept heures",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "に",
+                           "hiragana":  "に",
+                           "french":  "indique un moment précis",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "起きます",
+                           "hiragana":  "おきます",
+                           "french":  "se lever (poli)",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "に",
+                        "で",
+                        "を",
+                        "は",
+                        "が",
+                        "へ"
+                    ],
+        "answer":  "に",
+        "explanation":  "に s’emploie avec une heure précise.",
+        "translation":  "Je me lève à sept heures.",
+        "level":  "JLPT N5",
+        "source":  "Sélection pédagogique N5 (non officielle)",
+        "bank":  "JLPT5"
+    },
+    {
+        "id":  "n5-particle-destination-ni",
+        "topic":  "に — destination",
+        "tokens":  [
+                       {
+                           "japanese":  "駅",
+                           "hiragana":  "えき",
+                           "french":  "gare",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "に",
+                           "hiragana":  "に",
+                           "french":  "indique la destination",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "行きます",
+                           "hiragana":  "いきます",
+                           "french":  "aller (poli)",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "に",
+                        "を",
+                        "で",
+                        "の",
+                        "が",
+                        "と"
+                    ],
+        "answer":  "に",
+        "explanation":  "に marque ici le lieu où l’on se rend.",
+        "translation":  "Je vais à la gare.",
+        "level":  "JLPT N5",
+        "source":  "Sélection pédagogique N5 (non officielle)",
+        "bank":  "JLPT5"
+    },
+    {
+        "id":  "n5-particle-place-de",
+        "topic":  "で — lieu de l’action",
+        "tokens":  [
+                       {
+                           "japanese":  "家",
+                           "hiragana":  "いえ",
+                           "french":  "maison",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "で",
+                           "hiragana":  "で",
+                           "french":  "indique le lieu de l’action",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "ご飯",
+                           "hiragana":  "ごはん",
+                           "french":  "repas",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "を",
+                           "hiragana":  "を",
+                           "french":  "marque l’objet",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "食べます",
+                           "hiragana":  "たべます",
+                           "french":  "manger (poli)",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "で",
+                        "に",
+                        "へ",
+                        "は",
+                        "が",
+                        "の"
+                    ],
+        "answer":  "で",
+        "explanation":  "で indique où se déroule l’action de manger.",
+        "translation":  "Je mange à la maison.",
+        "level":  "JLPT N5",
+        "source":  "Sélection pédagogique N5 (non officielle)",
+        "bank":  "JLPT5"
+    },
+    {
+        "id":  "n5-particle-accompaniment-to",
+        "topic":  "と — accompagnement",
+        "tokens":  [
+                       {
+                           "japanese":  "友達",
+                           "hiragana":  "ともだち",
+                           "french":  "ami",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "と",
+                           "hiragana":  "と",
+                           "french":  "avec",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "映画",
+                           "hiragana":  "えいが",
+                           "french":  "film",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "を",
+                           "hiragana":  "を",
+                           "french":  "marque l’objet",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "見ます",
+                           "hiragana":  "みます",
+                           "french":  "regarder (poli)",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "と",
+                        "も",
+                        "の",
+                        "は",
+                        "が",
+                        "に"
+                    ],
+        "answer":  "と",
+        "explanation":  "と indique la personne qui accompagne.",
+        "translation":  "Je regarde un film avec un ami.",
+        "level":  "JLPT N5",
+        "source":  "Sélection pédagogique N5 (non officielle)",
+        "bank":  "JLPT5"
+    },
+    {
+        "id":  "n5-particle-possession-no",
+        "topic":  "の — relation entre deux noms",
+        "tokens":  [
+                       {
+                           "japanese":  "先生",
+                           "hiragana":  "せんせい",
+                           "french":  "professeur",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "の",
+                           "hiragana":  "の",
+                           "french":  "relie deux noms",
+                           "category":  "GRAMMAR_MARKER"
+                       },
+                       {
+                           "japanese":  "本",
+                           "hiragana":  "ほん",
+                           "french":  "livre",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "です",
+                           "hiragana":  "です",
+                           "french":  "être (poli)",
+                           "category":  "GRAMMAR_MARKER"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "の",
+                        "を",
+                        "で",
+                        "と",
+                        "に",
+                        "が"
+                    ],
+        "answer":  "の",
+        "explanation":  "の relie le possesseur et l’objet possédé.",
+        "translation":  "C’est le livre du professeur.",
+        "level":  "JLPT N5",
+        "source":  "Sélection pédagogique N5 (non officielle)",
+        "bank":  "JLPT5"
+    },
+    {
+        "id":  "n5-particle-addition-mo",
+        "topic":  "も — également",
+        "tokens":  [
+                       {
+                           "japanese":  "妹",
+                           "hiragana":  "いもうと",
+                           "french":  "petite sœur",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "も",
+                           "hiragana":  "も",
+                           "french":  "signifie aussi",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "学生",
+                           "hiragana":  "がくせい",
+                           "french":  "étudiant",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "です",
+                           "hiragana":  "です",
+                           "french":  "être (poli)",
+                           "category":  "GRAMMAR_MARKER"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "も",
+                        "は",
+                        "が",
+                        "を",
+                        "に",
+                        "で"
+                    ],
+        "answer":  "も",
+        "explanation":  "も remplace は pour ajouter l’idée « aussi ».",
+        "translation":  "Ma petite sœur est aussi étudiante.",
+        "level":  "JLPT N5",
+        "source":  "Sélection pédagogique N5 (non officielle)",
+        "bank":  "JLPT5"
+    },
+    {
+        "id":  "n5-particle-direction-e",
+        "topic":  "へ — direction",
+        "tokens":  [
+                       {
+                           "japanese":  "日本",
+                           "hiragana":  "にほん",
+                           "french":  "Japon",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "へ",
+                           "hiragana":  "へ",
+                           "french":  "indique une direction",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "行きます",
+                           "hiragana":  "いきます",
+                           "french":  "aller (poli)",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "へ",
+                        "で",
+                        "を",
+                        "が",
+                        "と",
+                        "の"
+                    ],
+        "answer":  "へ",
+        "explanation":  "へ indique la direction du déplacement.",
+        "translation":  "Je vais au Japon.",
+        "level":  "JLPT N5",
+        "source":  "Sélection pédagogique N5 (non officielle)",
+        "bank":  "JLPT5"
+    },
+    {
+        "id":  "n5-particle-question-ka",
+        "topic":  "か — question",
+        "tokens":  [
+                       {
+                           "japanese":  "学生",
+                           "hiragana":  "がくせい",
+                           "french":  "étudiant",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "です",
+                           "hiragana":  "です",
+                           "french":  "être (poli)",
+                           "category":  "GRAMMAR_MARKER"
+                       },
+                       {
+                           "japanese":  "か",
+                           "hiragana":  "か",
+                           "french":  "marque une question",
+                           "category":  "GRAMMAR_MARKER"
+                       }
+                   ],
+        "missingTokenIndex":  2,
+        "choices":  [
+                        "か",
+                        "の",
+                        "は",
+                        "も",
+                        "を",
+                        "で"
+                    ],
+        "answer":  "か",
+        "explanation":  "か placé en fin de phrase forme une question polie.",
+        "translation":  "Êtes-vous étudiant(e) ?",
+        "level":  "JLPT N5",
+        "source":  "Sélection pédagogique N5 (non officielle)",
+        "bank":  "JLPT5"
+    },
+    {
+        "id":  "n5-particle-start-kara",
+        "topic":  "から — point de départ",
+        "tokens":  [
+                       {
+                           "japanese":  "家",
+                           "hiragana":  "いえ",
+                           "french":  "maison",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "から",
+                           "hiragana":  "から",
+                           "french":  "indique le point de départ",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "駅",
+                           "hiragana":  "えき",
+                           "french":  "gare",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "まで",
+                           "hiragana":  "まで",
+                           "french":  "indique le point d’arrivée",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "歩きます",
+                           "hiragana":  "あるきます",
+                           "french":  "marcher (poli)",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "から",
+                        "まで",
+                        "に",
+                        "で",
+                        "を",
+                        "は"
+                    ],
+        "answer":  "から",
+        "explanation":  "から marque le point de départ ; まで marque l’arrivée.",
+        "translation":  "Je marche de la maison jusqu’à la gare.",
+        "level":  "JLPT N5",
+        "source":  "Sélection pédagogique N5 (non officielle)",
+        "bank":  "JLPT5"
+    },
+    {
+        "id":  "n5-particle-end-made",
+        "topic":  "まで — point d’arrivée",
+        "tokens":  [
+                       {
+                           "japanese":  "駅",
+                           "hiragana":  "えき",
+                           "french":  "gare",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "まで",
+                           "hiragana":  "まで",
+                           "french":  "indique le point d’arrivée",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "歩きます",
+                           "hiragana":  "あるきます",
+                           "french":  "marcher (poli)",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "まで",
+                        "から",
+                        "に",
+                        "で",
+                        "を",
+                        "は"
+                    ],
+        "answer":  "まで",
+        "explanation":  "まで indique jusqu’où se poursuit le déplacement.",
+        "translation":  "Je marche jusqu’à la gare.",
+        "level":  "JLPT N5",
+        "source":  "Sélection pédagogique N5 (non officielle)",
+        "bank":  "JLPT5"
+    },
+    {
+        "id":  "n5-particle-nonexhaustive-ya",
+        "topic":  "や — liste non exhaustive",
+        "tokens":  [
+                       {
+                           "japanese":  "りんご",
+                           "hiragana":  "りんご",
+                           "french":  "pomme",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "や",
+                           "hiragana":  "や",
+                           "french":  "introduit quelques éléments d’une liste",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "みかん",
+                           "hiragana":  "みかん",
+                           "french":  "mandarine",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "を",
+                           "hiragana":  "を",
+                           "french":  "marque l’objet",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "買います",
+                           "hiragana":  "かいます",
+                           "french":  "acheter (poli)",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "や",
+                        "と",
+                        "も",
+                        "の",
+                        "は",
+                        "が"
+                    ],
+        "answer":  "や",
+        "explanation":  "や énumère des exemples sans donner une liste exhaustive.",
+        "translation":  "J’achète des pommes, des mandarines, entre autres.",
+        "level":  "JLPT N5",
+        "source":  "Sélection pédagogique N5 (non officielle)",
+        "bank":  "JLPT5"
+    },
+    {
+        "id":  "n5-particle-subject-ga",
+        "topic":  "が — sujet de l’existence",
+        "tokens":  [
+                       {
+                           "japanese":  "部屋",
+                           "hiragana":  "へや",
+                           "french":  "chambre",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "に",
+                           "hiragana":  "に",
+                           "french":  "indique un lieu",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "猫",
+                           "hiragana":  "ねこ",
+                           "french":  "chat",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "が",
+                           "hiragana":  "が",
+                           "french":  "marque ce qui existe",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "います",
+                           "hiragana":  "います",
+                           "french":  "être (être vivant)",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  3,
+        "choices":  [
+                        "が",
+                        "は",
+                        "を",
+                        "で",
+                        "へ",
+                        "の"
+                    ],
+        "answer":  "が",
+        "explanation":  "が marque l’être vivant dont on indique la présence.",
+        "translation":  "Il y a un chat dans la chambre.",
+        "level":  "JLPT N5",
+        "source":  "Sélection pédagogique N5 (non officielle)",
+        "bank":  "JLPT5"
+    }
+]
