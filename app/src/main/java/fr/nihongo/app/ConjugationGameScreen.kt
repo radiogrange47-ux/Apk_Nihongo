@@ -1,0 +1,309 @@
+package fr.nihongo.app
+
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawingPadding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Dialog
+
+@Composable
+internal fun ConjugationGameScreen(
+    questions: List<ConjugationQuestion>,
+    onBack: () -> Unit,
+    onAnswer: (LearningQuestion, LearningGame, Boolean) -> String?,
+    onQuestionCompleted: (LearningGame) -> Unit,
+    extraAttempts: Int,
+    progress: ProgressSnapshot,
+    masteryThreshold: Int,
+    completedQuestions: Int,
+    seriesTarget: Int,
+    allQuestionsMastered: Boolean
+) {
+    var masteryCounters by remember {
+        mutableStateOf(
+            progress.questionsFor(LearningGame.CONJUGATION)
+                .associate { it.questionId to it.masteryCounter }
+        )
+    }
+    var questionIndex by remember { mutableIntStateOf(0) }
+    var wrongAnswers by remember { mutableIntStateOf(0) }
+    var selectedToken by remember { mutableStateOf<PhraseToken?>(null) }
+    var feedback by remember { mutableStateOf<String?>(null) }
+    var feedbackTranslation by remember { mutableStateOf<String?>(null) }
+    var feedbackCorrect by remember { mutableStateOf(false) }
+    var saveError by remember { mutableStateOf<String?>(null) }
+    val questionDeck = remember(questions) { QuestionDeck(questions) }
+    var question by remember(questionDeck) {
+        mutableStateOf(
+            questionDeck.draw(
+                masteryCounters = masteryCounters,
+                masteryThreshold = masteryThreshold
+            )
+        )
+    }
+
+    fun advance() {
+        questionIndex++
+        wrongAnswers = 0
+        onQuestionCompleted(LearningGame.CONJUGATION)
+        if (questionIndex < seriesTarget) {
+            question = questionDeck.draw(
+                masteryCounters = masteryCounters,
+                masteryThreshold = masteryThreshold
+            )
+        }
+    }
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .safeDrawingPadding()
+            .verticalScroll(rememberScrollState())
+            .padding(20.dp),
+        verticalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
+        TextButton(onClick = onBack) {
+            Text("‹", fontSize = 32.sp, color = MaterialTheme.colorScheme.primary)
+            Text("Accueil", color = MaterialTheme.colorScheme.onSurface)
+        }
+
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(24.dp),
+            colors = CardDefaults.cardColors(containerColor = Color(0xFF151515)),
+            border = BorderStroke(1.dp, Color(0xFF292929))
+        ) {
+            Column(
+                modifier = Modifier.padding(22.dp),
+                verticalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    Text("Conjugaison", style = MaterialTheme.typography.titleMedium)
+                    Text(
+                        "Question ${questionIndex + 1} / $seriesTarget",
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                }
+                Text(
+                    question.contextFrench,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    fontStyle = FontStyle.Italic
+                )
+                if (feedback != null) {
+                    Card(
+                        modifier = Modifier.fillMaxWidth(),
+                        shape = RoundedCornerShape(18.dp),
+                        colors = CardDefaults.cardColors(
+                            containerColor = if (feedbackCorrect) Color(0xFF12352A) else Color(0xFF3A1717)
+                        )
+                    ) {
+                        Text(
+                            text = buildAnnotatedString {
+                                append(feedback.orEmpty())
+                                feedbackTranslation?.let { translation ->
+                                    withStyle(SpanStyle(fontStyle = FontStyle.Italic)) {
+                                        append(translation)
+                                    }
+                                }
+                            },
+                            modifier = Modifier.padding(14.dp),
+                            color = if (feedbackCorrect) Color(0xFF8EE6B5) else Color(0xFFFF9999)
+                        )
+                    }
+                }
+                ConjugationPhrase(
+                    question = question,
+                    onSelectToken = { selectedToken = it }
+                )
+            }
+        }
+
+        question.choices.chunked(2).forEach { choices ->
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                choices.forEach { ending ->
+                    Card(
+                        modifier = Modifier
+                            .weight(1f)
+                            .height(76.dp)
+                            .semantics {
+                                contentDescription = "Choisir la terminaison $ending"
+                            }
+                            .clickable {
+                                val correct = ending == question.answerEnding
+                                saveError = onAnswer(question, LearningGame.CONJUGATION, correct)
+                                if (saveError == null) {
+                                    masteryCounters = masteryCounters + (
+                                        question.id to QuestionMasteryRules.updateCounter(
+                                            current = masteryCounters[question.id] ?: 0,
+                                            wasCorrect = correct
+                                        )
+                                    )
+                                }
+                                selectedToken = null
+                                if (correct) {
+                                    feedbackCorrect = true
+                                    feedback = "✓  "
+                                    feedbackTranslation = question.translation
+                                    advance()
+                                } else {
+                                    feedbackCorrect = false
+                                    val shouldAdvance = ParticleAnswerRules.shouldAdvanceAfterWrongAnswer(
+                                        previousWrongAnswers = wrongAnswers,
+                                        extraAttempts = extraAttempts
+                                    )
+                                    wrongAnswers++
+                                    feedback = if (shouldAdvance) {
+                                        "Réponse : ${question.answerEnding} · "
+                                    } else {
+                                        "Ce n’est pas « $ending ». Réessaie. "
+                                    }
+                                    feedbackTranslation = if (shouldAdvance) question.translation else null
+                                    if (shouldAdvance) advance()
+                                }
+                            },
+                        shape = RoundedCornerShape(16.dp),
+                        colors = CardDefaults.cardColors(containerColor = Color(0xFF080808)),
+                        border = BorderStroke(1.dp, Color(0xFF292929))
+                    ) {
+                        Box(
+                            modifier = Modifier.fillMaxSize().padding(8.dp),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                ending,
+                                color = Color(0xFFFFB74D),
+                                textAlign = TextAlign.Center,
+                                style = MaterialTheme.typography.titleLarge
+                            )
+                        }
+                    }
+                }
+                if (choices.size == 1) Spacer(modifier = Modifier.weight(1f))
+            }
+        }
+
+        saveError?.let { message ->
+            Text(
+                "Progression non enregistrée : $message",
+                color = MaterialTheme.colorScheme.error,
+                style = MaterialTheme.typography.bodySmall
+            )
+        }
+        SessionProgressFooter(
+            questionsCompleted = completedQuestions,
+            target = seriesTarget,
+            allQuestionsMastered = allQuestionsMastered
+        )
+    }
+
+    selectedToken?.let { token ->
+        Dialog(onDismissRequest = { selectedToken = null }) {
+            Surface(
+                shape = RoundedCornerShape(20.dp),
+                color = Color(0xFF151515),
+                border = BorderStroke(1.dp, Color(0xFF393939))
+            ) {
+                Column(
+                    modifier = Modifier.padding(horizontal = 18.dp, vertical = 14.dp),
+                    verticalArrangement = Arrangement.spacedBy(4.dp)
+                ) {
+                    Text(
+                        token.japanese,
+                        color = when (token.category) {
+                            WordCategory.VERB -> Color(0xFFFFB74D)
+                            WordCategory.PARTICLE -> Color(0xFF81C784)
+                            WordCategory.GRAMMAR_MARKER -> Color(0xFFCE93D8)
+                            WordCategory.VOCABULARY -> Color(0xFF64B5F6)
+                        },
+                        style = MaterialTheme.typography.titleLarge
+                    )
+                    Text(token.hiragana, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    Text(token.french, fontStyle = FontStyle.Italic)
+                }
+            }
+        }
+    }
+}
+
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+private fun ConjugationPhrase(
+    question: ConjugationQuestion,
+    onSelectToken: (PhraseToken) -> Unit
+) {
+    FlowRow(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.spacedBy(0.dp, Alignment.CenterHorizontally)
+    ) {
+        question.tokens.forEachIndexed { index, token ->
+            val color = when (token.category) {
+                WordCategory.VOCABULARY -> Color(0xFF64B5F6)
+                WordCategory.PARTICLE -> Color(0xFF81C784)
+                WordCategory.VERB -> Color(0xFFFFB74D)
+                WordCategory.GRAMMAR_MARKER -> Color(0xFFCE93D8)
+            }
+            Text(
+                token.japanese,
+                color = color,
+                style = MaterialTheme.typography.headlineSmall,
+                fontWeight = FontWeight.Medium,
+                modifier = Modifier.clickable { onSelectToken(token) }
+            )
+            if (index == question.verbTokenIndex) {
+                Text(
+                    "【？】",
+                    color = Color(0xFFFFB74D),
+                    style = MaterialTheme.typography.headlineSmall,
+                    modifier = Modifier.semantics {
+                        contentDescription = "Terminaison manquante"
+                    }
+                )
+            }
+        }
+        Text(" ${question.punctuation}", style = MaterialTheme.typography.headlineSmall)
+    }
+}

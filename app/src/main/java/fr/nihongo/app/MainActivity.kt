@@ -25,32 +25,65 @@ internal sealed interface UpdateUiState {
     data class Error(val message: String) : UpdateUiState
 }
 
+internal sealed interface QuestionDataUpdateUiState {
+    data object Idle : QuestionDataUpdateUiState
+    data object Checking : QuestionDataUpdateUiState
+    data object NoRelease : QuestionDataUpdateUiState
+    data class Current(val version: String) : QuestionDataUpdateUiState
+    data class Available(val release: QuestionDataRelease) : QuestionDataUpdateUiState
+    data class Downloading(val release: QuestionDataRelease) : QuestionDataUpdateUiState
+    data class Updated(val version: String) : QuestionDataUpdateUiState
+    data class Error(val message: String) : QuestionDataUpdateUiState
+}
+
 class MainActivity : ComponentActivity() {
     private val worker: ExecutorService = Executors.newSingleThreadExecutor()
     private var updateState by mutableStateOf<UpdateUiState>(UpdateUiState.Idle)
+    private var questionDataUpdateState by
+        mutableStateOf<QuestionDataUpdateUiState>(QuestionDataUpdateUiState.Idle)
+    private var questionCatalog by mutableStateOf<QuestionCatalog?>(null)
     private var progressSnapshot by mutableStateOf<ProgressSnapshot?>(null)
     private var extraAttempts by mutableStateOf(1)
+    private var questionMasteryThreshold by mutableStateOf(25)
+    private var sessionQuestionCount by mutableStateOf(10)
     private var pendingInstallerUri: Uri? = null
     private var pendingInstallRelease: GitHubRelease? = null
     private val releaseClient = GitHubReleaseClient()
     private val progressStore by lazy { ProgressStore(applicationContext) }
+    private val questionDataStore by lazy {
+        QuestionDataStore(applicationContext, progressStore)
+    }
+    private val questionReleaseClient = QuestionReleaseClient()
     private val learningSettingsStore by lazy { LearningSettingsStore(applicationContext) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        progressSnapshot = progressStore.snapshot()
+        val catalog = questionDataStore.loadOrSeed()
+        questionCatalog = catalog
+        progressSnapshot = progressStore.snapshot(catalog)
         extraAttempts = learningSettingsStore.extraAttempts()
+        questionMasteryThreshold = learningSettingsStore.questionMasteryThreshold()
+        sessionQuestionCount = learningSettingsStore.sessionQuestionCount()
         setContent {
             MainScreen(
                 appVersion = BuildConfig.VERSION_NAME,
                 updateState = updateState,
-                progress = progressSnapshot ?: progressStore.snapshot(),
+                questionCatalog = checkNotNull(questionCatalog),
+                questionDataUpdateState = questionDataUpdateState,
+                progress = checkNotNull(progressSnapshot),
                 extraAttempts = extraAttempts,
+                questionMasteryThreshold = questionMasteryThreshold,
+                sessionQuestionCount = sessionQuestionCount,
                 onCheckUpdates = ::checkForUpdates,
                 onDownloadUpdate = ::downloadUpdate,
+                onCheckQuestionUpdates = ::checkForQuestionUpdates,
+                onDownloadQuestionUpdate = ::downloadQuestionUpdate,
                 onRetryInstallPermission = ::retryInstallPermission,
                 onAnswer = ::recordAnswer,
-                onExtraAttemptsChange = ::setExtraAttempts
+                onExtraAttemptsChange = ::setExtraAttempts,
+                onQuestionMasteryThresholdChange = ::setQuestionMasteryThreshold,
+                onSessionQuestionCountChange = ::setSessionQuestionCount,
+                onResetMasteryCounters = ::resetMasteryCounters
             )
         }
     }
@@ -107,12 +140,75 @@ class MainActivity : ComponentActivity() {
             } catch (exception: Exception) {
                 Result.failure(exception)
             }
+
             runOnUiThread {
                 result.fold(
                     onSuccess = { uri -> requestInstallation(uri, release) },
                     onFailure = {
                         updateState = UpdateUiState.Error(
                             it.message ?: "Le téléchargement de la mise à jour a échoué."
+                        )
+                    }
+                )
+            }
+        }
+    }
+
+    private fun checkForQuestionUpdates() {
+        val installedCatalog = questionCatalog ?: return
+        questionDataUpdateState = QuestionDataUpdateUiState.Checking
+        worker.execute {
+            val result = try {
+                Result.success(questionReleaseClient.checkForUpdate(installedCatalog.contentVersion))
+            } catch (exception: Exception) {
+                Result.failure(exception)
+            }
+            runOnUiThread {
+                questionDataUpdateState = result.fold(
+                    onSuccess = { check ->
+                        when (check) {
+                            QuestionDataReleaseCheck.NoRelease -> QuestionDataUpdateUiState.NoRelease
+                            is QuestionDataReleaseCheck.Current ->
+                                QuestionDataUpdateUiState.Current(check.version)
+
+                            is QuestionDataReleaseCheck.Available ->
+                                QuestionDataUpdateUiState.Available(check.release)
+                        }
+                    },
+                    onFailure = {
+                        QuestionDataUpdateUiState.Error(
+                            it.message ?: "La recherche de questions a échoué."
+                        )
+                    }
+                )
+            }
+        }
+    }
+
+    private fun downloadQuestionUpdate(release: QuestionDataRelease) {
+        questionDataUpdateState = QuestionDataUpdateUiState.Downloading(release)
+        worker.execute {
+            val result = try {
+                val archive = QuestionDataDownloader(applicationContext).download(release.asset)
+                val catalog = questionDataStore.installArchive(
+                    archive = archive,
+                    expectedVersion = release.contentVersion
+                )
+                Result.success(catalog)
+            } catch (exception: Exception) {
+                Result.failure(exception)
+            }
+            runOnUiThread {
+                result.fold(
+                    onSuccess = { catalog ->
+                        questionCatalog = catalog
+                        progressSnapshot = progressStore.snapshot(catalog)
+                        questionDataUpdateState =
+                            QuestionDataUpdateUiState.Updated(catalog.contentVersion)
+                    },
+                    onFailure = {
+                        questionDataUpdateState = QuestionDataUpdateUiState.Error(
+                            it.message ?: "La mise à jour des questions a échoué."
                         )
                     }
                 )
@@ -147,9 +243,15 @@ class MainActivity : ComponentActivity() {
         requestInstallation(uri, pendingInstallRelease ?: return)
     }
 
-    private fun recordAnswer(exercise: ParticleExercise, wasCorrect: Boolean): String? =
+    private fun recordAnswer(
+        question: LearningQuestion,
+        game: LearningGame,
+        wasCorrect: Boolean
+    ): String? =
         try {
-            progressSnapshot = progressStore.recordAnswer(exercise, wasCorrect)
+            val catalog = questionCatalog
+                ?: return "Les questions ne sont pas encore chargées."
+            progressSnapshot = progressStore.recordAnswer(question, game, wasCorrect, catalog)
             null
         } catch (exception: Exception) {
             exception.message ?: "La réponse n’a pas pu être enregistrée."
@@ -162,6 +264,34 @@ class MainActivity : ComponentActivity() {
             null
         } catch (exception: Exception) {
             exception.message ?: "Le réglage n’a pas pu être enregistré."
+        }
+
+    private fun setQuestionMasteryThreshold(value: Int): String? =
+        try {
+            learningSettingsStore.setQuestionMasteryThreshold(value)
+            questionMasteryThreshold = value
+            null
+        } catch (exception: Exception) {
+            exception.message ?: "Le seuil de maîtrise n’a pas pu être enregistré."
+        }
+
+    private fun setSessionQuestionCount(value: Int): String? =
+        try {
+            learningSettingsStore.setSessionQuestionCount(value)
+            sessionQuestionCount = value
+            null
+        } catch (exception: Exception) {
+            exception.message ?: "Le nombre de questions n’a pas pu être enregistré."
+        }
+
+    private fun resetMasteryCounters(): String? =
+        try {
+            val catalog = questionCatalog
+                ?: return "Les questions ne sont pas encore chargées."
+            progressSnapshot = progressStore.resetMasteryCounters(catalog)
+            null
+        } catch (exception: Exception) {
+            exception.message ?: "Les compteurs des questions n’ont pas pu être réinitialisés."
         }
 
     private fun launchInstaller(uri: Uri, release: GitHubRelease? = null) {

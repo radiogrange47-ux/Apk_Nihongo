@@ -1,0 +1,10 @@
+{
+    "schemaVersion":  1,
+    "contentVersion":  "1.1.0",
+    "files":  [
+                  "particles.json",
+                  "vocabulary.json",
+                  "verbs.json",
+                  "conjugation.json"
+              ]
+}

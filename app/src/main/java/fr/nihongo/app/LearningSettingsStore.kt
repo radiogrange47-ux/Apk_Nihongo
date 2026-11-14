@@ -15,12 +15,48 @@ internal class LearningSettingsStore(context: Context) {
         }
     }
 
+    fun questionMasteryThreshold(): Int =
+        preferences.getInt(MASTERY_THRESHOLD_KEY, DEFAULT_MASTERY_THRESHOLD)
+            .coerceAtLeast(MIN_MASTERY_THRESHOLD)
+
+    fun setQuestionMasteryThreshold(value: Int) {
+        require(value >= MIN_MASTERY_THRESHOLD)
+        check(preferences.edit().putInt(MASTERY_THRESHOLD_KEY, value).commit()) {
+            "Impossible d’enregistrer le seuil de maîtrise des questions."
+        }
+    }
+
+    fun sessionQuestionCount(): Int =
+        preferences.getInt(
+            SESSION_QUESTION_COUNT_KEY,
+            preferences.getInt(LEGACY_SESSION_STREAK_KEY, DEFAULT_SESSION_QUESTION_COUNT)
+        ).coerceAtLeast(MIN_SESSION_QUESTION_COUNT)
+
+    fun setSessionQuestionCount(value: Int) {
+        require(value >= MIN_SESSION_QUESTION_COUNT)
+        check(
+            preferences.edit()
+                .putInt(SESSION_QUESTION_COUNT_KEY, value)
+                .remove(LEGACY_SESSION_STREAK_KEY)
+                .commit()
+        ) {
+            "Impossible d’enregistrer le nombre de questions par mini-jeu."
+        }
+    }
+
     private companion object {
         const val PREFERENCES_NAME = "learning_settings"
         const val EXTRA_ATTEMPTS_KEY = "extra_attempts"
+        const val MASTERY_THRESHOLD_KEY = "question_mastery_threshold"
+        const val SESSION_QUESTION_COUNT_KEY = "session_question_count"
+        const val LEGACY_SESSION_STREAK_KEY = "session_correct_streak"
         const val DEFAULT_EXTRA_ATTEMPTS = 1
+        const val DEFAULT_MASTERY_THRESHOLD = 25
+        const val DEFAULT_SESSION_QUESTION_COUNT = 10
         const val MIN_EXTRA_ATTEMPTS = 0
         const val MAX_EXTRA_ATTEMPTS = 5
+        const val MIN_MASTERY_THRESHOLD = 1
+        const val MIN_SESSION_QUESTION_COUNT = 1
     }
 }
 

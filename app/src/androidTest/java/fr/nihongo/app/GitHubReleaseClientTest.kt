@@ -57,6 +57,18 @@ class GitHubReleaseClientTest {
         }
     }
 
+    @Test
+    fun applicationUpdateSearchIgnoresQuestionDataReleases() {
+        val selected = client.latestApplicationRelease(
+            JSONArray()
+                .put(releaseJson(asset()))
+                .put(JSONObject().put("tag_name", "questions-v9.0.0"))
+                .put(releaseJson(asset()).put("tag_name", "v0.2.0"))
+        )
+
+        assertEquals("v0.2.0", selected?.getString("tag_name"))
+    }
+
     private fun releaseJson(vararg assets: JSONObject) = JSONObject()
         .put("tag_name", "v0.1.1")
         .put("name", "Nihongo 0.1.1")

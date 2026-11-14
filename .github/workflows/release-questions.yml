@@ -1,0 +1,48 @@
+name: Publish question data
+
+on:
+  push:
+    tags:
+      - "questions-v*.*.*"
+  pull_request:
+    paths:
+      - "questions/**"
+      - "tools/package_questions.py"
+      - ".github/workflows/release-questions.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  validate-and-publish:
+    name: Validate and publish question data
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out question data
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
+        with:
+          persist-credentials: false
+
+      - name: Validate and package question data
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          output="$RUNNER_TEMP/questions.zip"
+          if [[ "$GITHUB_REF" == refs/tags/* ]]; then
+            python3 tools/package_questions.py --output "$output" --expected-version "$RELEASE_TAG"
+          else
+            python3 tools/package_questions.py --output "$output"
+          fi
+
+      - name: Publish question data release
+        if: startsWith(github.ref, 'refs/tags/questions-v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          version="${RELEASE_TAG#questions-v}"
+          gh release create "$RELEASE_TAG" "$RUNNER_TEMP/questions.zip" \
+            --title "Questions v$version" \
+            --generate-notes

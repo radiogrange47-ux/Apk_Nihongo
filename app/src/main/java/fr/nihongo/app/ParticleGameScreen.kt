@@ -17,11 +17,10 @@ import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -32,12 +31,17 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.window.Dialog
 
 private data class WordColorLegend(
     val category: WordCategory,
@@ -49,10 +53,10 @@ private enum class FeedbackTone {
     CORRECT,
     INCORRECT
 }
-
 private data class AnswerFeedback(
     val tone: FeedbackTone,
-    val message: String
+    val message: String,
+    val frenchTranslation: String? = null
 )
 
 private val wordColorLegend = listOf(
@@ -64,40 +68,47 @@ private val wordColorLegend = listOf(
 
 @Composable
 internal fun ParticleGameScreen(
+    questions: List<ParticleExercise>,
     onBack: () -> Unit,
-    onAnswer: (ParticleExercise, Boolean) -> String?,
-    extraAttempts: Int
+    onAnswer: (LearningQuestion, LearningGame, Boolean) -> String?,
+    onQuestionCompleted: (LearningGame) -> Unit,
+    extraAttempts: Int,
+    progress: ProgressSnapshot,
+    masteryThreshold: Int,
+    completedQuestions: Int,
+    seriesTarget: Int,
+    allQuestionsMastered: Boolean
 ) {
     var questionIndex by remember { mutableIntStateOf(0) }
     var wrongAnswers by remember { mutableIntStateOf(0) }
     var selectedToken by remember { mutableStateOf<PhraseToken?>(null) }
     var feedback by remember { mutableStateOf<AnswerFeedback?>(null) }
     var saveError by remember { mutableStateOf<String?>(null) }
-    var correctCount by remember { mutableIntStateOf(0) }
-    var completed by remember { mutableStateOf(false) }
-
-    val exercises = ParticleExerciseBank.exercises
-
-    if (completed) {
-        GameSummary(
-            correctCount = correctCount,
-            questionCount = exercises.size,
-            onBack = onBack,
-            onPlayAgain = {
-                questionIndex = 0
-                wrongAnswers = 0
-                selectedToken = null
-                feedback = null
-                saveError = null
-                correctCount = 0
-                completed = false
-            },
-            finalFeedback = feedback
+    val initialMasteryCounters = progress.questionsFor(LearningGame.PARTICLES).associate {
+        it.questionId to it.masteryCounter
+    }
+    var masteryCounters by remember { mutableStateOf(initialMasteryCounters) }
+    val questionDeck = remember(questions) { QuestionDeck(questions) }
+    var exercise by remember(questionDeck) {
+        mutableStateOf(
+            questionDeck.draw(
+                masteryCounters = initialMasteryCounters,
+                masteryThreshold = masteryThreshold
+            )
         )
-        return
     }
 
-    val exercise = exercises[questionIndex]
+    fun advanceToNextQuestion() {
+        questionIndex++
+        wrongAnswers = 0
+        onQuestionCompleted(LearningGame.PARTICLES)
+        if (questionIndex < seriesTarget) {
+            exercise = questionDeck.draw(
+                masteryCounters = masteryCounters,
+                masteryThreshold = masteryThreshold
+            )
+        }
+    }
 
     Column(
         modifier = Modifier
@@ -145,7 +156,7 @@ internal fun ParticleGameScreen(
                                 color = MaterialTheme.colorScheme.onSurface
                             )
                             Text(
-                                "${questionIndex + 1} / ${exercises.size}",
+                                "Question ${questionIndex + 1} / $seriesTarget",
                                 color = MaterialTheme.colorScheme.primary,
                                 style = MaterialTheme.typography.titleMedium
                             )
@@ -186,21 +197,25 @@ internal fun ParticleGameScreen(
                             }
                             .clickable {
                                 val correct = choice == exercise.answer
-                                saveError = onAnswer(exercise, correct)
+                                saveError = onAnswer(exercise, LearningGame.PARTICLES, correct)
+                                val updatedCounter = if (saveError == null) {
+                                    QuestionMasteryRules.updateCounter(
+                                        current = masteryCounters[exercise.id] ?: 0,
+                                        wasCorrect = correct
+                                    )
+                                } else {
+                                    masteryCounters[exercise.id] ?: 0
+                                }
+                                masteryCounters = masteryCounters + (exercise.id to updatedCounter)
                                 selectedToken = null
 
                                 if (correct) {
-                                    correctCount++
                                     feedback = AnswerFeedback(
                                         tone = FeedbackTone.CORRECT,
-                                        message = "✓  ${exercise.translation}"
+                                        message = "✓",
+                                        frenchTranslation = exercise.translation
                                     )
-                                                    if (questionIndex == exercises.lastIndex) {
-                                                        completed = true
-                                                    } else {
-                                                        questionIndex++
-                                                        wrongAnswers = 0
-                                                    }
+                                    advanceToNextQuestion()
                                 } else {
                                     val shouldAdvance = ParticleAnswerRules.shouldAdvanceAfterWrongAnswer(
                                         previousWrongAnswers = wrongAnswers,
@@ -211,7 +226,8 @@ internal fun ParticleGameScreen(
                                         val answerToken = exercise.tokens[exercise.missingTokenIndex]
                                         AnswerFeedback(
                                             tone = FeedbackTone.INCORRECT,
-                                            message = "×  ${exercise.answer} = ${answerToken.romaji} · ${exercise.translation}"
+                                            message = "×  Réponse : ${answerToken.hiragana}",
+                                            frenchTranslation = exercise.translation
                                         )
                                     } else {
                                         AnswerFeedback(
@@ -220,12 +236,7 @@ internal fun ParticleGameScreen(
                                         )
                                     }
                                     if (shouldAdvance) {
-                                        if (questionIndex == exercises.lastIndex) {
-                                            completed = true
-                                        } else {
-                                            questionIndex++
-                                            wrongAnswers = 0
-                                        }
+                                        advanceToNextQuestion()
                                     }
                                 }
                             },
@@ -256,31 +267,40 @@ internal fun ParticleGameScreen(
                 style = MaterialTheme.typography.bodySmall
             )
         }
-        Spacer(modifier = Modifier.height(12.dp))
+        SessionProgressFooter(
+            questionsCompleted = completedQuestions,
+            target = seriesTarget,
+            allQuestionsMastered = allQuestionsMastered
+        )
     }
 
     selectedToken?.let { token ->
-        AlertDialog(
-            onDismissRequest = { selectedToken = null },
-            title = {
-                Text(
-                    text = token.japanese,
-                    color = wordColorLegend.first { it.category == token.category }.color,
-                    style = MaterialTheme.typography.headlineMedium
-                )
-            },
-            text = {
-                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Text("Rōmaji : ${token.romaji}", style = MaterialTheme.typography.titleMedium)
-                    Text("Français : ${token.french}", style = MaterialTheme.typography.bodyLarge)
-                }
-            },
-            confirmButton = {
-                TextButton(onClick = { selectedToken = null }) {
-                    Text("Fermer")
+        Dialog(onDismissRequest = { selectedToken = null }) {
+            Surface(
+                shape = RoundedCornerShape(20.dp),
+                color = Color(0xFF151515),
+                border = BorderStroke(1.dp, Color(0xFF393939)),
+                tonalElevation = 6.dp
+            ) {
+                Column(
+                    modifier = Modifier.padding(horizontal = 18.dp, vertical = 14.dp),
+                    verticalArrangement = Arrangement.spacedBy(4.dp)
+                ) {
+                    Text(
+                        text = token.japanese,
+                        color = wordColorLegend.first { it.category == token.category }.color,
+                        style = MaterialTheme.typography.titleLarge
+                    )
+                    Text(token.hiragana, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    Text(
+                        token.french,
+                        color = MaterialTheme.colorScheme.onSurface,
+                        style = MaterialTheme.typography.bodyMedium,
+                        fontStyle = FontStyle.Italic
+                    )
                 }
             }
-        )
+        }
     }
 }
 
@@ -319,7 +339,15 @@ private fun AnswerFeedbackBanner(feedback: AnswerFeedback) {
         border = BorderStroke(1.dp, foregroundColor.copy(alpha = 0.45f))
     ) {
         Text(
-            text = feedback.message,
+            text = buildAnnotatedString {
+                append(feedback.message)
+                feedback.frenchTranslation?.let { translation ->
+                    append(" ")
+                    withStyle(SpanStyle(fontStyle = FontStyle.Italic)) {
+                        append(translation)
+                    }
+                }
+            },
             modifier = Modifier.padding(horizontal = 16.dp, vertical = 13.dp),
             color = foregroundColor,
             style = MaterialTheme.typography.titleMedium
@@ -361,41 +389,6 @@ private fun JapanesePhrase(
                         }
                 )
             }
-        }
-    }
-}
-
-@Composable
-private fun GameSummary(
-    correctCount: Int,
-    questionCount: Int,
-    onBack: () -> Unit,
-    onPlayAgain: () -> Unit,
-    finalFeedback: AnswerFeedback?
-) {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .safeDrawingPadding()
-            .padding(24.dp),
-        verticalArrangement = Arrangement.Center
-    ) {
-        Text("Séance terminée !", style = MaterialTheme.typography.headlineMedium)
-        Spacer(modifier = Modifier.height(12.dp))
-        Text(
-            "$correctCount bonne(s) réponse(s) sur $questionCount.",
-            style = MaterialTheme.typography.titleLarge
-        )
-        finalFeedback?.let {
-            Spacer(modifier = Modifier.height(16.dp))
-            AnswerFeedbackBanner(it)
-        }
-        Spacer(modifier = Modifier.height(24.dp))
-        Button(onClick = onPlayAgain, modifier = Modifier.fillMaxWidth()) {
-            Text("Rejouer")
-        }
-        TextButton(onClick = onBack, modifier = Modifier.fillMaxWidth()) {
-            Text("Retour au menu")
         }
     }
 }

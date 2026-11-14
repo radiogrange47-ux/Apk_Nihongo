@@ -1,6 +1,7 @@
 package fr.nihongo.app
 
 import org.json.JSONObject
+import org.json.JSONArray
 import java.net.HttpURLConnection
 import java.net.URI
 import java.net.URISyntaxException
@@ -45,7 +46,8 @@ internal class GitHubReleaseClient {
             }
 
             val json = connection.inputStream.bufferedReader(Charsets.UTF_8).use { it.readText() }
-            val release = parseRelease(JSONObject(json))
+            val releaseJson = latestApplicationRelease(JSONArray(json)) ?: return ReleaseCheck.NoRelease
+            val release = parseRelease(releaseJson)
             val installed = ReleaseVersion.parse(installedVersion)
                 ?: throw IllegalStateException("La version installée « $installedVersion » n’est pas valide.")
             return if (release.version > installed) {
@@ -57,6 +59,20 @@ internal class GitHubReleaseClient {
             connection.disconnect()
         }
     }
+
+    internal fun latestApplicationRelease(releases: JSONArray): JSONObject? =
+        (0 until releases.length())
+            .map { releases.getJSONObject(it) }
+            .filterNot { it.optBoolean("draft") || it.optBoolean("prerelease") }
+            .mapNotNull { json ->
+                val tag = json.optString("tag_name")
+                if (!tag.startsWith("v")) return@mapNotNull null
+                val version = ReleaseVersion.parse(tag)
+                    ?: throw IllegalStateException("Le tag GitHub « $tag » ne suit pas le format v1.2.3.")
+                version to json
+            }
+            .maxByOrNull { it.first }
+            ?.second
 
     internal fun parseRelease(json: JSONObject): GitHubRelease {
         if (json.optBoolean("draft") || json.optBoolean("prerelease")) {
@@ -111,6 +127,6 @@ internal class GitHubReleaseClient {
         const val RELEASES_DOWNLOAD_PATH = "/radiogrange47-ux/Apk_Nihongo/releases/download/"
         val SHA256_PATTERN = Regex("^[a-fA-F0-9]{64}$")
         const val RELEASES_URL =
-            "https://api.github.com/repos/radiogrange47-ux/Apk_Nihongo/releases/latest"
+            "https://api.github.com/repos/radiogrange47-ux/Apk_Nihongo/releases?per_page=100"
     }
 }

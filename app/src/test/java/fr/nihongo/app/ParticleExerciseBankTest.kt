@@ -7,24 +7,6 @@ import org.junit.Test
 
 class ParticleExerciseBankTest {
     @Test
-    fun everyExerciseHasOneValidMissingParticleAndFrenchTranslations() {
-        assertEquals(10, ParticleExerciseBank.exercises.size)
-        assertEquals(
-            ParticleExerciseBank.exercises.size,
-            ParticleExerciseBank.exercises.map { it.id }.distinct().size
-        )
-
-        ParticleExerciseBank.exercises.forEach { exercise ->
-            assertTrue(exercise.answer in exercise.choices)
-            assertTrue(exercise.translation.isNotBlank())
-            assertTrue(exercise.explanation.isNotBlank())
-            assertTrue(exercise.tokens.all {
-                it.romaji.isNotBlank() && it.french.isNotBlank()
-            })
-        }
-    }
-
-    @Test
     fun progressMasteryRequiresEnoughAnswersAndAtLeastEightyPercent() {
         val topic = TopicProgress(topic = "を — objet", attempts = 2, correctAnswers = 2)
         assertFalse(topic.isMastered)

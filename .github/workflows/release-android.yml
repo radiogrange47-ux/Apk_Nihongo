@@ -38,6 +38,9 @@ jobs:
           set -o pipefail
           sdkmanager --install "platform-tools" "platforms;android-35" "build-tools;35.0.0"
 
+      - name: Validate bundled question data
+        run: python3 tools/package_questions.py --output "$RUNNER_TEMP/questions.zip"
+
       - name: Prepare release signing key
         env:
           NIHONGO_KEYSTORE_BASE64: ${{ secrets.NIHONGO_KEYSTORE_BASE64 }}

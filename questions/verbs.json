@@ -1,0 +1,1106 @@
+[{
+    "id":  "verb-eat",
+    "topic":  "Manger",
+    "kanji":  "食べる",
+    "hiragana":  "たべる",
+    "answer":  "manger",
+    "choices":  [
+                    "boire",
+                    "manger",
+                    "lire",
+                    "écrire",
+                    "acheter",
+                    "dormir"
+                ],
+    "level":  "JLPT N5",
+    "source":  "N5 pedagogical selection (unofficial)"
+},
+{
+    "id":  "verb-drink",
+    "topic":  "Boire",
+    "kanji":  "飲む",
+    "hiragana":  "のむ",
+    "answer":  "boire",
+    "choices":  [
+                    "boire",
+                    "parler",
+                    "aller",
+                    "voir",
+                    "manger",
+                    "écouter"
+                ],
+    "level":  "JLPT N5",
+    "source":  "N5 pedagogical selection (unofficial)"
+},
+{
+    "id":  "verb-go",
+    "topic":  "Aller",
+    "kanji":  "行く",
+    "hiragana":  "いく",
+    "answer":  "aller",
+    "choices":  [
+                    "venir",
+                    "sortir",
+                    "aller",
+                    "rester",
+                    "entrer",
+                    "rentrer"
+                ],
+    "level":  "JLPT N5",
+    "source":  "N5 pedagogical selection (unofficial)"
+},
+{
+    "id":  "verb-see",
+    "topic":  "Voir",
+    "kanji":  "見る",
+    "hiragana":  "みる",
+    "answer":  "voir",
+    "choices":  [
+                    "voir",
+                    "entendre",
+                    "faire",
+                    "prendre",
+                    "attendre",
+                    "ouvrir"
+                ],
+    "level":  "JLPT N5",
+    "source":  "N5 pedagogical selection (unofficial)"
+},
+{
+    "id":  "verb-read",
+    "topic":  "Lire",
+    "kanji":  "読む",
+    "hiragana":  "よむ",
+    "answer":  "lire",
+    "choices":  [
+                    "écrire",
+                    "lire",
+                    "apprendre",
+                    "enseigner",
+                    "chercher",
+                    "trouver"
+                ],
+    "level":  "JLPT N5",
+    "source":  "N5 pedagogical selection (unofficial)"
+},
+{
+    "id":  "verb-write",
+    "topic":  "Écrire",
+    "kanji":  "書く",
+    "hiragana":  "かく",
+    "answer":  "écrire",
+    "choices":  [
+                    "dessiner",
+                    "lire",
+                    "écrire",
+                    "parler",
+                    "écouter",
+                    "chanter"
+                ],
+    "level":  "JLPT N5",
+    "source":  "N5 pedagogical selection (unofficial)"
+},
+{
+    "id":  "verb-listen",
+    "topic":  "Écouter",
+    "kanji":  "聞く",
+    "hiragana":  "きく",
+    "answer":  "écouter",
+    "choices":  [
+                    "parler",
+                    "écouter",
+                    "regarder",
+                    "lire",
+                    "répondre",
+                    "demander"
+                ],
+    "level":  "JLPT N5",
+    "source":  "N5 pedagogical selection (unofficial)"
+},
+{
+    "id":  "verb-speak",
+    "topic":  "Parler",
+    "kanji":  "話す",
+    "hiragana":  "はなす",
+    "answer":  "parler",
+    "choices":  [
+                    "parler",
+                    "penser",
+                    "comprendre",
+                    "expliquer",
+                    "écouter",
+                    "appeler"
+                ],
+    "level":  "JLPT N5",
+    "source":  "N5 pedagogical selection (unofficial)"
+},
+{
+    "id":  "verb-buy",
+    "topic":  "Acheter",
+    "kanji":  "買う",
+    "hiragana":  "かう",
+    "answer":  "acheter",
+    "choices":  [
+                    "vendre",
+                    "payer",
+                    "acheter",
+                    "donner",
+                    "recevoir",
+                    "choisir"
+                ],
+    "level":  "JLPT N5",
+    "source":  "N5 pedagogical selection (unofficial)"
+},
+{
+    "id":  "verb-make",
+    "topic":  "Fabriquer",
+    "kanji":  "作る",
+    "hiragana":  "つくる",
+    "answer":  "fabriquer",
+    "choices":  [
+                    "détruire",
+                    "réparer",
+                    "fabriquer",
+                    "utiliser",
+                    "laver",
+                    "porter"
+                ],
+    "level":  "JLPT N5",
+    "source":  "N5 pedagogical selection (unofficial)"
+},
+{
+    "id":  "n5-verb-come",
+    "topic":  "Déplacement",
+    "kanji":  "来る",
+    "hiragana":  "くる",
+    "answer":  "venir",
+    "choices":  [
+                    "venir",
+                    "aller",
+                    "rentrer",
+                    "entrer",
+                    "sortir",
+                    "marcher"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-return",
+    "topic":  "Déplacement",
+    "kanji":  "帰る",
+    "hiragana":  "かえる",
+    "answer":  "rentrer",
+    "choices":  [
+                    "rentrer",
+                    "venir",
+                    "aller",
+                    "entrer",
+                    "sortir",
+                    "marcher"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-wake",
+    "topic":  "Quotidien",
+    "kanji":  "起きる",
+    "hiragana":  "おきる",
+    "answer":  "se lever",
+    "choices":  [
+                    "se lever",
+                    "dormir",
+                    "se reposer",
+                    "travailler",
+                    "apprendre",
+                    "attendre"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-sleep",
+    "topic":  "Quotidien",
+    "kanji":  "寝る",
+    "hiragana":  "ねる",
+    "answer":  "dormir",
+    "choices":  [
+                    "dormir",
+                    "se lever",
+                    "se reposer",
+                    "travailler",
+                    "apprendre",
+                    "attendre"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-rest",
+    "topic":  "Quotidien",
+    "kanji":  "休む",
+    "hiragana":  "やすむ",
+    "answer":  "se reposer",
+    "choices":  [
+                    "se reposer",
+                    "dormir",
+                    "se lever",
+                    "travailler",
+                    "apprendre",
+                    "attendre"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-work",
+    "topic":  "Activités",
+    "kanji":  "働く",
+    "hiragana":  "はたらく",
+    "answer":  "travailler",
+    "choices":  [
+                    "travailler",
+                    "se reposer",
+                    "dormir",
+                    "apprendre",
+                    "enseigner",
+                    "attendre"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-learn",
+    "topic":  "Études",
+    "kanji":  "習う",
+    "hiragana":  "ならう",
+    "answer":  "apprendre",
+    "choices":  [
+                    "apprendre",
+                    "enseigner",
+                    "comprendre",
+                    "connaître",
+                    "travailler",
+                    "attendre"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-teach",
+    "topic":  "Études",
+    "kanji":  "教える",
+    "hiragana":  "おしえる",
+    "answer":  "enseigner",
+    "choices":  [
+                    "enseigner",
+                    "apprendre",
+                    "comprendre",
+                    "connaître",
+                    "travailler",
+                    "attendre"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-meet",
+    "topic":  "Relations",
+    "kanji":  "会う",
+    "hiragana":  "あう",
+    "answer":  "rencontrer",
+    "choices":  [
+                    "rencontrer",
+                    "attendre",
+                    "parler",
+                    "écouter",
+                    "comprendre",
+                    "appeler"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-wait",
+    "topic":  "Actions",
+    "kanji":  "待つ",
+    "hiragana":  "まつ",
+    "answer":  "attendre",
+    "choices":  [
+                    "attendre",
+                    "rencontrer",
+                    "parler",
+                    "écouter",
+                    "comprendre",
+                    "appeler"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-understand",
+    "topic":  "Esprit",
+    "kanji":  "分かる",
+    "hiragana":  "わかる",
+    "answer":  "comprendre",
+    "choices":  [
+                    "comprendre",
+                    "connaître",
+                    "apprendre",
+                    "enseigner",
+                    "oublier",
+                    "mémoriser"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-know",
+    "topic":  "Esprit",
+    "kanji":  "知る",
+    "hiragana":  "しる",
+    "answer":  "connaître",
+    "choices":  [
+                    "connaître",
+                    "comprendre",
+                    "apprendre",
+                    "enseigner",
+                    "oublier",
+                    "mémoriser"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-use",
+    "topic":  "Actions",
+    "kanji":  "使う",
+    "hiragana":  "つかう",
+    "answer":  "utiliser",
+    "choices":  [
+                    "utiliser",
+                    "fabriquer",
+                    "tenir",
+                    "habiter",
+                    "couper",
+                    "prendre"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-make",
+    "topic":  "Actions",
+    "kanji":  "作る",
+    "hiragana":  "つくる",
+    "answer":  "fabriquer",
+    "choices":  [
+                    "fabriquer",
+                    "utiliser",
+                    "tenir",
+                    "habiter",
+                    "couper",
+                    "prendre"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-live",
+    "topic":  "Lieux",
+    "kanji":  "住む",
+    "hiragana":  "すむ",
+    "answer":  "habiter",
+    "choices":  [
+                    "habiter",
+                    "utiliser",
+                    "fabriquer",
+                    "tenir",
+                    "couper",
+                    "prendre"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-swim",
+    "topic":  "Loisirs",
+    "kanji":  "泳ぐ",
+    "hiragana":  "およぐ",
+    "answer":  "nager",
+    "choices":  [
+                    "nager",
+                    "jouer",
+                    "marcher",
+                    "courir",
+                    "monter",
+                    "descendre"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-play",
+    "topic":  "Loisirs",
+    "kanji":  "遊ぶ",
+    "hiragana":  "あそぶ",
+    "answer":  "jouer",
+    "choices":  [
+                    "jouer",
+                    "nager",
+                    "marcher",
+                    "courir",
+                    "monter",
+                    "descendre"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-walk",
+    "topic":  "Déplacement",
+    "kanji":  "歩く",
+    "hiragana":  "あるく",
+    "answer":  "marcher",
+    "choices":  [
+                    "marcher",
+                    "courir",
+                    "nager",
+                    "jouer",
+                    "monter",
+                    "descendre"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-run",
+    "topic":  "Déplacement",
+    "kanji":  "走る",
+    "hiragana":  "はしる",
+    "answer":  "courir",
+    "choices":  [
+                    "courir",
+                    "marcher",
+                    "nager",
+                    "jouer",
+                    "monter",
+                    "descendre"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-enter",
+    "topic":  "Déplacement",
+    "kanji":  "入る",
+    "hiragana":  "はいる",
+    "answer":  "entrer",
+    "choices":  [
+                    "entrer",
+                    "sortir",
+                    "rentrer",
+                    "venir",
+                    "marcher",
+                    "attendre"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-leave",
+    "topic":  "Déplacement",
+    "kanji":  "出る",
+    "hiragana":  "でる",
+    "answer":  "sortir",
+    "choices":  [
+                    "sortir",
+                    "entrer",
+                    "rentrer",
+                    "venir",
+                    "marcher",
+                    "attendre"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-open",
+    "topic":  "Actions",
+    "kanji":  "開ける",
+    "hiragana":  "あける",
+    "answer":  "ouvrir",
+    "choices":  [
+                    "ouvrir",
+                    "fermer",
+                    "allumer",
+                    "éteindre",
+                    "laver",
+                    "attendre"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-close",
+    "topic":  "Actions",
+    "kanji":  "閉める",
+    "hiragana":  "しめる",
+    "answer":  "fermer",
+    "choices":  [
+                    "fermer",
+                    "ouvrir",
+                    "allumer",
+                    "éteindre",
+                    "laver",
+                    "attendre"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-forget",
+    "topic":  "Esprit",
+    "kanji":  "忘れる",
+    "hiragana":  "わすれる",
+    "answer":  "oublier",
+    "choices":  [
+                    "oublier",
+                    "mémoriser",
+                    "comprendre",
+                    "connaître",
+                    "apprendre",
+                    "enseigner"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-remember",
+    "topic":  "Esprit",
+    "kanji":  "覚える",
+    "hiragana":  "おぼえる",
+    "answer":  "mémoriser",
+    "choices":  [
+                    "mémoriser",
+                    "oublier",
+                    "comprendre",
+                    "connaître",
+                    "apprendre",
+                    "enseigner"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-stand",
+    "topic":  "Actions",
+    "kanji":  "立つ",
+    "hiragana":  "たつ",
+    "answer":  "se tenir debout",
+    "choices":  [
+                    "lire",
+                    "courir",
+                    "se tenir debout",
+                    "écouter",
+                    "ouvrir",
+                    "manger"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-sit",
+    "topic":  "Actions",
+    "kanji":  "座る",
+    "hiragana":  "すわる",
+    "answer":  "s’asseoir",
+    "choices":  [
+                    "fabriquer",
+                    "rentrer",
+                    "comprendre",
+                    "mémoriser",
+                    "chanter",
+                    "s’asseoir"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-say",
+    "topic":  "Communication",
+    "kanji":  "言う",
+    "hiragana":  "いう",
+    "answer":  "dire",
+    "choices":  [
+                    "mémoriser",
+                    "changer",
+                    "voir",
+                    "se promener",
+                    "boire",
+                    "dire"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-think",
+    "topic":  "Esprit",
+    "kanji":  "思う",
+    "hiragana":  "おもう",
+    "answer":  "penser",
+    "choices":  [
+                    "jouer d’un instrument",
+                    "prendre du temps",
+                    "dire",
+                    "marcher",
+                    "attendre",
+                    "penser"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-drive",
+    "topic":  "Transport",
+    "kanji":  "運転する",
+    "hiragana":  "うんてんする",
+    "answer":  "conduire",
+    "choices":  [
+                    "conduire",
+                    "écouter",
+                    "se promener",
+                    "enseigner",
+                    "envoyer",
+                    "se mettre debout"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-send",
+    "topic":  "Communication",
+    "kanji":  "送る",
+    "hiragana":  "おくる",
+    "answer":  "envoyer",
+    "choices":  [
+                    "comprendre",
+                    "envoyer",
+                    "répondre",
+                    "recevoir",
+                    "venir",
+                    "changer"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-receive",
+    "topic":  "Relations",
+    "kanji":  "もらう",
+    "hiragana":  "もらう",
+    "answer":  "recevoir",
+    "choices":  [
+                    "se lever",
+                    "nager",
+                    "recevoir",
+                    "mourir",
+                    "fabriquer",
+                    "s’arrêter"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-give",
+    "topic":  "Relations",
+    "kanji":  "あげる",
+    "hiragana":  "あげる",
+    "answer":  "donner",
+    "choices":  [
+                    "se reposer",
+                    "habiter",
+                    "donner",
+                    "s’arrêter",
+                    "penser",
+                    "ouvrir"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-call",
+    "topic":  "Communication",
+    "kanji":  "呼ぶ",
+    "hiragana":  "よぶ",
+    "answer":  "appeler",
+    "choices":  [
+                    "être présent (être vivant)",
+                    "mourir",
+                    "appeler",
+                    "lire",
+                    "sortir (un objet)",
+                    "se lever"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-stop",
+    "topic":  "Actions",
+    "kanji":  "止まる",
+    "hiragana":  "とまる",
+    "answer":  "s’arrêter",
+    "choices":  [
+                    "acheter",
+                    "lire",
+                    "boire",
+                    "mettre dedans",
+                    "rire",
+                    "s’arrêter"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-take-out",
+    "topic":  "Actions",
+    "kanji":  "出す",
+    "hiragana":  "だす",
+    "answer":  "sortir (un objet)",
+    "choices":  [
+                    "habiter",
+                    "travailler",
+                    "se reposer",
+                    "sortir",
+                    "penser",
+                    "sortir (un objet)"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-put-in",
+    "topic":  "Actions",
+    "kanji":  "入れる",
+    "hiragana":  "いれる",
+    "answer":  "mettre dedans",
+    "choices":  [
+                    "entrer",
+                    "mettre dedans",
+                    "donner",
+                    "pleurer",
+                    "venir",
+                    "aller"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-sing",
+    "topic":  "Loisirs",
+    "kanji":  "歌う",
+    "hiragana":  "うたう",
+    "answer":  "chanter",
+    "choices":  [
+                    "ouvrir",
+                    "enseigner",
+                    "se mettre debout",
+                    "voyager",
+                    "chanter",
+                    "donner"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-play-instrument",
+    "topic":  "Loisirs",
+    "kanji":  "弾く",
+    "hiragana":  "ひく",
+    "answer":  "jouer d’un instrument",
+    "choices":  [
+                    "mettre (chaussures)",
+                    "jouer d’un instrument",
+                    "se promener",
+                    "exister (objet)",
+                    "travailler",
+                    "s’asseoir"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-cry",
+    "topic":  "Émotions",
+    "kanji":  "泣く",
+    "hiragana":  "なく",
+    "answer":  "pleurer",
+    "choices":  [
+                    "se tenir debout",
+                    "comprendre",
+                    "pleurer",
+                    "nager",
+                    "écrire",
+                    "apprendre"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-laugh",
+    "topic":  "Émotions",
+    "kanji":  "笑う",
+    "hiragana":  "わらう",
+    "answer":  "rire",
+    "choices":  [
+                    "se mettre debout",
+                    "terminer",
+                    "attendre",
+                    "rire",
+                    "nager",
+                    "commencer"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-die",
+    "topic":  "Actions",
+    "kanji":  "死ぬ",
+    "hiragana":  "しぬ",
+    "answer":  "mourir",
+    "choices":  [
+                    "rencontrer",
+                    "acheter",
+                    "mourir",
+                    "donner",
+                    "oublier",
+                    "habiter"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-exist-object",
+    "topic":  "Existence",
+    "kanji":  "ある",
+    "hiragana":  "ある",
+    "answer":  "exister (objet)",
+    "choices":  [
+                    "jouer d’un instrument",
+                    "marcher",
+                    "utiliser",
+                    "chanter",
+                    "répondre",
+                    "exister (objet)"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-exist-living",
+    "topic":  "Existence",
+    "kanji":  "いる",
+    "hiragana":  "いる",
+    "answer":  "être présent (être vivant)",
+    "choices":  [
+                    "mettre dedans",
+                    "se lever",
+                    "marcher",
+                    "mettre (chaussures)",
+                    "voir",
+                    "être présent (être vivant)"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-begin",
+    "topic":  "Temps",
+    "kanji":  "始める",
+    "hiragana":  "はじめる",
+    "answer":  "commencer",
+    "choices":  [
+                    "jouer d’un instrument",
+                    "commencer",
+                    "manger",
+                    "venir",
+                    "mettre (chaussures)",
+                    "donner"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-finish",
+    "topic":  "Temps",
+    "kanji":  "終える",
+    "hiragana":  "おえる",
+    "answer":  "terminer",
+    "choices":  [
+                    "terminer",
+                    "sortir",
+                    "attendre",
+                    "écouter",
+                    "entrer",
+                    "habiter"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-travel",
+    "topic":  "Loisirs",
+    "kanji":  "旅行する",
+    "hiragana":  "りょこうする",
+    "answer":  "voyager",
+    "choices":  [
+                    "se tenir debout",
+                    "dire",
+                    "penser",
+                    "changer",
+                    "voyager",
+                    "fabriquer"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-stroll",
+    "topic":  "Loisirs",
+    "kanji":  "散歩する",
+    "hiragana":  "さんぽする",
+    "answer":  "se promener",
+    "choices":  [
+                    "fermer",
+                    "mourir",
+                    "se promener",
+                    "manger",
+                    "voyager",
+                    "commencer"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-answer",
+    "topic":  "Communication",
+    "kanji":  "返事する",
+    "hiragana":  "へんじする",
+    "answer":  "répondre",
+    "choices":  [
+                    "entrer",
+                    "s’asseoir",
+                    "manger",
+                    "boire",
+                    "répondre",
+                    "rentrer"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-take-time",
+    "topic":  "Temps",
+    "kanji":  "かかる",
+    "hiragana":  "かかる",
+    "answer":  "prendre du temps",
+    "choices":  [
+                    "répondre",
+                    "se reposer",
+                    "prendre du temps",
+                    "apprendre",
+                    "sortir",
+                    "se tenir debout"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-wear-clothes",
+    "topic":  "Quotidien",
+    "kanji":  "着る",
+    "hiragana":  "きる",
+    "answer":  "porter (un vêtement)",
+    "choices":  [
+                    "utiliser",
+                    "pleurer",
+                    "se mettre debout",
+                    "lire",
+                    "courir",
+                    "porter (un vêtement)"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-wear-shoes",
+    "topic":  "Quotidien",
+    "kanji":  "履く",
+    "hiragana":  "はく",
+    "answer":  "mettre (chaussures)",
+    "choices":  [
+                    "penser",
+                    "mettre (chaussures)",
+                    "donner",
+                    "manger",
+                    "exister (objet)",
+                    "voir"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-stand-up",
+    "topic":  "Actions",
+    "kanji":  "起立する",
+    "hiragana":  "きりつする",
+    "answer":  "se mettre debout",
+    "choices":  [
+                    "terminer",
+                    "parler",
+                    "se mettre debout",
+                    "voyager",
+                    "utiliser",
+                    "apprendre"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-change",
+    "topic":  "Actions",
+    "kanji":  "変える",
+    "hiragana":  "かえる",
+    "answer":  "changer",
+    "choices":  [
+                    "changer",
+                    "jouer d’un instrument",
+                    "voir",
+                    "écrire",
+                    "sortir (un objet)",
+                    "recevoir"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+},
+{
+    "id":  "n5-verb-choose",
+    "topic":  "Actions",
+    "kanji":  "選ぶ",
+    "hiragana":  "えらぶ",
+    "answer":  "choisir",
+    "choices":  [
+                    "venir",
+                    "envoyer",
+                    "choisir",
+                    "jouer d’un instrument",
+                    "porter (un vêtement)",
+                    "rencontrer"
+                ],
+    "level":  "JLPT N5",
+    "source":  "Sélection pédagogique N5 (non officielle)"
+}
+]
