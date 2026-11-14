@@ -29,23 +29,28 @@ class MainActivity : ComponentActivity() {
     private val worker: ExecutorService = Executors.newSingleThreadExecutor()
     private var updateState by mutableStateOf<UpdateUiState>(UpdateUiState.Idle)
     private var progressSnapshot by mutableStateOf<ProgressSnapshot?>(null)
+    private var extraAttempts by mutableStateOf(1)
     private var pendingInstallerUri: Uri? = null
     private var pendingInstallRelease: GitHubRelease? = null
     private val releaseClient = GitHubReleaseClient()
     private val progressStore by lazy { ProgressStore(applicationContext) }
+    private val learningSettingsStore by lazy { LearningSettingsStore(applicationContext) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         progressSnapshot = progressStore.snapshot()
+        extraAttempts = learningSettingsStore.extraAttempts()
         setContent {
             MainScreen(
                 appVersion = BuildConfig.VERSION_NAME,
                 updateState = updateState,
                 progress = progressSnapshot ?: progressStore.snapshot(),
+                extraAttempts = extraAttempts,
                 onCheckUpdates = ::checkForUpdates,
                 onDownloadUpdate = ::downloadUpdate,
                 onRetryInstallPermission = ::retryInstallPermission,
-                onAnswer = ::recordAnswer
+                onAnswer = ::recordAnswer,
+                onExtraAttemptsChange = ::setExtraAttempts
             )
         }
     }
@@ -148,6 +153,15 @@ class MainActivity : ComponentActivity() {
             null
         } catch (exception: Exception) {
             exception.message ?: "La réponse n’a pas pu être enregistrée."
+        }
+
+    private fun setExtraAttempts(value: Int): String? =
+        try {
+            learningSettingsStore.setExtraAttempts(value)
+            extraAttempts = value
+            null
+        } catch (exception: Exception) {
+            exception.message ?: "Le réglage n’a pas pu être enregistré."
         }
 
     private fun launchInstaller(uri: Uri, release: GitHubRelease? = null) {

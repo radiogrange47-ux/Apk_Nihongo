@@ -35,4 +35,38 @@ class ParticleExerciseBankTest {
             TopicProgress(topic = "を — objet", attempts = 5, correctAnswers = 3).isMastered
         )
     }
+
+    @Test
+    fun wrongAnswersAdvanceAccordingToConfiguredExtraAttempts() {
+        assertTrue(
+            ParticleAnswerRules.shouldAdvanceAfterWrongAnswer(
+                previousWrongAnswers = 0,
+                extraAttempts = 0
+            )
+        )
+        assertFalse(
+            ParticleAnswerRules.shouldAdvanceAfterWrongAnswer(
+                previousWrongAnswers = 0,
+                extraAttempts = 1
+            )
+        )
+        assertTrue(
+            ParticleAnswerRules.shouldAdvanceAfterWrongAnswer(
+                previousWrongAnswers = 1,
+                extraAttempts = 1
+            )
+        )
+        assertFalse(
+            ParticleAnswerRules.shouldAdvanceAfterWrongAnswer(
+                previousWrongAnswers = 2,
+                extraAttempts = 3
+            )
+        )
+        assertTrue(
+            ParticleAnswerRules.shouldAdvanceAfterWrongAnswer(
+                previousWrongAnswers = 3,
+                extraAttempts = 3
+            )
+        )
+    }
 }

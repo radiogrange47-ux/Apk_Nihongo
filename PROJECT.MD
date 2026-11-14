@@ -69,6 +69,8 @@ Le keystore ne doit jamais être commité ou transmis dans le dépôt. Après av
 
 Au lancement, l’application affiche un menu présentant les modes disponibles. Le premier mode est jouable ; les modes qui ne sont pas encore développés peuvent être indiqués comme à venir.
 
+L’interface privilégie un thème sombre, une mise en page épurée, des cartes discrètes et le rouge comme accent. Les consignes redondantes ou évidentes sont évitées ; la phrase, la progression et les réponses restent les éléments visuels principaux.
+
 ### Affichage et traduction des contenus japonais — tous les modes
 
 Ces règles s’appliquent à toutes les phrases et à tous les contenus japonais affichés dans l’application, quel que soit le mode de jeu :
@@ -90,10 +92,12 @@ Le jeu présente une phrase japonaise contenant une particule manquante et plusi
 Pour chaque question, l’application doit :
 
 - afficher la phrase et les choix de réponse de manière lisible ;
-- indiquer si la réponse est correcte ;
+- passer immédiatement à la question suivante après une bonne réponse et afficher la traduction française précédente dans une bannière verte ;
+- afficher une invitation rouge à réessayer après une mauvaise réponse ;
+- après épuisement des essais, passer à la question suivante en affichant la réponse attendue et la traduction précédente dans une bannière rouge ;
 - fournir une explication courte sur l’emploi de la particule ;
 - enregistrer le résultat pour le suivi des progrès ;
-- permettre de passer à la question suivante.
+- proposer dans les paramètres de 0 à 5 essais supplémentaires, avec 1 essai supplémentaire par défaut.
 
 Les exercices doivent inclure la particule attendue, les choix proposés et une explication. Ils peuvent également fournir une traduction complète de la phrase.
 

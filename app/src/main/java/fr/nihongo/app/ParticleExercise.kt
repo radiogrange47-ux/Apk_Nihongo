@@ -46,7 +46,7 @@ internal object ParticleExerciseBank {
                 PhraseToken("飲みます", "nomimasu", "boire (forme polie)", WordCategory.VERB)
             ),
             missingTokenIndex = 3,
-            choices = listOf("は", "を", "に"),
+            choices = listOf("は", "を", "に", "が"),
             answer = "を",
             explanation = "を marque l’objet direct du verbe. Ici, c’est l’eau que l’on boit.",
             translation = "Je bois de l’eau."
@@ -60,7 +60,7 @@ internal object ParticleExerciseBank {
                 PhraseToken("います", "imasu", "être / se trouver (être vivant)", WordCategory.VERB)
             ),
             missingTokenIndex = 1,
-            choices = listOf("が", "を", "で"),
+            choices = listOf("が", "を", "で", "へ"),
             answer = "が",
             explanation = "が marque ici l’être vivant dont on indique l’existence : le chat.",
             translation = "Il y a un chat."
@@ -75,7 +75,7 @@ internal object ParticleExerciseBank {
                 PhraseToken("食べます", "tabemasu", "manger (forme polie)", WordCategory.VERB)
             ),
             missingTokenIndex = 2,
-            choices = listOf("を", "に", "も"),
+            choices = listOf("を", "に", "も", "は"),
             answer = "を",
             explanation = "を indique ce que l’on mange : le pain.",
             translation = "Je mange du pain chaque matin."
@@ -91,7 +91,7 @@ internal object ParticleExerciseBank {
                 PhraseToken("読みます", "yomimasu", "lire (forme polie)", WordCategory.VERB)
             ),
             missingTokenIndex = 1,
-            choices = listOf("で", "に", "へ"),
+            choices = listOf("で", "に", "へ", "が"),
             answer = "で",
             explanation = "で indique le lieu où une action se déroule : lire à la bibliothèque.",
             translation = "Je lis un livre à la bibliothèque."
@@ -107,7 +107,7 @@ internal object ParticleExerciseBank {
                 PhraseToken("書きます", "kakimasu", "écrire (forme polie)", WordCategory.VERB)
             ),
             missingTokenIndex = 1,
-            choices = listOf("に", "で", "が"),
+            choices = listOf("に", "で", "が", "と"),
             answer = "に",
             explanation = "に indique le destinataire de la lettre : un ami ou une amie.",
             translation = "J’écris une lettre à un(e) ami(e)."
@@ -123,7 +123,7 @@ internal object ParticleExerciseBank {
                 PhraseToken("行きます", "ikimasu", "aller (forme polie)", WordCategory.VERB)
             ),
             missingTokenIndex = 1,
-            choices = listOf("で", "を", "の"),
+            choices = listOf("で", "を", "の", "が"),
             answer = "で",
             explanation = "で indique le moyen utilisé pour se déplacer : le train.",
             translation = "Je vais à l’école en train."
@@ -141,7 +141,7 @@ internal object ParticleExerciseBank {
                 PhraseToken("あります", "arimasu", "être / se trouver (objet)", WordCategory.VERB)
             ),
             missingTokenIndex = 1,
-            choices = listOf("の", "を", "で"),
+            choices = listOf("の", "を", "で", "と"),
             answer = "の",
             explanation = "の relie 机 (bureau) et 上 (dessus) : « le dessus du bureau ».",
             translation = "Il y a un livre sur le bureau."
@@ -155,7 +155,7 @@ internal object ParticleExerciseBank {
                 PhraseToken("勉強します", "benkyou shimasu", "étudier (forme polie)", WordCategory.VERB)
             ),
             missingTokenIndex = 1,
-            choices = listOf("も", "を", "が"),
+            choices = listOf("も", "を", "が", "に"),
             answer = "も",
             explanation = "も remplace souvent は ou が pour ajouter un élément : le japonais aussi.",
             translation = "J’étudie aussi le japonais."
@@ -171,7 +171,7 @@ internal object ParticleExerciseBank {
                 PhraseToken("買います", "kaimasu", "acheter (forme polie)", WordCategory.VERB)
             ),
             missingTokenIndex = 1,
-            choices = listOf("と", "に", "は"),
+            choices = listOf("と", "に", "は", "が"),
             answer = "と",
             explanation = "と relie ici deux noms : une pomme et une banane.",
             translation = "J’achète une pomme et une banane."
@@ -186,7 +186,7 @@ internal object ParticleExerciseBank {
                 PhraseToken("走りました", "hashirimashita", "courir (passé poli)", WordCategory.VERB)
             ),
             missingTokenIndex = 2,
-            choices = listOf("で", "に", "を"),
+            choices = listOf("で", "に", "を", "へ"),
             answer = "で",
             explanation = "で indique le lieu de l’action : courir dans le parc.",
             translation = "J’ai couru dans le parc hier."

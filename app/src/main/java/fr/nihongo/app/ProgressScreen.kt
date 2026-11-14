@@ -1,22 +1,24 @@
 package fr.nihongo.app
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -32,27 +34,33 @@ internal fun ProgressScreen(
             .padding(20.dp),
         verticalArrangement = Arrangement.spacedBy(14.dp)
     ) {
-        TextButton(onClick = onBack) { Text("← Menu") }
+        TextButton(onClick = onBack) { Text("‹  Accueil") }
         Text("Ma progression", style = MaterialTheme.typography.headlineSmall)
 
-        Card(modifier = Modifier.fillMaxWidth()) {
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(22.dp),
+            colors = CardDefaults.cardColors(containerColor = Color(0xFF151515)),
+            border = BorderStroke(1.dp, Color(0xFF292929))
+        ) {
             Column(
                 modifier = Modifier.padding(18.dp),
                 verticalArrangement = Arrangement.spacedBy(6.dp)
             ) {
                 Text("${progress.masteredCount} notion(s) maîtrisée(s)", style = MaterialTheme.typography.titleLarge)
                 Text("${progress.totalAttempts} réponse(s) enregistrée(s)")
-                if (progress.totalAttempts > 0) {
-                    Text("${progress.overallAccuracyPercent} % de bonnes réponses")
-                } else {
-                    Text("Joue une première séance pour commencer le suivi.")
-                }
+                Text("${progress.overallAccuracyPercent} % de réussite")
             }
         }
 
         Text("Notions à réviser", style = MaterialTheme.typography.titleLarge)
         progress.topics.forEach { topic ->
-            Card(modifier = Modifier.fillMaxWidth()) {
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(18.dp),
+                colors = CardDefaults.cardColors(containerColor = Color(0xFF151515)),
+                border = BorderStroke(1.dp, Color(0xFF292929))
+            ) {
                 Column(
                     modifier = Modifier.padding(16.dp),
                     verticalArrangement = Arrangement.spacedBy(6.dp)
@@ -75,11 +83,5 @@ internal fun ProgressScreen(
             }
         }
 
-        Spacer(modifier = Modifier.height(8.dp))
-        Text(
-            "Une notion est considérée comme maîtrisée après au moins 3 réponses et avec " +
-                "80 % de bonnes réponses ou plus. Les résultats restent enregistrés sur cet appareil.",
-            style = MaterialTheme.typography.bodySmall
-        )
     }
 }

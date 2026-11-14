@@ -4,6 +4,8 @@ import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,24 +16,35 @@ import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.FilterChip
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.darkColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+
+private val NihongoBackground = Color(0xFF080808)
+private val NihongoPanel = Color(0xFF141414)
+private val NihongoAccent = Color(0xFFE05252)
+private val NihongoBorder = Color(0xFF292929)
 
 private enum class AppScreen {
     HOME,
     PARTICLE_GAME,
     PROGRESS,
+    SETTINGS,
     UPDATES
 }
 
@@ -40,34 +53,58 @@ internal fun MainScreen(
     appVersion: String,
     updateState: UpdateUiState,
     progress: ProgressSnapshot,
+    extraAttempts: Int,
     onCheckUpdates: () -> Unit,
     onDownloadUpdate: (GitHubRelease) -> Unit,
     onRetryInstallPermission: () -> Unit,
-    onAnswer: (ParticleExercise, Boolean) -> String?
+    onAnswer: (ParticleExercise, Boolean) -> String?,
+    onExtraAttemptsChange: (Int) -> String?
 ) {
     var screen by rememberSaveable { mutableStateOf(AppScreen.HOME) }
     BackHandler(enabled = screen != AppScreen.HOME) {
         screen = AppScreen.HOME
     }
 
-    MaterialTheme {
-        Surface(modifier = Modifier.fillMaxSize()) {
+    MaterialTheme(
+        colorScheme = darkColorScheme(
+            primary = NihongoAccent,
+            onPrimary = Color.White,
+            secondary = Color(0xFFFF7777),
+            background = NihongoBackground,
+            onBackground = Color(0xFFF3F3F3),
+            surface = NihongoPanel,
+            onSurface = Color(0xFFF3F3F3),
+            surfaceVariant = Color(0xFF202020),
+            onSurfaceVariant = Color(0xFFB8B8B8),
+            outline = NihongoBorder,
+            error = Color(0xFFFF7474)
+        )
+    ) {
+        Surface(modifier = Modifier.fillMaxSize(), color = NihongoBackground) {
             when (screen) {
                 AppScreen.HOME -> HomeScreen(
                     progress = progress,
                     onStartGame = { screen = AppScreen.PARTICLE_GAME },
                     onShowProgress = { screen = AppScreen.PROGRESS },
+                    onShowSettings = { screen = AppScreen.SETTINGS },
                     onShowUpdates = { screen = AppScreen.UPDATES }
                 )
 
                 AppScreen.PARTICLE_GAME -> ParticleGameScreen(
                     onBack = { screen = AppScreen.HOME },
-                    onAnswer = onAnswer
+                    onAnswer = onAnswer,
+                    extraAttempts = extraAttempts
                 )
 
                 AppScreen.PROGRESS -> ProgressScreen(
                     progress = progress,
                     onBack = { screen = AppScreen.HOME }
+                )
+
+                AppScreen.SETTINGS -> LearningSettingsScreen(
+                    extraAttempts = extraAttempts,
+                    onBack = { screen = AppScreen.HOME },
+                    onExtraAttemptsChange = onExtraAttemptsChange
                 )
 
                 AppScreen.UPDATES -> UpdatesScreen(
@@ -88,6 +125,7 @@ private fun HomeScreen(
     progress: ProgressSnapshot,
     onStartGame: () -> Unit,
     onShowProgress: () -> Unit,
+    onShowSettings: () -> Unit,
     onShowUpdates: () -> Unit
 ) {
     Column(
@@ -98,46 +136,63 @@ private fun HomeScreen(
             .padding(24.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        Spacer(modifier = Modifier.height(24.dp))
-        Text("にほんご", style = MaterialTheme.typography.headlineLarge)
-        Text("Apprendre le japonais, à votre rythme.", style = MaterialTheme.typography.titleMedium)
-        Text("Choisis un mode pour commencer.")
+        Spacer(modifier = Modifier.height(16.dp))
+        Text("にほんご", style = MaterialTheme.typography.headlineLarge, color = NihongoAccent)
 
         Card(
             modifier = Modifier
                 .fillMaxWidth()
-                .clickable(onClick = onStartGame)
+                .clickable(onClick = onStartGame),
+            shape = MaterialTheme.shapes.extraLarge,
+            colors = CardDefaults.cardColors(containerColor = NihongoPanel),
+            border = androidx.compose.foundation.BorderStroke(1.dp, NihongoBorder)
+        ) {
+            Column(
+                modifier = Modifier.padding(22.dp),
+                verticalArrangement = Arrangement.spacedBy(14.dp)
+            ) {
+                Text("Jeu des particules", style = MaterialTheme.typography.titleLarge)
+                Text(
+                    "${ParticleExerciseBank.exercises.size} exercices",
+                    style = MaterialTheme.typography.bodySmall
+                )
+                Button(
+                    onClick = onStartGame,
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = MaterialTheme.shapes.large,
+                    colors = ButtonDefaults.buttonColors(containerColor = NihongoAccent)
+                ) {
+                    Text("Commencer")
+                }
+            }
+        }
+
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickable(onClick = onShowProgress),
+            shape = MaterialTheme.shapes.extraLarge,
+            colors = CardDefaults.cardColors(containerColor = NihongoPanel),
+            border = androidx.compose.foundation.BorderStroke(1.dp, NihongoBorder)
         ) {
             Column(
                 modifier = Modifier.padding(20.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp)
+                verticalArrangement = Arrangement.spacedBy(4.dp)
             ) {
-                Text("Jeu des particules", style = MaterialTheme.typography.titleLarge)
-                Text("Complète des phrases japonaises et découvre le sens de chaque mot.")
+                Text("Ma progression", style = MaterialTheme.typography.titleLarge)
                 Text(
-                    "${ParticleExerciseBank.exercises.size} exercices disponibles hors ligne",
-                    style = MaterialTheme.typography.bodySmall
+                    "${progress.masteredCount} maîtrisée(s) · ${progress.totalAttempts} réponse(s)",
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
         }
 
-        Card(
-            modifier = Modifier
-                .fillMaxWidth()
-                .clickable(onClick = onShowProgress)
-        ) {
-            Column(
-                modifier = Modifier.padding(20.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                Text("Ma progression", style = MaterialTheme.typography.titleLarge)
-                Text("${progress.masteredCount} notion(s) maîtrisée(s) · ${progress.totalAttempts} réponse(s)")
-                TextButton(onClick = onShowProgress) { Text("Voir mes statistiques") }
-            }
+        TextButton(onClick = onShowSettings, modifier = Modifier.fillMaxWidth()) {
+            Text("Paramètres")
         }
 
         TextButton(onClick = onShowUpdates, modifier = Modifier.fillMaxWidth()) {
-            Text("Mise à jour de l’application ${BuildConfig.VERSION_NAME}")
+            Text("Mise à jour · v${BuildConfig.VERSION_NAME}")
         }
     }
 }
@@ -159,7 +214,7 @@ private fun UpdatesScreen(
             .padding(24.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        TextButton(onClick = onBack) { Text("← Retour") }
+        TextButton(onClick = onBack) { Text("‹  Accueil") }
         Text("Mise à jour de l’application", style = MaterialTheme.typography.headlineSmall)
         Text("Version installée : $appVersion")
         UpdateStatus(updateState)
@@ -195,10 +250,58 @@ private fun UpdatesScreen(
         ) {
             Text("Rechercher une mise à jour")
         }
-        Text(
-            "La recherche nécessite une connexion Internet.",
-            style = MaterialTheme.typography.bodySmall
-        )
+    }
+}
+
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+private fun LearningSettingsScreen(
+    extraAttempts: Int,
+    onBack: () -> Unit,
+    onExtraAttemptsChange: (Int) -> String?
+) {
+    var saveError by rememberSaveable { mutableStateOf<String?>(null) }
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .safeDrawingPadding()
+            .verticalScroll(rememberScrollState())
+            .padding(24.dp),
+        verticalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
+        TextButton(onClick = onBack) { Text("‹  Accueil") }
+        Text("Paramètres", style = MaterialTheme.typography.headlineSmall)
+
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            shape = MaterialTheme.shapes.extraLarge,
+            colors = CardDefaults.cardColors(containerColor = NihongoPanel),
+            border = androidx.compose.foundation.BorderStroke(1.dp, NihongoBorder)
+        ) {
+            Column(
+                modifier = Modifier.padding(20.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                Text("Essais supplémentaires", style = MaterialTheme.typography.titleLarge)
+                Text(
+                    "$extraAttempts après la première réponse",
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    (0..5).forEach { attempts ->
+                        FilterChip(
+                            selected = extraAttempts == attempts,
+                            onClick = { saveError = onExtraAttemptsChange(attempts) },
+                            label = { Text(attempts.toString()) }
+                        )
+                    }
+                }
+                saveError?.let { message ->
+                    Text(message, color = MaterialTheme.colorScheme.error)
+                }
+            }
+        }
     }
 }
 
