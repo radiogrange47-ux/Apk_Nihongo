@@ -1,5 +1,7 @@
 package fr.nihongo.app
 
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
@@ -12,6 +14,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -24,6 +27,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -31,6 +35,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontStyle
@@ -49,11 +54,11 @@ private data class WordColorLegend(
     val color: Color
 )
 
-private enum class FeedbackTone {
+internal enum class FeedbackTone {
     CORRECT,
     INCORRECT
 }
-private data class AnswerFeedback(
+internal data class AnswerFeedback(
     val tone: FeedbackTone,
     val message: String,
     val frenchTranslation: String? = null
@@ -83,6 +88,7 @@ internal fun ParticleGameScreen(
     var wrongAnswers by remember { mutableIntStateOf(0) }
     var selectedToken by remember { mutableStateOf<PhraseToken?>(null) }
     var feedback by remember { mutableStateOf<AnswerFeedback?>(null) }
+    var feedbackEvent by remember { mutableIntStateOf(0) }
     var saveError by remember { mutableStateOf<String?>(null) }
     val initialMasteryCounters = progress.questionsFor(LearningGame.PARTICLES).associate {
         it.questionId to it.masteryCounter
@@ -163,7 +169,7 @@ internal fun ParticleGameScreen(
                         }
                     }
                 } else {
-                    AnswerFeedbackBanner(feedback!!)
+                    AnswerFeedbackBanner(feedback!!, feedbackEvent)
                 }
 
                 Box(
@@ -198,6 +204,7 @@ internal fun ParticleGameScreen(
                             .clickable {
                                 val correct = choice == exercise.answer
                                 saveError = onAnswer(exercise, LearningGame.PARTICLES, correct)
+                                if (saveError == null) feedbackEvent++
                                 val updatedCounter = if (saveError == null) {
                                     QuestionMasteryRules.updateCounter(
                                         current = masteryCounters[exercise.id] ?: 0,
@@ -322,7 +329,27 @@ private fun WordColorLegendRow() {
 }
 
 @Composable
-private fun AnswerFeedbackBanner(feedback: AnswerFeedback) {
+internal fun AnswerFeedbackBanner(feedback: AnswerFeedback, eventKey: Int) {
+    val scale = remember { Animatable(1f) }
+    val horizontalShift = remember { Animatable(0f) }
+    LaunchedEffect(eventKey, feedback.tone) {
+        if (eventKey > 0) {
+            if (feedback.tone == FeedbackTone.CORRECT) {
+                horizontalShift.snapTo(0f)
+                scale.snapTo(0.96f)
+                scale.animateTo(1.035f, tween(110))
+                scale.animateTo(1f, tween(150))
+            } else {
+                scale.snapTo(1f)
+                horizontalShift.snapTo(0f)
+                repeat(2) {
+                    horizontalShift.animateTo(7f, tween(38))
+                    horizontalShift.animateTo(-7f, tween(38))
+                }
+                horizontalShift.animateTo(0f, tween(42))
+            }
+        }
+    }
     val backgroundColor = when (feedback.tone) {
         FeedbackTone.CORRECT -> Color(0xFF12352A)
         FeedbackTone.INCORRECT -> Color(0xFF3A1717)
@@ -333,7 +360,10 @@ private fun AnswerFeedbackBanner(feedback: AnswerFeedback) {
     }
 
     Card(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .graphicsLayer { scaleX = scale.value; scaleY = scale.value }
+            .offset(x = horizontalShift.value.dp),
         shape = RoundedCornerShape(20.dp),
         colors = CardDefaults.cardColors(containerColor = backgroundColor),
         border = BorderStroke(1.dp, foregroundColor.copy(alpha = 0.45f))
@@ -368,7 +398,7 @@ private fun JapanesePhrase(
         exercise.tokens.forEachIndexed { index, token ->
             if (index == exercise.missingTokenIndex) {
                 Text(
-                    "【 ？ 】",
+                    "...",
                     style = MaterialTheme.typography.headlineLarge,
                     color = MaterialTheme.colorScheme.primary,
                     modifier = Modifier.semantics {

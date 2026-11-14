@@ -20,6 +20,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -29,13 +30,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Dialog
 
 @Composable
 internal fun VocabularyGameScreen(
@@ -68,9 +68,11 @@ internal fun VocabularyGameScreen(
             )
         )
     }
+    var showReading by remember(question.id) { mutableStateOf(false) }
     var feedback by remember { mutableStateOf<String?>(null) }
     var feedbackTranslation by remember { mutableStateOf<String?>(null) }
     var feedbackCorrect by remember { mutableStateOf(false) }
+    var feedbackEvent by remember { mutableIntStateOf(0) }
     var saveError by remember { mutableStateOf<String?>(null) }
     fun advance() {
         questionIndex++
@@ -118,29 +120,14 @@ internal fun VocabularyGameScreen(
                     )
                 }
                 if (feedback != null) {
-                    Card(
-                        modifier = Modifier.fillMaxWidth(),
-                        shape = RoundedCornerShape(18.dp),
-                        colors = CardDefaults.cardColors(
-                            containerColor = if (feedbackCorrect) Color(0xFF12352A) else Color(0xFF3A1717)
-                        )
-                    ) {
-                        Text(
-                            buildAnnotatedString {
-                                append(feedback.orEmpty())
-                                feedbackTranslation?.let { translation ->
-                                    append(translation)
-                                    addStyle(
-                                        SpanStyle(fontStyle = FontStyle.Italic),
-                                        length - translation.length,
-                                        length
-                                    )
-                                }
-                            },
-                            modifier = Modifier.padding(14.dp),
-                            color = if (feedbackCorrect) Color(0xFF8EE6B5) else Color(0xFFFF9999),
-                        )
-                    }
+                    AnswerFeedbackBanner(
+                        AnswerFeedback(
+                            tone = if (feedbackCorrect) FeedbackTone.CORRECT else FeedbackTone.INCORRECT,
+                            message = feedback.orEmpty(),
+                            frenchTranslation = feedbackTranslation
+                        ),
+                        feedbackEvent
+                    )
                 }
                 Column(
                     modifier = Modifier
@@ -153,12 +140,8 @@ internal fun VocabularyGameScreen(
                         question.kanji,
                         style = MaterialTheme.typography.displayMedium,
                         color = Color(0xFF64B5F6),
-                        fontWeight = FontWeight.Medium
-                    )
-                    Text(
-                        question.hiragana,
-                        style = MaterialTheme.typography.titleLarge,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                        fontWeight = FontWeight.Medium,
+                        modifier = Modifier.clickable { showReading = true }
                     )
                 }
             }
@@ -177,6 +160,7 @@ internal fun VocabularyGameScreen(
                             .clickable {
                                 val correct = choice == question.answer
                                 saveError = onAnswer(question, game, correct)
+                                if (saveError == null) feedbackEvent++
                                 if (saveError == null) {
                                     masteryCounters = masteryCounters + (
                                         question.id to QuestionMasteryRules.updateCounter(
@@ -240,4 +224,28 @@ internal fun VocabularyGameScreen(
         )
     }
 
+    if (showReading) {
+        Dialog(onDismissRequest = { showReading = false }) {
+            Surface(
+                shape = RoundedCornerShape(20.dp),
+                color = Color(0xFF151515),
+                border = BorderStroke(1.dp, Color(0xFF393939))
+            ) {
+                Column(
+                    modifier = Modifier.padding(horizontal = 18.dp, vertical = 14.dp),
+                    verticalArrangement = Arrangement.spacedBy(4.dp)
+                ) {
+                    Text(
+                        question.kanji,
+                        color = Color(0xFF64B5F6),
+                        style = MaterialTheme.typography.titleLarge
+                    )
+                    Text(
+                        question.hiragana,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+            }
+        }
+    }
 }

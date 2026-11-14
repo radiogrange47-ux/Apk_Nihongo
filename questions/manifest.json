@@ -1,6 +1,6 @@
 {
     "schemaVersion":  1,
-    "contentVersion":  "1.2.0",
+    "contentVersion":  "1.4.0",
     "files":  [
                   "JLPT5/particles.json",
                   "JLPT5/vocabulary.json",

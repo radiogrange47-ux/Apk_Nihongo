@@ -19,20 +19,20 @@ class QuestionCatalogLoaderTest {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         val catalog = QuestionCatalogLoader(context).loadBundled()
 
-        assertEquals("1.2.0", catalog.contentVersion)
+        assertEquals("1.4.0", catalog.contentVersion)
         assertEquals(22, catalog.particles.count { it.bank == QuestionBank.JLPT5 })
-        assertEquals(67, catalog.vocabulary.count { it.bank == QuestionBank.JLPT5 })
+        assertEquals(108, catalog.vocabulary.count { it.bank == QuestionBank.JLPT5 })
         assertEquals(65, catalog.verbs.count { it.bank == QuestionBank.JLPT5 })
         assertEquals(22, catalog.conjugation.count { it.bank == QuestionBank.JLPT5 })
-        assertEquals(14, catalog.particles.count { it.bank == QuestionBank.COURSE })
-        assertEquals(81, catalog.vocabulary.count { it.bank == QuestionBank.COURSE })
-        assertEquals(24, catalog.verbs.count { it.bank == QuestionBank.COURSE })
-        assertEquals(14, catalog.conjugation.count { it.bank == QuestionBank.COURSE })
+        assertEquals(24, catalog.particles.count { it.bank == QuestionBank.COURSE })
+        assertEquals(148, catalog.vocabulary.count { it.bank == QuestionBank.COURSE })
+        assertEquals(41, catalog.verbs.count { it.bank == QuestionBank.COURSE })
+        assertEquals(25, catalog.conjugation.count { it.bank == QuestionBank.COURSE })
         assertTrue(catalog.particles.all { it.choices.size == 6 })
         assertTrue(catalog.vocabulary.all { it.choices.size == 6 })
         assertTrue(catalog.verbs.all { it.choices.size == 6 })
         assertTrue(catalog.conjugation.all { it.choices.size == 6 })
-        assertEquals(309, catalog.allQuestionIds().values.flatten().size)
+        assertEquals(455, catalog.allQuestionIds().values.flatten().size)
         assertTrue(
             LearningGame.values().all { game ->
                 catalog.questionsFor(game).all {
@@ -61,7 +61,7 @@ class QuestionCatalogLoaderTest {
                     zip.closeEntry()
                 }
             }
-            assertEquals("1.2.0", loader.loadArchive(archive).contentVersion)
+            assertEquals("1.4.0", loader.loadArchive(archive).contentVersion)
 
             ZipOutputStream(archive.outputStream()).use { zip ->
                 zip.putNextEntry(ZipEntry("../unexpected.json"))

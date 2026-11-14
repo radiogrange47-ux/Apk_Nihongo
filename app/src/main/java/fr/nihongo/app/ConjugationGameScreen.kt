@@ -65,6 +65,7 @@ internal fun ConjugationGameScreen(
     var selectedToken by remember { mutableStateOf<PhraseToken?>(null) }
     var feedback by remember { mutableStateOf<String?>(null) }
     var feedbackCorrect by remember { mutableStateOf(false) }
+    var feedbackEvent by remember { mutableIntStateOf(0) }
     var saveError by remember { mutableStateOf<String?>(null) }
     val questionDeck = remember(questions) { QuestionDeck(questions) }
     var question by remember(questionDeck) {
@@ -132,19 +133,13 @@ internal fun ConjugationGameScreen(
                     fontStyle = FontStyle.Italic
                 )
                 if (feedback != null) {
-                    Card(
-                        modifier = Modifier.fillMaxWidth(),
-                        shape = RoundedCornerShape(18.dp),
-                        colors = CardDefaults.cardColors(
-                            containerColor = if (feedbackCorrect) Color(0xFF12352A) else Color(0xFF3A1717)
-                        )
-                    ) {
-                        Text(
-                            text = feedback.orEmpty(),
-                            modifier = Modifier.padding(14.dp),
-                            color = if (feedbackCorrect) Color(0xFF8EE6B5) else Color(0xFFFF9999)
-                        )
-                    }
+                    AnswerFeedbackBanner(
+                        AnswerFeedback(
+                            tone = if (feedbackCorrect) FeedbackTone.CORRECT else FeedbackTone.INCORRECT,
+                            message = feedback.orEmpty()
+                        ),
+                        feedbackEvent
+                    )
                 }
                 ConjugationPhrase(
                     question = question,
@@ -169,6 +164,7 @@ internal fun ConjugationGameScreen(
                             .clickable {
                                 val correct = ending == question.answerEnding
                                 saveError = onAnswer(question, LearningGame.CONJUGATION, correct)
+                                if (saveError == null) feedbackEvent++
                                 if (saveError == null) {
                                     masteryCounters = masteryCounters + (
                                         question.id to QuestionMasteryRules.updateCounter(
@@ -287,7 +283,7 @@ private fun ConjugationPhrase(
             )
             if (index == question.verbTokenIndex) {
                 Text(
-                    "【？】",
+                    "...",
                     color = Color(0xFFFFB74D),
                     style = MaterialTheme.typography.headlineSmall,
                     modifier = Modifier.semantics {

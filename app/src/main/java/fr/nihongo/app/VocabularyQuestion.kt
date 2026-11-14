@@ -12,7 +12,7 @@ internal data class VocabularyQuestion(
     override val bank: QuestionBank = QuestionBank.JLPT5
 ) : LearningQuestion {
     override val prompt: String
-        get() = "$kanji\n$hiragana"
+        get() = kanji
 
     init {
         require(id.isNotBlank())

@@ -17,7 +17,7 @@ internal data class ConjugationQuestion(
 ) : LearningQuestion {
     override val prompt: String
         get() = tokens.mapIndexed { index, token ->
-            if (index == verbTokenIndex) "${token.japanese}＿＿" else token.japanese
+            if (index == verbTokenIndex) "${token.japanese}..." else token.japanese
         }.joinToString("") + punctuation
 
     init {

@@ -1,16 +1,13 @@
 package fr.nihongo.app
 
 import androidx.activity.compose.BackHandler
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.rememberScrollState
@@ -21,7 +18,6 @@ import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.Checkbox
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -196,9 +192,6 @@ internal fun MainScreen(
                     onStart = ::startSession,
                     onShowProgress = { screen = AppScreen.PROGRESS },
                     onShowSettings = { screen = AppScreen.SETTINGS },
-                    onShowUpdates = { screen = AppScreen.UPDATES },
-                    onShowQuestionUpdates = { screen = AppScreen.QUESTION_DATA_UPDATES },
-                    contentVersion = questionCatalog.contentVersion
                 )
 
                 AppScreen.SESSION -> {
@@ -275,11 +268,15 @@ internal fun MainScreen(
                     extraAttempts = extraAttempts,
                     questionMasteryThreshold = questionMasteryThreshold,
                     sessionQuestionCount = sessionQuestionCount,
+                    appVersion = appVersion,
+                    contentVersion = questionCatalog.contentVersion,
                     onBack = { screen = AppScreen.HOME },
                     onExtraAttemptsChange = onExtraAttemptsChange,
                     onQuestionMasteryThresholdChange = onQuestionMasteryThresholdChange,
                     onSessionQuestionCountChange = onSessionQuestionCountChange,
-                    onResetMasteryCounters = onResetMasteryCounters
+                    onResetMasteryCounters = onResetMasteryCounters,
+                    onShowUpdates = { screen = AppScreen.UPDATES },
+                    onShowQuestionUpdates = { screen = AppScreen.QUESTION_DATA_UPDATES }
                 )
 
                 AppScreen.UPDATES -> UpdatesScreen(
@@ -299,131 +296,6 @@ internal fun MainScreen(
                     onDownloadUpdate = onDownloadQuestionUpdate
                 )
             }
-        }
-    }
-}
-
-@Composable
-private fun HomeScreen(
-    progress: ProgressSnapshot,
-    selectedGames: List<LearningGame>,
-    selectedBanks: Set<QuestionBank>,
-    onBankSelectionChange: (QuestionBank, Boolean) -> Unit,
-    onGameSelectionChange: (LearningGame, Boolean) -> Unit,
-    onSelectAll: () -> Unit,
-    onSelectNone: () -> Unit,
-    onStart: () -> Unit,
-    onShowProgress: () -> Unit,
-    onShowSettings: () -> Unit,
-    onShowUpdates: () -> Unit,
-    onShowQuestionUpdates: () -> Unit,
-    contentVersion: String
-) {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .safeDrawingPadding()
-            .verticalScroll(rememberScrollState())
-            .padding(24.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp)
-    ) {
-        Spacer(modifier = Modifier.height(16.dp))
-        Text("にほんご", style = MaterialTheme.typography.headlineLarge, color = NihongoAccent)
-        Text("Exercices", style = MaterialTheme.typography.titleLarge)
-        Text("Banques de questions", style = MaterialTheme.typography.titleMedium)
-        QuestionBank.values().forEach { bank ->
-            Row(
-                modifier = Modifier.fillMaxWidth().clickable {
-                    onBankSelectionChange(bank, bank !in selectedBanks)
-                }.padding(vertical = 4.dp),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Checkbox(checked = bank in selectedBanks, onCheckedChange = { onBankSelectionChange(bank, it) })
-                Text(bank.title, style = MaterialTheme.typography.bodyLarge)
-            }
-        }
-        Text("Mini-jeux", style = MaterialTheme.typography.titleMedium)
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.End
-        ) {
-            TextButton(onClick = onSelectAll) { Text("Tout") }
-            TextButton(onClick = onSelectNone) { Text("Aucun") }
-        }
-        LearningGame.values().forEach { game ->
-            val label = when (game) {
-                LearningGame.PARTICLES -> "Particules"
-                LearningGame.VOCABULARY -> "Vocabulaire"
-                LearningGame.VERBS -> "Verbes"
-                LearningGame.CONJUGATION -> "Conjugaison"
-            }
-            Card(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .clickable {
-                        onGameSelectionChange(game, game !in selectedGames)
-                    },
-                shape = MaterialTheme.shapes.large,
-                colors = CardDefaults.cardColors(containerColor = NihongoPanel),
-                border = androidx.compose.foundation.BorderStroke(1.dp, NihongoBorder)
-            ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 16.dp, vertical = 10.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Checkbox(
-                        checked = game in selectedGames,
-                        onCheckedChange = { onGameSelectionChange(game, it) }
-                    )
-                    Text(label, style = MaterialTheme.typography.titleMedium)
-                }
-            }
-        }
-        Button(
-            onClick = onStart,
-            enabled = selectedGames.isNotEmpty(),
-            modifier = Modifier.fillMaxWidth(),
-            shape = MaterialTheme.shapes.large,
-            colors = ButtonDefaults.buttonColors(containerColor = NihongoAccent)
-        ) {
-            Text("Démarrer")
-        }
-
-        Card(
-            modifier = Modifier
-                .fillMaxWidth()
-                .clickable(onClick = onShowProgress),
-            shape = MaterialTheme.shapes.extraLarge,
-            colors = CardDefaults.cardColors(containerColor = NihongoPanel),
-            border = androidx.compose.foundation.BorderStroke(1.dp, NihongoBorder)
-        ) {
-            Column(
-                modifier = Modifier.padding(20.dp),
-                verticalArrangement = Arrangement.spacedBy(4.dp)
-            ) {
-                Text("Ma progression", style = MaterialTheme.typography.titleLarge)
-                Text(
-                    "${progress.questionsFor(LearningGame.PARTICLES).sumOf { it.attempts }} particules · " +
-                        "${progress.questionsFor(LearningGame.VOCABULARY).sumOf { it.attempts }} vocabulaire · " +
-                        "${progress.questionsFor(LearningGame.VERBS).sumOf { it.attempts }} verbes · " +
-                        "${progress.questionsFor(LearningGame.CONJUGATION).sumOf { it.attempts }} conjugaison",
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
-            }
-        }
-
-        TextButton(onClick = onShowSettings, modifier = Modifier.fillMaxWidth()) {
-            Text("Paramètres")
-        }
-
-        TextButton(onClick = onShowQuestionUpdates, modifier = Modifier.fillMaxWidth()) {
-            Text("Questions · v$contentVersion")
-        }
-
-        TextButton(onClick = onShowUpdates, modifier = Modifier.fillMaxWidth()) {
-            Text("Mise à jour · v${BuildConfig.VERSION_NAME}")
         }
     }
 }
@@ -490,11 +362,15 @@ private fun LearningSettingsScreen(
     extraAttempts: Int,
     questionMasteryThreshold: Int,
     sessionQuestionCount: Int,
+    appVersion: String,
+    contentVersion: String,
     onBack: () -> Unit,
     onExtraAttemptsChange: (Int) -> String?,
     onQuestionMasteryThresholdChange: (Int) -> String?,
     onSessionQuestionCountChange: (Int) -> String?,
-    onResetMasteryCounters: () -> String?
+    onResetMasteryCounters: () -> String?,
+    onShowUpdates: () -> Unit,
+    onShowQuestionUpdates: () -> Unit
 ) {
     var saveError by rememberSaveable { mutableStateOf<String?>(null) }
     var thresholdInput by rememberSaveable(questionMasteryThreshold) {
@@ -649,6 +525,26 @@ private fun LearningSettingsScreen(
                 }
                 resetMessage?.let { message ->
                     Text(message, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                }
+            }
+        }
+
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            shape = MaterialTheme.shapes.extraLarge,
+            colors = CardDefaults.cardColors(containerColor = NihongoPanel),
+            border = androidx.compose.foundation.BorderStroke(1.dp, NihongoBorder)
+        ) {
+            Column(
+                modifier = Modifier.padding(20.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                Text("Mises à jour", style = MaterialTheme.typography.titleLarge)
+                TextButton(onClick = onShowUpdates, modifier = Modifier.fillMaxWidth()) {
+                    Text("Application · v$appVersion", modifier = Modifier.fillMaxWidth())
+                }
+                TextButton(onClick = onShowQuestionUpdates, modifier = Modifier.fillMaxWidth()) {
+                    Text("Questions · v$contentVersion", modifier = Modifier.fillMaxWidth())
                 }
             }
         }

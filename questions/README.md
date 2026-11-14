@@ -3,7 +3,7 @@
 Chaque banque a son propre dossier :
 
 - `JLPT5/` : questions actuelles, classées par mini-jeu.
-- `Mes cours/` : questions tirées des fiches Yuki 01 à 04, classées par mini-jeu.
+- `Mes cours/` : questions tirées des fiches Yuki, actuellement 01 à 10, classées par mini-jeu.
 - `JLPT4/` : futures questions JLPT4, classées par mini-jeu.
 
 Les fichiers de mini-jeux sont `particles.json`, `vocabulary.json`, `verbs.json` et `conjugation.json`. Chaque question doit contenir `bank` avec l’identifiant correspondant : `JLPT5`, `COURSE` ou `JLPT4`.

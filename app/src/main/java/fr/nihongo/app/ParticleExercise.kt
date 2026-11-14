@@ -57,7 +57,7 @@ internal data class ParticleExercise(
 ) : LearningQuestion {
     override val prompt: String
         get() = tokens.mapIndexed { index, token ->
-            if (index == missingTokenIndex) "＿" else token.japanese
+            if (index == missingTokenIndex) "..." else token.japanese
         }.joinToString("")
 
     init {
