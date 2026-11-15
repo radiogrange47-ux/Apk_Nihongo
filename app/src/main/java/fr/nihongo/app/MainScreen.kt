@@ -69,6 +69,7 @@ internal fun MainScreen(
     masteredQuestionRepeatPercent: Int,
     sessionQuestionCount: Int,
     selectedQuestionBanks: Set<QuestionBank>,
+    questionSpeech: JapaneseQuestionSpeech,
     onQuestionBanksChange: (Set<QuestionBank>) -> Unit,
     onCheckUpdates: () -> Unit,
     onDownloadUpdate: (GitHubRelease) -> Unit,
@@ -230,6 +231,7 @@ internal fun MainScreen(
                             when (game) {
                                 LearningGame.PARTICLES -> ParticleGameScreen(
                                     questions = activeCatalog.particles,
+                                    questionSpeech = questionSpeech,
                                     onBack = { screen = AppScreen.HOME },
                                     onAnswer = sessionAnswer,
                                     onQuestionCompleted = completeSessionQuestion,
@@ -246,6 +248,7 @@ internal fun MainScreen(
                                 LearningGame.VOCABULARY -> VocabularyGameScreen(
                                     game = game,
                                     questions = activeCatalog.vocabulary,
+                                    questionSpeech = questionSpeech,
                                     onBack = { screen = AppScreen.HOME },
                                     onAnswer = sessionAnswer,
                                     onQuestionCompleted = completeSessionQuestion,
@@ -262,6 +265,7 @@ internal fun MainScreen(
                                 LearningGame.VERBS -> VocabularyGameScreen(
                                     game = game,
                                     questions = activeCatalog.verbs,
+                                    questionSpeech = questionSpeech,
                                     onBack = { screen = AppScreen.HOME },
                                     onAnswer = sessionAnswer,
                                     onQuestionCompleted = completeSessionQuestion,
@@ -277,6 +281,7 @@ internal fun MainScreen(
 
                                 LearningGame.CONJUGATION -> ConjugationGameScreen(
                                     questions = activeCatalog.conjugation,
+                                    questionSpeech = questionSpeech,
                                     onBack = { screen = AppScreen.HOME },
                                     onAnswer = sessionAnswer,
                                     onQuestionCompleted = completeSessionQuestion,
@@ -296,6 +301,7 @@ internal fun MainScreen(
 
                 AppScreen.PROGRESS -> ProgressScreen(
                     progress = progress,
+                    masteryThreshold = questionMasteryThreshold,
                     onBack = { screen = AppScreen.HOME }
                 )
 

@@ -22,6 +22,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -41,6 +42,7 @@ import androidx.compose.ui.window.Dialog
 internal fun VocabularyGameScreen(
     game: LearningGame,
     questions: List<VocabularyQuestion>,
+    questionSpeech: JapaneseQuestionSpeech,
     onBack: () -> Unit,
     onAnswer: (LearningQuestion, LearningGame, Boolean) -> String?,
     onQuestionCompleted: (LearningGame) -> Unit,
@@ -71,6 +73,9 @@ internal fun VocabularyGameScreen(
         )
     }
     val displayedChoices = remember(question.id) { question.choices.shuffled() }
+    LaunchedEffect(question.id) {
+        questionSpeech.speakQuestion(question.hiragana)
+    }
     var showReading by remember(question.id) { mutableStateOf(false) }
     var feedback by remember { mutableStateOf<String?>(null) }
     var feedbackTranslation by remember { mutableStateOf<String?>(null) }
@@ -119,10 +124,13 @@ internal fun VocabularyGameScreen(
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Text(game.title, style = MaterialTheme.typography.titleMedium)
-                    Text(
-                        "Question ${questionIndex + 1} / $seriesTarget",
-                        color = MaterialTheme.colorScheme.primary
-                    )
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Text(
+                            "Question ${questionIndex + 1} / $seriesTarget",
+                            color = MaterialTheme.colorScheme.primary
+                        )
+                        QuestionSpeechButton(questionSpeech, question.hiragana)
+                    }
                 }
                 if (feedback != null) {
                     AnswerFeedbackBanner(

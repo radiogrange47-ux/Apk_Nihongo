@@ -24,6 +24,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -44,6 +45,7 @@ import androidx.compose.ui.window.Dialog
 @Composable
 internal fun ConjugationGameScreen(
     questions: List<ConjugationQuestion>,
+    questionSpeech: JapaneseQuestionSpeech,
     onBack: () -> Unit,
     onAnswer: (LearningQuestion, LearningGame, Boolean) -> String?,
     onQuestionCompleted: (LearningGame) -> Unit,
@@ -78,6 +80,16 @@ internal fun ConjugationGameScreen(
                 masteredQuestionRepeatPercent = masteredQuestionRepeatPercent
             )
         )
+    }
+    val spokenQuestion = remember(question.id) {
+        val beforeGap = question.tokens.take(question.verbTokenIndex + 1)
+            .joinToString(separator = "") { it.hiragana }
+        val afterGap = question.tokens.drop(question.verbTokenIndex + 1)
+            .joinToString(separator = "") { it.hiragana }
+        beforeGap to afterGap
+    }
+    LaunchedEffect(question.id) {
+        questionSpeech.speakQuestionWithGap(spokenQuestion.first, spokenQuestion.second)
     }
 
     fun advance() {
@@ -121,10 +133,13 @@ internal fun ConjugationGameScreen(
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Text("Conjugaison", style = MaterialTheme.typography.titleMedium)
-                    Text(
-                        "Question ${questionIndex + 1} / $seriesTarget",
-                        color = MaterialTheme.colorScheme.primary
-                    )
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Text(
+                            "Question ${questionIndex + 1} / $seriesTarget",
+                            color = MaterialTheme.colorScheme.primary
+                        )
+                        QuestionSpeechButton(questionSpeech, spokenQuestion.first, spokenQuestion.second)
+                    }
                 }
                 if (feedback != null) {
                     AnswerFeedbackBanner(

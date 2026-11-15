@@ -1,0 +1,1094 @@
+[
+    {
+        "id":  "n4-particle-noni",
+        "topic":  "Contraste",
+        "tokens":  [
+                       {
+                           "japanese":  "雨が降っている",
+                           "hiragana":  "あめがふっている",
+                           "french":  "il pleut",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "のに",
+                           "hiragana":  "のに",
+                           "french":  "malgré le fait que",
+                           "category":  "GRAMMAR_MARKER"
+                       },
+                       {
+                           "japanese":  "彼は出かけました",
+                           "hiragana":  "かれはでかけました",
+                           "french":  "il est sorti",
+                           "category":  "VOCABULARY"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "のに",
+                        "ので",
+                        "から",
+                        "ために",
+                        "おかげで",
+                        "なら"
+                    ],
+        "answer":  "のに",
+        "explanation":  "のに relie deux faits opposés.",
+        "translation":  "Bien qu’il pleuve, il est sorti.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-okage",
+        "topic":  "Cause positive",
+        "tokens":  [
+                       {
+                           "japanese":  "先生のおかげで試験に合格しました",
+                           "hiragana":  "せんせいのおかげでしけんにごうかくしました",
+                           "french":  "grâce au professeur j’ai réussi l’examen",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "おかげで",
+                           "hiragana":  "おかげで",
+                           "french":  "grâce à",
+                           "category":  "GRAMMAR_MARKER"
+                       },
+                       {
+                           "japanese":  "試験に合格しました",
+                           "hiragana":  "しけんにごうかくしました",
+                           "french":  "j’ai réussi l’examen",
+                           "category":  "VOCABULARY"
+                       }
+                   ],
+        "missingTokenIndex":  2,
+        "choices":  [
+                        "おかげで",
+                        "せいで",
+                        "ので",
+                        "のに",
+                        "ために",
+                        "について"
+                    ],
+        "answer":  "おかげで",
+        "explanation":  "おかげで présente une cause positive ou une aide.",
+        "translation":  "Grâce à mon professeur, j’ai réussi l’examen.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-tsuite",
+        "topic":  "Sujet",
+        "tokens":  [
+                       {
+                           "japanese":  "日本の歴史について勉強しました",
+                           "hiragana":  "にほんのれきしについてべんきょうしました",
+                           "french":  "j’ai étudié l’histoire du Japon",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "について",
+                           "hiragana":  "について",
+                           "french":  "au sujet de",
+                           "category":  "GRAMMAR_MARKER"
+                       },
+                       {
+                           "japanese":  "勉強しました",
+                           "hiragana":  "べんきょうしました",
+                           "french":  "j’ai étudié",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  2,
+        "choices":  [
+                        "について",
+                        "に対して",
+                        "によって",
+                        "として",
+                        "にとって",
+                        "に比べて"
+                    ],
+        "answer":  "について",
+        "explanation":  "について signifie « au sujet de » ou « concernant ».",
+        "translation":  "J’ai étudié l’histoire du Japon.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-niyotte",
+        "topic":  "Différences",
+        "tokens":  [
+                       {
+                           "japanese":  "国によって習慣が違います",
+                           "hiragana":  "くにによってしゅうかんがちがいます",
+                           "french":  "les habitudes varient selon le pays",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "によって",
+                           "hiragana":  "によって",
+                           "french":  "selon / par",
+                           "category":  "GRAMMAR_MARKER"
+                       },
+                       {
+                           "japanese":  "習慣が違います",
+                           "hiragana":  "しゅうかんがちがいます",
+                           "french":  "les habitudes sont différentes",
+                           "category":  "VOCABULARY"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "によって",
+                        "について",
+                        "にとって",
+                        "として",
+                        "に対して",
+                        "に比べて"
+                    ],
+        "answer":  "によって",
+        "explanation":  "によって peut indiquer une différence selon le cas.",
+        "translation":  "Les habitudes varient selon les pays.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-toshite",
+        "topic":  "Rôle",
+        "tokens":  [
+                       {
+                           "japanese":  "私は先生としてここで働いています",
+                           "hiragana":  "わたしはせんせいとしてここではたらいています",
+                           "french":  "je travaille ici comme professeur",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "として",
+                           "hiragana":  "として",
+                           "french":  "en tant que",
+                           "category":  "GRAMMAR_MARKER"
+                       },
+                       {
+                           "japanese":  "ここで働いています",
+                           "hiragana":  "ここではたらいています",
+                           "french":  "je travaille ici",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  2,
+        "choices":  [
+                        "として",
+                        "について",
+                        "によって",
+                        "にとって",
+                        "に対して",
+                        "に比べて"
+                    ],
+        "answer":  "として",
+        "explanation":  "として indique le rôle ou la qualité dans laquelle on agit.",
+        "translation":  "Je travaille ici comme professeur.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-nitaishite",
+        "topic":  "Attitude",
+        "tokens":  [
+                       {
+                           "japanese":  "彼は子どもに対していつも親切です",
+                           "hiragana":  "かれはこどもにたいしていつもしんせつです",
+                           "french":  "il est toujours gentil avec les enfants",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "に対して",
+                           "hiragana":  "にたいして",
+                           "french":  "envers",
+                           "category":  "GRAMMAR_MARKER"
+                       },
+                       {
+                           "japanese":  "いつも親切です",
+                           "hiragana":  "いつもしんせつです",
+                           "french":  "il est toujours gentil",
+                           "category":  "VOCABULARY"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "に対して",
+                        "について",
+                        "として",
+                        "によって",
+                        "にとって",
+                        "に比べて"
+                    ],
+        "answer":  "に対して",
+        "explanation":  "に対して indique la personne ou la chose visée par une attitude.",
+        "translation":  "Il est toujours gentil avec les enfants.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-madeni",
+        "topic":  "Échéance",
+        "tokens":  [
+                       {
+                           "japanese":  "金曜日までにこの書類を出してください",
+                           "hiragana":  "きんようびまでにこのしょるいをだしてください",
+                           "french":  "veuillez remettre ce document d’ici vendredi",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "までに",
+                           "hiragana":  "までに",
+                           "french":  "d’ici / avant",
+                           "category":  "GRAMMAR_MARKER"
+                       },
+                       {
+                           "japanese":  "この書類を出してください",
+                           "hiragana":  "このしょるいをだしてください",
+                           "french":  "veuillez remettre ce document",
+                           "category":  "VOCABULARY"
+                       }
+                   ],
+        "missingTokenIndex":  2,
+        "choices":  [
+                        "までに",
+                        "まで",
+                        "から",
+                        "ごろ",
+                        "の間",
+                        "以外"
+                    ],
+        "answer":  "までに",
+        "explanation":  "までに indique une échéance à respecter.",
+        "translation":  "Veuillez rendre ce formulaire d’ici vendredi.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-bakari",
+        "topic":  "Répétition",
+        "tokens":  [
+                       {
+                           "japanese":  "弟はゲームばかりしています",
+                           "hiragana":  "おとうとはげーむばかりしています",
+                           "french":  "mon petit frère ne fait que jouer aux jeux vidéo",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "ばかり",
+                           "hiragana":  "ばかり",
+                           "french":  "ne faire que",
+                           "category":  "GRAMMAR_MARKER"
+                       },
+                       {
+                           "japanese":  "しています",
+                           "hiragana":  "しています",
+                           "french":  "est en train de faire",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  2,
+        "choices":  [
+                        "ばかり",
+                        "だけ",
+                        "しか",
+                        "ほど",
+                        "ずつ",
+                        "ごろ"
+                    ],
+        "answer":  "ばかり",
+        "explanation":  "ばかり souligne une action répétée ou presque exclusive.",
+        "translation":  "Mon petit frère ne fait que jouer aux jeux vidéo.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-shika",
+        "topic":  "Limitation",
+        "tokens":  [
+                       {
+                           "japanese":  "私は千円しか持っていません",
+                           "hiragana":  "わたしはせんえんしかもっていません",
+                           "french":  "je ne possède que mille yens",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "しか",
+                           "hiragana":  "しか",
+                           "french":  "ne… que",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "持っていません",
+                           "hiragana":  "もっていません",
+                           "french":  "je ne possède pas",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "しか",
+                        "だけ",
+                        "ばかり",
+                        "ほど",
+                        "ずつ",
+                        "まで"
+                    ],
+        "answer":  "しか",
+        "explanation":  "しか s’emploie avec une négation pour exprimer « seulement ».",
+        "translation":  "Je n’ai que mille yens.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-dake",
+        "topic":  "Limitation",
+        "tokens":  [
+                       {
+                           "japanese":  "今日は水だけ飲みます",
+                           "hiragana":  "きょうはみずだけのみます",
+                           "french":  "aujourd’hui je ne bois que de l’eau",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "だけ",
+                           "hiragana":  "だけ",
+                           "french":  "seulement",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "飲みます",
+                           "hiragana":  "のみます",
+                           "french":  "je bois",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  2,
+        "choices":  [
+                        "だけ",
+                        "しか",
+                        "ばかり",
+                        "ほど",
+                        "ずつ",
+                        "までに"
+                    ],
+        "answer":  "だけ",
+        "explanation":  "だけ signifie « seulement » et n’exige pas de négation.",
+        "translation":  "Aujourd’hui, je ne bois que de l’eau.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-hodo",
+        "topic":  "Degré",
+        "tokens":  [
+                       {
+                           "japanese":  "歩けないほど疲れました",
+                           "hiragana":  "あるけないほどつかれました",
+                           "french":  "j’étais si fatigué que je ne pouvais pas marcher",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "ほど",
+                           "hiragana":  "ほど",
+                           "french":  "au point de",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "疲れました",
+                           "hiragana":  "つかれました",
+                           "french":  "j’étais fatigué",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "ほど",
+                        "くらい",
+                        "だけ",
+                        "しか",
+                        "ばかり",
+                        "ずつ"
+                    ],
+        "answer":  "ほど",
+        "explanation":  "ほど indique un degré ou une intensité.",
+        "translation":  "J’étais si fatigué que je ne pouvais pas marcher.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-kurai",
+        "topic":  "Approximation",
+        "tokens":  [
+                       {
+                           "japanese":  "一時間くらい待ちました",
+                           "hiragana":  "いちじかんくらいまちました",
+                           "french":  "j’ai attendu environ une heure",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "くらい",
+                           "hiragana":  "くらい",
+                           "french":  "environ",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "待ちました",
+                           "hiragana":  "まちました",
+                           "french":  "j’ai attendu",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  2,
+        "choices":  [
+                        "くらい",
+                        "まで",
+                        "までに",
+                        "ごろ",
+                        "ほど",
+                        "ずつ"
+                    ],
+        "answer":  "くらい",
+        "explanation":  "くらい exprime ici une durée approximative.",
+        "translation":  "J’ai attendu environ une heure.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-zutsu",
+        "topic":  "Répartition",
+        "tokens":  [
+                       {
+                           "japanese":  "二人ずつ入ってください",
+                           "hiragana":  "ふたりずつはいってください",
+                           "french":  "veuillez entrer deux personnes à la fois",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "ずつ",
+                           "hiragana":  "ずつ",
+                           "french":  "chacun / par groupe de",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "入ってください",
+                           "hiragana":  "はいってください",
+                           "french":  "veuillez entrer",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "ずつ",
+                        "だけ",
+                        "しか",
+                        "ほど",
+                        "ばかり",
+                        "まで"
+                    ],
+        "answer":  "ずつ",
+        "explanation":  "ずつ répartit une quantité de façon égale.",
+        "translation":  "Veuillez entrer deux personnes à la fois.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-nikurabete",
+        "topic":  "Comparaison",
+        "tokens":  [
+                       {
+                           "japanese":  "去年に比べて今年は暑いです",
+                           "hiragana":  "きょねんにくらべてことしはあついです",
+                           "french":  "il fait plus chaud cette année que l’an dernier",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "に比べて",
+                           "hiragana":  "にくらべて",
+                           "french":  "par rapport à",
+                           "category":  "GRAMMAR_MARKER"
+                       },
+                       {
+                           "japanese":  "今年は暑いです",
+                           "hiragana":  "ことしはあついです",
+                           "french":  "cette année il fait chaud",
+                           "category":  "VOCABULARY"
+                       }
+                   ],
+        "missingTokenIndex":  2,
+        "choices":  [
+                        "に比べて",
+                        "について",
+                        "に対して",
+                        "によって",
+                        "として",
+                        "にとって"
+                    ],
+        "answer":  "に比べて",
+        "explanation":  "に比べて introduit le point de comparaison.",
+        "translation":  "Par rapport à l’an dernier, il fait plus chaud cette année.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-nitotte",
+        "topic":  "Point-de-vue",
+        "tokens":  [
+                       {
+                           "japanese":  "私にとって家族はとても大切です",
+                           "hiragana":  "わたしにとってかぞくはとてもたいせつです",
+                           "french":  "pour moi ma famille est très importante",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "にとって",
+                           "hiragana":  "にとって",
+                           "french":  "pour / du point de vue de",
+                           "category":  "GRAMMAR_MARKER"
+                       },
+                       {
+                           "japanese":  "家族はとても大切です",
+                           "hiragana":  "かぞくはとてもたいせつです",
+                           "french":  "ma famille est très importante",
+                           "category":  "VOCABULARY"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "にとって",
+                        "について",
+                        "によって",
+                        "として",
+                        "に対して",
+                        "に比べて"
+                    ],
+        "answer":  "にとって",
+        "explanation":  "にとって indique le point de vue d’une personne.",
+        "translation":  "Pour moi, ma famille est très importante.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-yori",
+        "topic":  "Comparaison",
+        "tokens":  [
+                       {
+                           "japanese":  "電車よりバスのほうが安いです",
+                           "hiragana":  "でんしゃよりばすのほうがやすいです",
+                           "french":  "le bus est plus abordable que le train",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "より",
+                           "hiragana":  "より",
+                           "french":  "que / plutôt que",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "バスのほうが安いです",
+                           "hiragana":  "ばすのほうがやすいです",
+                           "french":  "le bus est plus abordable",
+                           "category":  "VOCABULARY"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "より",
+                        "ほど",
+                        "だけ",
+                        "しか",
+                        "ばかり",
+                        "くらい"
+                    ],
+        "answer":  "より",
+        "explanation":  "より introduit l’élément de comparaison dans cette phrase.",
+        "translation":  "Le bus est moins cher que le train.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-toka",
+        "topic":  "Exemples",
+        "tokens":  [
+                       {
+                           "japanese":  "週末は本を読んだり映画を見たりします",
+                           "hiragana":  "しゅうまつはほんをよんだりえいがをみたりします",
+                           "french":  "le week-end je lis des livres et regarde des films",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "とか",
+                           "hiragana":  "とか",
+                           "french":  "comme / par exemple",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "買い物をします",
+                           "hiragana":  "かいものをします",
+                           "french":  "je fais des achats",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  2,
+        "choices":  [
+                        "とか",
+                        "など",
+                        "や",
+                        "と",
+                        "も",
+                        "だけ"
+                    ],
+        "answer":  "とか",
+        "explanation":  "とか sert ici à donner des exemples de choses faites.",
+        "translation":  "Le week-end, je lis des livres ou regarde des films.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-nado",
+        "topic":  "Exemples",
+        "tokens":  [
+                       {
+                           "japanese":  "トマトやにんじんなどの野菜が好きです",
+                           "hiragana":  "とまとやにんじんなどのやさいがすきです",
+                           "french":  "j’aime les légumes comme les tomates et les carottes",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "など",
+                           "hiragana":  "など",
+                           "french":  "entre autres",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "野菜が好きです",
+                           "hiragana":  "やさいがすきです",
+                           "french":  "j’aime les légumes",
+                           "category":  "VOCABULARY"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "など",
+                        "とか",
+                        "や",
+                        "と",
+                        "も",
+                        "しか"
+                    ],
+        "answer":  "など",
+        "explanation":  "など indique des exemples non exhaustifs.",
+        "translation":  "J’aime les légumes comme les tomates et les carottes.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-ni-mukatte",
+        "topic":  "Direction",
+        "tokens":  [
+                       {
+                           "japanese":  "駅に向かって歩いています",
+                           "hiragana":  "えきにむかってあるいています",
+                           "french":  "je marche en direction de la gare",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "に向かって",
+                           "hiragana":  "にむかって",
+                           "french":  "en direction de",
+                           "category":  "GRAMMAR_MARKER"
+                       },
+                       {
+                           "japanese":  "歩いています",
+                           "hiragana":  "あるいています",
+                           "french":  "je marche",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "に向かって",
+                        "にとって",
+                        "について",
+                        "に対して",
+                        "によって",
+                        "に比べて"
+                    ],
+        "answer":  "に向かって",
+        "explanation":  "に向かって indique la direction vers laquelle on se déplace.",
+        "translation":  "Je marche en direction de la gare.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-temo",
+        "topic":  "Concession",
+        "tokens":  [
+                       {
+                           "japanese":  "雨が降っても出かけます",
+                           "hiragana":  "あめがふってもでかけます",
+                           "french":  "même s’il pleut je sortirai",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "ても",
+                           "hiragana":  "ても",
+                           "french":  "même si",
+                           "category":  "GRAMMAR_MARKER"
+                       },
+                       {
+                           "japanese":  "出かけます",
+                           "hiragana":  "でかけます",
+                           "french":  "je sortirai",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  2,
+        "choices":  [
+                        "ても",
+                        "ので",
+                        "のに",
+                        "から",
+                        "ために",
+                        "なら"
+                    ],
+        "answer":  "ても",
+        "explanation":  "ても exprime qu’une action a lieu malgré une condition.",
+        "translation":  "Même s’il pleut, je sortirai.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-node",
+        "topic":  "Cause",
+        "tokens":  [
+                       {
+                           "japanese":  "電車が遅れたので会議に遅れました",
+                           "hiragana":  "でんしゃがおくれたのでかいぎにおくれました",
+                           "french":  "le train était en retard donc je suis arrivé en retard à la réunion",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "ので",
+                           "hiragana":  "ので",
+                           "french":  "parce que",
+                           "category":  "GRAMMAR_MARKER"
+                       },
+                       {
+                           "japanese":  "会議に遅れました",
+                           "hiragana":  "かいぎにおくれました",
+                           "french":  "je suis arrivé en retard à la réunion",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  2,
+        "choices":  [
+                        "ので",
+                        "のに",
+                        "ために",
+                        "おかげで",
+                        "せいで",
+                        "ながら"
+                    ],
+        "answer":  "ので",
+        "explanation":  "ので introduit une cause ou une explication neutre.",
+        "translation":  "Le train était en retard, donc je suis arrivé en retard à la réunion.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-tameni",
+        "topic":  "But",
+        "tokens":  [
+                       {
+                           "japanese":  "健康のために毎日歩いています",
+                           "hiragana":  "けんこうのためにまいにちあるいています",
+                           "french":  "je marche chaque jour pour ma santé",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "ために",
+                           "hiragana":  "ために",
+                           "french":  "pour / dans le but de",
+                           "category":  "GRAMMAR_MARKER"
+                       },
+                       {
+                           "japanese":  "毎日歩いています",
+                           "hiragana":  "まいにちあるいています",
+                           "french":  "je marche tous les jours",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  2,
+        "choices":  [
+                        "ために",
+                        "ように",
+                        "ので",
+                        "のに",
+                        "おかげで",
+                        "せいで"
+                    ],
+        "answer":  "ために",
+        "explanation":  "ために introduit ici le but d’une action.",
+        "translation":  "Je marche tous les jours pour rester en bonne santé.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-nikanshite",
+        "topic":  "Sujet",
+        "tokens":  [
+                       {
+                           "japanese":  "日本旅行に関して話し合いました",
+                           "hiragana":  "にほんりょこうにかんしてはなしあいました",
+                           "french":  "nous avons discuté du voyage au Japon",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "に関して",
+                           "hiragana":  "にかんして",
+                           "french":  "concernant",
+                           "category":  "GRAMMAR_MARKER"
+                       },
+                       {
+                           "japanese":  "話し合いました",
+                           "hiragana":  "はなしあいました",
+                           "french":  "nous avons discuté",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "に関して",
+                        "について",
+                        "に対して",
+                        "として",
+                        "によって",
+                        "にとって"
+                    ],
+        "answer":  "に関して",
+        "explanation":  "に関して signifie « concernant » dans un registre soutenu.",
+        "translation":  "Nous allons parler du voyage au Japon.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-kara-material",
+        "topic":  "Matière",
+        "tokens":  [
+                       {
+                           "japanese":  "木から紙を作ります",
+                           "hiragana":  "きからかみをつくります",
+                           "french":  "on fabrique du papier à partir du bois",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "から",
+                           "hiragana":  "から",
+                           "french":  "à partir de",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "紙を作ります",
+                           "hiragana":  "かみをつくります",
+                           "french":  "on fabrique du papier",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "から",
+                        "で",
+                        "に",
+                        "を",
+                        "より",
+                        "まで"
+                    ],
+        "answer":  "から",
+        "explanation":  "から indique la matière première à partir de laquelle on fabrique quelque chose.",
+        "translation":  "Le papier est fabriqué à partir du bois.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-niwa",
+        "topic":  "Contraste",
+        "tokens":  [
+                       {
+                           "japanese":  "この図書館には子どもの本がたくさんあります",
+                           "hiragana":  "このとしょかんにはこどものほんがたくさんあります",
+                           "french":  "dans cette bibliothèque il y a beaucoup de livres pour enfants",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "には",
+                           "hiragana":  "には",
+                           "french":  "dans / quant à",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "子どもの本がたくさんあります",
+                           "hiragana":  "こどものほんがたくさんあります",
+                           "french":  "il y a beaucoup de livres pour enfants",
+                           "category":  "VOCABULARY"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "には",
+                        "では",
+                        "へは",
+                        "からは",
+                        "より",
+                        "まで"
+                    ],
+        "answer":  "には",
+        "explanation":  "には marque ici le lieu où l’on trouve quelque chose.",
+        "translation":  "Dans cette bibliothèque, il y a beaucoup de livres pour enfants.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-mama",
+        "topic":  "État inchangé",
+        "tokens":  [
+                       {
+                           "japanese":  "窓を開けたまま寝てしまいました",
+                           "hiragana":  "まどをあけたままねてしまいました",
+                           "french":  "je me suis endormi en laissant la fenêtre ouverte",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "まま",
+                           "hiragana":  "まま",
+                           "french":  "en laissant l’état ainsi",
+                           "category":  "GRAMMAR_MARKER"
+                       },
+                       {
+                           "japanese":  "寝てしまいました",
+                           "hiragana":  "ねてしまいました",
+                           "french":  "je me suis endormi malgré moi",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  2,
+        "choices":  [
+                        "まま",
+                        "うちに",
+                        "あいだ",
+                        "ところ",
+                        "ばかり",
+                        "ずつ"
+                    ],
+        "answer":  "まま",
+        "explanation":  "まま décrit un état qui reste inchangé.",
+        "translation":  "Je me suis endormi en laissant la fenêtre ouverte.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-chuu",
+        "topic":  "Durée",
+        "tokens":  [
+                       {
+                           "japanese":  "授業中に携帯電話を使ってはいけません",
+                           "hiragana":  "じゅぎょうちゅうにけいたいでんわをつかってはいけません",
+                           "french":  "il ne faut pas utiliser son téléphone pendant le cours",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "中に",
+                           "hiragana":  "ちゅうに",
+                           "french":  "pendant",
+                           "category":  "GRAMMAR_MARKER"
+                       },
+                       {
+                           "japanese":  "携帯電話を使ってはいけません",
+                           "hiragana":  "けいたいでんわをつかってはいけません",
+                           "french":  "il ne faut pas utiliser son téléphone",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  1,
+        "choices":  [
+                        "中に",
+                        "までに",
+                        "の間",
+                        "ごろ",
+                        "以内",
+                        "以来"
+                    ],
+        "answer":  "中に",
+        "explanation":  "中に signifie « pendant » ou « au cours de ».",
+        "translation":  "Il ne faut pas utiliser son téléphone pendant le cours.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-particle-igai",
+        "topic":  "Exception",
+        "tokens":  [
+                       {
+                           "japanese":  "日曜日以外は毎日働いています",
+                           "hiragana":  "にちようびいがいはまいにちはたらいています",
+                           "french":  "je travaille tous les jours sauf dimanche",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "以外",
+                           "hiragana":  "いがい",
+                           "french":  "sauf",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "毎日働いています",
+                           "hiragana":  "まいにちはたらいています",
+                           "french":  "je travaille tous les jours",
+                           "category":  "VERB"
+                       }
+                   ],
+        "missingTokenIndex":  2,
+        "choices":  [
+                        "以外",
+                        "以内",
+                        "以上",
+                        "未満",
+                        "まで",
+                        "から"
+                    ],
+        "answer":  "以外",
+        "explanation":  "以外 signifie « sauf » ou « excepté ».",
+        "translation":  "À part dimanche, je travaille tous les jours.",
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    }
+]

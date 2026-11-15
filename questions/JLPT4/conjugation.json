@@ -1,0 +1,1866 @@
+[
+    {
+        "id":  "n4-conjugation-potential-iku",
+        "topic":  "Forme potentielle",
+        "contextFrench":  "Je peux aller seul jusquâ€™Ã  la gare.",
+        "verbTokenIndex":  4,
+        "answerEnding":  "ã¾ã™",
+        "choices":  [
+                        "ã¾ã™",
+                        "ã¾ã›ã‚“",
+                        "ã¾ã—ãŸ",
+                        "ã¾ã›ã‚“ã§ã—ãŸ",
+                        "ã¾ã—ã‚‡ã†",
+                        "ãŸã„ã§ã™"
+                    ],
+        "translation":  "Je peux aller seul jusquâ€™Ã  la gare.",
+        "explanation":  "Pour un verbe en ã, la forme potentielle prend souvent ã‘ã‚‹ avant la terminaison polie.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ç§",
+                           "hiragana":  "ã‚ãŸã—",
+                           "french":  "je",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "ã¯",
+                           "hiragana":  "ã¯",
+                           "french":  "thÃ¨me",
+                           "category":  "PARTICLE"
+                       },
+                       {
+                           "japanese":  "ä¸€äººã§",
+                           "hiragana":  "ã²ã¨ã‚Šã§",
+                           "french":  "seul",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "é§…ã¾ã§",
+                           "hiragana":  "ãˆãã¾ã§",
+                           "french":  "jusquâ€™Ã  la gare",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "è¡Œã‘",
+                           "hiragana":  "ã„ã‘",
+                           "french":  "pouvoir aller",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-potential-taberu",
+        "topic":  "Forme potentielle",
+        "contextFrench":  "Je peux manger des aliments Ã©picÃ©s.",
+        "verbTokenIndex":  2,
+        "answerEnding":  "ã‚‰ã‚Œã¾ã™",
+        "choices":  [
+                        "ã‚‰ã‚Œã¾ã™",
+                        "ã‚‰ã‚Œã¾ã›ã‚“",
+                        "ã‚‰ã‚Œã¾ã—ãŸ",
+                        "ã‚‰ã‚Œã¾ã›ã‚“ã§ã—ãŸ",
+                        "ã•ã›ã¾ã™",
+                        "ã•ã›ã‚‰ã‚Œã¾ã™"
+                    ],
+        "translation":  "Je peux manger des aliments Ã©picÃ©s.",
+        "explanation":  "Pour un verbe en ã‚‹, la forme potentielle standard utilise ã‚‰ã‚Œã‚‹.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ç§ã¯",
+                           "hiragana":  "ã‚ãŸã—ã¯",
+                           "french":  "moi",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "è¾›ã„æ–™ç†ã‚’",
+                           "hiragana":  "ã‹ã‚‰ã„ã‚Šã‚‡ã†ã‚Šã‚’",
+                           "french":  "des plats Ã©picÃ©s",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "é£Ÿã¹",
+                           "hiragana":  "ãŸã¹",
+                           "french":  "manger",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-passive-tsukau",
+        "topic":  "Forme passive",
+        "contextFrench":  "Ce produit est utilisÃ© par beaucoup de personnes.",
+        "verbTokenIndex":  2,
+        "answerEnding":  "ã‚ã‚Œã¦ã„ã¾ã™",
+        "choices":  [
+                        "ã‚ã‚Œã¦ã„ã¾ã™",
+                        "ã‚ã‚Œã¾ã›ã‚“",
+                        "ã„ã¾ã—ãŸ",
+                        "ã‚ã‚Œã¾ã—ãŸ",
+                        "ã‚ã•ã‚Œã¾ã™",
+                        "ã‚ã›ã¾ã—ãŸ"
+                    ],
+        "translation":  "Ce produit est utilisÃ© par beaucoup de personnes.",
+        "explanation":  "La forme passive de ä½¿ã† est ä½¿ã‚ã‚Œã‚‹.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ã“ã®å•†å“ã¯",
+                           "hiragana":  "ã“ã®ã—ã‚‡ã†ã²ã‚“ã¯",
+                           "french":  "ce produit",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "å¤šãã®äººã«",
+                           "hiragana":  "ãŠãŠãã®ã²ã¨ã«",
+                           "french":  "par beaucoup de personnes",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "ä½¿",
+                           "hiragana":  "ã¤ã‹",
+                           "french":  "Ãªtre utilisÃ©",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-passive-homeru",
+        "topic":  "Forme passive",
+        "contextFrench":  "Mon devoir a Ã©tÃ© fÃ©licitÃ© par le professeur.",
+        "verbTokenIndex":  2,
+        "answerEnding":  "ã‚ã‚‰ã‚Œã¾ã—ãŸ",
+        "choices":  [
+                        "ã‚ã‚‰ã‚Œã¾ã—ãŸ",
+                        "ã‚ã¾ã›ã‚“ã§ã—ãŸ",
+                        "ã‚ã¾ã—ãŸ",
+                        "ã‚ã‚‰ã‚Œã¾ã™",
+                        "ã‚ã•ã›ã¾ã—ãŸ",
+                        "ã‚ã•ã›ã‚‰ã‚Œã¾ã—ãŸ"
+                    ],
+        "translation":  "Mon devoir a Ã©tÃ© fÃ©licitÃ© par le professeur.",
+        "explanation":  "La forme passive place la personne qui reÃ§oit lâ€™action au centre de la phrase.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ç§ã®ä½œæ–‡ã¯",
+                           "hiragana":  "ã‚ãŸã—ã®ã•ãã¶ã‚“ã¯",
+                           "french":  "ma rÃ©daction",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "å…ˆç”Ÿã«",
+                           "hiragana":  "ã›ã‚“ã›ã„ã«",
+                           "french":  "par le professeur",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "ã»",
+                           "hiragana":  "ã»",
+                           "french":  "Ãªtre fÃ©licitÃ©",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-causative-kaku",
+        "topic":  "Forme causative",
+        "contextFrench":  "Le professeur fait Ã©crire des kanji aux Ã©lÃ¨ves.",
+        "verbTokenIndex":  3,
+        "answerEnding":  "ã‹ã›ã¾ã™",
+        "choices":  [
+                        "ã‹ã›ã¾ã™",
+                        "ã‹ã•ã‚Œã¾ã™",
+                        "ã‹ã›ã‚‰ã‚Œã¾ã™",
+                        "ãã¾ã™",
+                        "ãã¾ã—ãŸ",
+                        "ãã¾ã›ã‚“"
+                    ],
+        "translation":  "Le professeur fait Ã©crire des kanji aux Ã©lÃ¨ves.",
+        "explanation":  "La forme causative exprime le fait de faire faire ou de laisser faire une action.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "å…ˆç”Ÿã¯",
+                           "hiragana":  "ã›ã‚“ã›ã„ã¯",
+                           "french":  "le professeur",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "å­¦ç”Ÿã«",
+                           "hiragana":  "ãŒãã›ã„ã«",
+                           "french":  "aux Ã©lÃ¨ves",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "æ¼¢å­—ã‚’",
+                           "hiragana":  "ã‹ã‚“ã˜ã‚’",
+                           "french":  "des kanji",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "æ›¸",
+                           "hiragana":  "ã‹",
+                           "french":  "Ã©crire",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-causative-passive-taberu",
+        "topic":  "Forme causative-passive",
+        "contextFrench":  "Ma mÃ¨re mâ€™a obligÃ© Ã  manger des lÃ©gumes.",
+        "verbTokenIndex":  3,
+        "answerEnding":  "ã¹ã•ã›ã‚‰ã‚Œã¾ã—ãŸ",
+        "choices":  [
+                        "ã¹ã•ã›ã‚‰ã‚Œã¾ã—ãŸ",
+                        "ã¹ã•ã›ã¾ã—ãŸ",
+                        "ã¹ã‚‰ã‚Œã¾ã—ãŸ",
+                        "ã¹ã¾ã›ã‚“ã§ã—ãŸ",
+                        "ã¹ãŸã„ã§ã™",
+                        "ã¹ã‚‰ã‚Œã¾ã™"
+                    ],
+        "translation":  "Ma mÃ¨re mâ€™a obligÃ© Ã  manger des lÃ©gumes.",
+        "explanation":  "La forme causative-passive indique que le sujet a Ã©tÃ© contraint de faire lâ€™action.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ç§ã¯",
+                           "hiragana":  "ã‚ãŸã—ã¯",
+                           "french":  "moi",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "æ¯ã«",
+                           "hiragana":  "ã¯ã¯ã«",
+                           "french":  "par ma mÃ¨re",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "é‡Žèœã‚’",
+                           "hiragana":  "ã‚„ã•ã„ã‚’",
+                           "french":  "des lÃ©gumes",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "é£Ÿ",
+                           "hiragana":  "ãŸ",
+                           "french":  "manger",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-advice-neru",
+        "topic":  "Conseil",
+        "contextFrench":  "Tu devrais dormir plus tÃ´t.",
+        "verbTokenIndex":  2,
+        "answerEnding":  "ãŸã»ã†ãŒã„ã„ã§ã™",
+        "choices":  [
+                        "ãŸã»ã†ãŒã„ã„ã§ã™",
+                        "ãªã„ã»ã†ãŒã„ã„ã§ã™",
+                        "ã¦ã‚‚ã„ã„ã§ã™",
+                        "ã¦ã¯ã„ã‘ã¾ã›ã‚“",
+                        "ãªãã¦ã‚‚ã„ã„ã§ã™",
+                        "ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“"
+                    ],
+        "translation":  "Tu devrais dormir plus tÃ´t.",
+        "explanation":  "ãŸã»ã†ãŒã„ã„ã§ã™ sert Ã  conseiller de faire quelque chose.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ã‚ãªãŸã¯",
+                           "hiragana":  "ã‚ãªãŸã¯",
+                           "french":  "toi",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "ã‚‚ã£ã¨æ—©ã",
+                           "hiragana":  "ã‚‚ã£ã¨ã¯ã‚„ã",
+                           "french":  "plus tÃ´t",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "å¯",
+                           "hiragana":  "ã­",
+                           "french":  "dormir",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-advice-sake",
+        "topic":  "Conseil",
+        "contextFrench":  "Tu ferais mieux de ne pas boire trop dâ€™alcool.",
+        "verbTokenIndex":  2,
+        "answerEnding":  "ãªã„ã»ã†ãŒã„ã„ã§ã™",
+        "choices":  [
+                        "ãªã„ã»ã†ãŒã„ã„ã§ã™",
+                        "ãŸã»ã†ãŒã„ã„ã§ã™",
+                        "ã¦ã‚‚ã„ã„ã§ã™",
+                        "ã¦ã¯ã„ã‘ã¾ã›ã‚“",
+                        "ãªãã¦ã‚‚ã„ã„ã§ã™",
+                        "ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“"
+                    ],
+        "translation":  "Tu ferais mieux de ne pas boire trop dâ€™alcool.",
+        "explanation":  "ãªã„ã»ã†ãŒã„ã„ã§ã™ conseille dâ€™Ã©viter une action.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ãŠé…’ã¯",
+                           "hiragana":  "ãŠã•ã‘ã¯",
+                           "french":  "lâ€™alcool",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "ã‚ã¾ã‚Š",
+                           "hiragana":  "ã‚ã¾ã‚Š",
+                           "french":  "trop",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "é£²ã¾",
+                           "hiragana":  "ã®ã¾",
+                           "french":  "boire",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-must-benkyou",
+        "topic":  "Obligation",
+        "contextFrench":  "Je dois Ã©tudier avant lâ€™examen.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“",
+        "choices":  [
+                        "ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“",
+                        "ãªãã¦ã‚‚ã„ã„ã§ã™",
+                        "ãªã„ã»ã†ãŒã„ã„ã§ã™",
+                        "ãŸã»ã†ãŒã„ã„ã§ã™",
+                        "ã¦ã¿ã¾ã™",
+                        "ã¦ãŠãã¾ã™"
+                    ],
+        "translation":  "Je dois Ã©tudier avant lâ€™examen.",
+        "explanation":  "ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“ exprime une obligation forte.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "è©¦é¨“ã®å‰ã«",
+                           "hiragana":  "ã—ã‘ã‚“ã®ã¾ãˆã«",
+                           "french":  "avant lâ€™examen",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "å‹‰å¼·ã—",
+                           "hiragana":  "ã¹ã‚“ãã‚‡ã†ã—",
+                           "french":  "Ã©tudier",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-must-kaeru",
+        "topic":  "Obligation",
+        "contextFrench":  "Je dois rentrer avant dix heures.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ãªã„ã¨ã„ã‘ã¾ã›ã‚“",
+        "choices":  [
+                        "ãªã„ã¨ã„ã‘ã¾ã›ã‚“",
+                        "ãªãã¦ã‚‚ã„ã„ã§ã™",
+                        "ãªã„ã»ã†ãŒã„ã„ã§ã™",
+                        "ãŸã»ã†ãŒã„ã„ã§ã™",
+                        "ã¦ã—ã¾ã„ã¾ã™",
+                        "ã¦ã¿ã¾ã™"
+                    ],
+        "translation":  "Je dois rentrer avant dix heures.",
+        "explanation":  "ãªã„ã¨ã„ã‘ã¾ã›ã‚“ exprime une nÃ©cessitÃ© ou une obligation.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "åæ™‚ã¾ã§ã«",
+                           "hiragana":  "ã˜ã‚…ã†ã˜ã¾ã§ã«",
+                           "french":  "avant dix heures",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "å®¶ã«å¸°ã‚‰",
+                           "hiragana":  "ã„ãˆã«ã‹ãˆã‚‰",
+                           "french":  "rentrer Ã  la maison",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-no-need-kuru",
+        "topic":  "Permission",
+        "contextFrench":  "Tu nâ€™as pas besoin de venir demain.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ãªãã¦ã‚‚ã„ã„ã§ã™",
+        "choices":  [
+                        "ãªãã¦ã‚‚ã„ã„ã§ã™",
+                        "ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“",
+                        "ãªã„ã¨ã„ã‘ã¾ã›ã‚“",
+                        "ãªã„ã»ã†ãŒã„ã„ã§ã™",
+                        "ãŸã»ã†ãŒã„ã„ã§ã™",
+                        "ã¦ã¯ã„ã‘ã¾ã›ã‚“"
+                    ],
+        "translation":  "Tu nâ€™as pas besoin de venir demain.",
+        "explanation":  "ãªãã¦ã‚‚ã„ã„ã§ã™ signifie quâ€™une action nâ€™est pas nÃ©cessaire.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "æ˜Žæ—¥ã¯",
+                           "hiragana":  "ã‚ã—ãŸã¯",
+                           "french":  "demain",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "ã“ã“ã¸æ¥",
+                           "hiragana":  "ã“ã“ã¸ã“",
+                           "french":  "venir ici",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-try-taberu",
+        "topic":  "Essayer",
+        "contextFrench":  "Jâ€™ai goÃ»tÃ© le plat que tu as prÃ©parÃ©.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ã¦ã¿ã¾ã—ãŸ",
+        "choices":  [
+                        "ã¦ã¿ã¾ã—ãŸ",
+                        "ã¦ãŠãã¾ã—ãŸ",
+                        "ã¦ã—ã¾ã„ã¾ã—ãŸ",
+                        "ãŸã“ã¨ãŒã‚ã‚Šã¾ã™",
+                        "ã‚ˆã†ã«ã—ã¾ã—ãŸ",
+                        "ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“"
+                    ],
+        "translation":  "Jâ€™ai essayÃ© le plat que tu as prÃ©parÃ©.",
+        "explanation":  "ã¦ã¿ã‚‹ indique quâ€™on essaie une action pour voir le rÃ©sultat.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ã‚ãªãŸãŒä½œã£ãŸæ–™ç†ã‚’",
+                           "hiragana":  "ã‚ãªãŸãŒã¤ãã£ãŸã‚Šã‚‡ã†ã‚Šã‚’",
+                           "french":  "le plat que tu as prÃ©parÃ©",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "é£Ÿã¹",
+                           "hiragana":  "ãŸã¹",
+                           "french":  "manger",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-prepare-yoyaku",
+        "topic":  "PrÃ©paration",
+        "contextFrench":  "Jâ€™ai rÃ©servÃ© les billets Ã  lâ€™avance.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ã¦ãŠãã¾ã—ãŸ",
+        "choices":  [
+                        "ã¦ãŠãã¾ã—ãŸ",
+                        "ã¦ã¿ã¾ã—ãŸ",
+                        "ã¦ã—ã¾ã„ã¾ã—ãŸ",
+                        "ãŸã“ã¨ãŒã‚ã‚Šã¾ã™",
+                        "ã‚ˆã†ã«ãªã‚Šã¾ã—ãŸ",
+                        "ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“"
+                    ],
+        "translation":  "Jâ€™ai rÃ©servÃ© les billets Ã  lâ€™avance.",
+        "explanation":  "ã¦ãŠã indique une action faite en prÃ©paration ou pour sâ€™en servir plus tard.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "æ—…è¡Œã®å‰ã«",
+                           "hiragana":  "ã‚Šã‚‡ã“ã†ã®ã¾ãˆã«",
+                           "french":  "avant le voyage",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "åˆ‡ç¬¦ã‚’äºˆç´„ã—",
+                           "hiragana":  "ãã£ã·ã‚’ã‚ˆã‚„ãã—",
+                           "french":  "rÃ©server les billets",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-completion-wasureta",
+        "topic":  "Action achevÃ©e",
+        "contextFrench":  "Jâ€™ai malheureusement oubliÃ© mon parapluie dans le train.",
+        "verbTokenIndex":  2,
+        "answerEnding":  "ã‚Œã¦ã—ã¾ã„ã¾ã—ãŸ",
+        "choices":  [
+                        "ã‚Œã¦ã—ã¾ã„ã¾ã—ãŸ",
+                        "ã‚Œã¾ã—ãŸ",
+                        "ã‚Œã¦ã„ã¾ã™",
+                        "ã‚ŒãŸã“ã¨ãŒã‚ã‚Šã¾ã™",
+                        "ã‚Œã‚ˆã†ã¨æ€ã„ã¾ã™",
+                        "ã‚Œãªãã¦ã‚‚ã„ã„ã§ã™"
+                    ],
+        "translation":  "Jâ€™ai malheureusement oubliÃ© mon parapluie dans le train.",
+        "explanation":  "ã¦ã—ã¾ã† peut exprimer une action achevÃ©e ou un regret.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "é›»è»Šã«",
+                           "hiragana":  "ã§ã‚“ã—ã‚ƒã«",
+                           "french":  "dans le train",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "å‚˜ã‚’",
+                           "hiragana":  "ã‹ã•ã‚’",
+                           "french":  "mon parapluie",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "å¿˜",
+                           "hiragana":  "ã‚ã™",
+                           "french":  "oublier",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-too-much-tabeta",
+        "topic":  "ExcÃ¨s",
+        "contextFrench":  "Jâ€™ai trop mangÃ© au restaurant.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ã¹ã™ãŽã¾ã—ãŸ",
+        "choices":  [
+                        "ã¹ã™ãŽã¾ã—ãŸ",
+                        "ã¹ã¾ã—ãŸ",
+                        "ã¹ã‚‰ã‚Œã¾ã—ãŸ",
+                        "ã¹ã¦ã¿ã¾ã—ãŸ",
+                        "ã¹ã¦ãŠãã¾ã—ãŸ",
+                        "ã¹ãŸã„ã§ã™"
+                    ],
+        "translation":  "Jâ€™ai trop mangÃ© au restaurant.",
+        "explanation":  "ã™ãŽã‚‹ sâ€™ajoute Ã  la base du verbe pour dire quâ€™on en fait trop.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ãƒ¬ã‚¹ãƒˆãƒ©ãƒ³ã§",
+                           "hiragana":  "ã‚Œã™ã¨ã‚‰ã‚“ã§",
+                           "french":  "au restaurant",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "é£Ÿ",
+                           "hiragana":  "ãŸ",
+                           "french":  "manger",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-intention-iku",
+        "topic":  "Intention",
+        "contextFrench":  "Je pense aller au Japon lâ€™annÃ©e prochaine.",
+        "verbTokenIndex":  2,
+        "answerEnding":  "ã“ã†ã¨æ€ã£ã¦ã„ã¾ã™",
+        "choices":  [
+                        "ã“ã†ã¨æ€ã£ã¦ã„ã¾ã™",
+                        "ãã¤ã‚‚ã‚Šã§ã™",
+                        "ãã“ã¨ã«ã—ã¾ã—ãŸ",
+                        "ã‘ã°ã„ã„ã§ã™",
+                        "ããªã‚Šã¾ã—ãŸ",
+                        "ã„ã¦ã¿ã¾ã™"
+                    ],
+        "translation":  "Je pense aller au Japon lâ€™annÃ©e prochaine.",
+        "explanation":  "La forme volitive suivie de ã¨æ€ã† exprime une intention personnelle.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ç§ã¯",
+                           "hiragana":  "ã‚ãŸã—ã¯",
+                           "french":  "moi",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "æ¥å¹´",
+                           "hiragana":  "ã‚‰ã„ã­ã‚“",
+                           "french":  "lâ€™annÃ©e prochaine",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "æ—¥æœ¬ã¸è¡Œ",
+                           "hiragana":  "ã«ã»ã‚“ã¸ã„",
+                           "french":  "aller au Japon",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-intention-benkyou",
+        "topic":  "Intention",
+        "contextFrench":  "Jâ€™ai dÃ©cidÃ© dâ€™Ã©tudier chaque jour.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ã“ã¨ã«ã—ã¾ã—ãŸ",
+        "choices":  [
+                        "ã“ã¨ã«ã—ã¾ã—ãŸ",
+                        "ã“ã¨ã«ãªã‚Šã¾ã—ãŸ",
+                        "ã¤ã‚‚ã‚Šã§ã—ãŸ",
+                        "ã‚ˆã†ã«ãªã‚Šã¾ã—ãŸ",
+                        "ã¦ã—ã¾ã„ã¾ã—ãŸ",
+                        "ãŸã“ã¨ãŒã‚ã‚Šã¾ã™"
+                    ],
+        "translation":  "Jâ€™ai dÃ©cidÃ© dâ€™Ã©tudier chaque jour.",
+        "explanation":  "ã“ã¨ã«ã™ã‚‹ exprime une dÃ©cision prise par le sujet.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "æ¯Žæ—¥",
+                           "hiragana":  "ã¾ã„ã«ã¡",
+                           "french":  "tous les jours",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "å‹‰å¼·ã™ã‚‹",
+                           "hiragana":  "ã¹ã‚“ãã‚‡ã†ã™ã‚‹",
+                           "french":  "Ã©tudier",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-arrangement-kaigi",
+        "topic":  "DÃ©cision collective",
+        "contextFrench":  "Il a Ã©tÃ© dÃ©cidÃ© que la rÃ©union aurait lieu lundi.",
+        "verbTokenIndex":  0,
+        "answerEnding":  "ã“ã¨ã«ãªã‚Šã¾ã—ãŸ",
+        "choices":  [
+                        "ã“ã¨ã«ãªã‚Šã¾ã—ãŸ",
+                        "ã“ã¨ã«ã—ã¾ã—ãŸ",
+                        "ã¤ã‚‚ã‚Šã§ã™",
+                        "ã‚ˆã†ã«ã—ã¾ã—ãŸ",
+                        "ãŸã°ã‹ã‚Šã§ã™",
+                        "ã¦ãŠãã¾ã—ãŸ"
+                    ],
+        "translation":  "Il a Ã©tÃ© dÃ©cidÃ© que la rÃ©union aurait lieu lundi.",
+        "explanation":  "ã“ã¨ã«ãªã‚‹ prÃ©sente une dÃ©cision ou un arrangement Ã©tabli, souvent par dâ€™autres.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ä¼šè­°ã¯æœˆæ›œæ—¥ã«è¡Œã†",
+                           "hiragana":  "ã‹ã„ãŽã¯ã’ã¤ã‚ˆã†ã³ã«ãŠã“ãªã†",
+                           "french":  "tenir la rÃ©union lundi",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-make-sure-wasure",
+        "topic":  "PrÃ©caution",
+        "contextFrench":  "Je note lâ€™adresse pour ne pas lâ€™oublier.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ãªã„ã‚ˆã†ã«",
+        "choices":  [
+                        "ãªã„ã‚ˆã†ã«",
+                        "ãªãã¦ã‚‚ã„ã„ã‚ˆã†ã«",
+                        "ãªã„ã®ã«",
+                        "ãªã„ãŸã‚ã«",
+                        "ãªã„ã°ã‹ã‚Š",
+                        "ãªã„ã»ã©"
+                    ],
+        "translation":  "Je note lâ€™adresse pour ne pas lâ€™oublier.",
+        "explanation":  "ãªã„ã‚ˆã†ã« exprime le but dâ€™Ã©viter une action ou un Ã©tat.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ä½æ‰€ã‚’",
+                           "hiragana":  "ã˜ã‚…ã†ã—ã‚‡ã‚’",
+                           "french":  "lâ€™adresse",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "å¿˜ã‚Œ",
+                           "hiragana":  "ã‚ã™ã‚Œ",
+                           "french":  "oublier",
+                           "category":  "VERB"
+                       },
+                       {
+                           "japanese":  "ãƒ¡ãƒ¢ã—ã¾ã™",
+                           "hiragana":  "ã‚ã‚‚ã—ã¾ã™",
+                           "french":  "je note",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-experience-fuji",
+        "topic":  "ExpÃ©rience",
+        "contextFrench":  "Jâ€™ai dÃ©jÃ  gravi le mont Fuji une fois.",
+        "verbTokenIndex":  2,
+        "answerEnding":  "ãŸã“ã¨ãŒã‚ã‚Šã¾ã™",
+        "choices":  [
+                        "ãŸã“ã¨ãŒã‚ã‚Šã¾ã™",
+                        "ãŸã°ã‹ã‚Šã§ã™",
+                        "ã¦ã—ã¾ã„ã¾ã—ãŸ",
+                        "ã‚‹ã¤ã‚‚ã‚Šã§ã™",
+                        "ã‚ˆã†ã«ãªã‚Šã¾ã—ãŸ",
+                        "ãªãã¦ã‚‚ã„ã„ã§ã™"
+                    ],
+        "translation":  "Jâ€™ai dÃ©jÃ  gravi le mont Fuji une fois.",
+        "explanation":  "ãŸã“ã¨ãŒã‚ã‚‹ exprime une expÃ©rience vÃ©cue au moins une fois.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ç§ã¯",
+                           "hiragana":  "ã‚ãŸã—ã¯",
+                           "french":  "moi",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "å¯Œå£«å±±ã«",
+                           "hiragana":  "ãµã˜ã•ã‚“ã«",
+                           "french":  "au mont Fuji",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "ç™»ã£",
+                           "hiragana":  "ã®ã¼ã£",
+                           "french":  "grimper",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-just-arrive",
+        "topic":  "Action rÃ©cente",
+        "contextFrench":  "Je viens juste dâ€™arriver Ã  Tokyo.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ãŸã°ã‹ã‚Šã§ã™",
+        "choices":  [
+                        "ãŸã°ã‹ã‚Šã§ã™",
+                        "ãŸã“ã¨ãŒã‚ã‚Šã¾ã™",
+                        "ã¦ãŠãã¾ã—ãŸ",
+                        "ã¦ã¿ã¾ã—ãŸ",
+                        "ã‚‹ã¨ã“ã‚ã§ã™",
+                        "ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“"
+                    ],
+        "translation":  "Je viens juste dâ€™arriver Ã  Tokyo.",
+        "explanation":  "ãŸã°ã‹ã‚Šã§ã™ indique quâ€™une action vient de se terminer.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ç§ã¯",
+                           "hiragana":  "ã‚ãŸã—ã¯",
+                           "french":  "moi",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "æ±äº¬ã«ç€ã„",
+                           "hiragana":  "ã¨ã†ãã‚‡ã†ã«ã¤ã„",
+                           "french":  "arriver Ã  Tokyo",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-while-kuru",
+        "topic":  "Action en cours",
+        "contextFrench":  "Je lis pendant que jâ€™Ã©coute de la musique.",
+        "verbTokenIndex":  0,
+        "answerEnding":  "ãªãŒã‚‰",
+        "choices":  [
+                        "ãªãŒã‚‰",
+                        "ãŸã‚ã¨ã§",
+                        "ã‚‹å‰ã«",
+                        "ã¦ã—ã¾ã£ã¦",
+                        "ãŸã°ã‹ã‚Šã§",
+                        "ãªã„ã‚ˆã†ã«"
+                    ],
+        "translation":  "Je lis pendant que jâ€™Ã©coute de la musique.",
+        "explanation":  "ãªãŒã‚‰ relie deux actions faites en mÃªme temps par le mÃªme sujet.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "éŸ³æ¥½ã‚’èžã",
+                           "hiragana":  "ãŠã‚“ãŒãã‚’ãã",
+                           "french":  "Ã©couter de la musique",
+                           "category":  "VERB"
+                       },
+                       {
+                           "japanese":  "æœ¬ã‚’èª­ã‚“ã§ã„ã¾ã™",
+                           "hiragana":  "ã»ã‚“ã‚’ã‚ˆã‚“ã§ã„ã¾ã™",
+                           "french":  "je lis un livre",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-before-tabeta",
+        "topic":  "Ordre",
+        "contextFrench":  "Lavez-vous les mains avant de manger.",
+        "verbTokenIndex":  0,
+        "answerEnding":  "ã‚‹å‰ã«",
+        "choices":  [
+                        "ã‚‹å‰ã«",
+                        "ãŸã‚ã¨ã§",
+                        "ã¦ã‹ã‚‰",
+                        "ãªãŒã‚‰",
+                        "ãŸã°ã‹ã‚Šã§",
+                        "ãªã„ã‚ˆã†ã«"
+                    ],
+        "translation":  "Lavez-vous les mains avant de manger.",
+        "explanation":  "ã‚‹å‰ã« sâ€™emploie avec la forme dictionnaire pour situer une action avant une autre.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ã”é£¯ã‚’é£Ÿã¹",
+                           "hiragana":  "ã”ã¯ã‚“ã‚’ãŸã¹",
+                           "french":  "manger",
+                           "category":  "VERB"
+                       },
+                       {
+                           "japanese":  "æ‰‹ã‚’æ´—ã£ã¦ãã ã•ã„",
+                           "hiragana":  "ã¦ã‚’ã‚ã‚‰ã£ã¦ãã ã•ã„",
+                           "french":  "veuillez vous laver les mains",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-after-shukudai",
+        "topic":  "Ordre",
+        "contextFrench":  "Je regarderai la tÃ©lÃ©vision aprÃ¨s avoir fini mes devoirs.",
+        "verbTokenIndex":  0,
+        "answerEnding":  "ãŸã‚ã¨ã§",
+        "choices":  [
+                        "ãŸã‚ã¨ã§",
+                        "ã‚‹å‰ã«",
+                        "ãªãŒã‚‰",
+                        "ã¦ã—ã¾ã£ã¦",
+                        "ãŸã°ã‹ã‚Šã§",
+                        "ãªã„ã‚ˆã†ã«"
+                    ],
+        "translation":  "Je regarderai la tÃ©lÃ©vision aprÃ¨s avoir fini mes devoirs.",
+        "explanation":  "ãŸã‚ã¨ã§ indique quâ€™une action a lieu aprÃ¨s la fin dâ€™une autre.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "å®¿é¡Œã‚’ã—",
+                           "hiragana":  "ã—ã‚…ãã ã„ã‚’ã—",
+                           "french":  "faire les devoirs",
+                           "category":  "VERB"
+                       },
+                       {
+                           "japanese":  "ãƒ†ãƒ¬ãƒ“ã‚’è¦‹ã¾ã™",
+                           "hiragana":  "ã¦ã‚Œã³ã‚’ã¿ã¾ã™",
+                           "french":  "je regarderai la tÃ©lÃ©vision",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-condition-ame",
+        "topic":  "Condition",
+        "contextFrench":  "Sâ€™il pleut demain, je resterai Ã  la maison.",
+        "verbTokenIndex":  0,
+        "answerEnding":  "ã£ãŸã‚‰",
+        "choices":  [
+                        "ã£ãŸã‚‰",
+                        "ã‚Œã°",
+                        "ãªã‚‰",
+                        "ã‚‹ã¨",
+                        "ã®ã§",
+                        "ã®ã«"
+                    ],
+        "translation":  "ãŸã‚‰ exprime ici une condition ou un Ã©vÃ©nement futur.",
+        "explanation":  "Sâ€™il pleut demain, je resterai Ã  la maison.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "æ˜Žæ—¥é›¨ãŒé™",
+                           "hiragana":  "ã‚ã—ãŸã‚ã‚ãŒãµ",
+                           "french":  "pleuvoir demain",
+                           "category":  "VERB"
+                       },
+                       {
+                           "japanese":  "å®¶ã«ã„ã¾ã™",
+                           "hiragana":  "ã„ãˆã«ã„ã¾ã™",
+                           "french":  "je resterai Ã  la maison",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-condition-yasui",
+        "topic":  "Condition",
+        "contextFrench":  "Si câ€™est bon marchÃ©, jâ€™en achÃ¨terai deux.",
+        "verbTokenIndex":  0,
+        "answerEnding":  "ã‘ã‚Œã°",
+        "choices":  [
+                        "ã‘ã‚Œã°",
+                        "ã‹ã£ãŸã‚‰",
+                        "ãã¦ã‚‚",
+                        "ã„ã®ã«",
+                        "ã„ãªãŒã‚‰",
+                        "ã„ãã†ã§"
+                    ],
+        "translation":  "La forme ã‘ã‚Œã° est le conditionnel de lâ€™adjectif å®‰ã„.",
+        "explanation":  "Sâ€™il est bon marchÃ©, jâ€™en achÃ¨terai deux.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "å®‰",
+                           "hiragana":  "ã‚„ã™",
+                           "french":  "Ãªtre bon marchÃ©",
+                           "category":  "VERB"
+                       },
+                       {
+                           "japanese":  "äºŒã¤è²·ã„ã¾ã™",
+                           "hiragana":  "ãµãŸã¤ã‹ã„ã¾ã™",
+                           "french":  "jâ€™en achÃ¨terai deux",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-condition-nara",
+        "topic":  "Condition",
+        "contextFrench":  "Si tu vas Ã  Kyoto, visite aussi ce temple.",
+        "verbTokenIndex":  0,
+        "answerEnding":  "ãªã‚‰",
+        "choices":  [
+                        "ãªã‚‰",
+                        "ãŸã‚‰",
+                        "ã°",
+                        "ã¨",
+                        "ã®ã§",
+                        "ã®ã«"
+                    ],
+        "translation":  "ãªã‚‰ reprend une situation ou un sujet comme condition.",
+        "explanation":  "Si tu vas Ã  Kyoto, visite aussi ce temple.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "äº¬éƒ½ã¸è¡Œã",
+                           "hiragana":  "ãã‚‡ã†ã¨ã¸ã„ã",
+                           "french":  "aller Ã  Kyoto",
+                           "category":  "VERB"
+                       },
+                       {
+                           "japanese":  "ã“ã®ãŠå¯ºã‚‚è¦‹ã¦ãã ã•ã„",
+                           "hiragana":  "ã“ã®ãŠã¦ã‚‰ã‚‚ã¿ã¦ãã ã•ã„",
+                           "french":  "visite aussi ce temple",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-condition-to",
+        "topic":  "Condition naturelle",
+        "contextFrench":  "Quand on appuie sur ce bouton, la porte sâ€™ouvre.",
+        "verbTokenIndex":  0,
+        "answerEnding":  "ã™ã¨",
+        "choices":  [
+                        "ã™ã¨",
+                        "ã›ã°",
+                        "ã—ãŸã‚‰",
+                        "ã™ãªã‚‰",
+                        "ã™ã®ã§",
+                        "ã™ã®ã«"
+                    ],
+        "translation":  "ã¨ exprime ici le rÃ©sultat naturel ou automatique dâ€™une action.",
+        "explanation":  "Quand on appuie sur ce bouton, la porte sâ€™ouvre.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ã“ã®ãƒœã‚¿ãƒ³ã‚’æŠ¼",
+                           "hiragana":  "ã“ã®ã¼ãŸã‚“ã‚’ãŠ",
+                           "french":  "appuyer sur ce bouton",
+                           "category":  "VERB"
+                       },
+                       {
+                           "japanese":  "ãƒ‰ã‚¢ãŒé–‹ãã¾ã™",
+                           "hiragana":  "ã©ã‚ãŒã‚ãã¾ã™",
+                           "french":  "la porte sâ€™ouvre",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-condition-ba",
+        "topic":  "Condition",
+        "contextFrench":  "Si tu prends ce mÃ©dicament, tu iras mieux.",
+        "verbTokenIndex":  0,
+        "answerEnding":  "ã‚ã°",
+        "choices":  [
+                        "ã‚ã°",
+                        "ã‚“ã ã‚‰",
+                        "ã‚€ãªã‚‰",
+                        "ã‚€ã¨",
+                        "ã‚“ã§",
+                        "ã‚ã¦ã‚‚"
+                    ],
+        "translation":  "ã° forme ici le conditionnel du verbe é£²ã‚€.",
+        "explanation":  "Si tu prends ce mÃ©dicament, tu iras mieux.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ã“ã®è–¬ã‚’é£²",
+                           "hiragana":  "ã“ã®ãã™ã‚Šã‚’ã®",
+                           "french":  "prendre ce mÃ©dicament",
+                           "category":  "VERB"
+                       },
+                       {
+                           "japanese":  "å…ƒæ°—ã«ãªã‚Šã¾ã™",
+                           "hiragana":  "ã’ã‚“ãã«ãªã‚Šã¾ã™",
+                           "french":  "tu iras mieux",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-hearsay-sou",
+        "topic":  "OuÃ¯-dire",
+        "contextFrench":  "Dâ€™aprÃ¨s la mÃ©tÃ©o, il paraÃ®t quâ€™il va pleuvoir demain.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ã‚‹ãã†ã§ã™",
+        "choices":  [
+                        "ã‚‹ãã†ã§ã™",
+                        "ã‚Šãã†ã§ã™",
+                        "ã‚‹ã‚ˆã†ã§ã™",
+                        "ã‚‹ã¤ã‚‚ã‚Šã§ã™",
+                        "ã‚‹ã¯ãšã§ã™",
+                        "ã‚Œã°ã„ã„ã§ã™"
+                    ],
+        "translation":  "ãã†ã§ã™ aprÃ¨s la forme dictionnaire rapporte une information entendue.",
+        "explanation":  "Dâ€™aprÃ¨s la mÃ©tÃ©o, il paraÃ®t quâ€™il va pleuvoir demain.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "å¤©æ°—äºˆå ±ã«ã‚ˆã‚‹ã¨",
+                           "hiragana":  "ã¦ã‚“ãã‚ˆã»ã†ã«ã‚ˆã‚‹ã¨",
+                           "french":  "dâ€™aprÃ¨s la mÃ©tÃ©o",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "æ˜Žæ—¥ã¯é›¨ãŒé™",
+                           "hiragana":  "ã‚ã—ãŸã¯ã‚ã‚ãŒãµ",
+                           "french":  "il pleuvra demain",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-appearance-sou",
+        "topic":  "Apparence",
+        "contextFrench":  "Le ciel est sombre ; on dirait quâ€™il va pleuvoir.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ã‚Šãã†ã§ã™",
+        "choices":  [
+                        "ã‚Šãã†ã§ã™",
+                        "ã‚‹ãã†ã§ã™",
+                        "ã‚‹ã‚ˆã†ã§ã™",
+                        "ã‚‹ã¤ã‚‚ã‚Šã§ã™",
+                        "ã‚‹ã¯ãšã§ã™",
+                        "ã‚Œã°ã„ã„ã§ã™"
+                    ],
+        "translation":  "ãã†ã§ã™ aprÃ¨s la base en ã¾ã™ exprime une apparence ou une impression.",
+        "explanation":  "Le ciel est sombre ; on dirait quâ€™il va pleuvoir.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ç©ºãŒæš—ã„ã®ã§",
+                           "hiragana":  "ãã‚‰ãŒãã‚‰ã„ã®ã§",
+                           "french":  "comme le ciel est sombre",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "é›¨ãŒé™",
+                           "hiragana":  "ã‚ã‚ãŒãµ",
+                           "french":  "pleuvoir",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-possibility-kuru",
+        "topic":  "PossibilitÃ©",
+        "contextFrench":  "Il se peut que mon ami vienne ce soir.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ãªã„ã‹ã‚‚ã—ã‚Œã¾ã›ã‚“",
+        "choices":  [
+                        "ãªã„ã‹ã‚‚ã—ã‚Œã¾ã›ã‚“",
+                        "ã‚‹ã§ã—ã‚‡ã†",
+                        "ã‚‹ã¤ã‚‚ã‚Šã§ã™",
+                        "ãŸã“ã¨ãŒã‚ã‚Šã¾ã™",
+                        "ãªãã¦ã‚‚ã„ã„ã§ã™",
+                        "ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“"
+                    ],
+        "translation":  "ã‹ã‚‚ã—ã‚Œã¾ã›ã‚“ exprime une possibilitÃ© incertaine.",
+        "explanation":  "Il se peut que mon ami ne vienne pas ce soir.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "å‹é”ã¯ä»Šæ™©",
+                           "hiragana":  "ã¨ã‚‚ã ã¡ã¯ã“ã‚“ã°ã‚“",
+                           "french":  "mon ami ce soir",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "æ¥",
+                           "hiragana":  "ã“",
+                           "french":  "venir",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-probability-desho",
+        "topic":  "ProbabilitÃ©",
+        "contextFrench":  "Demain, le temps sera probablement beau.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ã„ã§ã—ã‚‡ã†",
+        "choices":  [
+                        "ã„ã§ã—ã‚‡ã†",
+                        "ã‹ã£ãŸã§ã™",
+                        "ããªã‚Šã¾ã™",
+                        "ãã¦ã‚‚ã„ã„ã§ã™",
+                        "ã„ãã†ã§ã™",
+                        "ãã‚ã‚Šã¾ã›ã‚“"
+                    ],
+        "translation":  "ã§ã—ã‚‡ã† exprime une supposition ou une probabilitÃ©.",
+        "explanation":  "Demain, le temps sera probablement beau.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "æ˜Žæ—¥ã¯",
+                           "hiragana":  "ã‚ã—ãŸã¯",
+                           "french":  "demain",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "å¤©æ°—ãŒã‚ˆ",
+                           "hiragana":  "ã¦ã‚“ããŒã‚ˆ",
+                           "french":  "faire beau",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-explanation-nodesu",
+        "topic":  "Explication",
+        "contextFrench":  "Je ne peux pas sortir parce que jâ€™ai un rendez-vous.",
+        "verbTokenIndex":  2,
+        "answerEnding":  "ã‚‹ã‚“ã§ã™",
+        "choices":  [
+                        "ã‚‹ã‚“ã§ã™",
+                        "ãŸã‚“ã§ã™",
+                        "ãªã„ã‚“ã§ã™",
+                        "ã‚‹ãã†ã§ã™",
+                        "ã‚‹ã¤ã‚‚ã‚Šã§ã™",
+                        "ã‚Œã°ã„ã„ã§ã™"
+                    ],
+        "translation":  "ã‚“ã§ã™ prÃ©sente une explication ou un arriÃ¨re-plan.",
+        "explanation":  "Je ne peux pas sortir, voyez-vous, car jâ€™ai un rendez-vous.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ä»Šæ—¥ã¯",
+                           "hiragana":  "ãã‚‡ã†ã¯",
+                           "french":  "aujourdâ€™hui",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "ç´„æŸãŒã‚ã‚‹ã®ã§",
+                           "hiragana":  "ã‚„ããããŒã‚ã‚‹ã®ã§",
+                           "french":  "parce que jâ€™ai un rendez-vous",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "å‡ºã‹ã‘ã‚‰ã‚Œãªã„",
+                           "hiragana":  "ã§ã‹ã‘ã‚‰ã‚Œãªã„",
+                           "french":  "ne pas pouvoir sortir",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-request-kureru",
+        "topic":  "Demande polie",
+        "contextFrench":  "Pourriez-vous mâ€™aider Ã  porter ces bagages ?",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ã‚“ã§ãã‚Œã¾ã›ã‚“ã‹",
+        "choices":  [
+                        "ã‚“ã§ãã‚Œã¾ã›ã‚“ã‹",
+                        "ã‚“ã§ãã ã•ã„ã¾ã›ã‚“ã‹",
+                        "ã‚“ã§ã‚‚ã‚‰ã„ã¾ã—ãŸ",
+                        "ã‚“ã§ã—ã¾ã„ã¾ã—ãŸ",
+                        "ã‚“ã§ãŠãã¾ã™",
+                        "ã¾ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“"
+                    ],
+        "translation":  "ã¦ãã‚Œã¾ã›ã‚“ã‹ formule une demande polie Ã  une personne proche.",
+        "explanation":  "Pourriez-vous mâ€™aider Ã  porter ces bagages ?",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ã“ã®è·ç‰©ã‚’",
+                           "hiragana":  "ã“ã®ã«ã‚‚ã¤ã‚’",
+                           "french":  "ces bagages",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "é‹",
+                           "hiragana":  "ã¯ã“",
+                           "french":  "porter",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-request-itadaku",
+        "topic":  "Demande trÃ¨s polie",
+        "contextFrench":  "Pourriez-vous mâ€™expliquer encore une fois ?",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ã¦ã„ãŸã ã‘ã¾ã›ã‚“ã‹",
+        "choices":  [
+                        "ã¦ã„ãŸã ã‘ã¾ã›ã‚“ã‹",
+                        "ã¦ãã‚Œã¾ã›ã‚“ã‹",
+                        "ã¦ã‚‚ã‚‰ã„ã¾ã—ãŸ",
+                        "ã¦ã—ã¾ã„ã¾ã—ãŸ",
+                        "ã¦ãŠãã¾ã™",
+                        "ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“"
+                    ],
+        "translation":  "ã¦ã„ãŸã ã‘ã¾ã›ã‚“ã‹ exprime une demande trÃ¨s polie.",
+        "explanation":  "Pourriez-vous mâ€™expliquer encore une fois ?",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ã‚‚ã†ä¸€åº¦",
+                           "hiragana":  "ã‚‚ã†ã„ã¡ã©",
+                           "french":  "encore une fois",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "èª¬æ˜Žã—",
+                           "hiragana":  "ã›ã¤ã‚ã„ã—",
+                           "french":  "expliquer",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-give-kureru",
+        "topic":  "Don reÃ§u",
+        "contextFrench":  "Mon ami mâ€™a prÃªtÃ© un livre.",
+        "verbTokenIndex":  2,
+        "answerEnding":  "ã—ã¦ãã‚Œã¾ã—ãŸ",
+        "choices":  [
+                        "ã—ã¦ãã‚Œã¾ã—ãŸ",
+                        "ã—ã¦ã‚ã’ã¾ã—ãŸ",
+                        "ã—ã¦ã‚‚ã‚‰ã„ã¾ã—ãŸ",
+                        "ã•ã›ã‚‰ã‚Œã¾ã—ãŸ",
+                        "ã—ã¦ã—ã¾ã„ã¾ã—ãŸ",
+                        "ã—ãŸã°ã‹ã‚Šã§ã™"
+                    ],
+        "translation":  "ã¦ãã‚Œã‚‹ indique quâ€™une personne fait quelque chose pour le locuteur ou son groupe.",
+        "explanation":  "Mon ami mâ€™a prÃªtÃ© un livre.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "å‹é”ãŒ",
+                           "hiragana":  "ã¨ã‚‚ã ã¡ãŒ",
+                           "french":  "mon ami",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "æœ¬ã‚’",
+                           "hiragana":  "ã»ã‚“ã‚’",
+                           "french":  "un livre",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "è²¸",
+                           "hiragana":  "ã‹",
+                           "french":  "prÃªter",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-receive-morau",
+        "topic":  "Don reÃ§u",
+        "contextFrench":  "Jâ€™ai demandÃ© Ã  mon frÃ¨re de mâ€™aider.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ã—ã¦ã‚‚ã‚‰ã„ã¾ã—ãŸ",
+        "choices":  [
+                        "ã—ã¦ã‚‚ã‚‰ã„ã¾ã—ãŸ",
+                        "ã—ã¦ãã‚Œã¾ã—ãŸ",
+                        "ã—ã¦ã‚ã’ã¾ã—ãŸ",
+                        "ã•ã›ã¾ã—ãŸ",
+                        "ã—ã¦ã—ã¾ã„ã¾ã—ãŸ",
+                        "ã—ãŸã“ã¨ãŒã‚ã‚Šã¾ã™"
+                    ],
+        "translation":  "ã¦ã‚‚ã‚‰ã† indique quâ€™on reÃ§oit le bÃ©nÃ©fice dâ€™une action demandÃ©e ou obtenue.",
+        "explanation":  "Jâ€™ai demandÃ© Ã  mon frÃ¨re de mâ€™aider.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "å…„ã«",
+                           "hiragana":  "ã‚ã«ã«",
+                           "french":  "Ã  mon grand frÃ¨re",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "æ‰‹ä¼",
+                           "hiragana":  "ã¦ã¤ã ",
+                           "french":  "aider",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-give-ageru",
+        "topic":  "Don offert",
+        "contextFrench":  "Jâ€™ai prÃ©parÃ© un gÃ¢teau pour ma sÅ“ur.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ã£ã¦ã‚ã’ã¾ã—ãŸ",
+        "choices":  [
+                        "ã£ã¦ã‚ã’ã¾ã—ãŸ",
+                        "ã£ã¦ãã‚Œã¾ã—ãŸ",
+                        "ã£ã¦ã‚‚ã‚‰ã„ã¾ã—ãŸ",
+                        "ã‚‰ã‚Œã¾ã—ãŸ",
+                        "ã£ã¦ã—ã¾ã„ã¾ã—ãŸ",
+                        "ã£ãŸã“ã¨ãŒã‚ã‚Šã¾ã™"
+                    ],
+        "translation":  "ã¦ã‚ã’ã‚‹ indique une action accomplie pour le bÃ©nÃ©fice dâ€™autrui.",
+        "explanation":  "Jâ€™ai prÃ©parÃ© un gÃ¢teau pour ma sÅ“ur.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "å¦¹ã«",
+                           "hiragana":  "ã„ã‚‚ã†ã¨ã«",
+                           "french":  "pour ma petite sÅ“ur",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "ã‚±ãƒ¼ã‚­ã‚’ä½œ",
+                           "hiragana":  "ã‘ãƒ¼ãã‚’ã¤ã",
+                           "french":  "prÃ©parer un gÃ¢teau",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-change-youni",
+        "topic":  "Changement",
+        "contextFrench":  "Je suis devenu capable de lire les journaux japonais.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ã‚ã‚‹ã‚ˆã†ã«ãªã‚Šã¾ã—ãŸ",
+        "choices":  [
+                        "ã‚ã‚‹ã‚ˆã†ã«ãªã‚Šã¾ã—ãŸ",
+                        "ã‚ã‚‹ã¤ã‚‚ã‚Šã§ã™",
+                        "ã‚ãŸã“ã¨ãŒã‚ã‚Šã¾ã™",
+                        "ã‚ã¦ã—ã¾ã„ã¾ã—ãŸ",
+                        "ã‚ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“",
+                        "ã‚ã°ã‚ˆã‹ã£ãŸã§ã™"
+                    ],
+        "translation":  "ã‚ˆã†ã«ãªã‚‹ exprime un changement progressif ou une capacitÃ© nouvellement acquise.",
+        "explanation":  "Je suis devenu capable de lire les journaux japonais.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "æ—¥æœ¬èªžã®æ–°èžãŒ",
+                           "hiragana":  "ã«ã»ã‚“ã”ã®ã—ã‚“ã¶ã‚“ãŒ",
+                           "french":  "les journaux japonais",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "èª­",
+                           "hiragana":  "ã‚ˆ",
+                           "french":  "lire",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-habit-you ni suru",
+        "topic":  "Habitude",
+        "contextFrench":  "Jâ€™essaie de faire de lâ€™exercice tous les jours.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ã‚‹ã‚ˆã†ã«ã—ã¦ã„ã¾ã™",
+        "choices":  [
+                        "ã‚‹ã‚ˆã†ã«ã—ã¦ã„ã¾ã™",
+                        "ã‚‹ã“ã¨ã«ã—ã¾ã—ãŸ",
+                        "ã‚‹ã“ã¨ã«ãªã‚Šã¾ã—ãŸ",
+                        "ãŸã°ã‹ã‚Šã§ã™",
+                        "ã¦ã—ã¾ã„ã¾ã—ãŸ",
+                        "ãªãã¦ã‚‚ã„ã„ã§ã™"
+                    ],
+        "translation":  "ã‚ˆã†ã«ã™ã‚‹ exprime un effort volontaire ou une habitude que lâ€™on essaie de garder.",
+        "explanation":  "Jâ€™essaie de faire de lâ€™exercice tous les jours.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "æ¯Žæ—¥",
+                           "hiragana":  "ã¾ã„ã«ã¡",
+                           "french":  "tous les jours",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "é‹å‹•ã™",
+                           "hiragana":  "ã†ã‚“ã©ã†ã™",
+                           "french":  "faire de lâ€™exercice",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-stage-tokoro",
+        "topic":  "Ã‰tape dâ€™action",
+        "contextFrench":  "Je suis sur le point de partir maintenant.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ã‚‹ã¨ã“ã‚ã§ã™",
+        "choices":  [
+                        "ã‚‹ã¨ã“ã‚ã§ã™",
+                        "ãŸã¨ã“ã‚ã§ã™",
+                        "ã¦ã„ã‚‹ã¨ã“ã‚ã§ã™",
+                        "ãŸã°ã‹ã‚Šã§ã™",
+                        "ã‚‹ã¤ã‚‚ã‚Šã§ã—ãŸ",
+                        "ãªãã¦ã‚‚ã„ã„ã§ã™"
+                    ],
+        "translation":  "ã‚‹ã¨ã“ã‚ã§ã™ indique quâ€™une action est sur le point de commencer.",
+        "explanation":  "Je suis sur le point de partir maintenant.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ä»Šã‹ã‚‰",
+                           "hiragana":  "ã„ã¾ã‹ã‚‰",
+                           "french":  "Ã  partir de maintenant",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "å‡ºã‹ã‘",
+                           "hiragana":  "ã§ã‹ã‘",
+                           "french":  "sortir / partir",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-stage-teiru",
+        "topic":  "Ã‰tape dâ€™action",
+        "contextFrench":  "Je suis en train de prÃ©parer le dÃ®ner.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ã¦ã„ã‚‹ã¨ã“ã‚ã§ã™",
+        "choices":  [
+                        "ã¦ã„ã‚‹ã¨ã“ã‚ã§ã™",
+                        "ã‚‹ã¨ã“ã‚ã§ã™",
+                        "ãŸã¨ã“ã‚ã§ã™",
+                        "ãŸã°ã‹ã‚Šã§ã™",
+                        "ã¦ãŠãã¾ã—ãŸ",
+                        "ãªã„ã‚ˆã†ã«ã—ã¾ã™"
+                    ],
+        "translation":  "ã¦ã„ã‚‹ã¨ã“ã‚ã§ã™ indique quâ€™une action est actuellement en cours.",
+        "explanation":  "Je suis en train de prÃ©parer le dÃ®ner.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "å¤•é£Ÿã‚’",
+                           "hiragana":  "ã‚†ã†ã—ã‚‡ãã‚’",
+                           "french":  "le dÃ®ner",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "æº–å‚™ã—",
+                           "hiragana":  "ã˜ã‚…ã‚“ã³ã—",
+                           "french":  "prÃ©parer",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-stage-ta",
+        "topic":  "Ã‰tape dâ€™action",
+        "contextFrench":  "Je viens de finir mes devoirs.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ãŸã¨ã“ã‚ã§ã™",
+        "choices":  [
+                        "ãŸã¨ã“ã‚ã§ã™",
+                        "ã‚‹ã¨ã“ã‚ã§ã™",
+                        "ã¦ã„ã‚‹ã¨ã“ã‚ã§ã™",
+                        "ãŸã°ã‹ã‚Šã§ã™",
+                        "ã¦ãŠãã¾ã™",
+                        "ãŸã“ã¨ãŒã‚ã‚Šã¾ã™"
+                    ],
+        "translation":  "ãŸã¨ã“ã‚ã§ã™ indique quâ€™une action vient juste de se terminer.",
+        "explanation":  "Je viens de finir mes devoirs.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "å®¿é¡Œã‚’",
+                           "hiragana":  "ã—ã‚…ãã ã„ã‚’",
+                           "french":  "les devoirs",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "çµ‚ã‚ã£",
+                           "hiragana":  "ãŠã‚ã£",
+                           "french":  "finir",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-without-zuni",
+        "topic":  "ManiÃ¨re",
+        "contextFrench":  "Il est parti sans rien dire.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ãšã«",
+        "choices":  [
+                        "ãšã«",
+                        "ãªã„ã§",
+                        "ãªãŒã‚‰",
+                        "ã¦ã‹ã‚‰",
+                        "ãŸã‚ã¨ã§",
+                        "ã‚ˆã†ã«"
+                    ],
+        "translation":  "ãšã« signifie Â« sans faire Â» dans un registre Ã©crit ou soutenu.",
+        "explanation":  "Il est parti sans rien dire.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "å½¼ã¯ä½•ã‚‚",
+                           "hiragana":  "ã‹ã‚Œã¯ãªã«ã‚‚",
+                           "french":  "il, quoi que ce soit",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "è¨€ã‚",
+                           "hiragana":  "ã„ã‚",
+                           "french":  "dire",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-imperative-nasai",
+        "topic":  "Instruction",
+        "contextFrench":  "Le professeur dit aux Ã©lÃ¨ves dâ€™ouvrir le livre.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ããªã•ã„",
+        "choices":  [
+                        "ããªã•ã„",
+                        "ã„ã¦ãã ã•ã„",
+                        "ãã¾ã—ã‚‡ã†",
+                        "ã‹ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“",
+                        "ã‹ãªã„ã§ãã ã•ã„",
+                        "ã„ãŸã“ã¨ãŒã‚ã‚Šã¾ã™"
+                    ],
+        "translation":  "ãªã•ã„ donne une instruction ferme mais courante, par exemple dâ€™un adulte Ã  un enfant.",
+        "explanation":  "Le professeur dit aux Ã©lÃ¨ves dâ€™ouvrir leur livre.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "å…ˆç”Ÿã¯å­¦ç”Ÿã«æœ¬ã‚’",
+                           "hiragana":  "ã›ã‚“ã›ã„ã¯ãŒãã›ã„ã«ã»ã‚“ã‚’",
+                           "french":  "le professeur dit aux Ã©lÃ¨ves le livre",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "é–‹",
+                           "hiragana":  "ã‚",
+                           "french":  "ouvrir",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-must-not",
+        "topic":  "Interdiction",
+        "contextFrench":  "Il ne faut pas prendre de photos ici.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ã£ã¦ã¯ã„ã‘ã¾ã›ã‚“",
+        "choices":  [
+                        "ã£ã¦ã¯ã„ã‘ã¾ã›ã‚“",
+                        "ã£ã¦ã‚‚ã„ã„ã§ã™",
+                        "ã‚‰ãªãã¦ã‚‚ã„ã„ã§ã™",
+                        "ã‚‰ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“",
+                        "ã£ã¦ã¿ã¾ã™",
+                        "ã£ã¦ãŠãã¾ã™"
+                    ],
+        "translation":  "ã¦ã¯ã„ã‘ã¾ã›ã‚“ exprime une interdiction.",
+        "explanation":  "Il ne faut pas prendre de photos ici.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ã“ã“ã§å†™çœŸã‚’",
+                           "hiragana":  "ã“ã“ã§ã—ã‚ƒã—ã‚“ã‚’",
+                           "french":  "des photos ici",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "æ’®",
+                           "hiragana":  "ã¨",
+                           "french":  "prendre une photo",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-potential-speak",
+        "topic":  "CapacitÃ©",
+        "contextFrench":  "Je suis devenu capable de parler un peu japonais.",
+        "verbTokenIndex":  2,
+        "answerEnding":  "ã›ã‚‹ã‚ˆã†ã«ãªã‚Šã¾ã—ãŸ",
+        "choices":  [
+                        "ã›ã‚‹ã‚ˆã†ã«ãªã‚Šã¾ã—ãŸ",
+                        "ã›ã‚‹ã¤ã‚‚ã‚Šã§ã™",
+                        "ã›ãŸã“ã¨ãŒã‚ã‚Šã¾ã™",
+                        "ã›ã¦ã—ã¾ã„ã¾ã—ãŸ",
+                        "ã•ã›ã‚‰ã‚Œã¾ã—ãŸ",
+                        "ã›ã°ã‚ˆã‹ã£ãŸã§ã™"
+                    ],
+        "translation":  "La forme potentielle suivie de ã‚ˆã†ã«ãªã‚‹ indique une capacitÃ© acquise.",
+        "explanation":  "Je suis devenu capable de parler un peu japonais.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ç§ã¯",
+                           "hiragana":  "ã‚ãŸã—ã¯",
+                           "french":  "moi",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "æ—¥æœ¬èªžã‚’å°‘ã—",
+                           "hiragana":  "ã«ã»ã‚“ã”ã‚’ã™ã“ã—",
+                           "french":  "un peu japonais",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "è©±",
+                           "hiragana":  "ã¯ãª",
+                           "french":  "parler",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-causative-drink",
+        "topic":  "Faire faire",
+        "contextFrench":  "Le mÃ©decin mâ€™a fait prendre ce mÃ©dicament.",
+        "verbTokenIndex":  1,
+        "answerEnding":  "ã¾ã›ã¾ã—ãŸ",
+        "choices":  [
+                        "ã¾ã›ã¾ã—ãŸ",
+                        "ã¿ã¾ã—ãŸ",
+                        "ã¾ã‚Œã¾ã—ãŸ",
+                        "ã‚“ã§ãã‚Œã¾ã—ãŸ",
+                        "ã¿ãŸã„ã§ã™",
+                        "ã¾ãªãã¦ã‚‚ã„ã„ã§ã™"
+                    ],
+        "translation":  "La forme causative indique ici que le mÃ©decin a fait prendre le mÃ©dicament.",
+        "explanation":  "Le mÃ©decin mâ€™a fait prendre ce mÃ©dicament.",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "åŒ»è€…ã¯ç§ã«ã“ã®è–¬ã‚’",
+                           "hiragana":  "ã„ã—ã‚ƒã¯ã‚ãŸã—ã«ã“ã®ãã™ã‚Šã‚’",
+                           "french":  "le mÃ©decin mâ€™a dit pour ce mÃ©dicament",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "é£²",
+                           "hiragana":  "ã®",
+                           "french":  "boire / prendre",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-conjugation-comparison-hou",
+        "topic":  "Comparaison",
+        "contextFrench":  "Cette chambre est plus grande que celle-lÃ .",
+        "verbTokenIndex":  2,
+        "answerEnding":  "ã‚ˆã‚Šåºƒã„ã§ã™",
+        "choices":  [
+                        "ã‚ˆã‚Šåºƒã„ã§ã™",
+                        "ã»ã©åºƒããªã„ã§ã™",
+                        "ã®ã»ã†ãŒç‹­ã„ã§ã™",
+                        "ã¨åŒã˜ã§ã™",
+                        "ã—ã‹ã‚ã‚Šã¾ã›ã‚“",
+                        "ã°ã‹ã‚Šã§ã™"
+                    ],
+        "translation":  "ã‚ˆã‚Šã€œã®ã»ã†ãŒ sert Ã  comparer deux Ã©lÃ©ments.",
+        "explanation":  "Cette chambre est plus grande que celle-lÃ .",
+        "punctuation":  "ã€‚",
+        "tokens":  [
+                       {
+                           "japanese":  "ã“ã®éƒ¨å±‹ã¯",
+                           "hiragana":  "ã“ã®ã¸ã‚„ã¯",
+                           "french":  "cette chambre",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "ã‚ã®éƒ¨å±‹",
+                           "hiragana":  "ã‚ã®ã¸ã‚„",
+                           "french":  "cette autre chambre",
+                           "category":  "VOCABULARY"
+                       },
+                       {
+                           "japanese":  "åºƒ",
+                           "hiragana":  "ã²ã‚",
+                           "french":  "Ãªtre vaste",
+                           "category":  "VERB"
+                       }
+                   ],
+        "level":  "JLPT N4",
+        "source":  "SÃ©lection pÃ©dagogique N4 non officielle, croisÃ©e avec les objectifs JLPT et des listes dâ€™Ã©tude publiques",
+        "bank":  "JLPT4"
+    }
+]

@@ -55,6 +55,7 @@ class MainActivity : ComponentActivity() {
         QuestionDataStore(applicationContext, progressStore)
     }
     private val questionReleaseClient = QuestionReleaseClient()
+    private val questionSpeech by lazy { JapaneseQuestionSpeech(applicationContext) }
     private val learningSettingsStore by lazy { LearningSettingsStore(applicationContext) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,6 +79,7 @@ class MainActivity : ComponentActivity() {
                 masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
                 sessionQuestionCount = sessionQuestionCount,
                 selectedQuestionBanks = learningSettingsStore.selectedQuestionBanks(),
+                questionSpeech = questionSpeech,
                 onQuestionBanksChange = ::setSelectedQuestionBanks,
                 onCheckUpdates = ::checkForUpdates,
                 onDownloadUpdate = ::downloadUpdate,
@@ -112,6 +114,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onDestroy() {
         worker.shutdown()
+        questionSpeech.release()
         super.onDestroy()
     }
 

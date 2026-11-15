@@ -10,9 +10,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 QUESTION_DIR = ROOT / "questions"
 SCHEMA_VERSION = 1
-VALID_BANKS = {"JLPT5", "COURSE", "JLPT4"}
+VALID_BANKS = {"JLPT5", "COURSE", "JLPT4", "FOOD"}
 VALID_GAME_FILES = {"particles.json", "vocabulary.json", "verbs.json", "conjugation.json"}
-FOLDER_BANKS = {"JLPT5": "JLPT5", "Mes cours": "COURSE", "JLPT4": "JLPT4"}
+FOLDER_BANKS = {"JLPT5": "JLPT5", "Mes cours": "COURSE", "JLPT4": "JLPT4", "Nourriture": "FOOD"}
 CATEGORIES = {"VOCABULARY", "PARTICLE", "VERB", "GRAMMAR_MARKER"}
 VERSION_PATTERN = re.compile(r"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$")
 

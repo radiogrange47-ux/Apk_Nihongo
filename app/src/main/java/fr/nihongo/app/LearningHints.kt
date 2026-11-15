@@ -181,7 +181,7 @@ internal fun concisePedagogicalHint(explanation: String): String {
 
 internal fun vocabularyKanjiBreakdown(question: VocabularyQuestion): String? {
     val kanjiCharacters = question.kanji.filter { it in '\u4E00'..'\u9FFF' }
-    if (kanjiCharacters.size < 2 || kanjiCharacters.any { it !in kanjiMeanings }) return null
+    if (kanjiCharacters.length < 2 || kanjiCharacters.any { it !in kanjiMeanings }) return null
     val components = kanjiCharacters
         .map { kanji -> "$kanji : ${kanjiMeanings.getValue(kanji)}" }
     return components.joinToString(" · ")

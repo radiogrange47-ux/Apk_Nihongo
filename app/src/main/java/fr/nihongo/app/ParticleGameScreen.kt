@@ -76,6 +76,7 @@ private val wordColorLegend = listOf(
 @Composable
 internal fun ParticleGameScreen(
     questions: List<ParticleExercise>,
+    questionSpeech: JapaneseQuestionSpeech,
     onBack: () -> Unit,
     onAnswer: (LearningQuestion, LearningGame, Boolean) -> String?,
     onQuestionCompleted: (LearningGame) -> Unit,
@@ -108,6 +109,16 @@ internal fun ParticleGameScreen(
         )
     }
     val displayedChoices = remember(exercise.id) { exercise.choices.shuffled() }
+    val spokenQuestionParts = remember(exercise.id) {
+        val beforeGap = exercise.tokens.take(exercise.missingTokenIndex)
+            .joinToString(separator = "") { it.hiragana }
+        val afterGap = exercise.tokens.drop(exercise.missingTokenIndex + 1)
+            .joinToString(separator = "") { it.hiragana }
+        beforeGap to afterGap
+    }
+    LaunchedEffect(exercise.id) {
+        questionSpeech.speakQuestionWithGap(spokenQuestionParts.first, spokenQuestionParts.second)
+    }
 
     fun advanceToNextQuestion() {
         questionIndex++
@@ -138,6 +149,7 @@ internal fun ParticleGameScreen(
                 Text("‹", fontSize = 32.sp, color = MaterialTheme.colorScheme.primary)
                 Text("Accueil", color = MaterialTheme.colorScheme.onSurface)
             }
+            QuestionSpeechButton(questionSpeech, spokenQuestionParts.first, spokenQuestionParts.second)
         }
 
         Card(

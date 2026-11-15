@@ -1,11 +1,17 @@
 {
     "schemaVersion":  1,
-    "contentVersion":  "1.4.0",
+    "contentVersion":  "1.5.1",
     "files":  [
                   "JLPT5/particles.json",
                   "JLPT5/vocabulary.json",
                   "JLPT5/verbs.json",
                   "JLPT5/conjugation.json",
+                  "JLPT4/particles.json",
+                  "JLPT4/vocabulary.json",
+                  "JLPT4/verbs.json",
+                  "JLPT4/conjugation.json",
+                  "Nourriture/vocabulary.json",
+                  "Nourriture/verbs.json",
                   "Mes cours/particles.json",
                   "Mes cours/vocabulary.json",
                   "Mes cours/verbs.json",

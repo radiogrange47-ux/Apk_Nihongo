@@ -1,0 +1,1010 @@
+[
+    {
+        "id":  "n4-verbs-rise",
+        "topic":  "Déplacements",
+        "kanji":  "上がる",
+        "hiragana":  "あがる",
+        "answer":  "monter / s’élever",
+        "choices":  [
+                        "monter / s’élever",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-gather-intransitive",
+        "topic":  "Vie quotidienne",
+        "kanji":  "集まる",
+        "hiragana":  "あつまる",
+        "answer":  "se rassembler",
+        "choices":  [
+                        "se rassembler",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-gather-transitive",
+        "topic":  "Vie quotidienne",
+        "kanji":  "集める",
+        "hiragana":  "あつめる",
+        "answer":  "rassembler / collectionner",
+        "choices":  [
+                        "rassembler / collectionner",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-apologize",
+        "topic":  "Relations",
+        "kanji":  "謝る",
+        "hiragana":  "あやまる",
+        "answer":  "s’excuser",
+        "choices":  [
+                        "s’excuser",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-choose",
+        "topic":  "Vie quotidienne",
+        "kanji":  "選ぶ",
+        "hiragana":  "えらぶ",
+        "answer":  "choisir",
+        "choices":  [
+                        "choisir",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-carry",
+        "topic":  "Vie quotidienne",
+        "kanji":  "運ぶ",
+        "hiragana":  "はこぶ",
+        "answer":  "transporter",
+        "choices":  [
+                        "transporter",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-pay",
+        "topic":  "Achats",
+        "kanji":  "払う",
+        "hiragana":  "はらう",
+        "answer":  "payer",
+        "choices":  [
+                        "payer",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-increase",
+        "topic":  "Quantités",
+        "kanji":  "増える",
+        "hiragana":  "ふえる",
+        "answer":  "augmenter",
+        "choices":  [
+                        "augmenter",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-compare",
+        "topic":  "Études",
+        "kanji":  "比べる",
+        "hiragana":  "くらべる",
+        "answer":  "comparer",
+        "choices":  [
+                        "comparer",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-be-late",
+        "topic":  "Temps",
+        "kanji":  "遅れる",
+        "hiragana":  "おくれる",
+        "answer":  "être en retard",
+        "choices":  [
+                        "être en retard",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-investigate",
+        "topic":  "Études",
+        "kanji":  "調べる",
+        "hiragana":  "しらべる",
+        "answer":  "examiner / se renseigner",
+        "choices":  [
+                        "examiner / se renseigner",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-continue",
+        "topic":  "Vie quotidienne",
+        "kanji":  "続ける",
+        "hiragana":  "つづける",
+        "answer":  "continuer",
+        "choices":  [
+                        "continuer",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-tidy-up",
+        "topic":  "Maison",
+        "kanji":  "片付ける",
+        "hiragana":  "かたづける",
+        "answer":  "ranger",
+        "choices":  [
+                        "ranger",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-break-intransitive",
+        "topic":  "Objets",
+        "kanji":  "壊れる",
+        "hiragana":  "こわれる",
+        "answer":  "se casser",
+        "choices":  [
+                        "se casser",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-break-transitive",
+        "topic":  "Objets",
+        "kanji":  "壊す",
+        "hiragana":  "こわす",
+        "answer":  "casser",
+        "choices":  [
+                        "casser",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-heal",
+        "topic":  "Santé",
+        "kanji":  "治る",
+        "hiragana":  "なおる",
+        "answer":  "guérir",
+        "choices":  [
+                        "guérir",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-repair",
+        "topic":  "Objets",
+        "kanji":  "直す",
+        "hiragana":  "なおす",
+        "answer":  "réparer / corriger",
+        "choices":  [
+                        "réparer / corriger",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-decide",
+        "topic":  "Vie quotidienne",
+        "kanji":  "決める",
+        "hiragana":  "きめる",
+        "answer":  "décider",
+        "choices":  [
+                        "décider",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-be-decided",
+        "topic":  "Vie quotidienne",
+        "kanji":  "決まる",
+        "hiragana":  "きまる",
+        "answer":  "être décidé",
+        "choices":  [
+                        "être décidé",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-welcome",
+        "topic":  "Relations",
+        "kanji":  "迎える",
+        "hiragana":  "むかえる",
+        "answer":  "accueillir",
+        "choices":  [
+                        "accueillir",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-be-found",
+        "topic":  "Objets",
+        "kanji":  "見つかる",
+        "hiragana":  "みつかる",
+        "answer":  "être trouvé",
+        "choices":  [
+                        "être trouvé",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-find",
+        "topic":  "Objets",
+        "kanji":  "見つける",
+        "hiragana":  "みつける",
+        "answer":  "trouver",
+        "choices":  [
+                        "trouver",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-apply",
+        "topic":  "Études et travail",
+        "kanji":  "申し込む",
+        "hiragana":  "もうしこむ",
+        "answer":  "s’inscrire / faire une demande",
+        "choices":  [
+                        "s’inscrire / faire une demande",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-say-honorific",
+        "topic":  "Politesse",
+        "kanji":  "おっしゃる",
+        "hiragana":  "おっしゃる",
+        "answer":  "dire (honorifique)",
+        "choices":  [
+                        "dire (honorifique)",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-see-honorific",
+        "topic":  "Politesse",
+        "kanji":  "ご覧になる",
+        "hiragana":  "ごらんになる",
+        "answer":  "voir (honorifique)",
+        "choices":  [
+                        "voir (honorifique)",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-eat-honorific",
+        "topic":  "Politesse",
+        "kanji":  "召し上がる",
+        "hiragana":  "めしあがる",
+        "answer":  "manger (honorifique)",
+        "choices":  [
+                        "manger (honorifique)",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-give-honorific",
+        "topic":  "Politesse",
+        "kanji":  "くださる",
+        "hiragana":  "くださる",
+        "answer":  "donner (honorifique)",
+        "choices":  [
+                        "donner (honorifique)",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-do-honorific",
+        "topic":  "Politesse",
+        "kanji":  "なさる",
+        "hiragana":  "なさる",
+        "answer":  "faire (honorifique)",
+        "choices":  [
+                        "faire (honorifique)",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-be-go-honorific",
+        "topic":  "Politesse",
+        "kanji":  "いらっしゃる",
+        "hiragana":  "いらっしゃる",
+        "answer":  "être / aller / venir (honorifique)",
+        "choices":  [
+                        "être / aller / venir (honorifique)",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-go-humble",
+        "topic":  "Politesse",
+        "kanji":  "参る",
+        "hiragana":  "まいる",
+        "answer":  "aller / venir (humble)",
+        "choices":  [
+                        "aller / venir (humble)",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-say-humble",
+        "topic":  "Politesse",
+        "kanji":  "申す",
+        "hiragana":  "もうす",
+        "answer":  "dire (humble)",
+        "choices":  [
+                        "dire (humble)",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-do-humble",
+        "topic":  "Politesse",
+        "kanji":  "いたす",
+        "hiragana":  "いたす",
+        "answer":  "faire (humble)",
+        "choices":  [
+                        "faire (humble)",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-ask-humble",
+        "topic":  "Politesse",
+        "kanji":  "伺う",
+        "hiragana":  "うかがう",
+        "answer":  "demander / rendre visite (humble)",
+        "choices":  [
+                        "demander / rendre visite (humble)",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-arrive",
+        "topic":  "Déplacements",
+        "kanji":  "届く",
+        "hiragana":  "とどく",
+        "answer":  "arriver / être livré",
+        "choices":  [
+                        "arriver / être livré",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-deliver",
+        "topic":  "Déplacements",
+        "kanji":  "届ける",
+        "hiragana":  "とどける",
+        "answer":  "livrer / remettre",
+        "choices":  [
+                        "livrer / remettre",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-grill-transitive",
+        "topic":  "Nourriture",
+        "kanji":  "焼く",
+        "hiragana":  "やく",
+        "answer":  "griller / faire cuire",
+        "choices":  [
+                        "griller / faire cuire",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-be-cooked",
+        "topic":  "Nourriture",
+        "kanji":  "焼ける",
+        "hiragana":  "やける",
+        "answer":  "cuire / être grillé",
+        "choices":  [
+                        "cuire / être grillé",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-boil-intransitive",
+        "topic":  "Nourriture",
+        "kanji":  "沸く",
+        "hiragana":  "わく",
+        "answer":  "bouillir",
+        "choices":  [
+                        "bouillir",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-boil-transitive",
+        "topic":  "Nourriture",
+        "kanji":  "沸かす",
+        "hiragana":  "わかす",
+        "answer":  "faire bouillir",
+        "choices":  [
+                        "faire bouillir",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-step-on",
+        "topic":  "Déplacements",
+        "kanji":  "踏む",
+        "hiragana":  "ふむ",
+        "answer":  "marcher sur",
+        "choices":  [
+                        "marcher sur",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-commute",
+        "topic":  "Déplacements",
+        "kanji":  "通う",
+        "hiragana":  "かよう",
+        "answer":  "fréquenter / faire la navette",
+        "choices":  [
+                        "fréquenter / faire la navette",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-take-along",
+        "topic":  "Déplacements",
+        "kanji":  "連れる",
+        "hiragana":  "つれる",
+        "answer":  "emmener (une personne)",
+        "choices":  [
+                        "emmener (une personne)",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-replace",
+        "topic":  "Objets",
+        "kanji":  "取り替える",
+        "hiragana":  "とりかえる",
+        "answer":  "remplacer / échanger",
+        "choices":  [
+                        "remplacer / échanger",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-transfer",
+        "topic":  "Transports",
+        "kanji":  "乗り換える",
+        "hiragana":  "のりかえる",
+        "answer":  "changer de ligne / de véhicule",
+        "choices":  [
+                        "changer de ligne / de véhicule",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-suit",
+        "topic":  "Vêtements",
+        "kanji":  "似合う",
+        "hiragana":  "にあう",
+        "answer":  "aller bien (vêtement)",
+        "choices":  [
+                        "aller bien (vêtement)",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-be-useful",
+        "topic":  "Études et travail",
+        "kanji":  "役に立つ",
+        "hiragana":  "やくにたつ",
+        "answer":  "être utile",
+        "choices":  [
+                        "être utile",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-say-polite",
+        "topic":  "Politesse",
+        "kanji":  "おっしゃいます",
+        "hiragana":  "おっしゃいます",
+        "answer":  "dire (forme honorifique polie)",
+        "choices":  [
+                        "dire (forme honorifique polie)",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-visit",
+        "topic":  "Relations",
+        "kanji":  "訪ねる",
+        "hiragana":  "たずねる",
+        "answer":  "rendre visite",
+        "choices":  [
+                        "rendre visite",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-return-object",
+        "topic":  "Objets",
+        "kanji":  "返す",
+        "hiragana":  "かえす",
+        "answer":  "rendre / retourner (un objet)",
+        "choices":  [
+                        "rendre / retourner (un objet)",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-become-dry",
+        "topic":  "Vie quotidienne",
+        "kanji":  "乾く",
+        "hiragana":  "かわく",
+        "answer":  "sécher",
+        "choices":  [
+                        "sécher",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-dry-transitive",
+        "topic":  "Vie quotidienne",
+        "kanji":  "乾かす",
+        "hiragana":  "かわかす",
+        "answer":  "sécher (quelque chose)",
+        "choices":  [
+                        "sécher (quelque chose)",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-join",
+        "topic":  "Relations",
+        "kanji":  "参加する",
+        "hiragana":  "さんかする",
+        "answer":  "participer",
+        "choices":  [
+                        "participer",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-be-surprised",
+        "topic":  "Sentiments",
+        "kanji":  "驚く",
+        "hiragana":  "おどろく",
+        "answer":  "être surpris",
+        "choices":  [
+                        "être surpris",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-be-hurt",
+        "topic":  "Santé",
+        "kanji":  "けがをする",
+        "hiragana":  "けがをする",
+        "answer":  "se blesser",
+        "choices":  [
+                        "se blesser",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-be-lost",
+        "topic":  "Déplacements",
+        "kanji":  "迷う",
+        "hiragana":  "まよう",
+        "answer":  "se perdre / hésiter",
+        "choices":  [
+                        "se perdre / hésiter",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-verbs-be-in-time",
+        "topic":  "Temps",
+        "kanji":  "間に合う",
+        "hiragana":  "まにあう",
+        "answer":  "être à l’heure",
+        "choices":  [
+                        "être à l’heure",
+                        "aller",
+                        "venir",
+                        "faire",
+                        "dire",
+                        "manger"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    }
+]

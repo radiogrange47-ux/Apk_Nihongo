@@ -1,0 +1,2018 @@
+[
+    {
+        "id":  "n4-vocabulary-self",
+        "topic":  "Personnes",
+        "kanji":  "自分",
+        "hiragana":  "じぶん",
+        "answer":  "soi-même",
+        "choices":  [
+                        "soi-même",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-except",
+        "topic":  "Relations",
+        "kanji":  "以外",
+        "hiragana":  "いがい",
+        "answer":  "sauf / à part",
+        "choices":  [
+                        "sauf / à part",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-within",
+        "topic":  "Temps et mesures",
+        "kanji":  "以内",
+        "hiragana":  "いない",
+        "answer":  "dans la limite de",
+        "choices":  [
+                        "dans la limite de",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-entrance",
+        "topic":  "Lieux",
+        "kanji":  "入口",
+        "hiragana":  "いりぐち",
+        "answer":  "entrée",
+        "choices":  [
+                        "entrée",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-reception",
+        "topic":  "Lieux",
+        "kanji":  "受付",
+        "hiragana":  "うけつけ",
+        "answer":  "accueil / réception",
+        "choices":  [
+                        "accueil / réception",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-countryside",
+        "topic":  "Lieux",
+        "kanji":  "田舎",
+        "hiragana":  "いなか",
+        "answer":  "campagne",
+        "choices":  [
+                        "campagne",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-celebration",
+        "topic":  "Vie quotidienne",
+        "kanji":  "お祝い",
+        "hiragana":  "おいわい",
+        "answer":  "célébration",
+        "choices":  [
+                        "célébration",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-sound",
+        "topic":  "Vie quotidienne",
+        "kanji":  "音",
+        "hiragana":  "おと",
+        "answer":  "son",
+        "choices":  [
+                        "son",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-meeting",
+        "topic":  "Études et travail",
+        "kanji":  "会議",
+        "hiragana":  "かいぎ",
+        "answer":  "réunion",
+        "choices":  [
+                        "réunion",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "chose",
+                        "affaire"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-venue",
+        "topic":  "Lieux",
+        "kanji":  "会場",
+        "hiragana":  "かいじょう",
+        "answer":  "lieu de réunion",
+        "choices":  [
+                        "lieu de réunion",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-conversation",
+        "topic":  "Communication",
+        "kanji":  "会話",
+        "hiragana":  "かいわ",
+        "answer":  "conversation",
+        "choices":  [
+                        "conversation",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-fire",
+        "topic":  "Vie quotidienne",
+        "kanji":  "火事",
+        "hiragana":  "かじ",
+        "answer":  "incendie",
+        "choices":  [
+                        "incendie",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-science",
+        "topic":  "Études",
+        "kanji":  "科学",
+        "hiragana":  "かがく",
+        "answer":  "science",
+        "choices":  [
+                        "science",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-mirror",
+        "topic":  "Objets",
+        "kanji":  "鏡",
+        "hiragana":  "かがみ",
+        "answer":  "miroir",
+        "choices":  [
+                        "miroir",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-scenery",
+        "topic":  "Nature",
+        "kanji":  "景色",
+        "hiragana":  "けしき",
+        "answer":  "paysage",
+        "choices":  [
+                        "paysage",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-mood",
+        "topic":  "Sentiments",
+        "kanji":  "気分",
+        "hiragana":  "きぶん",
+        "answer":  "humeur",
+        "choices":  [
+                        "humeur",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-education",
+        "topic":  "Études",
+        "kanji":  "教育",
+        "hiragana":  "きょういく",
+        "answer":  "éducation",
+        "choices":  [
+                        "éducation",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-neighborhood",
+        "topic":  "Lieux",
+        "kanji":  "近所",
+        "hiragana":  "きんじょ",
+        "answer":  "voisinage",
+        "choices":  [
+                        "voisinage",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-factory",
+        "topic":  "Travail",
+        "kanji":  "工場",
+        "hiragana":  "こうじょう",
+        "answer":  "usine",
+        "choices":  [
+                        "usine",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-highschool",
+        "topic":  "Études",
+        "kanji":  "高校",
+        "hiragana":  "こうこう",
+        "answer":  "lycée",
+        "choices":  [
+                        "lycée",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-highway",
+        "topic":  "Transports",
+        "kanji":  "高速道路",
+        "hiragana":  "こうそくどうろ",
+        "answer":  "autoroute",
+        "choices":  [
+                        "autoroute",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-international",
+        "topic":  "Société",
+        "kanji":  "国際",
+        "hiragana":  "こくさい",
+        "answer":  "international",
+        "choices":  [
+                        "international",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-society",
+        "topic":  "Société",
+        "kanji":  "社会",
+        "hiragana":  "しゃかい",
+        "answer":  "société",
+        "choices":  [
+                        "société",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-address",
+        "topic":  "Vie quotidienne",
+        "kanji":  "住所",
+        "hiragana":  "じゅうしょ",
+        "answer":  "adresse",
+        "choices":  [
+                        "adresse",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-attendance",
+        "topic":  "Études",
+        "kanji":  "出席",
+        "hiragana":  "しゅっせき",
+        "answer":  "présence en cours",
+        "choices":  [
+                        "présence en cours",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-preparation",
+        "topic":  "Vie quotidienne",
+        "kanji":  "準備",
+        "hiragana":  "じゅんび",
+        "answer":  "préparation",
+        "choices":  [
+                        "préparation",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-future",
+        "topic":  "Temps",
+        "kanji":  "将来",
+        "hiragana":  "しょうらい",
+        "answer":  "avenir",
+        "choices":  [
+                        "avenir",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-invitation",
+        "topic":  "Relations",
+        "kanji":  "招待",
+        "hiragana":  "しょうたい",
+        "answer":  "invitation",
+        "choices":  [
+                        "invitation",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-groceries",
+        "topic":  "Vie quotidienne",
+        "kanji":  "食料品",
+        "hiragana":  "しょくりょうひん",
+        "answer":  "produits alimentaires",
+        "choices":  [
+                        "produits alimentaires",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-explanation",
+        "topic":  "Communication",
+        "kanji":  "説明",
+        "hiragana":  "せつめい",
+        "answer":  "explication",
+        "choices":  [
+                        "explication",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-graduation",
+        "topic":  "Études",
+        "kanji":  "卒業",
+        "hiragana":  "そつぎょう",
+        "answer":  "fin des études",
+        "choices":  [
+                        "fin des études",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-typhoon",
+        "topic":  "Nature",
+        "kanji":  "台風",
+        "hiragana":  "たいふう",
+        "answer":  "typhon",
+        "choices":  [
+                        "typhon",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-trip",
+        "topic":  "Voyages",
+        "kanji":  "旅",
+        "hiragana":  "たび",
+        "answer":  "voyage",
+        "choices":  [
+                        "voyage",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-zoo",
+        "topic":  "Loisirs",
+        "kanji":  "動物園",
+        "hiragana":  "どうぶつえん",
+        "answer":  "zoo",
+        "choices":  [
+                        "zoo",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-hospitalization",
+        "topic":  "Santé",
+        "kanji":  "入院",
+        "hiragana":  "にゅういん",
+        "answer":  "hospitalisation",
+        "choices":  [
+                        "hospitalisation",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-situation",
+        "topic":  "Communication",
+        "kanji":  "場合",
+        "hiragana":  "ばあい",
+        "answer":  "cas / situation",
+        "choices":  [
+                        "cas / situation",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-program",
+        "topic":  "Loisirs",
+        "kanji":  "番組",
+        "hiragana":  "ばんぐみ",
+        "answer":  "émission",
+        "choices":  [
+                        "émission",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-culture",
+        "topic":  "Société",
+        "kanji":  "文化",
+        "hiragana":  "ぶんか",
+        "answer":  "culture",
+        "choices":  [
+                        "culture",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-literature",
+        "topic":  "Études",
+        "kanji":  "文学",
+        "hiragana":  "ぶんがく",
+        "answer":  "littérature",
+        "choices":  [
+                        "littérature",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-law",
+        "topic":  "Société",
+        "kanji":  "法律",
+        "hiragana":  "ほうりつ",
+        "answer":  "loi",
+        "choices":  [
+                        "loi",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-port",
+        "topic":  "Voyages",
+        "kanji":  "港",
+        "hiragana":  "みなと",
+        "answer":  "port",
+        "choices":  [
+                        "port",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-forest",
+        "topic":  "Nature",
+        "kanji":  "森",
+        "hiragana":  "もり",
+        "answer":  "forêt",
+        "choices":  [
+                        "forêt",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-purpose",
+        "topic":  "Études",
+        "kanji":  "目的",
+        "hiragana":  "もくてき",
+        "answer":  "objectif",
+        "choices":  [
+                        "objectif",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-plan",
+        "topic":  "Temps",
+        "kanji":  "予定",
+        "hiragana":  "よてい",
+        "answer":  "projet / programme prévu",
+        "choices":  [
+                        "projet / programme prévu",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-reason",
+        "topic":  "Communication",
+        "kanji":  "理由",
+        "hiragana":  "りゆう",
+        "answer":  "raison",
+        "choices":  [
+                        "raison",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-absence",
+        "topic":  "Vie quotidienne",
+        "kanji":  "留守",
+        "hiragana":  "るす",
+        "answer":  "absence du domicile",
+        "choices":  [
+                        "absence du domicile",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-contact",
+        "topic":  "Communication",
+        "kanji":  "連絡",
+        "hiragana":  "れんらく",
+        "answer":  "contact / nouvelles",
+        "choices":  [
+                        "contact / nouvelles",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-inn",
+        "topic":  "Voyages",
+        "kanji":  "旅館",
+        "hiragana":  "りょかん",
+        "answer":  "auberge japonaise",
+        "choices":  [
+                        "auberge japonaise",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-dream",
+        "topic":  "Sentiments",
+        "kanji":  "夢",
+        "hiragana":  "ゆめ",
+        "answer":  "rêve",
+        "choices":  [
+                        "rêve",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-wall",
+        "topic":  "Maison",
+        "kanji":  "壁",
+        "hiragana":  "かべ",
+        "answer":  "mur",
+        "choices":  [
+                        "mur",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-relationship",
+        "topic":  "Relations",
+        "kanji":  "関係",
+        "hiragana":  "かんけい",
+        "answer":  "relation",
+        "choices":  [
+                        "relation",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-experience",
+        "topic":  "Vie quotidienne",
+        "kanji":  "経験",
+        "hiragana":  "けいけん",
+        "answer":  "expérience",
+        "choices":  [
+                        "expérience",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-technology",
+        "topic":  "Études et travail",
+        "kanji":  "技術",
+        "hiragana":  "ぎじゅつ",
+        "answer":  "technique / savoir-faire",
+        "choices":  [
+                        "technique / savoir-faire",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-geography",
+        "topic":  "Études",
+        "kanji":  "地理",
+        "hiragana":  "ちり",
+        "answer":  "géographie",
+        "choices":  [
+                        "géographie",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-tool",
+        "topic":  "Objets",
+        "kanji":  "道具",
+        "hiragana":  "どうぐ",
+        "answer":  "outil",
+        "choices":  [
+                        "outil",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-thief",
+        "topic":  "Société",
+        "kanji":  "泥棒",
+        "hiragana":  "どろぼう",
+        "answer":  "voleur",
+        "choices":  [
+                        "voleur",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-trade",
+        "topic":  "Société",
+        "kanji":  "貿易",
+        "hiragana":  "ぼうえき",
+        "answer":  "commerce international",
+        "choices":  [
+                        "commerce international",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-double",
+        "topic":  "Quantités",
+        "kanji":  "倍",
+        "hiragana":  "ばい",
+        "answer":  "double",
+        "choices":  [
+                        "double",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-department-head",
+        "topic":  "Travail",
+        "kanji":  "部長",
+        "hiragana":  "ぶちょう",
+        "answer":  "chef de service",
+        "choices":  [
+                        "chef de service",
+                        "lieu",
+                        "histoire",
+                        "règle",
+                        "réunion",
+                        "chose"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-once",
+        "topic":  "Temps",
+        "kanji":  "いつか",
+        "hiragana":  "いつか",
+        "answer":  "un jour",
+        "choices":  [
+                        "un jour",
+                        "parfois",
+                        "toujours",
+                        "rarement",
+                        "souvent",
+                        "vite"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-certainly",
+        "topic":  "Fréquence",
+        "kanji":  "必ず",
+        "hiragana":  "かならず",
+        "answer":  "certainement",
+        "choices":  [
+                        "certainement",
+                        "parfois",
+                        "toujours",
+                        "rarement",
+                        "souvent",
+                        "vite"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-surely",
+        "topic":  "Fréquence",
+        "kanji":  "きっと",
+        "hiragana":  "きっと",
+        "answer":  "sûrement",
+        "choices":  [
+                        "sûrement",
+                        "parfois",
+                        "toujours",
+                        "rarement",
+                        "souvent",
+                        "vite"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-quite",
+        "topic":  "Degré",
+        "kanji":  "ずいぶん",
+        "hiragana":  "ずいぶん",
+        "answer":  "considérablement",
+        "choices":  [
+                        "considérablement",
+                        "parfois",
+                        "toujours",
+                        "rarement",
+                        "souvent",
+                        "vite"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-usually",
+        "topic":  "Fréquence",
+        "kanji":  "たいてい",
+        "hiragana":  "たいてい",
+        "answer":  "généralement",
+        "choices":  [
+                        "généralement",
+                        "parfois",
+                        "toujours",
+                        "rarement",
+                        "souvent",
+                        "vite"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-for-example",
+        "topic":  "Communication",
+        "kanji":  "例えば",
+        "hiragana":  "たとえば",
+        "answer":  "par exemple",
+        "choices":  [
+                        "par exemple",
+                        "parfois",
+                        "toujours",
+                        "rarement",
+                        "souvent",
+                        "vite"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-as-much-as-possible",
+        "topic":  "Fréquence",
+        "kanji":  "なるべく",
+        "hiragana":  "なるべく",
+        "answer":  "autant que possible",
+        "choices":  [
+                        "autant que possible",
+                        "parfois",
+                        "toujours",
+                        "rarement",
+                        "souvent",
+                        "vite"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-clearly",
+        "topic":  "Communication",
+        "kanji":  "はっきり",
+        "hiragana":  "はっきり",
+        "answer":  "clairement",
+        "choices":  [
+                        "clairement",
+                        "parfois",
+                        "toujours",
+                        "rarement",
+                        "souvent",
+                        "vite"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-almost",
+        "topic":  "Degré",
+        "kanji":  "ほとんど",
+        "hiragana":  "ほとんど",
+        "answer":  "presque",
+        "choices":  [
+                        "presque",
+                        "parfois",
+                        "toujours",
+                        "rarement",
+                        "souvent",
+                        "vite"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-soon",
+        "topic":  "Temps",
+        "kanji":  "もうすぐ",
+        "hiragana":  "もうすぐ",
+        "answer":  "bientôt",
+        "choices":  [
+                        "bientôt",
+                        "parfois",
+                        "toujours",
+                        "rarement",
+                        "souvent",
+                        "vite"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-finally",
+        "topic":  "Temps",
+        "kanji":  "やっと",
+        "hiragana":  "やっと",
+        "answer":  "enfin",
+        "choices":  [
+                        "enfin",
+                        "parfois",
+                        "toujours",
+                        "rarement",
+                        "souvent",
+                        "vite"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-of-course",
+        "topic":  "Communication",
+        "kanji":  "もちろん",
+        "hiragana":  "もちろん",
+        "answer":  "bien sûr",
+        "choices":  [
+                        "bien sûr",
+                        "parfois",
+                        "toujours",
+                        "rarement",
+                        "souvent",
+                        "vite"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-if",
+        "topic":  "Communication",
+        "kanji":  "もし",
+        "hiragana":  "もし",
+        "answer":  "si / au cas où",
+        "choices":  [
+                        "si / au cas où",
+                        "parfois",
+                        "toujours",
+                        "rarement",
+                        "souvent",
+                        "vite"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-more-and-more",
+        "topic":  "Degré",
+        "kanji":  "どんどん",
+        "hiragana":  "どんどん",
+        "answer":  "de plus en plus",
+        "choices":  [
+                        "de plus en plus",
+                        "parfois",
+                        "toujours",
+                        "rarement",
+                        "souvent",
+                        "vite"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-for-a-while",
+        "topic":  "Temps",
+        "kanji":  "しばらく",
+        "hiragana":  "しばらく",
+        "answer":  "pendant quelque temps",
+        "choices":  [
+                        "pendant quelque temps",
+                        "parfois",
+                        "toujours",
+                        "rarement",
+                        "souvent",
+                        "vite"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-sometimes",
+        "topic":  "Fréquence",
+        "kanji":  "たまに",
+        "hiragana":  "たまに",
+        "answer":  "de temps en temps",
+        "choices":  [
+                        "de temps en temps",
+                        "parfois",
+                        "toujours",
+                        "rarement",
+                        "souvent",
+                        "vite"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-before-long",
+        "topic":  "Temps",
+        "kanji":  "そろそろ",
+        "hiragana":  "そろそろ",
+        "answer":  "bientôt / il est temps",
+        "choices":  [
+                        "bientôt / il est temps",
+                        "parfois",
+                        "toujours",
+                        "rarement",
+                        "souvent",
+                        "vite"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-first",
+        "topic":  "Ordre",
+        "kanji":  "まず",
+        "hiragana":  "まず",
+        "answer":  "d’abord",
+        "choices":  [
+                        "d’abord",
+                        "parfois",
+                        "toujours",
+                        "rarement",
+                        "souvent",
+                        "vite"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-safety",
+        "topic":  "Qualités",
+        "kanji":  "安全",
+        "hiragana":  "あんぜん",
+        "answer":  "sûr / sécurité",
+        "choices":  [
+                        "sûr / sécurité",
+                        "grand",
+                        "petit",
+                        "nouveau",
+                        "ancien",
+                        "propre"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-important",
+        "topic":  "Qualités",
+        "kanji":  "大事",
+        "hiragana":  "だいじ",
+        "answer":  "important",
+        "choices":  [
+                        "important",
+                        "grand",
+                        "petit",
+                        "nouveau",
+                        "ancien",
+                        "propre"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-inconvenient",
+        "topic":  "Qualités",
+        "kanji":  "不便",
+        "hiragana":  "ふべん",
+        "answer":  "peu pratique",
+        "choices":  [
+                        "peu pratique",
+                        "grand",
+                        "petit",
+                        "nouveau",
+                        "ancien",
+                        "propre"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-complicated",
+        "topic":  "Qualités",
+        "kanji":  "複雑",
+        "hiragana":  "ふくざつ",
+        "answer":  "compliqué",
+        "choices":  [
+                        "compliqué",
+                        "grand",
+                        "petit",
+                        "nouveau",
+                        "ancien",
+                        "propre"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-shallow",
+        "topic":  "Nature",
+        "kanji":  "浅い",
+        "hiragana":  "あさい",
+        "answer":  "peu profond",
+        "choices":  [
+                        "peu profond",
+                        "grand",
+                        "petit",
+                        "nouveau",
+                        "ancien",
+                        "propre"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-deep",
+        "topic":  "Nature",
+        "kanji":  "深い",
+        "hiragana":  "ふかい",
+        "answer":  "profond",
+        "choices":  [
+                        "profond",
+                        "grand",
+                        "petit",
+                        "nouveau",
+                        "ancien",
+                        "propre"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-unusual",
+        "topic":  "Qualités",
+        "kanji":  "珍しい",
+        "hiragana":  "めずらしい",
+        "answer":  "rare / inhabituel",
+        "choices":  [
+                        "rare / inhabituel",
+                        "grand",
+                        "petit",
+                        "nouveau",
+                        "ancien",
+                        "propre"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-wonderful",
+        "topic":  "Qualités",
+        "kanji":  "素晴らしい",
+        "hiragana":  "すばらしい",
+        "answer":  "magnifique",
+        "choices":  [
+                        "magnifique",
+                        "grand",
+                        "petit",
+                        "nouveau",
+                        "ancien",
+                        "propre"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-embarrassed",
+        "topic":  "Sentiments",
+        "kanji":  "恥ずかしい",
+        "hiragana":  "はずかしい",
+        "answer":  "gêné / embarrassé",
+        "choices":  [
+                        "gêné / embarrassé",
+                        "grand",
+                        "petit",
+                        "nouveau",
+                        "ancien",
+                        "propre"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-ordinary",
+        "topic":  "Qualités",
+        "kanji":  "普通",
+        "hiragana":  "ふつう",
+        "answer":  "ordinaire",
+        "choices":  [
+                        "ordinaire",
+                        "grand",
+                        "petit",
+                        "nouveau",
+                        "ancien",
+                        "propre"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-noisy",
+        "topic":  "Qualités",
+        "kanji":  "うるさい",
+        "hiragana":  "うるさい",
+        "answer":  "bruyant",
+        "choices":  [
+                        "bruyant",
+                        "grand",
+                        "petit",
+                        "nouveau",
+                        "ancien",
+                        "propre"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-enthusiastic",
+        "topic":  "Qualités",
+        "kanji":  "熱心",
+        "hiragana":  "ねっしん",
+        "answer":  "enthousiaste",
+        "choices":  [
+                        "enthousiaste",
+                        "grand",
+                        "petit",
+                        "nouveau",
+                        "ancien",
+                        "propre"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-mysterious",
+        "topic":  "Qualités",
+        "kanji":  "不思議",
+        "hiragana":  "ふしぎ",
+        "answer":  "étrange / mystérieux",
+        "choices":  [
+                        "étrange / mystérieux",
+                        "grand",
+                        "petit",
+                        "nouveau",
+                        "ancien",
+                        "propre"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-simple",
+        "topic":  "Qualités",
+        "kanji":  "簡単",
+        "hiragana":  "かんたん",
+        "answer":  "simple / facile",
+        "choices":  [
+                        "simple / facile",
+                        "grand",
+                        "petit",
+                        "nouveau",
+                        "ancien",
+                        "propre"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-free",
+        "topic":  "Qualités",
+        "kanji":  "自由",
+        "hiragana":  "じゆう",
+        "answer":  "libre",
+        "choices":  [
+                        "libre",
+                        "grand",
+                        "petit",
+                        "nouveau",
+                        "ancien",
+                        "propre"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-accessory",
+        "topic":  "Objets",
+        "kanji":  "アクセサリー",
+        "hiragana":  "あくせさりー",
+        "answer":  "accessoire",
+        "choices":  [
+                        "accessoire",
+                        "emploi à temps partiel",
+                        "alcool",
+                        "escalator",
+                        "essence",
+                        "verre"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-parttime-job",
+        "topic":  "Travail",
+        "kanji":  "アルバイト",
+        "hiragana":  "あるばいと",
+        "answer":  "emploi à temps partiel",
+        "choices":  [
+                        "emploi à temps partiel",
+                        "accessoire",
+                        "alcool",
+                        "escalator",
+                        "essence",
+                        "verre"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-alcohol",
+        "topic":  "Nourriture",
+        "kanji":  "アルコール",
+        "hiragana":  "あるこーる",
+        "answer":  "alcool",
+        "choices":  [
+                        "alcool",
+                        "accessoire",
+                        "emploi à temps partiel",
+                        "escalator",
+                        "essence",
+                        "verre"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-escalator",
+        "topic":  "Lieux",
+        "kanji":  "エスカレーター",
+        "hiragana":  "えすかれーたー",
+        "answer":  "escalator",
+        "choices":  [
+                        "escalator",
+                        "accessoire",
+                        "emploi à temps partiel",
+                        "alcool",
+                        "essence",
+                        "verre"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-gasoline",
+        "topic":  "Transports",
+        "kanji":  "ガソリン",
+        "hiragana":  "がそりん",
+        "answer":  "essence",
+        "choices":  [
+                        "essence",
+                        "accessoire",
+                        "emploi à temps partiel",
+                        "alcool",
+                        "escalator",
+                        "verre"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-glass",
+        "topic":  "Objets",
+        "kanji":  "ガラス",
+        "hiragana":  "がらす",
+        "answer":  "verre",
+        "choices":  [
+                        "verre",
+                        "accessoire",
+                        "emploi à temps partiel",
+                        "alcool",
+                        "escalator",
+                        "essence"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-gas-station",
+        "topic":  "Transports",
+        "kanji":  "ガソリンスタンド",
+        "hiragana":  "がそりんすたんど",
+        "answer":  "station-service",
+        "choices":  [
+                        "station-service",
+                        "accessoire",
+                        "emploi à temps partiel",
+                        "alcool",
+                        "escalator",
+                        "essence"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-office-worker",
+        "topic":  "Travail",
+        "kanji":  "サラリーマン",
+        "hiragana":  "さらりーまん",
+        "answer":  "employé de bureau",
+        "choices":  [
+                        "employé de bureau",
+                        "accessoire",
+                        "emploi à temps partiel",
+                        "alcool",
+                        "escalator",
+                        "essence"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-check",
+        "topic":  "Études",
+        "kanji":  "チェック",
+        "hiragana":  "ちぇっく",
+        "answer":  "vérification",
+        "choices":  [
+                        "vérification",
+                        "accessoire",
+                        "emploi à temps partiel",
+                        "alcool",
+                        "escalator",
+                        "essence"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-fax",
+        "topic":  "Communication",
+        "kanji":  "ファックス",
+        "hiragana":  "ふぁっくす",
+        "answer":  "fax",
+        "choices":  [
+                        "fax",
+                        "accessoire",
+                        "emploi à temps partiel",
+                        "alcool",
+                        "escalator",
+                        "essence"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-building",
+        "topic":  "Lieux",
+        "kanji":  "ビル",
+        "hiragana":  "びる",
+        "answer":  "immeuble",
+        "choices":  [
+                        "immeuble",
+                        "accessoire",
+                        "emploi à temps partiel",
+                        "alcool",
+                        "escalator",
+                        "essence"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-report",
+        "topic":  "Études",
+        "kanji":  "レポート",
+        "hiragana":  "れぽーと",
+        "answer":  "rapport",
+        "choices":  [
+                        "rapport",
+                        "accessoire",
+                        "emploi à temps partiel",
+                        "alcool",
+                        "escalator",
+                        "essence"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-airmail",
+        "topic":  "Communication",
+        "kanji":  "エアメール",
+        "hiragana":  "えあめーる",
+        "answer":  "courrier aérien",
+        "choices":  [
+                        "courrier aérien",
+                        "accessoire",
+                        "emploi à temps partiel",
+                        "alcool",
+                        "escalator",
+                        "essence"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-interview",
+        "topic":  "Travail",
+        "kanji":  "インタビュー",
+        "hiragana":  "いんたびゅー",
+        "answer":  "interview",
+        "choices":  [
+                        "interview",
+                        "accessoire",
+                        "emploi à temps partiel",
+                        "alcool",
+                        "escalator",
+                        "essence"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-computer",
+        "topic":  "Objets",
+        "kanji":  "コンピューター",
+        "hiragana":  "こんぴゅーたー",
+        "answer":  "ordinateur",
+        "choices":  [
+                        "ordinateur",
+                        "accessoire",
+                        "emploi à temps partiel",
+                        "alcool",
+                        "escalator",
+                        "essence"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-sandals",
+        "topic":  "Vêtements",
+        "kanji":  "サンダル",
+        "hiragana":  "さんだる",
+        "answer":  "sandales",
+        "choices":  [
+                        "sandales",
+                        "accessoire",
+                        "emploi à temps partiel",
+                        "alcool",
+                        "escalator",
+                        "essence"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-suit",
+        "topic":  "Vêtements",
+        "kanji":  "スーツ",
+        "hiragana":  "すーつ",
+        "answer":  "costume",
+        "choices":  [
+                        "costume",
+                        "accessoire",
+                        "emploi à temps partiel",
+                        "alcool",
+                        "escalator",
+                        "essence"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-suitcase",
+        "topic":  "Voyages",
+        "kanji":  "スーツケース",
+        "hiragana":  "すーつけーす",
+        "answer":  "valise",
+        "choices":  [
+                        "valise",
+                        "accessoire",
+                        "emploi à temps partiel",
+                        "alcool",
+                        "escalator",
+                        "essence"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-wordprocessor",
+        "topic":  "Études",
+        "kanji":  "ワープロ",
+        "hiragana":  "わーぷろ",
+        "answer":  "traitement de texte",
+        "choices":  [
+                        "traitement de texte",
+                        "accessoire",
+                        "emploi à temps partiel",
+                        "alcool",
+                        "escalator",
+                        "essence"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    },
+    {
+        "id":  "n4-vocabulary-textbook",
+        "topic":  "Études",
+        "kanji":  "テキスト",
+        "hiragana":  "てきすと",
+        "answer":  "manuel / texte",
+        "choices":  [
+                        "manuel / texte",
+                        "accessoire",
+                        "emploi à temps partiel",
+                        "alcool",
+                        "escalator",
+                        "essence"
+                    ],
+        "level":  "JLPT N4",
+        "source":  "Sélection pédagogique N4 non officielle, croisée avec les objectifs JLPT et des listes d’étude publiques",
+        "bank":  "JLPT4"
+    }
+]

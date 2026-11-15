@@ -18,7 +18,8 @@ internal enum class LearningGame(val title: String) {
 internal enum class QuestionBank(val title: String) {
     JLPT5("JLPT5"),
     COURSE("Mes cours"),
-    JLPT4("JLPT4")
+    JLPT4("JLPT4"),
+    FOOD("Nourriture")
 }
 
 internal interface LearningQuestion {

@@ -1,0 +1,650 @@
+[
+    {
+        "id":  "food-verb-001",
+        "topic":  "Verbes de cuisine et de repas",
+        "kanji":  "食べる",
+        "hiragana":  "たべる",
+        "answer":  "manger",
+        "choices":  [
+                        "frire",
+                        "goûter pour vérifier l’assaisonnement",
+                        "mélanger",
+                        "vendre",
+                        "couper",
+                        "manger"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-002",
+        "topic":  "Verbes de cuisine et de repas",
+        "kanji":  "飲む",
+        "hiragana":  "のむ",
+        "answer":  "boire",
+        "choices":  [
+                        "faire bouillir",
+                        "emporter",
+                        "boire",
+                        "verser",
+                        "refuser le sac de caisse",
+                        "régler l’addition"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-003",
+        "topic":  "Verbes de cuisine et de repas",
+        "kanji":  "料理する",
+        "hiragana":  "りょうりする",
+        "answer":  "cuisiner",
+        "choices":  [
+                        "payer",
+                        "payer en espèces",
+                        "cuisiner",
+                        "régler l’addition",
+                        "goûter pour vérifier l’assaisonnement",
+                        "faire sauter"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-004",
+        "topic":  "Verbes de cuisine et de repas",
+        "kanji":  "作る",
+        "hiragana":  "つくる",
+        "answer":  "préparer / faire",
+        "choices":  [
+                        "faire mijoter",
+                        "chercher",
+                        "mélanger",
+                        "préparer / faire",
+                        "faire sauter",
+                        "frire"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-005",
+        "topic":  "Verbes de cuisine et de repas",
+        "kanji":  "切る",
+        "hiragana":  "きる",
+        "answer":  "couper",
+        "choices":  [
+                        "couper",
+                        "boire",
+                        "demander / commander",
+                        "préparer / faire",
+                        "réchauffer",
+                        "commander"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-006",
+        "topic":  "Verbes de cuisine et de repas",
+        "kanji":  "焼く",
+        "hiragana":  "やく",
+        "answer":  "griller / cuire au four",
+        "choices":  [
+                        "griller / cuire au four",
+                        "acheter",
+                        "choisir",
+                        "faire bouillir",
+                        "payer",
+                        "réchauffer"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-007",
+        "topic":  "Verbes de cuisine et de repas",
+        "kanji":  "煮る",
+        "hiragana":  "にる",
+        "answer":  "faire mijoter",
+        "choices":  [
+                        "régler l’addition",
+                        "recommander",
+                        "faire mijoter",
+                        "ajouter / mettre dedans",
+                        "faire une réduction",
+                        "mettre dans un sac"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-008",
+        "topic":  "Verbes de cuisine et de repas",
+        "kanji":  "ゆでる",
+        "hiragana":  "ゆでる",
+        "answer":  "faire bouillir",
+        "choices":  [
+                        "manger à volonté",
+                        "griller / cuire au four",
+                        "refuser le sac de caisse",
+                        "payer par carte",
+                        "couper",
+                        "faire bouillir"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-009",
+        "topic":  "Verbes de cuisine et de repas",
+        "kanji":  "炒める",
+        "hiragana":  "いためる",
+        "answer":  "faire sauter",
+        "choices":  [
+                        "verser",
+                        "réserver",
+                        "payer / régler",
+                        "faire mijoter",
+                        "recommander",
+                        "faire sauter"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-010",
+        "topic":  "Verbes de cuisine et de repas",
+        "kanji":  "揚げる",
+        "hiragana":  "あげる",
+        "answer":  "frire",
+        "choices":  [
+                        "frire",
+                        "payer",
+                        "recommander",
+                        "régler l’addition",
+                        "refroidir",
+                        "payer / régler"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-011",
+        "topic":  "Verbes de cuisine et de repas",
+        "kanji":  "混ぜる",
+        "hiragana":  "まぜる",
+        "answer":  "mélanger",
+        "choices":  [
+                        "mélanger",
+                        "payer",
+                        "emporter",
+                        "faire sauter",
+                        "préparer / faire",
+                        "réserver"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-012",
+        "topic":  "Verbes de cuisine et de repas",
+        "kanji":  "入れる",
+        "hiragana":  "いれる",
+        "answer":  "ajouter / mettre dedans",
+        "choices":  [
+                        "verser",
+                        "payer par carte",
+                        "manger",
+                        "ajouter / mettre dedans",
+                        "réserver",
+                        "réchauffer"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-013",
+        "topic":  "Verbes de cuisine et de repas",
+        "kanji":  "注ぐ",
+        "hiragana":  "そそぐ",
+        "answer":  "verser",
+        "choices":  [
+                        "mélanger",
+                        "faire bouillir",
+                        "régler l’addition",
+                        "couper",
+                        "verser",
+                        "goûter pour vérifier l’assaisonnement"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-014",
+        "topic":  "Verbes de cuisine et de repas",
+        "kanji":  "温める",
+        "hiragana":  "あたためる",
+        "answer":  "réchauffer",
+        "choices":  [
+                        "refroidir",
+                        "cuisiner",
+                        "verser",
+                        "mélanger",
+                        "réchauffer",
+                        "mettre dans un sac"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-015",
+        "topic":  "Verbes de cuisine et de repas",
+        "kanji":  "冷やす",
+        "hiragana":  "ひやす",
+        "answer":  "refroidir",
+        "choices":  [
+                        "faire mijoter",
+                        "refroidir",
+                        "emporter",
+                        "couper",
+                        "faire une réduction",
+                        "verser"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-016",
+        "topic":  "Verbes de cuisine et de repas",
+        "kanji":  "味見する",
+        "hiragana":  "あじみする",
+        "answer":  "goûter pour vérifier l’assaisonnement",
+        "choices":  [
+                        "verser",
+                        "mettre dans un sac",
+                        "couper",
+                        "cuisiner",
+                        "manger",
+                        "goûter pour vérifier l’assaisonnement"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-017",
+        "topic":  "Restaurant et bar",
+        "kanji":  "注文する",
+        "hiragana":  "ちゅうもんする",
+        "answer":  "commander",
+        "choices":  [
+                        "préparer / faire",
+                        "commander",
+                        "peser",
+                        "mélanger",
+                        "ajouter / mettre dedans",
+                        "payer en espèces"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-018",
+        "topic":  "Restaurant et bar",
+        "kanji":  "頼む",
+        "hiragana":  "たのむ",
+        "answer":  "demander / commander",
+        "choices":  [
+                        "acheter",
+                        "demander / commander",
+                        "chercher",
+                        "verser",
+                        "faire bouillir",
+                        "réchauffer"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-019",
+        "topic":  "Restaurant et bar",
+        "kanji":  "おすすめする",
+        "hiragana":  "おすすめする",
+        "answer":  "recommander",
+        "choices":  [
+                        "manger",
+                        "refroidir",
+                        "recommander",
+                        "emporter",
+                        "vendre",
+                        "faire bouillir"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-020",
+        "topic":  "Restaurant et bar",
+        "kanji":  "予約する",
+        "hiragana":  "よやくする",
+        "answer":  "réserver",
+        "choices":  [
+                        "payer par carte",
+                        "peser",
+                        "acheter",
+                        "faire bouillir",
+                        "réserver",
+                        "griller / cuire au four"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-021",
+        "topic":  "Restaurant et bar",
+        "kanji":  "持ち帰る",
+        "hiragana":  "もちかえる",
+        "answer":  "emporter",
+        "choices":  [
+                        "acheter",
+                        "emporter",
+                        "payer par carte",
+                        "manger à volonté",
+                        "refuser le sac de caisse",
+                        "recommander"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-022",
+        "topic":  "Restaurant et bar",
+        "kanji":  "食べ放題",
+        "hiragana":  "たべほうだい",
+        "answer":  "manger à volonté",
+        "choices":  [
+                        "choisir",
+                        "manger à volonté",
+                        "préparer / faire",
+                        "payer",
+                        "commander",
+                        "couper"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-023",
+        "topic":  "Restaurant et bar",
+        "kanji":  "飲み放題",
+        "hiragana":  "のみほうだい",
+        "answer":  "boissons à volonté",
+        "choices":  [
+                        "préparer / faire",
+                        "manger",
+                        "boissons à volonté",
+                        "chercher",
+                        "commander",
+                        "réchauffer"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-024",
+        "topic":  "Restaurant et bar",
+        "kanji":  "会計する",
+        "hiragana":  "かいけいする",
+        "answer":  "régler l’addition",
+        "choices":  [
+                        "réserver",
+                        "boire",
+                        "payer par carte",
+                        "frire",
+                        "goûter pour vérifier l’assaisonnement",
+                        "régler l’addition"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-025",
+        "topic":  "Paiement et courses",
+        "kanji":  "払う",
+        "hiragana":  "はらう",
+        "answer":  "payer",
+        "choices":  [
+                        "boissons à volonté",
+                        "payer",
+                        "chercher",
+                        "vendre",
+                        "frire",
+                        "faire sauter"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-026",
+        "topic":  "Paiement et courses",
+        "kanji":  "支払う",
+        "hiragana":  "しはらう",
+        "answer":  "payer / régler",
+        "choices":  [
+                        "préparer / faire",
+                        "réserver",
+                        "demander / commander",
+                        "payer / régler",
+                        "faire bouillir",
+                        "faire une réduction"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-027",
+        "topic":  "Paiement et courses",
+        "kanji":  "買う",
+        "hiragana":  "かう",
+        "answer":  "acheter",
+        "choices":  [
+                        "manger",
+                        "goûter pour vérifier l’assaisonnement",
+                        "emporter",
+                        "acheter",
+                        "faire mijoter",
+                        "griller / cuire au four"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-028",
+        "topic":  "Paiement et courses",
+        "kanji":  "売る",
+        "hiragana":  "うる",
+        "answer":  "vendre",
+        "choices":  [
+                        "peser",
+                        "vendre",
+                        "mélanger",
+                        "goûter pour vérifier l’assaisonnement",
+                        "demander / commander",
+                        "acheter"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-029",
+        "topic":  "Paiement et courses",
+        "kanji":  "選ぶ",
+        "hiragana":  "えらぶ",
+        "answer":  "choisir",
+        "choices":  [
+                        "emporter",
+                        "faire mijoter",
+                        "choisir",
+                        "couper",
+                        "payer / régler",
+                        "mettre dans un sac"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-030",
+        "topic":  "Paiement et courses",
+        "kanji":  "探す",
+        "hiragana":  "さがす",
+        "answer":  "chercher",
+        "choices":  [
+                        "réserver",
+                        "commander",
+                        "demander / commander",
+                        "chercher",
+                        "peser",
+                        "boire"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-031",
+        "topic":  "Paiement et courses",
+        "kanji":  "量る",
+        "hiragana":  "はかる",
+        "answer":  "peser",
+        "choices":  [
+                        "emporter",
+                        "verser",
+                        "peser",
+                        "acheter",
+                        "manger à volonté",
+                        "vendre"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-032",
+        "topic":  "Paiement et courses",
+        "kanji":  "袋に入れる",
+        "hiragana":  "ふくろにいれる",
+        "answer":  "mettre dans un sac",
+        "choices":  [
+                        "couper",
+                        "mettre dans un sac",
+                        "verser",
+                        "vendre",
+                        "réserver",
+                        "boissons à volonté"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-033",
+        "topic":  "Paiement et courses",
+        "kanji":  "値引きする",
+        "hiragana":  "ねびきする",
+        "answer":  "faire une réduction",
+        "choices":  [
+                        "faire mijoter",
+                        "payer par carte",
+                        "choisir",
+                        "recommander",
+                        "verser",
+                        "faire une réduction"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-034",
+        "topic":  "Paiement et courses",
+        "kanji":  "現金で払う",
+        "hiragana":  "げんきんではらう",
+        "answer":  "payer en espèces",
+        "choices":  [
+                        "payer",
+                        "préparer / faire",
+                        "acheter",
+                        "payer en espèces",
+                        "goûter pour vérifier l’assaisonnement",
+                        "choisir"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-035",
+        "topic":  "Paiement et courses",
+        "kanji":  "カードで払う",
+        "hiragana":  "カードではらう",
+        "answer":  "payer par carte",
+        "choices":  [
+                        "chercher",
+                        "payer par carte",
+                        "verser",
+                        "emporter",
+                        "mélanger",
+                        "faire bouillir"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-verb-036",
+        "topic":  "Paiement et courses",
+        "kanji":  "レジ袋を断る",
+        "hiragana":  "レジぶくろをことわる",
+        "answer":  "refuser le sac de caisse",
+        "choices":  [
+                        "refuser le sac de caisse",
+                        "manger à volonté",
+                        "acheter",
+                        "payer par carte",
+                        "mélanger",
+                        "manger"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    }
+]

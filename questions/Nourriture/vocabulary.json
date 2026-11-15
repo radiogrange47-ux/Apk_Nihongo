@@ -1,0 +1,2252 @@
+[
+    {
+        "id":  "food-vocab-001",
+        "topic":  "Céréales et produits de base",
+        "kanji":  "お米",
+        "hiragana":  "おこめ",
+        "answer":  "riz cru",
+        "choices":  [
+                        "algue nori",
+                        "ketchup",
+                        "pâte de soja miso",
+                        "bÅ“uf",
+                        "farine de blé",
+                        "riz cru"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-002",
+        "topic":  "Céréales et produits de base",
+        "kanji":  "å°éº¦ç²‰",
+        "hiragana":  "こむぎこ",
+        "answer":  "farine de blé",
+        "choices":  [
+                        "sauce soja",
+                        "carotte",
+                        "mayonnaise",
+                        "pomme",
+                        "farine de blé",
+                        "fromage"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-003",
+        "topic":  "Céréales et produits de base",
+        "kanji":  "パン",
+        "hiragana":  "パン",
+        "answer":  "pain",
+        "choices":  [
+                        "sucre",
+                        "sel",
+                        "sauce soja",
+                        "poivre",
+                        "raisin",
+                        "pain"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-004",
+        "topic":  "Produits frais",
+        "kanji":  "åµ",
+        "hiragana":  "たまご",
+        "answer":  "Å“uf",
+        "choices":  [
+                        "viande",
+                        "carotte",
+                        "aubergine",
+                        "banane",
+                        "riz cru",
+                        "Å“uf"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-005",
+        "topic":  "Produits frais",
+        "kanji":  "ç‰›ä¹³",
+        "hiragana":  "ぎゅうにゅう",
+        "answer":  "lait de vache",
+        "choices":  [
+                        "thon",
+                        "tomate",
+                        "tofu",
+                        "poulet",
+                        "riz cru",
+                        "lait de vache"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-006",
+        "topic":  "Produits frais",
+        "kanji":  "バター",
+        "hiragana":  "バター",
+        "answer":  "beurre",
+        "choices":  [
+                        "concombre",
+                        "sucre",
+                        "saumon",
+                        "beurre",
+                        "crevette",
+                        "aubergine"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-007",
+        "topic":  "Produits frais",
+        "kanji":  "チーズ",
+        "hiragana":  "チーズ",
+        "answer":  "fromage",
+        "choices":  [
+                        "saumon",
+                        "oignon vert",
+                        "crevette",
+                        "laitue",
+                        "légume",
+                        "fromage"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-008",
+        "topic":  "Viandes et poissons",
+        "kanji":  "è‚‰",
+        "hiragana":  "にく",
+        "answer":  "viande",
+        "choices":  [
+                        "pain",
+                        "mayonnaise",
+                        "concombre",
+                        "chou",
+                        "viande",
+                        "algue wakamé"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-009",
+        "topic":  "Viandes et poissons",
+        "kanji":  "ç‰›è‚‰",
+        "hiragana":  "ぎゅうにく",
+        "answer":  "bÅ“uf",
+        "choices":  [
+                        "viande",
+                        "huile de sésame",
+                        "champignon",
+                        "oignon",
+                        "algue nori",
+                        "bÅ“uf"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-010",
+        "topic":  "Viandes et poissons",
+        "kanji":  "è±šè‚‰",
+        "hiragana":  "ぶたにく",
+        "answer":  "porc",
+        "choices":  [
+                        "fraise",
+                        "porc",
+                        "saumon",
+                        "citron",
+                        "lait de vache",
+                        "oignon vert"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-011",
+        "topic":  "Viandes et poissons",
+        "kanji":  "é¶è‚‰",
+        "hiragana":  "とりにく",
+        "answer":  "poulet",
+        "choices":  [
+                        "tomate",
+                        "riz cru",
+                        "thon",
+                        "poulet",
+                        "farine de blé",
+                        "pain"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-012",
+        "topic":  "Viandes et poissons",
+        "kanji":  "é­š",
+        "hiragana":  "さかな",
+        "answer":  "poisson",
+        "choices":  [
+                        "raisin",
+                        "concombre",
+                        "lait de vache",
+                        "mandarine",
+                        "légume",
+                        "poisson"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-013",
+        "topic":  "Viandes et poissons",
+        "kanji":  "é®­",
+        "hiragana":  "さけ",
+        "answer":  "saumon",
+        "choices":  [
+                        "carotte",
+                        "tofu",
+                        "vinaigre",
+                        "riz cru",
+                        "banane",
+                        "saumon"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-014",
+        "topic":  "Viandes et poissons",
+        "kanji":  "まぐろ",
+        "hiragana":  "まぐろ",
+        "answer":  "thon",
+        "choices":  [
+                        "thon",
+                        "poulpe",
+                        "légume",
+                        "fraise",
+                        "oignon vert",
+                        "pain"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-015",
+        "topic":  "Viandes et poissons",
+        "kanji":  "えび",
+        "hiragana":  "えび",
+        "answer":  "crevette",
+        "choices":  [
+                        "natto",
+                        "crevette",
+                        "farine de blé",
+                        "concombre",
+                        "pomme de terre",
+                        "beurre"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-016",
+        "topic":  "Viandes et poissons",
+        "kanji":  "いか",
+        "hiragana":  "いか",
+        "answer":  "calamar",
+        "choices":  [
+                        "calamar",
+                        "natto",
+                        "mayonnaise",
+                        "concombre",
+                        "algue nori",
+                        "farine de blé"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-017",
+        "topic":  "Viandes et poissons",
+        "kanji":  "たこ",
+        "hiragana":  "たこ",
+        "answer":  "poulpe",
+        "choices":  [
+                        "huile de sésame",
+                        "calamar",
+                        "poulpe",
+                        "coquillage",
+                        "saumon",
+                        "viande"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-018",
+        "topic":  "Viandes et poissons",
+        "kanji":  "è²",
+        "hiragana":  "かい",
+        "answer":  "coquillage",
+        "choices":  [
+                        "lait de vache",
+                        "ketchup",
+                        "pomme",
+                        "coquillage",
+                        "chou",
+                        "tofu"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-019",
+        "topic":  "Produits frais",
+        "kanji":  "è±†è…",
+        "hiragana":  "とうふ",
+        "answer":  "tofu",
+        "choices":  [
+                        "algue nori",
+                        "fruit",
+                        "sauce soja",
+                        "pain",
+                        "tofu",
+                        "chou"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-020",
+        "topic":  "Produits frais",
+        "kanji":  "ç´è±†",
+        "hiragana":  "なっとう",
+        "answer":  "natto",
+        "choices":  [
+                        "aubergine",
+                        "natto",
+                        "concombre",
+                        "chou",
+                        "fraise",
+                        "algue wakamé"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-021",
+        "topic":  "Fruits et légumes",
+        "kanji":  "é‡Žèœ",
+        "hiragana":  "やさい",
+        "answer":  "légume",
+        "choices":  [
+                        "thon",
+                        "citron",
+                        "laitue",
+                        "huile",
+                        "tomate",
+                        "légume"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-022",
+        "topic":  "Fruits et légumes",
+        "kanji":  "æžœç‰©",
+        "hiragana":  "くだもの",
+        "answer":  "fruit",
+        "choices":  [
+                        "algue wakamé",
+                        "chou",
+                        "fruit",
+                        "crevette",
+                        "bÅ“uf",
+                        "tofu"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-023",
+        "topic":  "Fruits et légumes",
+        "kanji":  "玉ねぎ",
+        "hiragana":  "たまねぎ",
+        "answer":  "oignon",
+        "choices":  [
+                        "oignon",
+                        "huile de sésame",
+                        "ketchup",
+                        "carotte",
+                        "poulpe",
+                        "chou"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-024",
+        "topic":  "Fruits et légumes",
+        "kanji":  "ねぎ",
+        "hiragana":  "ねぎ",
+        "answer":  "oignon vert",
+        "choices":  [
+                        "oignon vert",
+                        "Å“uf",
+                        "farine de blé",
+                        "pomme de terre",
+                        "ketchup",
+                        "poulet"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-025",
+        "topic":  "Fruits et légumes",
+        "kanji":  "にんじん",
+        "hiragana":  "にんじん",
+        "answer":  "carotte",
+        "choices":  [
+                        "beurre",
+                        "vinaigre",
+                        "tofu",
+                        "carotte",
+                        "poivre",
+                        "fromage"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-026",
+        "topic":  "Fruits et légumes",
+        "kanji":  "じゃがいも",
+        "hiragana":  "じゃがいも",
+        "answer":  "pomme de terre",
+        "choices":  [
+                        "poulet",
+                        "crevette",
+                        "saumon",
+                        "pomme de terre",
+                        "huile",
+                        "poisson"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-027",
+        "topic":  "Fruits et légumes",
+        "kanji":  "きゅうり",
+        "hiragana":  "きゅうり",
+        "answer":  "concombre",
+        "choices":  [
+                        "poulet",
+                        "lait de vache",
+                        "concombre",
+                        "tofu",
+                        "porc",
+                        "fruit"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-028",
+        "topic":  "Fruits et légumes",
+        "kanji":  "トマト",
+        "hiragana":  "トマト",
+        "answer":  "tomate",
+        "choices":  [
+                        "fromage",
+                        "natto",
+                        "tomate",
+                        "raisin",
+                        "porc",
+                        "pain"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-029",
+        "topic":  "Fruits et légumes",
+        "kanji":  "キャベツ",
+        "hiragana":  "キャベツ",
+        "answer":  "chou",
+        "choices":  [
+                        "chou",
+                        "lait de vache",
+                        "concombre",
+                        "algue nori",
+                        "mayonnaise",
+                        "fromage"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-030",
+        "topic":  "Fruits et légumes",
+        "kanji":  "レタス",
+        "hiragana":  "レタス",
+        "answer":  "laitue",
+        "choices":  [
+                        "fruit",
+                        "laitue",
+                        "sauce soja",
+                        "poivre",
+                        "aubergine",
+                        "ketchup"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-031",
+        "topic":  "Fruits et légumes",
+        "kanji":  "なす",
+        "hiragana":  "なす",
+        "answer":  "aubergine",
+        "choices":  [
+                        "fruit",
+                        "chou",
+                        "pain",
+                        "crevette",
+                        "sucre",
+                        "aubergine"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-032",
+        "topic":  "Fruits et légumes",
+        "kanji":  "きのこ",
+        "hiragana":  "きのこ",
+        "answer":  "champignon",
+        "choices":  [
+                        "poulpe",
+                        "pomme de terre",
+                        "Å“uf",
+                        "huile de sésame",
+                        "poisson",
+                        "champignon"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-033",
+        "topic":  "Fruits et légumes",
+        "kanji":  "りんご",
+        "hiragana":  "りんご",
+        "answer":  "pomme",
+        "choices":  [
+                        "mandarine",
+                        "mayonnaise",
+                        "oignon",
+                        "thon",
+                        "viande",
+                        "pomme"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-034",
+        "topic":  "Fruits et légumes",
+        "kanji":  "みかん",
+        "hiragana":  "みかん",
+        "answer":  "mandarine",
+        "choices":  [
+                        "mandarine",
+                        "viande",
+                        "sel",
+                        "pomme",
+                        "pain",
+                        "farine de blé"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-035",
+        "topic":  "Fruits et légumes",
+        "kanji":  "バナナ",
+        "hiragana":  "バナナ",
+        "answer":  "banane",
+        "choices":  [
+                        "natto",
+                        "pomme",
+                        "huile de sésame",
+                        "coquillage",
+                        "banane",
+                        "ketchup"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-036",
+        "topic":  "Fruits et légumes",
+        "kanji":  "いちご",
+        "hiragana":  "いちご",
+        "answer":  "fraise",
+        "choices":  [
+                        "laitue",
+                        "fraise",
+                        "raisin",
+                        "oignon",
+                        "sucre",
+                        "bÅ“uf"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-037",
+        "topic":  "Fruits et légumes",
+        "kanji":  "ぶどう",
+        "hiragana":  "ぶどう",
+        "answer":  "raisin",
+        "choices":  [
+                        "huile",
+                        "saumon",
+                        "riz cru",
+                        "algue wakamé",
+                        "porc",
+                        "raisin"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-038",
+        "topic":  "Fruits et légumes",
+        "kanji":  "レモン",
+        "hiragana":  "レモン",
+        "answer":  "citron",
+        "choices":  [
+                        "laitue",
+                        "pâte de soja miso",
+                        "algue nori",
+                        "citron",
+                        "raisin",
+                        "oignon"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-039",
+        "topic":  "Épicerie et autres ingrédients",
+        "kanji":  "æµ·è‹”",
+        "hiragana":  "のり",
+        "answer":  "algue nori",
+        "choices":  [
+                        "tomate",
+                        "raisin",
+                        "citron",
+                        "huile",
+                        "pâte de soja miso",
+                        "algue nori"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-040",
+        "topic":  "Épicerie et autres ingrédients",
+        "kanji":  "わかめ",
+        "hiragana":  "わかめ",
+        "answer":  "algue wakamé",
+        "choices":  [
+                        "lait de vache",
+                        "pomme de terre",
+                        "tomate",
+                        "poulet",
+                        "algue wakamé",
+                        "banane"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-041",
+        "topic":  "Épicerie et autres ingrédients",
+        "kanji":  "å‘³å™Œ",
+        "hiragana":  "みそ",
+        "answer":  "pâte de soja miso",
+        "choices":  [
+                        "tofu",
+                        "pâte de soja miso",
+                        "légume",
+                        "pain",
+                        "huile",
+                        "fromage"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-042",
+        "topic":  "Épicerie et autres ingrédients",
+        "kanji":  "しょうゆ",
+        "hiragana":  "しょうゆ",
+        "answer":  "sauce soja",
+        "choices":  [
+                        "Å“uf",
+                        "saumon",
+                        "tofu",
+                        "légume",
+                        "sauce soja",
+                        "oignon"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-043",
+        "topic":  "Épicerie et autres ingrédients",
+        "kanji":  "é…¢",
+        "hiragana":  "す",
+        "answer":  "vinaigre",
+        "choices":  [
+                        "bÅ“uf",
+                        "tofu",
+                        "huile",
+                        "pâte de soja miso",
+                        "vinaigre",
+                        "pain"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-044",
+        "topic":  "Épicerie et autres ingrédients",
+        "kanji":  "ç ‚ç³–",
+        "hiragana":  "さとう",
+        "answer":  "sucre",
+        "choices":  [
+                        "thon",
+                        "champignon",
+                        "oignon vert",
+                        "fraise",
+                        "sucre",
+                        "poisson"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-045",
+        "topic":  "Épicerie et autres ingrédients",
+        "kanji":  "å¡©",
+        "hiragana":  "しお",
+        "answer":  "sel",
+        "choices":  [
+                        "raisin",
+                        "sel",
+                        "carotte",
+                        "chou",
+                        "porc",
+                        "poulet"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-046",
+        "topic":  "Épicerie et autres ingrédients",
+        "kanji":  "こしょう",
+        "hiragana":  "こしょう",
+        "answer":  "poivre",
+        "choices":  [
+                        "poivre",
+                        "farine de blé",
+                        "Å“uf",
+                        "ketchup",
+                        "oignon vert",
+                        "thon"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-047",
+        "topic":  "Épicerie et autres ingrédients",
+        "kanji":  "æ²¹",
+        "hiragana":  "あぶら",
+        "answer":  "huile",
+        "choices":  [
+                        "coquillage",
+                        "carotte",
+                        "natto",
+                        "pâte de soja miso",
+                        "thon",
+                        "huile"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-048",
+        "topic":  "Épicerie et autres ingrédients",
+        "kanji":  "ごま油",
+        "hiragana":  "ごまあぶら",
+        "answer":  "huile de sésame",
+        "choices":  [
+                        "tofu",
+                        "oignon",
+                        "chou",
+                        "natto",
+                        "huile de sésame",
+                        "viande"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-049",
+        "topic":  "Épicerie et autres ingrédients",
+        "kanji":  "マヨネーズ",
+        "hiragana":  "マヨネーズ",
+        "answer":  "mayonnaise",
+        "choices":  [
+                        "coquillage",
+                        "beurre",
+                        "crevette",
+                        "sel",
+                        "mayonnaise",
+                        "pomme"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-050",
+        "topic":  "Épicerie et autres ingrédients",
+        "kanji":  "ケチャップ",
+        "hiragana":  "ケチャップ",
+        "answer":  "ketchup",
+        "choices":  [
+                        "lait de vache",
+                        "Å“uf",
+                        "oignon",
+                        "huile de sésame",
+                        "ketchup",
+                        "citron"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-051",
+        "topic":  "Plats et repas",
+        "kanji":  "ご飯",
+        "hiragana":  "ごはん",
+        "answer":  "riz cuit / repas",
+        "choices":  [
+                        "riz sauté",
+                        "riz cuit / repas",
+                        "tempura",
+                        "nouilles udon",
+                        "sushi",
+                        "boîte-repas"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-052",
+        "topic":  "Plats et repas",
+        "kanji":  "おにぎり",
+        "hiragana":  "おにぎり",
+        "answer":  "boulette de riz",
+        "choices":  [
+                        "frites",
+                        "shabu-shabu",
+                        "poisson cru en tranches",
+                        "boulette de riz",
+                        "soupe miso",
+                        "riz au curry"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-053",
+        "topic":  "Plats et repas",
+        "kanji":  "お弁当",
+        "hiragana":  "おべんとう",
+        "answer":  "boîte-repas",
+        "choices":  [
+                        "soupe",
+                        "boîte-repas",
+                        "nouilles soba",
+                        "glace",
+                        "soupe miso",
+                        "shabu-shabu"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-054",
+        "topic":  "Plats japonais",
+        "kanji":  "å¯¿å¸",
+        "hiragana":  "すし",
+        "answer":  "sushi",
+        "choices":  [
+                        "shabu-shabu",
+                        "sushi",
+                        "soupe",
+                        "nouilles soba",
+                        "glace",
+                        "brochette de poulet"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-055",
+        "topic":  "Plats japonais",
+        "kanji":  "åˆºèº«",
+        "hiragana":  "さしみ",
+        "answer":  "poisson cru en tranches",
+        "choices":  [
+                        "boîte-repas",
+                        "raviolis grillés",
+                        "tempura",
+                        "flan",
+                        "poisson cru en tranches",
+                        "boulette de riz"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-056",
+        "topic":  "Plats japonais",
+        "kanji":  "天ぷら",
+        "hiragana":  "てんぷら",
+        "answer":  "tempura",
+        "choices":  [
+                        "boulette de riz",
+                        "glace",
+                        "steak haché japonais",
+                        "steak",
+                        "tempura",
+                        "boîte-repas"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-057",
+        "topic":  "Plats japonais",
+        "kanji":  "焼き鳥",
+        "hiragana":  "やきとり",
+        "answer":  "brochette de poulet",
+        "choices":  [
+                        "glace",
+                        "chocolat",
+                        "boulettes de poulpe",
+                        "poisson cru en tranches",
+                        "brochette de poulet",
+                        "steak haché japonais"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-058",
+        "topic":  "Plats japonais",
+        "kanji":  "焼き肉",
+        "hiragana":  "やきにく",
+        "answer":  "viande grillée",
+        "choices":  [
+                        "boulettes de poulpe",
+                        "riz au curry",
+                        "frites",
+                        "shabu-shabu",
+                        "viande grillée",
+                        "boulette de riz"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-059",
+        "topic":  "Plats japonais",
+        "kanji":  "すき焼き",
+        "hiragana":  "すきやき",
+        "answer":  "sukiyaki",
+        "choices":  [
+                        "riz au curry",
+                        "flan",
+                        "riz sauté",
+                        "steak",
+                        "riz cuit / repas",
+                        "sukiyaki"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-060",
+        "topic":  "Plats japonais",
+        "kanji":  "しゃぶしゃぶ",
+        "hiragana":  "しゃぶしゃぶ",
+        "answer":  "shabu-shabu",
+        "choices":  [
+                        "shabu-shabu",
+                        "bol de riz garni",
+                        "sukiyaki",
+                        "riz cuit / repas",
+                        "gâteau",
+                        "brochette de poulet"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-061",
+        "topic":  "Nouilles et plats chauds",
+        "kanji":  "うどん",
+        "hiragana":  "うどん",
+        "answer":  "nouilles udon",
+        "choices":  [
+                        "steak",
+                        "riz au curry",
+                        "brochette de poulet",
+                        "flan",
+                        "nouilles udon",
+                        "nouilles sautées"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-062",
+        "topic":  "Nouilles et plats chauds",
+        "kanji":  "そば",
+        "hiragana":  "そば",
+        "answer":  "nouilles soba",
+        "choices":  [
+                        "viande grillée",
+                        "raviolis grillés",
+                        "frites",
+                        "ramen",
+                        "sukiyaki",
+                        "nouilles soba"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-063",
+        "topic":  "Nouilles et plats chauds",
+        "kanji":  "ラーメン",
+        "hiragana":  "ラーメン",
+        "answer":  "ramen",
+        "choices":  [
+                        "soupe",
+                        "sushi",
+                        "glace",
+                        "boulettes de poulpe",
+                        "viande grillée",
+                        "ramen"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-064",
+        "topic":  "Nouilles et plats chauds",
+        "kanji":  "焼きそば",
+        "hiragana":  "やきそば",
+        "answer":  "nouilles sautées",
+        "choices":  [
+                        "riz cuit / repas",
+                        "nouilles sautées",
+                        "raviolis grillés",
+                        "steak haché japonais",
+                        "brochette de poulet",
+                        "glace"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-065",
+        "topic":  "Plats japonais",
+        "kanji":  "カレーライス",
+        "hiragana":  "カレーライス",
+        "answer":  "riz au curry",
+        "choices":  [
+                        "boulettes de poulpe",
+                        "riz au curry",
+                        "crêpe salée japonaise",
+                        "bol de riz garni",
+                        "gâteau",
+                        "salade"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-066",
+        "topic":  "Plats japonais",
+        "kanji":  "チャーハン",
+        "hiragana":  "チャーハン",
+        "answer":  "riz sauté",
+        "choices":  [
+                        "viande grillée",
+                        "poisson cru en tranches",
+                        "shabu-shabu",
+                        "soupe",
+                        "riz sauté",
+                        "brochette de poulet"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-067",
+        "topic":  "Plats japonais",
+        "kanji":  "ä¸¼",
+        "hiragana":  "どんぶり",
+        "answer":  "bol de riz garni",
+        "choices":  [
+                        "bol de riz garni",
+                        "gâteau",
+                        "pancake",
+                        "viande grillée",
+                        "crêpe salée japonaise",
+                        "brochette de poulet"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-068",
+        "topic":  "Plats japonais",
+        "kanji":  "å‘³å™Œæ±",
+        "hiragana":  "みそしる",
+        "answer":  "soupe miso",
+        "choices":  [
+                        "riz cuit / repas",
+                        "pancake",
+                        "soupe miso",
+                        "brochette de poulet",
+                        "boulettes de poulpe",
+                        "viande grillée"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-069",
+        "topic":  "Plats et repas",
+        "kanji":  "スープ",
+        "hiragana":  "スープ",
+        "answer":  "soupe",
+        "choices":  [
+                        "sukiyaki",
+                        "crêpe salée japonaise",
+                        "soupe",
+                        "brochette de poulet",
+                        "sushi",
+                        "ramen"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-070",
+        "topic":  "Plats et repas",
+        "kanji":  "サラダ",
+        "hiragana":  "サラダ",
+        "answer":  "salade",
+        "choices":  [
+                        "pain",
+                        "bol de riz garni",
+                        "nouilles sautées",
+                        "soupe miso",
+                        "riz au curry",
+                        "salade"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-071",
+        "topic":  "Plats japonais",
+        "kanji":  "é¤ƒå­",
+        "hiragana":  "ぎょうざ",
+        "answer":  "raviolis grillés",
+        "choices":  [
+                        "chocolat",
+                        "raviolis grillés",
+                        "pancake",
+                        "ramen",
+                        "boulettes de poulpe",
+                        "poisson cru en tranches"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-072",
+        "topic":  "Plats japonais",
+        "kanji":  "お好み焼き",
+        "hiragana":  "おこのみやき",
+        "answer":  "crêpe salée japonaise",
+        "choices":  [
+                        "raviolis grillés",
+                        "boîte-repas",
+                        "riz au curry",
+                        "salade",
+                        "crêpe salée japonaise",
+                        "brochette de poulet"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-073",
+        "topic":  "Plats japonais",
+        "kanji":  "たこ焼き",
+        "hiragana":  "たこやき",
+        "answer":  "boulettes de poulpe",
+        "choices":  [
+                        "flan",
+                        "frites",
+                        "pain",
+                        "soupe",
+                        "boulettes de poulpe",
+                        "raviolis grillés"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-074",
+        "topic":  "Plats japonais",
+        "kanji":  "コロッケ",
+        "hiragana":  "コロッケ",
+        "answer":  "croquette",
+        "choices":  [
+                        "glace",
+                        "croquette",
+                        "soupe miso",
+                        "riz cuit / repas",
+                        "nouilles sautées",
+                        "sushi"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-075",
+        "topic":  "Plats et repas",
+        "kanji":  "ハンバーグ",
+        "hiragana":  "ハンバーグ",
+        "answer":  "steak haché japonais",
+        "choices":  [
+                        "riz sauté",
+                        "biscuit",
+                        "pancake",
+                        "steak haché japonais",
+                        "tempura",
+                        "riz au curry"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-076",
+        "topic":  "Plats et repas",
+        "kanji":  "ステーキ",
+        "hiragana":  "ステーキ",
+        "answer":  "steak",
+        "choices":  [
+                        "nouilles sautées",
+                        "pancake",
+                        "flan",
+                        "brochette de poulet",
+                        "bol de riz garni",
+                        "steak"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-077",
+        "topic":  "Plats et repas",
+        "kanji":  "フライドポテト",
+        "hiragana":  "フライドポテト",
+        "answer":  "frites",
+        "choices":  [
+                        "riz cuit / repas",
+                        "nouilles sautées",
+                        "glace",
+                        "soupe",
+                        "boulette de riz",
+                        "frites"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-078",
+        "topic":  "Desserts et pâtisseries",
+        "kanji":  "パンケーキ",
+        "hiragana":  "パンケーキ",
+        "answer":  "pancake",
+        "choices":  [
+                        "tempura",
+                        "frites",
+                        "chocolat",
+                        "shabu-shabu",
+                        "nouilles udon",
+                        "pancake"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-079",
+        "topic":  "Desserts et pâtisseries",
+        "kanji":  "ケーキ",
+        "hiragana":  "ケーキ",
+        "answer":  "gâteau",
+        "choices":  [
+                        "steak haché japonais",
+                        "brochette de poulet",
+                        "chocolat",
+                        "tempura",
+                        "gâteau",
+                        "boîte-repas"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-080",
+        "topic":  "Desserts et pâtisseries",
+        "kanji":  "アイスクリーム",
+        "hiragana":  "アイスクリーム",
+        "answer":  "glace",
+        "choices":  [
+                        "viande grillée",
+                        "glace",
+                        "tempura",
+                        "riz cuit / repas",
+                        "ramen",
+                        "riz sauté"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-081",
+        "topic":  "Desserts et pâtisseries",
+        "kanji":  "プリン",
+        "hiragana":  "プリン",
+        "answer":  "flan",
+        "choices":  [
+                        "glace",
+                        "ramen",
+                        "flan",
+                        "riz sauté",
+                        "soupe miso",
+                        "boulettes de poulpe"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-082",
+        "topic":  "Desserts et pâtisseries",
+        "kanji":  "チョコレート",
+        "hiragana":  "チョコレート",
+        "answer":  "chocolat",
+        "choices":  [
+                        "pancake",
+                        "boîte-repas",
+                        "chocolat",
+                        "brochette de poulet",
+                        "nouilles udon",
+                        "frites"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-083",
+        "topic":  "Desserts et pâtisseries",
+        "kanji":  "クッキー",
+        "hiragana":  "クッキー",
+        "answer":  "biscuit",
+        "choices":  [
+                        "boîte-repas",
+                        "bol de riz garni",
+                        "biscuit",
+                        "tempura",
+                        "glace",
+                        "riz sauté"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-085",
+        "topic":  "Boissons",
+        "kanji":  "æ°´",
+        "hiragana":  "みず",
+        "answer":  "eau",
+        "choices":  [
+                        "saké japonais",
+                        "lait",
+                        "eau",
+                        "café",
+                        "cocktail japonais au citron",
+                        "vin blanc"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-086",
+        "topic":  "Boissons",
+        "kanji":  "お湯",
+        "hiragana":  "おゆ",
+        "answer":  "eau chaude",
+        "choices":  [
+                        "eau gazeuse",
+                        "eau",
+                        "shÅchÅ«",
+                        "vin",
+                        "eau chaude",
+                        "saké japonais"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-087",
+        "topic":  "Boissons chaudes",
+        "kanji":  "お茶",
+        "hiragana":  "おちゃ",
+        "answer":  "thé",
+        "choices":  [
+                        "whisky",
+                        "thé",
+                        "cocktail",
+                        "saké japonais",
+                        "whisky soda",
+                        "bière"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-088",
+        "topic":  "Boissons chaudes",
+        "kanji":  "ç·‘èŒ¶",
+        "hiragana":  "りょくちゃ",
+        "answer":  "thé vert",
+        "choices":  [
+                        "eau gazeuse",
+                        "shÅchÅ«",
+                        "whisky soda",
+                        "thé vert",
+                        "bière",
+                        "café"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-089",
+        "topic":  "Boissons chaudes",
+        "kanji":  "ç´…èŒ¶",
+        "hiragana":  "こうちゃ",
+        "answer":  "thé noir",
+        "choices":  [
+                        "eau gazeuse",
+                        "thé noir",
+                        "whisky",
+                        "shÅchÅ«",
+                        "vin blanc",
+                        "café"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-090",
+        "topic":  "Boissons chaudes",
+        "kanji":  "コーヒー",
+        "hiragana":  "コーヒー",
+        "answer":  "café",
+        "choices":  [
+                        "thé noir",
+                        "thé vert",
+                        "boisson",
+                        "café",
+                        "cocktail japonais au citron",
+                        "cocktail"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-092",
+        "topic":  "Boissons froides",
+        "kanji":  "ジュース",
+        "hiragana":  "ジュース",
+        "answer":  "jus",
+        "choices":  [
+                        "vin blanc",
+                        "jus",
+                        "cocktail japonais au citron",
+                        "café",
+                        "cocktail",
+                        "vin"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-093",
+        "topic":  "Boissons froides",
+        "kanji":  "オレンジジュース",
+        "hiragana":  "オレンジジュース",
+        "answer":  "jus d’orange",
+        "choices":  [
+                        "thé vert",
+                        "boisson",
+                        "thé noir",
+                        "jus d’orange",
+                        "cocktail",
+                        "eau gazeuse"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-094",
+        "topic":  "Boissons froides",
+        "kanji":  "ç‚­é…¸æ°´",
+        "hiragana":  "たんさんすい",
+        "answer":  "eau gazeuse",
+        "choices":  [
+                        "eau chaude",
+                        "shÅchÅ«",
+                        "eau gazeuse",
+                        "thé",
+                        "thé vert",
+                        "thé noir"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-095",
+        "topic":  "Boissons alcoolisées",
+        "kanji":  "ビール",
+        "hiragana":  "ビール",
+        "answer":  "bière",
+        "choices":  [
+                        "cocktail japonais au citron",
+                        "café",
+                        "bière",
+                        "boisson",
+                        "eau chaude",
+                        "whisky"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-096",
+        "topic":  "Boissons alcoolisées",
+        "kanji":  "æ—¥æœ¬é…’",
+        "hiragana":  "にほんしゅ",
+        "answer":  "saké japonais",
+        "choices":  [
+                        "boisson",
+                        "jus",
+                        "eau gazeuse",
+                        "saké japonais",
+                        "eau",
+                        "lait"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-097",
+        "topic":  "Boissons alcoolisées",
+        "kanji":  "ç„¼é…Ž",
+        "hiragana":  "しょうちゅう",
+        "answer":  "shÅchÅ«",
+        "choices":  [
+                        "vin blanc",
+                        "café",
+                        "jus d’orange",
+                        "shÅchÅ«",
+                        "bière",
+                        "cocktail japonais au citron"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-098",
+        "topic":  "Boissons alcoolisées",
+        "kanji":  "ワイン",
+        "hiragana":  "ワイン",
+        "answer":  "vin",
+        "choices":  [
+                        "vin blanc",
+                        "lait",
+                        "saké japonais",
+                        "shÅchÅ«",
+                        "eau chaude",
+                        "vin"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-099",
+        "topic":  "Boissons alcoolisées",
+        "kanji":  "赤ワイン",
+        "hiragana":  "あかワイン",
+        "answer":  "vin rouge",
+        "choices":  [
+                        "eau chaude",
+                        "eau gazeuse",
+                        "vin rouge",
+                        "jus d’orange",
+                        "vin blanc",
+                        "cocktail japonais au citron"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-100",
+        "topic":  "Boissons alcoolisées",
+        "kanji":  "白ワイン",
+        "hiragana":  "しろワイン",
+        "answer":  "vin blanc",
+        "choices":  [
+                        "bière",
+                        "vin",
+                        "café",
+                        "thé vert",
+                        "eau",
+                        "vin blanc"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-101",
+        "topic":  "Boissons alcoolisées",
+        "kanji":  "ウイスキー",
+        "hiragana":  "ウイスキー",
+        "answer":  "whisky",
+        "choices":  [
+                        "jus d’orange",
+                        "whisky",
+                        "eau gazeuse",
+                        "lait",
+                        "thé",
+                        "eau chaude"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-102",
+        "topic":  "Boissons alcoolisées",
+        "kanji":  "ハイボール",
+        "hiragana":  "ハイボール",
+        "answer":  "whisky soda",
+        "choices":  [
+                        "vin blanc",
+                        "eau gazeuse",
+                        "cocktail japonais au citron",
+                        "whisky soda",
+                        "vin",
+                        "shÅchÅ«"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-103",
+        "topic":  "Boissons alcoolisées",
+        "kanji":  "カクテル",
+        "hiragana":  "カクテル",
+        "answer":  "cocktail",
+        "choices":  [
+                        "jus d’orange",
+                        "shÅchÅ«",
+                        "eau gazeuse",
+                        "bière",
+                        "cocktail",
+                        "thé vert"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-104",
+        "topic":  "Boissons alcoolisées",
+        "kanji":  "レモンサワー",
+        "hiragana":  "レモンサワー",
+        "answer":  "cocktail japonais au citron",
+        "choices":  [
+                        "thé",
+                        "saké japonais",
+                        "eau chaude",
+                        "cocktail japonais au citron",
+                        "boisson",
+                        "café"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-105",
+        "topic":  "Boissons",
+        "kanji":  "飲み物",
+        "hiragana":  "のみもの",
+        "answer":  "boisson",
+        "choices":  [
+                        "saké japonais",
+                        "jus d’orange",
+                        "boisson",
+                        "eau gazeuse",
+                        "vin rouge",
+                        "cocktail"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-106",
+        "topic":  "Magasin alimentaire",
+        "kanji":  "スーパー",
+        "hiragana":  "スーパー",
+        "answer":  "supermarché",
+        "choices":  [
+                        "client",
+                        "monnaie rendue",
+                        "supermarché",
+                        "menu",
+                        "supérette",
+                        "carte bancaire"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-107",
+        "topic":  "Magasin alimentaire",
+        "kanji":  "コンビニ",
+        "hiragana":  "コンビニ",
+        "answer":  "supérette",
+        "choices":  [
+                        "réduction",
+                        "caisse",
+                        "menu",
+                        "magasin / restaurant",
+                        "supérette",
+                        "client"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-108",
+        "topic":  "Magasin alimentaire",
+        "kanji":  "レジ",
+        "hiragana":  "レジ",
+        "answer":  "caisse",
+        "choices":  [
+                        "employé de magasin",
+                        "espèces",
+                        "monnaie rendue",
+                        "commande",
+                        "caisse",
+                        "courses / achats"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-109",
+        "topic":  "Magasin alimentaire",
+        "kanji":  "買い物",
+        "hiragana":  "かいもの",
+        "answer":  "courses / achats",
+        "choices":  [
+                        "caisse",
+                        "promotion",
+                        "supermarché",
+                        "réduction",
+                        "courses / achats",
+                        "addition / paiement"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-110",
+        "topic":  "Magasin alimentaire",
+        "kanji":  "å€¤æ®µ",
+        "hiragana":  "ねだん",
+        "answer":  "prix",
+        "choices":  [
+                        "addition / paiement",
+                        "addition",
+                        "courses / achats",
+                        "espèces",
+                        "caisse",
+                        "prix"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-111",
+        "topic":  "Magasin alimentaire",
+        "kanji":  "å‰²å¼•",
+        "hiragana":  "わりびき",
+        "answer":  "réduction",
+        "choices":  [
+                        "carte bancaire",
+                        "réduction",
+                        "caisse",
+                        "ticket de caisse",
+                        "commande",
+                        "supérette"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-112",
+        "topic":  "Magasin alimentaire",
+        "kanji":  "ç‰¹å£²",
+        "hiragana":  "とくばい",
+        "answer":  "promotion",
+        "choices":  [
+                        "supérette",
+                        "promotion",
+                        "commande",
+                        "courses / achats",
+                        "espèces",
+                        "magasin / restaurant"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-113",
+        "topic":  "Magasin alimentaire",
+        "kanji":  "è¢‹",
+        "hiragana":  "ふくろ",
+        "answer":  "sac",
+        "choices":  [
+                        "prix",
+                        "sac",
+                        "réduction",
+                        "courses / achats",
+                        "ticket de caisse",
+                        "supérette"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-114",
+        "topic":  "Magasin alimentaire",
+        "kanji":  "レシート",
+        "hiragana":  "レシート",
+        "answer":  "ticket de caisse",
+        "choices":  [
+                        "caisse",
+                        "client",
+                        "ticket de caisse",
+                        "addition",
+                        "carte bancaire",
+                        "monnaie rendue"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-115",
+        "topic":  "Magasin alimentaire",
+        "kanji":  "ç¾é‡‘",
+        "hiragana":  "げんきん",
+        "answer":  "espèces",
+        "choices":  [
+                        "supermarché",
+                        "espèces",
+                        "sac",
+                        "client",
+                        "caisse",
+                        "menu"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-116",
+        "topic":  "Magasin alimentaire",
+        "kanji":  "カード",
+        "hiragana":  "カード",
+        "answer":  "carte bancaire",
+        "choices":  [
+                        "carte bancaire",
+                        "monnaie rendue",
+                        "menu",
+                        "sac",
+                        "réduction",
+                        "client"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-117",
+        "topic":  "Magasin alimentaire",
+        "kanji":  "お釣り",
+        "hiragana":  "おつり",
+        "answer":  "monnaie rendue",
+        "choices":  [
+                        "employé de magasin",
+                        "ticket de caisse",
+                        "addition / paiement",
+                        "addition",
+                        "monnaie rendue",
+                        "réduction"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-118",
+        "topic":  "Magasin alimentaire",
+        "kanji":  "åº—å“¡",
+        "hiragana":  "てんいん",
+        "answer":  "employé de magasin",
+        "choices":  [
+                        "addition",
+                        "espèces",
+                        "employé de magasin",
+                        "réservation",
+                        "ticket de caisse",
+                        "réduction"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-119",
+        "topic":  "Restaurant et bar",
+        "kanji":  "æ³¨æ–‡",
+        "hiragana":  "ちゅうもん",
+        "answer":  "commande",
+        "choices":  [
+                        "promotion",
+                        "courses / achats",
+                        "prix",
+                        "commande",
+                        "menu",
+                        "carte bancaire"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-120",
+        "topic":  "Restaurant et bar",
+        "kanji":  "メニュー",
+        "hiragana":  "メニュー",
+        "answer":  "menu",
+        "choices":  [
+                        "commande",
+                        "monnaie rendue",
+                        "menu",
+                        "espèces",
+                        "supérette",
+                        "promotion"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-121",
+        "topic":  "Restaurant et bar",
+        "kanji":  "äºˆç´„",
+        "hiragana":  "よやく",
+        "answer":  "réservation",
+        "choices":  [
+                        "promotion",
+                        "menu",
+                        "réservation",
+                        "prix",
+                        "supérette",
+                        "caisse"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-122",
+        "topic":  "Restaurant et bar",
+        "kanji":  "ä¼šè¨ˆ",
+        "hiragana":  "かいけい",
+        "answer":  "addition / paiement",
+        "choices":  [
+                        "client",
+                        "addition / paiement",
+                        "employé de magasin",
+                        "espèces",
+                        "supérette",
+                        "promotion"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-123",
+        "topic":  "Restaurant et bar",
+        "kanji":  "お勘定",
+        "hiragana":  "おかんじょう",
+        "answer":  "addition",
+        "choices":  [
+                        "commande",
+                        "addition / paiement",
+                        "prix",
+                        "addition",
+                        "promotion",
+                        "réduction"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-124",
+        "topic":  "Restaurant et bar",
+        "kanji":  "お客さん",
+        "hiragana":  "おきゃくさん",
+        "answer":  "client",
+        "choices":  [
+                        "sac",
+                        "monnaie rendue",
+                        "commande",
+                        "addition",
+                        "carte bancaire",
+                        "client"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-125",
+        "topic":  "Restaurant et bar",
+        "kanji":  "åº—",
+        "hiragana":  "みせ",
+        "answer":  "magasin / restaurant",
+        "choices":  [
+                        "commande",
+                        "sac",
+                        "addition",
+                        "magasin / restaurant",
+                        "promotion",
+                        "menu"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-126",
+        "topic":  "Restaurant et bar",
+        "kanji":  "食べ放題",
+        "hiragana":  "たべほうだい",
+        "answer":  "repas à volonté",
+        "choices":  [
+                        "repas à volonté",
+                        "café",
+                        "plat",
+                        "commande",
+                        "manger",
+                        "repas"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    },
+    {
+        "id":  "food-vocab-127",
+        "topic":  "Restaurant et bar",
+        "kanji":  "飲み放題",
+        "hiragana":  "のみほうだい",
+        "answer":  "boissons à volonté",
+        "choices":  [
+                        "menu",
+                        "café",
+                        "boissons à volonté",
+                        "boire",
+                        "addition",
+                        "commande"
+                    ],
+        "level":  "Thème nourriture",
+        "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
+        "bank":  "FOOD"
+    }
+]
