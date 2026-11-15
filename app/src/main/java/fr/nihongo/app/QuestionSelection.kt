@@ -15,28 +15,47 @@ internal object QuestionMasteryRules {
 
 internal object QuestionSelector {
     private const val NORMAL_WEIGHT = 100
-    private const val MASTERED_WEIGHT = 5
+
+    fun countEligibleQuestions(
+        questions: List<LearningQuestion>,
+        masteryCounters: Map<String, Int>,
+        masteryThreshold: Int,
+        masteredQuestionRepeatPercent: Int
+    ): Int {
+        require(masteryThreshold > 0)
+        require(masteredQuestionRepeatPercent in 0..100)
+        return if (masteredQuestionRepeatPercent == 0) {
+            questions.count { (masteryCounters[it.id] ?: 0) < masteryThreshold }
+        } else {
+            questions.size
+        }
+    }
 
     fun <T : LearningQuestion> draw(
         questions: List<T>,
         masteryCounters: Map<String, Int>,
         masteryThreshold: Int,
         count: Int,
+        masteredQuestionRepeatPercent: Int = 5,
         random: Random = Random.Default
     ): List<T> {
         require(questions.isNotEmpty())
         require(masteryThreshold > 0)
         require(count >= 0)
+        require(masteredQuestionRepeatPercent in 0..100)
 
         val weightedQuestions = questions.map { question ->
             question to if ((masteryCounters[question.id] ?: 0) >= masteryThreshold) {
-                MASTERED_WEIGHT
+                masteredQuestionRepeatPercent
             } else {
                 NORMAL_WEIGHT
             }
         }
 
         val totalWeight = weightedQuestions.sumOf { it.second }
+        require(count == 0 || totalWeight > 0) {
+            "Aucune question non maîtrisée ne reste à réviser avec ce réglage."
+        }
 
         return List(count) {
             var ticket = random.nextInt(totalWeight)
@@ -67,7 +86,11 @@ internal class QuestionDeck<T : LearningQuestion>(
         }
     }
 
-    fun draw(masteryCounters: Map<String, Int>, masteryThreshold: Int): T {
+    fun draw(
+        masteryCounters: Map<String, Int>,
+        masteryThreshold: Int,
+        masteredQuestionRepeatPercent: Int = 5
+    ): T {
         check(remainingIds.isNotEmpty()) {
             "Toutes les questions de cette série ont déjà été posées."
         }
@@ -77,6 +100,7 @@ internal class QuestionDeck<T : LearningQuestion>(
             masteryCounters = masteryCounters,
             masteryThreshold = masteryThreshold,
             count = 1,
+            masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
             random = random
         ).single()
         remainingIds.remove(selected.id)

@@ -47,6 +47,7 @@ internal fun VocabularyGameScreen(
     extraAttempts: Int,
     progress: ProgressSnapshot,
     masteryThreshold: Int,
+    masteredQuestionRepeatPercent: Int = 5,
     completedQuestions: Int,
     seriesTarget: Int,
     allQuestionsMastered: Boolean
@@ -64,7 +65,8 @@ internal fun VocabularyGameScreen(
         mutableStateOf(
             questionDeck.draw(
                 masteryCounters = masteryCounters,
-                masteryThreshold = masteryThreshold
+                masteryThreshold = masteryThreshold,
+                masteredQuestionRepeatPercent = masteredQuestionRepeatPercent
             )
         )
     }
@@ -72,6 +74,7 @@ internal fun VocabularyGameScreen(
     var showReading by remember(question.id) { mutableStateOf(false) }
     var feedback by remember { mutableStateOf<String?>(null) }
     var feedbackTranslation by remember { mutableStateOf<String?>(null) }
+    var feedbackHint by remember { mutableStateOf<String?>(null) }
     var feedbackCorrect by remember { mutableStateOf(false) }
     var feedbackEvent by remember { mutableIntStateOf(0) }
     var saveError by remember { mutableStateOf<String?>(null) }
@@ -82,7 +85,8 @@ internal fun VocabularyGameScreen(
         if (questionIndex < seriesTarget) {
             question = questionDeck.draw(
                 masteryCounters = masteryCounters,
-                masteryThreshold = masteryThreshold
+                masteryThreshold = masteryThreshold,
+                masteredQuestionRepeatPercent = masteredQuestionRepeatPercent
             )
         }
     }
@@ -125,7 +129,8 @@ internal fun VocabularyGameScreen(
                         AnswerFeedback(
                             tone = if (feedbackCorrect) FeedbackTone.CORRECT else FeedbackTone.INCORRECT,
                             message = feedback.orEmpty(),
-                            frenchTranslation = feedbackTranslation
+                            frenchTranslation = feedbackTranslation,
+                            pedagogicalHint = feedbackHint
                         ),
                         feedbackEvent
                     )
@@ -174,6 +179,7 @@ internal fun VocabularyGameScreen(
                                     feedbackCorrect = true
                                     feedback = "✓  "
                                     feedbackTranslation = question.answer
+                                    feedbackHint = vocabularyKanjiBreakdown(question)
                                     advance()
                                 } else {
                                     feedbackCorrect = false
@@ -188,6 +194,7 @@ internal fun VocabularyGameScreen(
                                         "Ce n’est pas « $choice ». Réessaie."
                                     }
                                     feedbackTranslation = if (shouldAdvance) question.answer else null
+                                    feedbackHint = if (shouldAdvance) vocabularyKanjiBreakdown(question) else null
                                     if (shouldAdvance) advance()
                                 }
                             },

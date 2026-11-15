@@ -61,7 +61,8 @@ internal enum class FeedbackTone {
 internal data class AnswerFeedback(
     val tone: FeedbackTone,
     val message: String,
-    val frenchTranslation: String? = null
+    val frenchTranslation: String? = null,
+    val pedagogicalHint: String? = null
 )
 
 private val wordColorLegend = listOf(
@@ -81,6 +82,7 @@ internal fun ParticleGameScreen(
     extraAttempts: Int,
     progress: ProgressSnapshot,
     masteryThreshold: Int,
+    masteredQuestionRepeatPercent: Int = 5,
     completedQuestions: Int,
     seriesTarget: Int,
     allQuestionsMastered: Boolean
@@ -100,7 +102,8 @@ internal fun ParticleGameScreen(
         mutableStateOf(
             questionDeck.draw(
                 masteryCounters = initialMasteryCounters,
-                masteryThreshold = masteryThreshold
+                masteryThreshold = masteryThreshold,
+                masteredQuestionRepeatPercent = masteredQuestionRepeatPercent
             )
         )
     }
@@ -113,7 +116,8 @@ internal fun ParticleGameScreen(
         if (questionIndex < seriesTarget) {
             exercise = questionDeck.draw(
                 masteryCounters = masteryCounters,
-                masteryThreshold = masteryThreshold
+                masteryThreshold = masteryThreshold,
+                masteredQuestionRepeatPercent = masteredQuestionRepeatPercent
             )
         }
     }
@@ -222,7 +226,8 @@ internal fun ParticleGameScreen(
                                     feedback = AnswerFeedback(
                                         tone = FeedbackTone.CORRECT,
                                         message = "✓",
-                                        frenchTranslation = exercise.translation
+                                        frenchTranslation = exercise.translation,
+                                        pedagogicalHint = concisePedagogicalHint(exercise.explanation)
                                     )
                                     advanceToNextQuestion()
                                 } else {
@@ -236,7 +241,8 @@ internal fun ParticleGameScreen(
                                         AnswerFeedback(
                                             tone = FeedbackTone.INCORRECT,
                                             message = "×  Réponse : ${answerToken.hiragana}",
-                                            frenchTranslation = exercise.translation
+                                            frenchTranslation = exercise.translation,
+                                            pedagogicalHint = concisePedagogicalHint(exercise.explanation)
                                         )
                                     } else {
                                         AnswerFeedback(
@@ -370,20 +376,28 @@ internal fun AnswerFeedbackBanner(feedback: AnswerFeedback, eventKey: Int) {
         colors = CardDefaults.cardColors(containerColor = backgroundColor),
         border = BorderStroke(1.dp, foregroundColor.copy(alpha = 0.45f))
     ) {
-        Text(
-            text = buildAnnotatedString {
-                append(feedback.message)
-                feedback.frenchTranslation?.let { translation ->
-                    append(" ")
-                    withStyle(SpanStyle(fontStyle = FontStyle.Italic)) {
-                        append(translation)
+        Column(modifier = Modifier.padding(horizontal = 16.dp, vertical = 13.dp)) {
+            Text(
+                text = buildAnnotatedString {
+                    append(feedback.message)
+                    feedback.frenchTranslation?.let { translation ->
+                        append(" ")
+                        withStyle(SpanStyle(fontStyle = FontStyle.Italic)) {
+                            append(translation)
+                        }
                     }
-                }
-            },
-            modifier = Modifier.padding(horizontal = 16.dp, vertical = 13.dp),
-            color = foregroundColor,
-            style = MaterialTheme.typography.titleMedium
-        )
+                },
+                color = foregroundColor,
+                style = MaterialTheme.typography.titleMedium
+            )
+            feedback.pedagogicalHint?.let { hint ->
+                Text(
+                    hint,
+                    color = foregroundColor.copy(alpha = 0.88f),
+                    style = MaterialTheme.typography.bodySmall
+                )
+            }
+        }
     }
 }
 

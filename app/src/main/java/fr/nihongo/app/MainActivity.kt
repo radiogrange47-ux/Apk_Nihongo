@@ -45,6 +45,7 @@ class MainActivity : ComponentActivity() {
     private var progressSnapshot by mutableStateOf<ProgressSnapshot?>(null)
     private var extraAttempts by mutableStateOf(1)
     private var questionMasteryThreshold by mutableStateOf(25)
+    private var masteredQuestionRepeatPercent by mutableStateOf(5)
     private var sessionQuestionCount by mutableStateOf(10)
     private var pendingInstallerUri: Uri? = null
     private var pendingInstallRelease: GitHubRelease? = null
@@ -63,6 +64,7 @@ class MainActivity : ComponentActivity() {
         progressSnapshot = progressStore.snapshot(catalog)
         extraAttempts = learningSettingsStore.extraAttempts()
         questionMasteryThreshold = learningSettingsStore.questionMasteryThreshold()
+        masteredQuestionRepeatPercent = learningSettingsStore.masteredQuestionRepeatPercent()
         sessionQuestionCount = learningSettingsStore.sessionQuestionCount()
         setContent {
             MainScreen(
@@ -73,6 +75,7 @@ class MainActivity : ComponentActivity() {
                 progress = checkNotNull(progressSnapshot),
                 extraAttempts = extraAttempts,
                 questionMasteryThreshold = questionMasteryThreshold,
+                masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
                 sessionQuestionCount = sessionQuestionCount,
                 selectedQuestionBanks = learningSettingsStore.selectedQuestionBanks(),
                 onQuestionBanksChange = ::setSelectedQuestionBanks,
@@ -84,6 +87,7 @@ class MainActivity : ComponentActivity() {
                 onAnswer = ::recordAnswer,
                 onExtraAttemptsChange = ::setExtraAttempts,
                 onQuestionMasteryThresholdChange = ::setQuestionMasteryThreshold,
+                onMasteredQuestionRepeatPercentChange = ::setMasteredQuestionRepeatPercent,
                 onSessionQuestionCountChange = ::setSessionQuestionCount,
                 onResetMasteryCounters = ::resetMasteryCounters
             )
@@ -275,6 +279,15 @@ class MainActivity : ComponentActivity() {
             null
         } catch (exception: Exception) {
             exception.message ?: "Le seuil de maîtrise n’a pas pu être enregistré."
+        }
+
+    private fun setMasteredQuestionRepeatPercent(value: Int): String? =
+        try {
+            learningSettingsStore.setMasteredQuestionRepeatPercent(value)
+            masteredQuestionRepeatPercent = value
+            null
+        } catch (exception: Exception) {
+            exception.message ?: "Le taux de réapparition n’a pas pu être enregistré."
         }
 
     private fun setSessionQuestionCount(value: Int): String? =

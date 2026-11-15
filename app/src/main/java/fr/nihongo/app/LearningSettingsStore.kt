@@ -26,6 +26,17 @@ internal class LearningSettingsStore(context: Context) {
         }
     }
 
+    fun masteredQuestionRepeatPercent(): Int =
+        preferences.getInt(MASTERED_REPEAT_PERCENT_KEY, DEFAULT_MASTERED_REPEAT_PERCENT)
+            .coerceIn(MIN_MASTERED_REPEAT_PERCENT, MAX_MASTERED_REPEAT_PERCENT)
+
+    fun setMasteredQuestionRepeatPercent(value: Int) {
+        require(value in MIN_MASTERED_REPEAT_PERCENT..MAX_MASTERED_REPEAT_PERCENT)
+        check(preferences.edit().putInt(MASTERED_REPEAT_PERCENT_KEY, value).commit()) {
+            "Impossible d’enregistrer la fréquence de réapparition des questions maîtrisées."
+        }
+    }
+
     fun sessionQuestionCount(): Int =
         preferences.getInt(
             SESSION_QUESTION_COUNT_KEY,
@@ -61,6 +72,7 @@ internal class LearningSettingsStore(context: Context) {
         const val PREFERENCES_NAME = "learning_settings"
         const val EXTRA_ATTEMPTS_KEY = "extra_attempts"
         const val MASTERY_THRESHOLD_KEY = "question_mastery_threshold"
+        const val MASTERED_REPEAT_PERCENT_KEY = "mastered_question_repeat_percent"
         const val SESSION_QUESTION_COUNT_KEY = "session_question_count"
         const val QUESTION_BANKS_KEY = "selected_question_banks"
         const val LEGACY_SESSION_STREAK_KEY = "session_correct_streak"
@@ -70,6 +82,9 @@ internal class LearningSettingsStore(context: Context) {
         const val MIN_EXTRA_ATTEMPTS = 0
         const val MAX_EXTRA_ATTEMPTS = 5
         const val MIN_MASTERY_THRESHOLD = 1
+        const val DEFAULT_MASTERED_REPEAT_PERCENT = 5
+        const val MIN_MASTERED_REPEAT_PERCENT = 0
+        const val MAX_MASTERED_REPEAT_PERCENT = 100
         const val MIN_SESSION_QUESTION_COUNT = 1
     }
 }

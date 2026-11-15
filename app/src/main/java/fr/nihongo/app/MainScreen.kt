@@ -21,6 +21,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Slider
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -30,6 +31,7 @@ import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
@@ -39,6 +41,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import kotlin.math.roundToInt
 
 private val NihongoBackground = Color(0xFF080808)
 private val NihongoPanel = Color(0xFF141414)
@@ -63,6 +66,7 @@ internal fun MainScreen(
     progress: ProgressSnapshot,
     extraAttempts: Int,
     questionMasteryThreshold: Int,
+    masteredQuestionRepeatPercent: Int,
     sessionQuestionCount: Int,
     selectedQuestionBanks: Set<QuestionBank>,
     onQuestionBanksChange: (Set<QuestionBank>) -> Unit,
@@ -74,6 +78,7 @@ internal fun MainScreen(
     onAnswer: (LearningQuestion, LearningGame, Boolean) -> String?,
     onExtraAttemptsChange: (Int) -> String?,
     onQuestionMasteryThresholdChange: (Int) -> String?,
+    onMasteredQuestionRepeatPercentChange: (Int) -> String?,
     onSessionQuestionCountChange: (Int) -> String?,
     onResetMasteryCounters: () -> String?
 ) {
@@ -92,10 +97,27 @@ internal fun MainScreen(
     var sessionGameIndex by rememberSaveable { mutableIntStateOf(0) }
     var questionsCompleted by rememberSaveable { mutableIntStateOf(0) }
     var sessionRound by rememberSaveable { mutableIntStateOf(0) }
+    var sessionTargetCounts by rememberSaveable { mutableStateOf("") }
     val selectedGames = LearningGame.values()
         .filter { it.name in selectedGameNames.split(",") && activeCatalog.questionsFor(it).isNotEmpty() }
+    val eligibleQuestionCounts = LearningGame.values().associateWith { game ->
+        val masteryCounters = progress.questionsFor(game).associate { it.questionId to it.masteryCounter }
+        QuestionSelector.countEligibleQuestions(
+            questions = activeCatalog.questionsFor(game),
+            masteryCounters = masteryCounters,
+            masteryThreshold = questionMasteryThreshold,
+            masteredQuestionRepeatPercent = masteredQuestionRepeatPercent
+        )
+    }
+    val playableGames = selectedGames.filter { (eligibleQuestionCounts[it] ?: 0) > 0 }
     val sessionGames = sessionGameNames.split(",")
         .mapNotNull { name -> LearningGame.values().firstOrNull { it.name == name } }
+    val storedSessionTargets = sessionTargetCounts.split(",").mapNotNull { entry ->
+        val parts = entry.split(":")
+        val game = parts.getOrNull(0)?.let { name -> LearningGame.values().firstOrNull { it.name == name } }
+        val target = parts.getOrNull(1)?.toIntOrNull()
+        if (game != null && target != null) game to target else null
+    }.toMap()
 
     fun updateGameSelection(game: LearningGame, checked: Boolean) {
         val selected = selectedGameNames.split(",").filter(String::isNotBlank).toMutableSet()
@@ -114,8 +136,11 @@ internal fun MainScreen(
     }
 
     fun startSession() {
-        if (selectedGames.isEmpty()) return
-        sessionGameNames = selectedGames.joinToString(",") { it.name }
+        if (playableGames.isEmpty()) return
+        sessionGameNames = playableGames.joinToString(",") { it.name }
+        sessionTargetCounts = playableGames.joinToString(",") { game ->
+            "${game.name}:${minOf(sessionQuestionCount, eligibleQuestionCounts.getValue(game))}"
+        }
         sessionGameIndex = 0
         questionsCompleted = 0
         sessionRound++
@@ -138,7 +163,8 @@ internal fun MainScreen(
             sessionGames.isNotEmpty() &&
             sessionGames.getOrNull(sessionGameIndex) == game
         ) {
-            val target = minOf(sessionQuestionCount, activeCatalog.questionsFor(game).size)
+            val target = storedSessionTargets[game]
+                ?: minOf(sessionQuestionCount, activeCatalog.questionsFor(game).size)
             val update = LearningSessionRules.afterQuestion(
                 questionsCompleted = questionsCompleted,
                 gameIndex = sessionGameIndex,
@@ -184,6 +210,7 @@ internal fun MainScreen(
                 AppScreen.HOME -> HomeScreen(
                     progress = progress,
                     selectedGames = selectedGames,
+                    playableGameCount = playableGames.size,
                     selectedBanks = activeBanks,
                     onBankSelectionChange = ::updateBankSelection,
                     onGameSelectionChange = ::updateGameSelection,
@@ -209,8 +236,10 @@ internal fun MainScreen(
                                     extraAttempts = extraAttempts,
                                     progress = progress,
                                     masteryThreshold = questionMasteryThreshold,
+                                    masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
                                     completedQuestions = questionsCompleted,
-                                    seriesTarget = minOf(sessionQuestionCount, activeCatalog.particles.size),
+                                    seriesTarget = storedSessionTargets[game]
+                                        ?: minOf(sessionQuestionCount, activeCatalog.particles.size),
                                     allQuestionsMastered = allSelectedQuestionsMastered
                                 )
 
@@ -223,8 +252,10 @@ internal fun MainScreen(
                                     extraAttempts = extraAttempts,
                                     progress = progress,
                                     masteryThreshold = questionMasteryThreshold,
+                                    masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
                                     completedQuestions = questionsCompleted,
-                                    seriesTarget = minOf(sessionQuestionCount, activeCatalog.vocabulary.size),
+                                    seriesTarget = storedSessionTargets[game]
+                                        ?: minOf(sessionQuestionCount, activeCatalog.vocabulary.size),
                                     allQuestionsMastered = allSelectedQuestionsMastered
                                 )
 
@@ -237,8 +268,10 @@ internal fun MainScreen(
                                     extraAttempts = extraAttempts,
                                     progress = progress,
                                     masteryThreshold = questionMasteryThreshold,
+                                    masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
                                     completedQuestions = questionsCompleted,
-                                    seriesTarget = minOf(sessionQuestionCount, activeCatalog.verbs.size),
+                                    seriesTarget = storedSessionTargets[game]
+                                        ?: minOf(sessionQuestionCount, activeCatalog.verbs.size),
                                     allQuestionsMastered = allSelectedQuestionsMastered
                                 )
 
@@ -250,8 +283,10 @@ internal fun MainScreen(
                                     extraAttempts = extraAttempts,
                                     progress = progress,
                                     masteryThreshold = questionMasteryThreshold,
+                                    masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
                                     completedQuestions = questionsCompleted,
-                                    seriesTarget = minOf(sessionQuestionCount, activeCatalog.conjugation.size),
+                                    seriesTarget = storedSessionTargets[game]
+                                        ?: minOf(sessionQuestionCount, activeCatalog.conjugation.size),
                                     allQuestionsMastered = allSelectedQuestionsMastered
                                 )
                             }
@@ -267,12 +302,14 @@ internal fun MainScreen(
                 AppScreen.SETTINGS -> LearningSettingsScreen(
                     extraAttempts = extraAttempts,
                     questionMasteryThreshold = questionMasteryThreshold,
+                    masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
                     sessionQuestionCount = sessionQuestionCount,
                     appVersion = appVersion,
                     contentVersion = questionCatalog.contentVersion,
                     onBack = { screen = AppScreen.HOME },
                     onExtraAttemptsChange = onExtraAttemptsChange,
                     onQuestionMasteryThresholdChange = onQuestionMasteryThresholdChange,
+                    onMasteredQuestionRepeatPercentChange = onMasteredQuestionRepeatPercentChange,
                     onSessionQuestionCountChange = onSessionQuestionCountChange,
                     onResetMasteryCounters = onResetMasteryCounters,
                     onShowUpdates = { screen = AppScreen.UPDATES },
@@ -361,12 +398,14 @@ private fun UpdatesScreen(
 private fun LearningSettingsScreen(
     extraAttempts: Int,
     questionMasteryThreshold: Int,
+    masteredQuestionRepeatPercent: Int,
     sessionQuestionCount: Int,
     appVersion: String,
     contentVersion: String,
     onBack: () -> Unit,
     onExtraAttemptsChange: (Int) -> String?,
     onQuestionMasteryThresholdChange: (Int) -> String?,
+    onMasteredQuestionRepeatPercentChange: (Int) -> String?,
     onSessionQuestionCountChange: (Int) -> String?,
     onResetMasteryCounters: () -> String?,
     onShowUpdates: () -> Unit,
@@ -377,6 +416,10 @@ private fun LearningSettingsScreen(
         mutableStateOf(questionMasteryThreshold.toString())
     }
     var thresholdError by rememberSaveable { mutableStateOf<String?>(null) }
+    var repeatPercentValue by rememberSaveable(masteredQuestionRepeatPercent) {
+        mutableFloatStateOf(masteredQuestionRepeatPercent.toFloat())
+    }
+    var repeatPercentError by rememberSaveable { mutableStateOf<String?>(null) }
     var sessionQuestionCountInput by rememberSaveable(sessionQuestionCount) {
         mutableStateOf(sessionQuestionCount.toString())
     }
@@ -483,7 +526,7 @@ private fun LearningSettingsScreen(
             ) {
                 Text("Révision des questions", style = MaterialTheme.typography.titleLarge)
                 Text(
-                    "Après ${questionMasteryThreshold} bonnes réponses au compteur, une question apparaît environ 20 fois moins souvent. Une erreur fait baisser son compteur.",
+                    "Après ${questionMasteryThreshold} bonnes réponses, une question est considérée comme maîtrisée. Une erreur fait baisser son compteur.",
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
                 OutlinedTextField(
@@ -511,6 +554,36 @@ private fun LearningSettingsScreen(
                     Text("Enregistrer le seuil")
                 }
                 thresholdError?.let { message ->
+                    Text(message, color = MaterialTheme.colorScheme.error)
+                }
+                Text(
+                    "Réapparition des questions maîtrisées : ${repeatPercentValue.roundToInt()} %",
+                    style = MaterialTheme.typography.titleMedium
+                )
+                Text(
+                    "0 % : jamais sélectionnées. 100 % : même fréquence que les autres questions.",
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Slider(
+                    value = repeatPercentValue,
+                    onValueChange = {
+                        repeatPercentValue = it
+                        repeatPercentError = null
+                    },
+                    valueRange = 0f..100f,
+                    steps = 99,
+                    onValueChangeFinished = {
+                        repeatPercentError = onMasteredQuestionRepeatPercentChange(repeatPercentValue.roundToInt())
+                    }
+                )
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    Text("0 %", color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    Text("100 %", color = MaterialTheme.colorScheme.onSurfaceVariant)
+                }
+                repeatPercentError?.let { message ->
                     Text(message, color = MaterialTheme.colorScheme.error)
                 }
                 Button(

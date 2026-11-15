@@ -50,6 +50,7 @@ internal fun ConjugationGameScreen(
     extraAttempts: Int,
     progress: ProgressSnapshot,
     masteryThreshold: Int,
+    masteredQuestionRepeatPercent: Int = 5,
     completedQuestions: Int,
     seriesTarget: Int,
     allQuestionsMastered: Boolean
@@ -65,6 +66,7 @@ internal fun ConjugationGameScreen(
     var selectedToken by remember { mutableStateOf<PhraseToken?>(null) }
     var feedback by remember { mutableStateOf<String?>(null) }
     var feedbackCorrect by remember { mutableStateOf(false) }
+    var feedbackHint by remember { mutableStateOf<String?>(null) }
     var feedbackEvent by remember { mutableIntStateOf(0) }
     var saveError by remember { mutableStateOf<String?>(null) }
     val questionDeck = remember(questions) { QuestionDeck(questions) }
@@ -72,7 +74,8 @@ internal fun ConjugationGameScreen(
         mutableStateOf(
             questionDeck.draw(
                 masteryCounters = masteryCounters,
-                masteryThreshold = masteryThreshold
+                masteryThreshold = masteryThreshold,
+                masteredQuestionRepeatPercent = masteredQuestionRepeatPercent
             )
         )
     }
@@ -84,7 +87,8 @@ internal fun ConjugationGameScreen(
         if (questionIndex < seriesTarget) {
             question = questionDeck.draw(
                 masteryCounters = masteryCounters,
-                masteryThreshold = masteryThreshold
+                masteryThreshold = masteryThreshold,
+                masteredQuestionRepeatPercent = masteredQuestionRepeatPercent
             )
         }
     }
@@ -122,6 +126,16 @@ internal fun ConjugationGameScreen(
                         color = MaterialTheme.colorScheme.primary
                     )
                 }
+                if (feedback != null) {
+                    AnswerFeedbackBanner(
+                        AnswerFeedback(
+                            tone = if (feedbackCorrect) FeedbackTone.CORRECT else FeedbackTone.INCORRECT,
+                            message = feedback.orEmpty(),
+                            pedagogicalHint = feedbackHint
+                        ),
+                        feedbackEvent
+                    )
+                }
                 Text(
                     question.contextFrench,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -132,15 +146,6 @@ internal fun ConjugationGameScreen(
                     color = MaterialTheme.colorScheme.onSurface,
                     fontStyle = FontStyle.Italic
                 )
-                if (feedback != null) {
-                    AnswerFeedbackBanner(
-                        AnswerFeedback(
-                            tone = if (feedbackCorrect) FeedbackTone.CORRECT else FeedbackTone.INCORRECT,
-                            message = feedback.orEmpty()
-                        ),
-                        feedbackEvent
-                    )
-                }
                 ConjugationPhrase(
                     question = question,
                     onSelectToken = { selectedToken = it }
@@ -176,7 +181,8 @@ internal fun ConjugationGameScreen(
                                 selectedToken = null
                                 if (correct) {
                                     feedbackCorrect = true
-                                    feedback = "✓  "
+                                    feedback = "✓  ${question.completedJapaneseSentence()}"
+                                    feedbackHint = concisePedagogicalHint(question.explanation)
                                     advance()
                                 } else {
                                     feedbackCorrect = false
@@ -186,9 +192,14 @@ internal fun ConjugationGameScreen(
                                     )
                                     wrongAnswers++
                                     feedback = if (shouldAdvance) {
-                                        "Réponse : ${question.answerEnding} · "
+                                        "Réponse : ${question.completedJapaneseSentence()}"
                                     } else {
                                         "Ce n’est pas « $ending ». Réessaie. "
+                                    }
+                                    feedbackHint = if (shouldAdvance) {
+                                        concisePedagogicalHint(question.explanation)
+                                    } else {
+                                        null
                                     }
                                     if (shouldAdvance) advance()
                                 }
@@ -257,6 +268,11 @@ internal fun ConjugationGameScreen(
         }
     }
 }
+
+private fun ConjugationQuestion.completedJapaneseSentence(): String =
+    tokens.mapIndexed { index, token ->
+        if (index == verbTokenIndex) token.japanese + answerEnding else token.japanese
+    }.joinToString(separator = "") + punctuation
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable

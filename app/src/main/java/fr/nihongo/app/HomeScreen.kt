@@ -43,6 +43,7 @@ private val HomeBorder = Color(0xFF292929)
 internal fun HomeScreen(
     progress: ProgressSnapshot,
     selectedGames: List<LearningGame>,
+    playableGameCount: Int,
     selectedBanks: Set<QuestionBank>,
     onBankSelectionChange: (QuestionBank, Boolean) -> Unit,
     onGameSelectionChange: (LearningGame, Boolean) -> Unit,
@@ -57,8 +58,11 @@ internal fun HomeScreen(
     }
     val startLabel = when (selectedGames.size) {
         0 -> "Choisis un mini-jeu"
-        1 -> "Démarrer la séance · 1 jeu"
-        else -> "Démarrer la séance · ${selectedGames.size} jeux"
+        else -> when (playableGameCount) {
+            0 -> "Aucune question à réviser"
+            1 -> "Démarrer la séance · 1 jeu"
+            else -> "Démarrer la séance · $playableGameCount jeux"
+        }
     }
 
     Column(
@@ -178,7 +182,7 @@ internal fun HomeScreen(
 
         Button(
             onClick = onStart,
-            enabled = selectedGames.isNotEmpty(),
+            enabled = playableGameCount > 0,
             modifier = Modifier.fillMaxWidth().height(58.dp),
             shape = RoundedCornerShape(18.dp),
             colors = ButtonDefaults.buttonColors(containerColor = HomeAccent)
