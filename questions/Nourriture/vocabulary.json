@@ -9,7 +9,7 @@
                         "algue nori",
                         "ketchup",
                         "pâte de soja miso",
-                        "bÅ“uf",
+                        "bœuf",
                         "farine de blé",
                         "riz cru"
                     ],
@@ -20,7 +20,7 @@
     {
         "id":  "food-vocab-002",
         "topic":  "Céréales et produits de base",
-        "kanji":  "å°éº¦ç²‰",
+        "kanji":  "小麦粉",
         "hiragana":  "こむぎこ",
         "answer":  "farine de blé",
         "choices":  [
@@ -56,16 +56,16 @@
     {
         "id":  "food-vocab-004",
         "topic":  "Produits frais",
-        "kanji":  "åµ",
+        "kanji":  "卵",
         "hiragana":  "たまご",
-        "answer":  "Å“uf",
+        "answer":  "œuf",
         "choices":  [
                         "viande",
                         "carotte",
                         "aubergine",
                         "banane",
                         "riz cru",
-                        "Å“uf"
+                        "œuf"
                     ],
         "level":  "Thème nourriture",
         "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
@@ -74,7 +74,7 @@
     {
         "id":  "food-vocab-005",
         "topic":  "Produits frais",
-        "kanji":  "ç‰›ä¹³",
+        "kanji":  "牛乳",
         "hiragana":  "ぎゅうにゅう",
         "answer":  "lait de vache",
         "choices":  [
@@ -128,7 +128,7 @@
     {
         "id":  "food-vocab-008",
         "topic":  "Viandes et poissons",
-        "kanji":  "è‚‰",
+        "kanji":  "肉",
         "hiragana":  "にく",
         "answer":  "viande",
         "choices":  [
@@ -146,16 +146,16 @@
     {
         "id":  "food-vocab-009",
         "topic":  "Viandes et poissons",
-        "kanji":  "ç‰›è‚‰",
+        "kanji":  "牛肉",
         "hiragana":  "ぎゅうにく",
-        "answer":  "bÅ“uf",
+        "answer":  "bœuf",
         "choices":  [
                         "viande",
                         "huile de sésame",
                         "champignon",
                         "oignon",
                         "algue nori",
-                        "bÅ“uf"
+                        "bœuf"
                     ],
         "level":  "Thème nourriture",
         "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
@@ -164,7 +164,7 @@
     {
         "id":  "food-vocab-010",
         "topic":  "Viandes et poissons",
-        "kanji":  "è±šè‚‰",
+        "kanji":  "豚肉",
         "hiragana":  "ぶたにく",
         "answer":  "porc",
         "choices":  [
@@ -182,7 +182,7 @@
     {
         "id":  "food-vocab-011",
         "topic":  "Viandes et poissons",
-        "kanji":  "é¶è‚‰",
+        "kanji":  "鶏肉",
         "hiragana":  "とりにく",
         "answer":  "poulet",
         "choices":  [
@@ -308,7 +308,7 @@
     {
         "id":  "food-vocab-018",
         "topic":  "Viandes et poissons",
-        "kanji":  "è²",
+        "kanji":  "貝",
         "hiragana":  "かい",
         "answer":  "coquillage",
         "choices":  [
@@ -326,7 +326,7 @@
     {
         "id":  "food-vocab-019",
         "topic":  "Produits frais",
-        "kanji":  "è±†è…",
+        "kanji":  "豆腐",
         "hiragana":  "とうふ",
         "answer":  "tofu",
         "choices":  [
@@ -344,7 +344,7 @@
     {
         "id":  "food-vocab-020",
         "topic":  "Produits frais",
-        "kanji":  "ç´è±†",
+        "kanji":  "納豆",
         "hiragana":  "なっとう",
         "answer":  "natto",
         "choices":  [
@@ -362,7 +362,7 @@
     {
         "id":  "food-vocab-021",
         "topic":  "Fruits et légumes",
-        "kanji":  "é‡Žèœ",
+        "kanji":  "野菜",
         "hiragana":  "やさい",
         "answer":  "légume",
         "choices":  [
@@ -380,7 +380,7 @@
     {
         "id":  "food-vocab-022",
         "topic":  "Fruits et légumes",
-        "kanji":  "æžœç‰©",
+        "kanji":  "果物",
         "hiragana":  "くだもの",
         "answer":  "fruit",
         "choices":  [
@@ -388,7 +388,7 @@
                         "chou",
                         "fruit",
                         "crevette",
-                        "bÅ“uf",
+                        "bœuf",
                         "tofu"
                     ],
         "level":  "Thème nourriture",
@@ -421,7 +421,7 @@
         "answer":  "oignon vert",
         "choices":  [
                         "oignon vert",
-                        "Å“uf",
+                        "œuf",
                         "farine de blé",
                         "pomme de terre",
                         "ketchup",
@@ -566,7 +566,7 @@
         "choices":  [
                         "poulpe",
                         "pomme de terre",
-                        "Å“uf",
+                        "œuf",
                         "huile de sésame",
                         "poisson",
                         "champignon"
@@ -641,7 +641,7 @@
                         "raisin",
                         "oignon",
                         "sucre",
-                        "bÅ“uf"
+                        "bœuf"
                     ],
         "level":  "Thème nourriture",
         "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
@@ -686,7 +686,7 @@
     {
         "id":  "food-vocab-039",
         "topic":  "Épicerie et autres ingrédients",
-        "kanji":  "æµ·è‹”",
+        "kanji":  "海苔",
         "hiragana":  "のり",
         "answer":  "algue nori",
         "choices":  [
@@ -722,7 +722,7 @@
     {
         "id":  "food-vocab-041",
         "topic":  "Épicerie et autres ingrédients",
-        "kanji":  "å‘³å™Œ",
+        "kanji":  "味噌",
         "hiragana":  "みそ",
         "answer":  "pâte de soja miso",
         "choices":  [
@@ -744,7 +744,7 @@
         "hiragana":  "しょうゆ",
         "answer":  "sauce soja",
         "choices":  [
-                        "Å“uf",
+                        "œuf",
                         "saumon",
                         "tofu",
                         "légume",
@@ -762,7 +762,7 @@
         "hiragana":  "す",
         "answer":  "vinaigre",
         "choices":  [
-                        "bÅ“uf",
+                        "bœuf",
                         "tofu",
                         "huile",
                         "pâte de soja miso",
@@ -776,7 +776,7 @@
     {
         "id":  "food-vocab-044",
         "topic":  "Épicerie et autres ingrédients",
-        "kanji":  "ç ‚ç³–",
+        "kanji":  "砂糖",
         "hiragana":  "さとう",
         "answer":  "sucre",
         "choices":  [
@@ -794,7 +794,7 @@
     {
         "id":  "food-vocab-045",
         "topic":  "Épicerie et autres ingrédients",
-        "kanji":  "å¡©",
+        "kanji":  "塩",
         "hiragana":  "しお",
         "answer":  "sel",
         "choices":  [
@@ -818,7 +818,7 @@
         "choices":  [
                         "poivre",
                         "farine de blé",
-                        "Å“uf",
+                        "œuf",
                         "ketchup",
                         "oignon vert",
                         "thon"
@@ -830,7 +830,7 @@
     {
         "id":  "food-vocab-047",
         "topic":  "Épicerie et autres ingrédients",
-        "kanji":  "æ²¹",
+        "kanji":  "油",
         "hiragana":  "あぶら",
         "answer":  "huile",
         "choices":  [
@@ -889,7 +889,7 @@
         "answer":  "ketchup",
         "choices":  [
                         "lait de vache",
-                        "Å“uf",
+                        "œuf",
                         "oignon",
                         "huile de sésame",
                         "ketchup",
@@ -956,7 +956,7 @@
     {
         "id":  "food-vocab-054",
         "topic":  "Plats japonais",
-        "kanji":  "å¯¿å¸",
+        "kanji":  "寿司",
         "hiragana":  "すし",
         "answer":  "sushi",
         "choices":  [
@@ -974,7 +974,7 @@
     {
         "id":  "food-vocab-055",
         "topic":  "Plats japonais",
-        "kanji":  "åˆºèº«",
+        "kanji":  "刺身",
         "hiragana":  "さしみ",
         "answer":  "poisson cru en tranches",
         "choices":  [
@@ -1208,7 +1208,7 @@
     {
         "id":  "food-vocab-068",
         "topic":  "Plats japonais",
-        "kanji":  "å‘³å™Œæ±",
+        "kanji":  "味噌汁",
         "hiragana":  "みそしる",
         "answer":  "soupe miso",
         "choices":  [
@@ -1262,7 +1262,7 @@
     {
         "id":  "food-vocab-071",
         "topic":  "Plats japonais",
-        "kanji":  "é¤ƒå­",
+        "kanji":  "餃子",
         "hiragana":  "ぎょうざ",
         "answer":  "raviolis grillés",
         "choices":  [
@@ -1496,7 +1496,7 @@
     {
         "id":  "food-vocab-085",
         "topic":  "Boissons",
-        "kanji":  "æ°´",
+        "kanji":  "水",
         "hiragana":  "みず",
         "answer":  "eau",
         "choices":  [
@@ -1520,7 +1520,7 @@
         "choices":  [
                         "eau gazeuse",
                         "eau",
-                        "shÅchÅ«",
+                        "shōchū",
                         "vin",
                         "eau chaude",
                         "saké japonais"
@@ -1550,12 +1550,12 @@
     {
         "id":  "food-vocab-088",
         "topic":  "Boissons chaudes",
-        "kanji":  "ç·‘èŒ¶",
+        "kanji":  "緑茶",
         "hiragana":  "りょくちゃ",
         "answer":  "thé vert",
         "choices":  [
                         "eau gazeuse",
-                        "shÅchÅ«",
+                        "shōchū",
                         "whisky soda",
                         "thé vert",
                         "bière",
@@ -1568,14 +1568,14 @@
     {
         "id":  "food-vocab-089",
         "topic":  "Boissons chaudes",
-        "kanji":  "ç´…èŒ¶",
+        "kanji":  "紅茶",
         "hiragana":  "こうちゃ",
         "answer":  "thé noir",
         "choices":  [
                         "eau gazeuse",
                         "thé noir",
                         "whisky",
-                        "shÅchÅ«",
+                        "shōchū",
                         "vin blanc",
                         "café"
                     ],
@@ -1640,12 +1640,12 @@
     {
         "id":  "food-vocab-094",
         "topic":  "Boissons froides",
-        "kanji":  "ç‚­é…¸æ°´",
+        "kanji":  "炭酸水",
         "hiragana":  "たんさんすい",
         "answer":  "eau gazeuse",
         "choices":  [
                         "eau chaude",
-                        "shÅchÅ«",
+                        "shōchū",
                         "eau gazeuse",
                         "thé",
                         "thé vert",
@@ -1676,7 +1676,7 @@
     {
         "id":  "food-vocab-096",
         "topic":  "Boissons alcoolisées",
-        "kanji":  "æ—¥æœ¬é…’",
+        "kanji":  "日本酒",
         "hiragana":  "にほんしゅ",
         "answer":  "saké japonais",
         "choices":  [
@@ -1694,14 +1694,14 @@
     {
         "id":  "food-vocab-097",
         "topic":  "Boissons alcoolisées",
-        "kanji":  "ç„¼é…Ž",
+        "kanji":  "焼酎",
         "hiragana":  "しょうちゅう",
-        "answer":  "shÅchÅ«",
+        "answer":  "shōchū",
         "choices":  [
                         "vin blanc",
                         "café",
                         "jus d’orange",
-                        "shÅchÅ«",
+                        "shōchū",
                         "bière",
                         "cocktail japonais au citron"
                     ],
@@ -1719,7 +1719,7 @@
                         "vin blanc",
                         "lait",
                         "saké japonais",
-                        "shÅchÅ«",
+                        "shōchū",
                         "eau chaude",
                         "vin"
                     ],
@@ -1793,7 +1793,7 @@
                         "cocktail japonais au citron",
                         "whisky soda",
                         "vin",
-                        "shÅchÅ«"
+                        "shōchū"
                     ],
         "level":  "Thème nourriture",
         "source":  "Sélection pédagogique : vocabulaire courant pour les repas, le restaurant, le bar et les courses alimentaires.",
@@ -1807,7 +1807,7 @@
         "answer":  "cocktail",
         "choices":  [
                         "jus d’orange",
-                        "shÅchÅ«",
+                        "shōchū",
                         "eau gazeuse",
                         "bière",
                         "cocktail",
@@ -1928,7 +1928,7 @@
     {
         "id":  "food-vocab-110",
         "topic":  "Magasin alimentaire",
-        "kanji":  "å€¤æ®µ",
+        "kanji":  "値段",
         "hiragana":  "ねだん",
         "answer":  "prix",
         "choices":  [
@@ -1946,7 +1946,7 @@
     {
         "id":  "food-vocab-111",
         "topic":  "Magasin alimentaire",
-        "kanji":  "å‰²å¼•",
+        "kanji":  "割引",
         "hiragana":  "わりびき",
         "answer":  "réduction",
         "choices":  [
@@ -1964,7 +1964,7 @@
     {
         "id":  "food-vocab-112",
         "topic":  "Magasin alimentaire",
-        "kanji":  "ç‰¹å£²",
+        "kanji":  "特売",
         "hiragana":  "とくばい",
         "answer":  "promotion",
         "choices":  [
@@ -1982,7 +1982,7 @@
     {
         "id":  "food-vocab-113",
         "topic":  "Magasin alimentaire",
-        "kanji":  "è¢‹",
+        "kanji":  "袋",
         "hiragana":  "ふくろ",
         "answer":  "sac",
         "choices":  [
@@ -2018,7 +2018,7 @@
     {
         "id":  "food-vocab-115",
         "topic":  "Magasin alimentaire",
-        "kanji":  "ç¾é‡‘",
+        "kanji":  "現金",
         "hiragana":  "げんきん",
         "answer":  "espèces",
         "choices":  [
@@ -2072,7 +2072,7 @@
     {
         "id":  "food-vocab-118",
         "topic":  "Magasin alimentaire",
-        "kanji":  "åº—å“¡",
+        "kanji":  "店員",
         "hiragana":  "てんいん",
         "answer":  "employé de magasin",
         "choices":  [
@@ -2090,7 +2090,7 @@
     {
         "id":  "food-vocab-119",
         "topic":  "Restaurant et bar",
-        "kanji":  "æ³¨æ–‡",
+        "kanji":  "注文",
         "hiragana":  "ちゅうもん",
         "answer":  "commande",
         "choices":  [
@@ -2126,7 +2126,7 @@
     {
         "id":  "food-vocab-121",
         "topic":  "Restaurant et bar",
-        "kanji":  "äºˆç´„",
+        "kanji":  "予約",
         "hiragana":  "よやく",
         "answer":  "réservation",
         "choices":  [
@@ -2144,7 +2144,7 @@
     {
         "id":  "food-vocab-122",
         "topic":  "Restaurant et bar",
-        "kanji":  "ä¼šè¨ˆ",
+        "kanji":  "会計",
         "hiragana":  "かいけい",
         "answer":  "addition / paiement",
         "choices":  [
@@ -2198,7 +2198,7 @@
     {
         "id":  "food-vocab-125",
         "topic":  "Restaurant et bar",
-        "kanji":  "åº—",
+        "kanji":  "店",
         "hiragana":  "みせ",
         "answer":  "magasin / restaurant",
         "choices":  [

@@ -68,7 +68,16 @@ internal class QuestionDataStore(
                 preferBundledWhenNewer(loader.loadArchive(currentArchive))
                     .also(progressStore::synchronizeQuestions)
             } catch (currentFailure: Exception) {
-                if (!backupArchive.isFile) throw currentFailure
+                if (!backupArchive.isFile) {
+                    val bundledCatalog = try {
+                        loader.loadBundled()
+                    } catch (bundledFailure: Exception) {
+                        bundledFailure.addSuppressed(currentFailure)
+                        throw bundledFailure
+                    }
+                    currentArchive.delete()
+                    return bundledCatalog.also(progressStore::synchronizeQuestions)
+                }
                 val backup = loader.loadArchive(backupArchive)
                 if (!replaceFile(backupArchive, currentArchive)) {
                     throw IllegalStateException(

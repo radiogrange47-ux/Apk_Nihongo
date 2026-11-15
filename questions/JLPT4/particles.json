@@ -61,7 +61,7 @@
                            "category":  "VOCABULARY"
                        }
                    ],
-        "missingTokenIndex":  2,
+        "missingTokenIndex":  1,
         "choices":  [
                         "おかげで",
                         "せいで",
@@ -100,7 +100,7 @@
                            "category":  "VERB"
                        }
                    ],
-        "missingTokenIndex":  2,
+        "missingTokenIndex":  1,
         "choices":  [
                         "について",
                         "に対して",
@@ -178,7 +178,7 @@
                            "category":  "VERB"
                        }
                    ],
-        "missingTokenIndex":  2,
+        "missingTokenIndex":  1,
         "choices":  [
                         "として",
                         "について",
@@ -256,7 +256,7 @@
                            "category":  "VOCABULARY"
                        }
                    ],
-        "missingTokenIndex":  2,
+        "missingTokenIndex":  1,
         "choices":  [
                         "までに",
                         "まで",
@@ -295,7 +295,7 @@
                            "category":  "VERB"
                        }
                    ],
-        "missingTokenIndex":  2,
+        "missingTokenIndex":  1,
         "choices":  [
                         "ばかり",
                         "だけ",
@@ -373,7 +373,7 @@
                            "category":  "VERB"
                        }
                    ],
-        "missingTokenIndex":  2,
+        "missingTokenIndex":  1,
         "choices":  [
                         "だけ",
                         "しか",
@@ -451,7 +451,7 @@
                            "category":  "VERB"
                        }
                    ],
-        "missingTokenIndex":  2,
+        "missingTokenIndex":  1,
         "choices":  [
                         "くらい",
                         "まで",
@@ -529,7 +529,7 @@
                            "category":  "VOCABULARY"
                        }
                    ],
-        "missingTokenIndex":  2,
+        "missingTokenIndex":  1,
         "choices":  [
                         "に比べて",
                         "について",
@@ -646,7 +646,7 @@
                            "category":  "VERB"
                        }
                    ],
-        "missingTokenIndex":  2,
+        "missingTokenIndex":  1,
         "choices":  [
                         "とか",
                         "など",
@@ -763,7 +763,7 @@
                            "category":  "VERB"
                        }
                    ],
-        "missingTokenIndex":  2,
+        "missingTokenIndex":  1,
         "choices":  [
                         "ても",
                         "ので",
@@ -802,7 +802,7 @@
                            "category":  "VERB"
                        }
                    ],
-        "missingTokenIndex":  2,
+        "missingTokenIndex":  1,
         "choices":  [
                         "ので",
                         "のに",
@@ -841,7 +841,7 @@
                            "category":  "VERB"
                        }
                    ],
-        "missingTokenIndex":  2,
+        "missingTokenIndex":  1,
         "choices":  [
                         "ために",
                         "ように",
@@ -997,7 +997,7 @@
                            "category":  "VERB"
                        }
                    ],
-        "missingTokenIndex":  2,
+        "missingTokenIndex":  1,
         "choices":  [
                         "まま",
                         "うちに",
@@ -1075,7 +1075,7 @@
                            "category":  "VERB"
                        }
                    ],
-        "missingTokenIndex":  2,
+        "missingTokenIndex":  1,
         "choices":  [
                         "以外",
                         "以内",
