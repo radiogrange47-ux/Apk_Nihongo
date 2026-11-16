@@ -340,4 +340,6 @@ private fun LearningGame.progressTitle(): String = when (this) {
     LearningGame.VOCABULARY -> "Vocabulaire"
     LearningGame.VERBS -> "Verbes"
     LearningGame.CONJUGATION -> "Conjugaison"
+    LearningGame.PAIRS -> "Paires japonaises"
+    LearningGame.COUNTER_CHALLENGE -> "Défi des compteurs"
 }

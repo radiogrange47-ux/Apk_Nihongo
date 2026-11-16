@@ -165,6 +165,7 @@ internal fun ConjugationGameScreen(
                 )
                 ConjugationPhrase(
                     question = question,
+                    questionSpeech = questionSpeech,
                     onSelectToken = { selectedToken = it }
                 )
             }
@@ -184,6 +185,7 @@ internal fun ConjugationGameScreen(
                                 contentDescription = "Choisir la terminaison $ending"
                             }
                             .clickable {
+                                questionSpeech.speakQuestion(ending)
                                 val correct = ending == question.answerEnding
                                 saveError = onAnswer(question, LearningGame.CONJUGATION, correct)
                                 if (saveError == null) feedbackEvent++
@@ -301,6 +303,7 @@ private fun ConjugationQuestion.completedJapaneseSentence(): String =
 @Composable
 private fun ConjugationPhrase(
     question: ConjugationQuestion,
+    questionSpeech: JapaneseQuestionSpeech,
     onSelectToken: (PhraseToken) -> Unit
 ) {
     FlowRow(
@@ -320,7 +323,10 @@ private fun ConjugationPhrase(
                 color = color,
                 style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Medium,
-                modifier = Modifier.clickable { onSelectToken(token) }
+                modifier = Modifier.clickable {
+                    questionSpeech.speakQuestion(token.hiragana)
+                    onSelectToken(token)
+                }
             )
             if (index == question.verbTokenIndex) {
                 Text(

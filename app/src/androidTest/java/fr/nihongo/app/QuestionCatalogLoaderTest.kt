@@ -43,7 +43,9 @@ class QuestionCatalogLoaderTest {
         assertTrue(catalog.vocabulary.all { it.choices.size == 6 })
         assertTrue(catalog.verbs.all { it.choices.size == 6 })
         assertTrue(catalog.conjugation.all { it.choices.size == 6 })
-        assertEquals(1082, catalog.allQuestionIds().values.flatten().size)
+        assertEquals(840, catalog.questionsFor(LearningGame.PAIRS).size)
+        assertEquals(122, catalog.questionsFor(LearningGame.COUNTER_CHALLENGE).size)
+        assertEquals(2044, catalog.allQuestionIds().values.flatten().size)
         assertTrue(
             LearningGame.values().all { game ->
                 catalog.questionsFor(game).all {

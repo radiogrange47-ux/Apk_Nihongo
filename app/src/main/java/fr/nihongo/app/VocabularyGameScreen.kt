@@ -155,7 +155,10 @@ internal fun VocabularyGameScreen(
                         style = MaterialTheme.typography.displayMedium,
                         color = Color(0xFF64B5F6),
                         fontWeight = FontWeight.Medium,
-                        modifier = Modifier.clickable { showReading = true }
+                        modifier = Modifier.clickable {
+                            questionSpeech.speakQuestion(question.hiragana)
+                            showReading = true
+                        }
                     )
                 }
             }

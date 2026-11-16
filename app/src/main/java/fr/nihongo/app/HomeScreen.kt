@@ -56,12 +56,25 @@ internal fun HomeScreen(
     onShowSettings: () -> Unit
 ) {
     val masteredCounters = progress.questions.associate { it.questionId to it.masteryCounter }
+    val pairIds = questionCatalog.pairingQuestions().mapTo(hashSetOf()) { it.id.removePrefix("pairs-") }
+    val counterIds = questionCatalog.counterChallengeQuestions().mapTo(hashSetOf()) {
+        it.id.removePrefix("counter-")
+    }
     val bankMasteryPercent = QuestionBank.values().associateWith { bank ->
-        val questions = LearningGame.values().flatMap { game ->
+        val questions = LearningGame.values().filterNot {
+            it == LearningGame.PAIRS || it == LearningGame.COUNTER_CHALLENGE
+        }.flatMap { game ->
             questionCatalog.questionsFor(game).filter { it.bank == bank }
         }
         if (questions.isEmpty()) 0 else {
-            questions.count { (masteredCounters[it.id] ?: 0) >= masteryThreshold } * 100 / questions.size
+            questions.count { question ->
+                val masteredInOriginal = (masteredCounters[question.id] ?: 0) >= masteryThreshold
+                val masteredInPairs = question.id in pairIds &&
+                    (masteredCounters["pairs-${question.id}"] ?: 0) >= masteryThreshold
+                val masteredInCounters = question.id in counterIds &&
+                    (masteredCounters["counter-${question.id}"] ?: 0) >= masteryThreshold
+                masteredInOriginal || masteredInPairs || masteredInCounters
+            } * 100 / questions.size
         }
     }
     val attempts = LearningGame.values().sumOf { game ->
@@ -167,6 +180,8 @@ internal fun HomeScreen(
                         LearningGame.VOCABULARY -> "語" to "Vocabulaire"
                         LearningGame.VERBS -> "動" to "Verbes"
                         LearningGame.CONJUGATION -> "文" to "Conjugaison"
+                        LearningGame.PAIRS -> "組" to "Paires"
+                        LearningGame.COUNTER_CHALLENGE -> "数" to "Compteurs"
                     }
                     val isSelected = game in selectedGames
                     Card(

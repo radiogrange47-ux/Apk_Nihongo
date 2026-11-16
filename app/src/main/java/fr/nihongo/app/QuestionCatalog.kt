@@ -21,6 +21,31 @@ internal data class QuestionCatalog(
         LearningGame.VOCABULARY -> vocabulary
         LearningGame.VERBS -> verbs
         LearningGame.CONJUGATION -> conjugation
+        LearningGame.PAIRS -> pairingQuestions()
+        LearningGame.COUNTER_CHALLENGE -> counterChallengeQuestions()
+    }
+
+    fun pairingQuestions(): List<VocabularyQuestion> = (vocabulary + verbs)
+        .distinctBy { Triple(it.kanji, it.hiragana, it.answer) }
+        .map { it.copy(id = "pairs-${it.id}") }
+
+    fun counterChallengeQuestions(): List<VocabularyQuestion> {
+        val counterQuestions = vocabulary.filter { it.bank == QuestionBank.COUNTERS }
+        return counterQuestions.map { question ->
+            val random = kotlin.random.Random(question.id.hashCode())
+            val distractors = counterQuestions
+                .filter { it.topic == question.topic && it.id != question.id }
+                .shuffled(random)
+                .take(5)
+            val choices = (distractors.map { it.kanji } + question.kanji).shuffled(random)
+            question.copy(
+                id = "counter-${question.id}",
+                kanji = question.answer,
+                hiragana = question.hiragana,
+                answer = question.kanji,
+                choices = choices
+            )
+        }
     }
 
     fun allQuestionIds(): Map<LearningGame, Set<String>> =

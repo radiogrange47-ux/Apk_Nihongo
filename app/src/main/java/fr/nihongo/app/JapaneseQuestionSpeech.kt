@@ -99,11 +99,12 @@ internal fun QuestionSpeechButton(
     speech: JapaneseQuestionSpeech,
     questionText: String,
     textAfterGap: String? = null,
+    speakOnEnable: Boolean = true,
     modifier: Modifier = Modifier
 ) {
     IconButton(
         onClick = {
-            if (speech.toggle()) {
+            if (speech.toggle() && speakOnEnable) {
                 if (textAfterGap == null) speech.speakQuestion(questionText)
                 else speech.speakQuestionWithGap(questionText, textAfterGap)
             }

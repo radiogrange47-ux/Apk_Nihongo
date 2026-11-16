@@ -103,12 +103,13 @@ internal fun MainScreen(
         .filter { it.name in selectedGameNames.split(",") && activeCatalog.questionsFor(it).isNotEmpty() }
     val eligibleQuestionCounts = LearningGame.values().associateWith { game ->
         val masteryCounters = progress.questionsFor(game).associate { it.questionId to it.masteryCounter }
-        QuestionSelector.countEligibleQuestions(
+        val eligibleQuestions = QuestionSelector.countEligibleQuestions(
             questions = activeCatalog.questionsFor(game),
             masteryCounters = masteryCounters,
             masteryThreshold = questionMasteryThreshold,
             masteredQuestionRepeatPercent = masteredQuestionRepeatPercent
         )
+        if (game == LearningGame.PAIRS) eligibleQuestions / 6 else eligibleQuestions
     }
     val playableGames = selectedGames.filter { (eligibleQuestionCounts[it] ?: 0) > 0 }
     val sessionGames = sessionGameNames.split(",")
@@ -295,6 +296,35 @@ internal fun MainScreen(
                                     seriesTarget = storedSessionTargets[game]
                                         ?: minOf(sessionQuestionCount, activeCatalog.conjugation.size),
                                     allQuestionsMastered = allSelectedQuestionsMastered
+                                )
+
+                                LearningGame.PAIRS -> JapanesePairsGameScreen(
+                                    questions = activeCatalog.pairingQuestions(),
+                                    questionSpeech = questionSpeech,
+                                    onBack = { screen = AppScreen.HOME },
+                                    onAnswer = sessionAnswer,
+                                    onQuestionCompleted = completeSessionQuestion,
+                                    progress = progress,
+                                    masteryThreshold = questionMasteryThreshold,
+                                    masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
+                                    completedQuestions = questionsCompleted,
+                                    seriesTarget = storedSessionTargets[game]
+                                        ?: minOf(sessionQuestionCount, activeCatalog.pairingQuestions().size / 6)
+                                )
+
+                                LearningGame.COUNTER_CHALLENGE -> CounterChallengeGameScreen(
+                                    questions = activeCatalog.counterChallengeQuestions(),
+                                    questionSpeech = questionSpeech,
+                                    onBack = { screen = AppScreen.HOME },
+                                    onAnswer = sessionAnswer,
+                                    onQuestionCompleted = completeSessionQuestion,
+                                    extraAttempts = extraAttempts,
+                                    progress = progress,
+                                    masteryThreshold = questionMasteryThreshold,
+                                    masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
+                                    completedQuestions = questionsCompleted,
+                                    seriesTarget = storedSessionTargets[game]
+                                        ?: minOf(sessionQuestionCount, activeCatalog.counterChallengeQuestions().size)
                                 )
                             }
                         }

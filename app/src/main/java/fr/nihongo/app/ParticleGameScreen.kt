@@ -199,6 +199,7 @@ internal fun ParticleGameScreen(
                 ) {
                     JapanesePhrase(
                         exercise = exercise,
+                        questionSpeech = questionSpeech,
                         onSelectToken = { selectedToken = it }
                     )
                 }
@@ -221,6 +222,7 @@ internal fun ParticleGameScreen(
                                 contentDescription = "Choisir la particule $choice"
                             }
                             .clickable {
+                                questionSpeech.speakQuestion(choice)
                                 val correct = choice == exercise.answer
                                 saveError = onAnswer(exercise, LearningGame.PARTICLES, correct)
                                 if (saveError == null) feedbackEvent++
@@ -427,6 +429,7 @@ internal fun AnswerFeedbackBanner(feedback: AnswerFeedback, eventKey: Int) {
 @Composable
 private fun JapanesePhrase(
     exercise: ParticleExercise,
+    questionSpeech: JapaneseQuestionSpeech,
     onSelectToken: (PhraseToken) -> Unit
 ) {
     FlowRow(
@@ -451,7 +454,10 @@ private fun JapanesePhrase(
                     style = MaterialTheme.typography.headlineLarge,
                     fontWeight = FontWeight.Medium,
                     modifier = Modifier
-                        .clickable { onSelectToken(token) }
+                        .clickable {
+                            questionSpeech.speakQuestion(token.hiragana)
+                            onSelectToken(token)
+                        }
                         .semantics {
                             contentDescription = "${token.japanese}, ${token.french}"
                         }

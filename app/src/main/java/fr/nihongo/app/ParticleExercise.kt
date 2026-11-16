@@ -12,7 +12,9 @@ internal enum class LearningGame(val title: String) {
     PARTICLES("Jeu des particules"),
     VOCABULARY("Vocabulaire"),
     VERBS("Vocabulaire des verbes"),
-    CONJUGATION("Conjugaison")
+    CONJUGATION("Conjugaison"),
+    PAIRS("Paires japonaises"),
+    COUNTER_CHALLENGE("Défi des compteurs")
 }
 
 internal enum class QuestionBank(val title: String) {
