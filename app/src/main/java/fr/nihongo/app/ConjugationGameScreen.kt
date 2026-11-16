@@ -69,6 +69,7 @@ internal fun ConjugationGameScreen(
     var feedback by remember { mutableStateOf<String?>(null) }
     var feedbackCorrect by remember { mutableStateOf(false) }
     var feedbackHint by remember { mutableStateOf<String?>(null) }
+    var feedbackKanji by remember { mutableStateOf<String?>(null) }
     var feedbackEvent by remember { mutableIntStateOf(0) }
     var saveError by remember { mutableStateOf<String?>(null) }
     val questionDeck = remember(questions) { QuestionDeck(questions) }
@@ -146,7 +147,8 @@ internal fun ConjugationGameScreen(
                         AnswerFeedback(
                             tone = if (feedbackCorrect) FeedbackTone.CORRECT else FeedbackTone.INCORRECT,
                             message = feedback.orEmpty(),
-                            pedagogicalHint = feedbackHint
+                            pedagogicalHint = feedbackHint,
+                            kanjiBreakdown = feedbackKanji
                         ),
                         feedbackEvent
                     )
@@ -198,6 +200,7 @@ internal fun ConjugationGameScreen(
                                     feedbackCorrect = true
                                     feedback = "✓  ${question.completedJapaneseSentence()}"
                                     feedbackHint = concisePedagogicalHint(question.explanation)
+                                    feedbackKanji = kanjiBreakdown(question.completedJapaneseSentence())
                                     advance()
                                 } else {
                                     feedbackCorrect = false
@@ -213,6 +216,11 @@ internal fun ConjugationGameScreen(
                                     }
                                     feedbackHint = if (shouldAdvance) {
                                         concisePedagogicalHint(question.explanation)
+                                    } else {
+                                        null
+                                    }
+                                    feedbackKanji = if (shouldAdvance) {
+                                        kanjiBreakdown(question.completedJapaneseSentence())
                                     } else {
                                         null
                                     }

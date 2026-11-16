@@ -1,6 +1,6 @@
 {
     "schemaVersion":  1,
-    "contentVersion":  "1.5.1",
+    "contentVersion":  "1.5.3",
     "files":  [
                   "JLPT5/particles.json",
                   "JLPT5/vocabulary.json",
@@ -12,6 +12,11 @@
                   "JLPT4/conjugation.json",
                   "Nourriture/vocabulary.json",
                   "Nourriture/verbs.json",
+                  "Compteurs/vocabulary.json",
+                  "Connecteurs/vocabulary.json",
+                  "Démonstratifs/vocabulary.json",
+                  "Interrogatifs/vocabulary.json",
+                  "Quantifieurs/vocabulary.json",
                   "Mes cours/particles.json",
                   "Mes cours/vocabulary.json",
                   "Mes cours/verbs.json",

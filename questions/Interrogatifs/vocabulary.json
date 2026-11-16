@@ -1,0 +1,452 @@
+[
+    {
+        "id":  "wg-vocab-171",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "誰",
+        "hiragana":  "だれ",
+        "answer":  "qui",
+        "choices":  [
+                        "lequel",
+                        "comment",
+                        "quel âge",
+                        "lequel des deux / où (poli)",
+                        "combien de livres",
+                        "qui"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-172",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "何",
+        "hiragana":  "なに",
+        "answer":  "quoi / que",
+        "choices":  [
+                        "quelle date / combien de jours",
+                        "combien d’objets longs",
+                        "quoi / que",
+                        "combien de personnes",
+                        "combien d’objets compacts",
+                        "combien (prix)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-173",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "いつ",
+        "hiragana":  "いつ",
+        "answer":  "quand",
+        "choices":  [
+                        "pourquoi / comment se fait-il que",
+                        "comment",
+                        "combien (objets / âge)",
+                        "quel / lequel parmi",
+                        "quel étage",
+                        "quand"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-174",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "どこ",
+        "hiragana":  "どこ",
+        "answer":  "où",
+        "choices":  [
+                        "quoi / que",
+                        "combien de personnes",
+                        "combien d’objets plats",
+                        "où",
+                        "combien de livres",
+                        "lequel"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-175",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "どちら",
+        "hiragana":  "どちら",
+        "answer":  "lequel des deux / où (poli)",
+        "choices":  [
+                        "combien de personnes",
+                        "quel mois",
+                        "quoi / que",
+                        "lequel des deux / où (poli)",
+                        "quel étage",
+                        "combien de fois"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-176",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "どれ",
+        "hiragana":  "どれ",
+        "answer":  "lequel",
+        "choices":  [
+                        "pourquoi",
+                        "quelle heure",
+                        "lequel",
+                        "combien de personnes",
+                        "quand",
+                        "quoi / que"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-177",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "どの",
+        "hiragana":  "どの",
+        "answer":  "quel / lequel parmi",
+        "choices":  [
+                        "quel étage",
+                        "combien d’objets plats",
+                        "combien d’objets compacts",
+                        "quel mois",
+                        "quel / lequel parmi",
+                        "lequel des deux / où (poli)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-178",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "なぜ",
+        "hiragana":  "なぜ",
+        "answer":  "pourquoi",
+        "choices":  [
+                        "pourquoi / comment se fait-il que",
+                        "pourquoi",
+                        "quel mois",
+                        "quand",
+                        "quel âge",
+                        "lequel"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-179",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "どうして",
+        "hiragana":  "どうして",
+        "answer":  "pourquoi / comment se fait-il que",
+        "choices":  [
+                        "combien (prix)",
+                        "combien d’objets compacts",
+                        "quel jour de la semaine",
+                        "pourquoi / comment se fait-il que",
+                        "quelle heure",
+                        "combien d’objets longs"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-180",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "どう",
+        "hiragana":  "どう",
+        "answer":  "comment",
+        "choices":  [
+                        "combien (prix)",
+                        "où",
+                        "comment",
+                        "quelle date / combien de jours",
+                        "lequel des deux / où (poli)",
+                        "combien d’objets longs"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-181",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "いくら",
+        "hiragana":  "いくら",
+        "answer":  "combien (prix)",
+        "choices":  [
+                        "qui",
+                        "combien d’objets longs",
+                        "quel / lequel parmi",
+                        "pourquoi / comment se fait-il que",
+                        "combien (prix)",
+                        "lequel"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-182",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "いくつ",
+        "hiragana":  "いくつ",
+        "answer":  "combien (objets / âge)",
+        "choices":  [
+                        "lequel des deux / où (poli)",
+                        "combien d’objets compacts",
+                        "quel étage",
+                        "pourquoi",
+                        "combien (objets / âge)",
+                        "combien (prix)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-183",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "何人",
+        "hiragana":  "なんにん",
+        "answer":  "combien de personnes",
+        "choices":  [
+                        "quel numéro",
+                        "combien de personnes",
+                        "où",
+                        "quel / lequel parmi",
+                        "quel âge",
+                        "quel mois"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-184",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "何時",
+        "hiragana":  "なんじ",
+        "answer":  "quelle heure",
+        "choices":  [
+                        "quel jour de la semaine",
+                        "quelle heure",
+                        "combien d’objets plats",
+                        "pourquoi",
+                        "pourquoi / comment se fait-il que",
+                        "quel / lequel parmi"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-185",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "何曜日",
+        "hiragana":  "なんようび",
+        "answer":  "quel jour de la semaine",
+        "choices":  [
+                        "quand",
+                        "combien (prix)",
+                        "quel étage",
+                        "quel numéro",
+                        "quel / lequel parmi",
+                        "quel jour de la semaine"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-186",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "何月",
+        "hiragana":  "なんがつ",
+        "answer":  "quel mois",
+        "choices":  [
+                        "quand",
+                        "quel mois",
+                        "combien (prix)",
+                        "comment",
+                        "lequel",
+                        "combien de livres"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-187",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "何日",
+        "hiragana":  "なんにち",
+        "answer":  "quelle date / combien de jours",
+        "choices":  [
+                        "lequel",
+                        "combien de livres",
+                        "pourquoi",
+                        "combien (objets / âge)",
+                        "quelle date / combien de jours",
+                        "combien de fois"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-188",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "何階",
+        "hiragana":  "なんがい",
+        "answer":  "quel étage",
+        "choices":  [
+                        "quel étage",
+                        "combien d’objets compacts",
+                        "combien de fois",
+                        "quel numéro",
+                        "quel mois",
+                        "quel / lequel parmi"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-189",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "何番",
+        "hiragana":  "なんばん",
+        "answer":  "quel numéro",
+        "choices":  [
+                        "combien de personnes",
+                        "lequel des deux / où (poli)",
+                        "où",
+                        "combien (prix)",
+                        "quelle heure",
+                        "quel numéro"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-190",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "何個",
+        "hiragana":  "なんこ",
+        "answer":  "combien d’objets compacts",
+        "choices":  [
+                        "combien de personnes",
+                        "combien d’objets compacts",
+                        "quel étage",
+                        "quelle date / combien de jours",
+                        "quel / lequel parmi",
+                        "pourquoi"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-191",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "何枚",
+        "hiragana":  "なんまい",
+        "answer":  "combien d’objets plats",
+        "choices":  [
+                        "lequel",
+                        "combien d’objets plats",
+                        "quel mois",
+                        "combien (prix)",
+                        "combien (objets / âge)",
+                        "quel étage"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-192",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "何本",
+        "hiragana":  "なんぼん",
+        "answer":  "combien d’objets longs",
+        "choices":  [
+                        "quelle date / combien de jours",
+                        "combien d’objets longs",
+                        "pourquoi / comment se fait-il que",
+                        "quel étage",
+                        "combien (prix)",
+                        "quel numéro"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-193",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "何冊",
+        "hiragana":  "なんさつ",
+        "answer":  "combien de livres",
+        "choices":  [
+                        "combien de livres",
+                        "combien (objets / âge)",
+                        "combien d’objets plats",
+                        "quoi / que",
+                        "quel numéro",
+                        "quel étage"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-194",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "何歳",
+        "hiragana":  "なんさい",
+        "answer":  "quel âge",
+        "choices":  [
+                        "quel âge",
+                        "quelle heure",
+                        "combien d’objets compacts",
+                        "pourquoi / comment se fait-il que",
+                        "combien de fois",
+                        "quel mois"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    },
+    {
+        "id":  "wg-vocab-195",
+        "topic":  "Mots interrogatifs",
+        "kanji":  "何回",
+        "hiragana":  "なんかい",
+        "answer":  "combien de fois",
+        "choices":  [
+                        "combien d’objets longs",
+                        "quand",
+                        "combien d’objets plats",
+                        "combien de fois",
+                        "comment",
+                        "quoi / que"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "INTERROGATIVES"
+    }
+]

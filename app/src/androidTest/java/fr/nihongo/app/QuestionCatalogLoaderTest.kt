@@ -19,7 +19,7 @@ class QuestionCatalogLoaderTest {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         val catalog = QuestionCatalogLoader(context).loadBundled()
 
-        assertEquals("1.5.1", catalog.contentVersion)
+        assertEquals("1.5.3", catalog.contentVersion)
         assertEquals(22, catalog.particles.count { it.bank == QuestionBank.JLPT5 })
         assertEquals(108, catalog.vocabulary.count { it.bank == QuestionBank.JLPT5 })
         assertEquals(65, catalog.verbs.count { it.bank == QuestionBank.JLPT5 })
@@ -30,6 +30,11 @@ class QuestionCatalogLoaderTest {
         assertEquals(50, catalog.conjugation.count { it.bank == QuestionBank.JLPT4 })
         assertEquals(125, catalog.vocabulary.count { it.bank == QuestionBank.FOOD })
         assertEquals(36, catalog.verbs.count { it.bank == QuestionBank.FOOD })
+        assertEquals(122, catalog.vocabulary.count { it.bank == QuestionBank.COUNTERS })
+        assertEquals(24, catalog.vocabulary.count { it.bank == QuestionBank.CONNECTORS })
+        assertEquals(24, catalog.vocabulary.count { it.bank == QuestionBank.DEMONSTRATIVES })
+        assertEquals(25, catalog.vocabulary.count { it.bank == QuestionBank.INTERROGATIVES })
+        assertEquals(25, catalog.vocabulary.count { it.bank == QuestionBank.DETERMINERS })
         assertEquals(24, catalog.particles.count { it.bank == QuestionBank.COURSE })
         assertEquals(148, catalog.vocabulary.count { it.bank == QuestionBank.COURSE })
         assertEquals(41, catalog.verbs.count { it.bank == QuestionBank.COURSE })
@@ -38,14 +43,22 @@ class QuestionCatalogLoaderTest {
         assertTrue(catalog.vocabulary.all { it.choices.size == 6 })
         assertTrue(catalog.verbs.all { it.choices.size == 6 })
         assertTrue(catalog.conjugation.all { it.choices.size == 6 })
-        assertEquals(862, catalog.allQuestionIds().values.flatten().size)
+        assertEquals(1082, catalog.allQuestionIds().values.flatten().size)
         assertTrue(
             LearningGame.values().all { game ->
                 catalog.questionsFor(game).all {
                     it.bank == QuestionBank.COURSE ||
                         (it.level == "JLPT N5" && !it.source.isNullOrBlank()) ||
                         (it.level == "JLPT N4" && !it.source.isNullOrBlank()) ||
-                        (it.bank == QuestionBank.FOOD && !it.source.isNullOrBlank())
+                        (it.bank in setOf(
+                            QuestionBank.FOOD,
+                            QuestionBank.COUNTERS,
+                            QuestionBank.CONNECTORS,
+                            QuestionBank.DEMONSTRATIVES,
+                            QuestionBank.INTERROGATIVES,
+                            QuestionBank.DETERMINERS
+                        ) &&
+                            !it.source.isNullOrBlank())
                 }
             }
         )
@@ -69,7 +82,7 @@ class QuestionCatalogLoaderTest {
                     zip.closeEntry()
                 }
             }
-            assertEquals("1.5.1", loader.loadArchive(archive).contentVersion)
+            assertEquals("1.5.3", loader.loadArchive(archive).contentVersion)
 
             ZipOutputStream(archive.outputStream()).use { zip ->
                 zip.putNextEntry(ZipEntry("../unexpected.json"))

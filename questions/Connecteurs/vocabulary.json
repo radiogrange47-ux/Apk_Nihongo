@@ -1,0 +1,434 @@
+[
+    {
+        "id":  "wg-vocab-123",
+        "topic":  "Mots connecteurs",
+        "kanji":  "そして",
+        "hiragana":  "そして",
+        "answer":  "et puis / ensuite",
+        "choices":  [
+                        "cependant / toutefois",
+                        "pour cette raison",
+                        "autrement dit / en bref",
+                        "pour finir",
+                        "et puis / ensuite",
+                        "aussi / de nouveau"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    },
+    {
+        "id":  "wg-vocab-124",
+        "topic":  "Mots connecteurs",
+        "kanji":  "それから",
+        "hiragana":  "それから",
+        "answer":  "après cela / ensuite",
+        "choices":  [
+                        "mais / pourtant",
+                        "mais / bien que",
+                        "pour finir",
+                        "à titre indicatif / au passage",
+                        "pour cette raison",
+                        "après cela / ensuite"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    },
+    {
+        "id":  "wg-vocab-125",
+        "topic":  "Mots connecteurs",
+        "kanji":  "それに",
+        "hiragana":  "それに",
+        "answer":  "en plus / de plus",
+        "choices":  [
+                        "et puis / ensuite",
+                        "à propos / au fait",
+                        "mais / pourtant",
+                        "et pourtant / malgré cela",
+                        "en plus / de plus",
+                        "dans ce cas / alors"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    },
+    {
+        "id":  "wg-vocab-126",
+        "topic":  "Mots connecteurs",
+        "kanji":  "しかし",
+        "hiragana":  "しかし",
+        "answer":  "cependant / toutefois",
+        "choices":  [
+                        "alors / à ce moment-là",
+                        "ensuite",
+                        "parce que / car",
+                        "cependant / toutefois",
+                        "pourtant / or",
+                        "en plus / de plus"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    },
+    {
+        "id":  "wg-vocab-127",
+        "topic":  "Mots connecteurs",
+        "kanji":  "でも",
+        "hiragana":  "でも",
+        "answer":  "mais / pourtant",
+        "choices":  [
+                        "à titre indicatif / au passage",
+                        "mais / pourtant",
+                        "alors / à ce moment-là",
+                        "et pourtant / malgré cela",
+                        "à propos / au fait",
+                        "et puis / ensuite"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    },
+    {
+        "id":  "wg-vocab-128",
+        "topic":  "Mots connecteurs",
+        "kanji":  "けれども",
+        "hiragana":  "けれども",
+        "answer":  "mais / bien que",
+        "choices":  [
+                        "dans ce cas / alors",
+                        "mais / pourtant",
+                        "parce que / car",
+                        "à titre indicatif / au passage",
+                        "alors / et c’est ainsi que",
+                        "mais / bien que"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    },
+    {
+        "id":  "wg-vocab-129",
+        "topic":  "Mots connecteurs",
+        "kanji":  "だから",
+        "hiragana":  "だから",
+        "answer":  "donc / c’est pourquoi",
+        "choices":  [
+                        "aussi / de nouveau",
+                        "et pourtant / malgré cela",
+                        "mais / bien que",
+                        "à titre indicatif / au passage",
+                        "après cela / ensuite",
+                        "donc / c’est pourquoi"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    },
+    {
+        "id":  "wg-vocab-130",
+        "topic":  "Mots connecteurs",
+        "kanji":  "それで",
+        "hiragana":  "それで",
+        "answer":  "alors / et c’est ainsi que",
+        "choices":  [
+                        "pour cette raison",
+                        "mais / bien que",
+                        "pour finir",
+                        "autrement dit / en bref",
+                        "alors / et c’est ainsi que",
+                        "à propos / au fait"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    },
+    {
+        "id":  "wg-vocab-131",
+        "topic":  "Mots connecteurs",
+        "kanji":  "すると",
+        "hiragana":  "すると",
+        "answer":  "alors / à ce moment-là",
+        "choices":  [
+                        "parce que / car",
+                        "cependant / toutefois",
+                        "aussi / de nouveau",
+                        "et puis / ensuite",
+                        "pour cette raison",
+                        "alors / à ce moment-là"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    },
+    {
+        "id":  "wg-vocab-132",
+        "topic":  "Mots connecteurs",
+        "kanji":  "それでは",
+        "hiragana":  "それでは",
+        "answer":  "dans ce cas / alors",
+        "choices":  [
+                        "d’abord",
+                        "dans ce cas / alors",
+                        "alors / à ce moment-là",
+                        "à titre indicatif / au passage",
+                        "d’un autre côté",
+                        "alors / et c’est ainsi que"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    },
+    {
+        "id":  "wg-vocab-133",
+        "topic":  "Mots connecteurs",
+        "kanji":  "まず",
+        "hiragana":  "まず",
+        "answer":  "d’abord",
+        "choices":  [
+                        "mais / pourtant",
+                        "pourtant / or",
+                        "à propos / au fait",
+                        "pour cette raison",
+                        "d’abord",
+                        "parce que / car"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    },
+    {
+        "id":  "wg-vocab-134",
+        "topic":  "Mots connecteurs",
+        "kanji":  "次に",
+        "hiragana":  "つぎに",
+        "answer":  "ensuite",
+        "choices":  [
+                        "aussi / de nouveau",
+                        "pourtant / or",
+                        "pour finir",
+                        "ensuite",
+                        "pour cette raison",
+                        "après cela / ensuite"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    },
+    {
+        "id":  "wg-vocab-135",
+        "topic":  "Mots connecteurs",
+        "kanji":  "最後に",
+        "hiragana":  "さいごに",
+        "answer":  "pour finir",
+        "choices":  [
+                        "et pourtant / malgré cela",
+                        "pour finir",
+                        "à propos / au fait",
+                        "en plus / de plus",
+                        "alors / à ce moment-là",
+                        "et puis / ensuite"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    },
+    {
+        "id":  "wg-vocab-136",
+        "topic":  "Mots connecteurs",
+        "kanji":  "また",
+        "hiragana":  "また",
+        "answer":  "aussi / de nouveau",
+        "choices":  [
+                        "pourtant / or",
+                        "autrement dit / en bref",
+                        "pour finir",
+                        "parce que / car",
+                        "d’un autre côté",
+                        "aussi / de nouveau"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    },
+    {
+        "id":  "wg-vocab-137",
+        "topic":  "Mots connecteurs",
+        "kanji":  "たとえば",
+        "hiragana":  "たとえば",
+        "answer":  "par exemple",
+        "choices":  [
+                        "à titre indicatif / au passage",
+                        "donc / c’est pourquoi",
+                        "aussi / de nouveau",
+                        "et pourtant / malgré cela",
+                        "par exemple",
+                        "cependant / toutefois"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    },
+    {
+        "id":  "wg-vocab-138",
+        "topic":  "Mots connecteurs",
+        "kanji":  "つまり",
+        "hiragana":  "つまり",
+        "answer":  "autrement dit / en bref",
+        "choices":  [
+                        "à titre indicatif / au passage",
+                        "ou bien (dans une question)",
+                        "pour finir",
+                        "après cela / ensuite",
+                        "pourtant / or",
+                        "autrement dit / en bref"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    },
+    {
+        "id":  "wg-vocab-139",
+        "topic":  "Mots connecteurs",
+        "kanji":  "ところで",
+        "hiragana":  "ところで",
+        "answer":  "à propos / au fait",
+        "choices":  [
+                        "ensuite",
+                        "par exemple",
+                        "ou bien (dans une question)",
+                        "alors / à ce moment-là",
+                        "à propos / au fait",
+                        "en plus / de plus"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    },
+    {
+        "id":  "wg-vocab-140",
+        "topic":  "Mots connecteurs",
+        "kanji":  "一方",
+        "hiragana":  "いっぽう",
+        "answer":  "d’un autre côté",
+        "choices":  [
+                        "d’un autre côté",
+                        "à propos / au fait",
+                        "ou bien (dans une question)",
+                        "après cela / ensuite",
+                        "mais / pourtant",
+                        "donc / c’est pourquoi"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    },
+    {
+        "id":  "wg-vocab-141",
+        "topic":  "Mots connecteurs",
+        "kanji":  "それとも",
+        "hiragana":  "それとも",
+        "answer":  "ou bien (dans une question)",
+        "choices":  [
+                        "autrement dit / en bref",
+                        "ou bien (dans une question)",
+                        "en plus / de plus",
+                        "mais / bien que",
+                        "d’abord",
+                        "parce que / car"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    },
+    {
+        "id":  "wg-vocab-142",
+        "topic":  "Mots connecteurs",
+        "kanji":  "なぜなら",
+        "hiragana":  "なぜなら",
+        "answer":  "parce que / car",
+        "choices":  [
+                        "par exemple",
+                        "ensuite",
+                        "parce que / car",
+                        "donc / c’est pourquoi",
+                        "et pourtant / malgré cela",
+                        "autrement dit / en bref"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    },
+    {
+        "id":  "wg-vocab-143",
+        "topic":  "Mots connecteurs",
+        "kanji":  "そのため",
+        "hiragana":  "そのため",
+        "answer":  "pour cette raison",
+        "choices":  [
+                        "pourtant / or",
+                        "parce que / car",
+                        "pour cette raison",
+                        "mais / bien que",
+                        "autrement dit / en bref",
+                        "cependant / toutefois"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    },
+    {
+        "id":  "wg-vocab-144",
+        "topic":  "Mots connecteurs",
+        "kanji":  "それなのに",
+        "hiragana":  "それなのに",
+        "answer":  "et pourtant / malgré cela",
+        "choices":  [
+                        "ou bien (dans une question)",
+                        "mais / pourtant",
+                        "et pourtant / malgré cela",
+                        "d’abord",
+                        "à propos / au fait",
+                        "à titre indicatif / au passage"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    },
+    {
+        "id":  "wg-vocab-145",
+        "topic":  "Mots connecteurs",
+        "kanji":  "ところが",
+        "hiragana":  "ところが",
+        "answer":  "pourtant / or",
+        "choices":  [
+                        "pour finir",
+                        "pourtant / or",
+                        "parce que / car",
+                        "à propos / au fait",
+                        "autrement dit / en bref",
+                        "alors / à ce moment-là"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    },
+    {
+        "id":  "wg-vocab-146",
+        "topic":  "Mots connecteurs",
+        "kanji":  "ちなみに",
+        "hiragana":  "ちなみに",
+        "answer":  "à titre indicatif / au passage",
+        "choices":  [
+                        "par exemple",
+                        "à titre indicatif / au passage",
+                        "cependant / toutefois",
+                        "à propos / au fait",
+                        "après cela / ensuite",
+                        "mais / pourtant"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "CONNECTORS"
+    }
+]

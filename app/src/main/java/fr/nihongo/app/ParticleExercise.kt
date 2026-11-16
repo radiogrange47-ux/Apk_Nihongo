@@ -19,7 +19,12 @@ internal enum class QuestionBank(val title: String) {
     JLPT5("JLPT5"),
     COURSE("Mes cours"),
     JLPT4("JLPT4"),
-    FOOD("Nourriture")
+    FOOD("Nourriture"),
+    COUNTERS("Compteurs"),
+    CONNECTORS("Mots connecteurs"),
+    DEMONSTRATIVES("Démonstratifs"),
+    INTERROGATIVES("Mots interrogatifs"),
+    DETERMINERS("Déterminants & quantifieurs")
 }
 
 internal interface LearningQuestion {

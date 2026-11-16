@@ -138,7 +138,7 @@ internal fun VocabularyGameScreen(
                             tone = if (feedbackCorrect) FeedbackTone.CORRECT else FeedbackTone.INCORRECT,
                             message = feedback.orEmpty(),
                             frenchTranslation = feedbackTranslation,
-                            pedagogicalHint = feedbackHint
+                            kanjiBreakdown = feedbackHint
                         ),
                         feedbackEvent
                     )

@@ -73,7 +73,10 @@ internal object QuestionCatalogCodec {
     fun isValidFileName(name: String): Boolean {
         val path = normalizedFileName(name)
         return path.count { it == '/' } == 1 &&
-            path.substringBefore('/') in setOf("JLPT5", "Mes cours", "JLPT4", "Nourriture") &&
+            path.substringBefore('/') in setOf(
+                "JLPT5", "Mes cours", "JLPT4", "Nourriture", "Compteurs", "Connecteurs",
+                "Démonstratifs", "Interrogatifs", "Quantifieurs"
+            ) &&
             path.substringAfter('/') in setOf("particles.json", "vocabulary.json", "verbs.json", "conjugation.json")
     }
 
@@ -82,6 +85,11 @@ internal object QuestionCatalogCodec {
         "Mes cours" -> QuestionBank.COURSE
         "JLPT4" -> QuestionBank.JLPT4
         "Nourriture" -> QuestionBank.FOOD
+        "Compteurs" -> QuestionBank.COUNTERS
+        "Connecteurs" -> QuestionBank.CONNECTORS
+        "Démonstratifs" -> QuestionBank.DEMONSTRATIVES
+        "Interrogatifs" -> QuestionBank.INTERROGATIVES
+        "Quantifieurs" -> QuestionBank.DETERMINERS
         else -> error("Banque de questions inconnue.")
     }
 

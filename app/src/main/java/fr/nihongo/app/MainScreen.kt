@@ -210,6 +210,8 @@ internal fun MainScreen(
             when (screen) {
                 AppScreen.HOME -> HomeScreen(
                     progress = progress,
+                    questionCatalog = questionCatalog,
+                    masteryThreshold = questionMasteryThreshold,
                     selectedGames = selectedGames,
                     playableGameCount = playableGames.size,
                     selectedBanks = activeBanks,

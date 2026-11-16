@@ -1,0 +1,2198 @@
+[
+    {
+        "id":  "wg-vocab-001",
+        "topic":  "Compteurs — personnes",
+        "kanji":  "一人",
+        "hiragana":  "ひとり",
+        "answer":  "une personne",
+        "choices":  [
+                        "5e étage",
+                        "1er étage",
+                        "huit personnes",
+                        "dix personnes",
+                        "huit jours / le 8 du mois",
+                        "une personne"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-002",
+        "topic":  "Compteurs — personnes",
+        "kanji":  "二人",
+        "hiragana":  "ふたり",
+        "answer":  "deux personnes",
+        "choices":  [
+                        "huit ans (âge)",
+                        "six petits animaux",
+                        "huit objets plats",
+                        "deux personnes",
+                        "un objet long/cylindrique",
+                        "quatre objets (petits/compacts)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-003",
+        "topic":  "Compteurs — personnes",
+        "kanji":  "三人",
+        "hiragana":  "さんにん",
+        "answer":  "trois personnes",
+        "choices":  [
+                        "novembre",
+                        "octobre",
+                        "cinq jours / le 5 du mois",
+                        "trois personnes",
+                        "huit heures",
+                        "quatre petits animaux"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-004",
+        "topic":  "Compteurs — personnes",
+        "kanji":  "四人",
+        "hiragana":  "よにん",
+        "answer":  "quatre personnes",
+        "choices":  [
+                        "deux livres / volumes",
+                        "un objet long/cylindrique",
+                        "quatre personnes",
+                        "un livre / volume",
+                        "huit heures",
+                        "8e étage"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-005",
+        "topic":  "Compteurs — personnes",
+        "kanji":  "五人",
+        "hiragana":  "ごにん",
+        "answer":  "cinq personnes",
+        "choices":  [
+                        "huit objets (petits/compacts)",
+                        "décembre",
+                        "cinq personnes",
+                        "huit livres / volumes",
+                        "5e étage",
+                        "neuf ans (âge)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-006",
+        "topic":  "Compteurs — personnes",
+        "kanji":  "六人",
+        "hiragana":  "ろくにん",
+        "answer":  "six personnes",
+        "choices":  [
+                        "sept heures",
+                        "quatre personnes",
+                        "un véhicule / appareil",
+                        "trois livres / volumes",
+                        "six personnes",
+                        "six ans (âge)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-007",
+        "topic":  "Compteurs — personnes",
+        "kanji":  "七人",
+        "hiragana":  "しちにん",
+        "answer":  "sept personnes",
+        "choices":  [
+                        "cinq petits animaux",
+                        "10e étage",
+                        "sept personnes",
+                        "six objets (petits/compacts)",
+                        "dix jours / le 10 du mois",
+                        "neuf livres / volumes"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-008",
+        "topic":  "Compteurs — personnes",
+        "kanji":  "八人",
+        "hiragana":  "はちにん",
+        "answer":  "huit personnes",
+        "choices":  [
+                        "quatre livres / volumes",
+                        "six véhicules / appareils",
+                        "quatre personnes",
+                        "sept livres / volumes",
+                        "huit personnes",
+                        "une personne"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-009",
+        "topic":  "Compteurs — personnes",
+        "kanji":  "九人",
+        "hiragana":  "くにん",
+        "answer":  "neuf personnes",
+        "choices":  [
+                        "six objets longs/cylindriques",
+                        "neuf personnes",
+                        "dix ans (âge)",
+                        "neuf véhicules / appareils",
+                        "sept objets longs/cylindriques",
+                        "quatre heures"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-010",
+        "topic":  "Compteurs — personnes",
+        "kanji":  "十人",
+        "hiragana":  "じゅうにん",
+        "answer":  "dix personnes",
+        "choices":  [
+                        "dix objets longs/cylindriques",
+                        "trois jours / le 3 du mois",
+                        "dix personnes",
+                        "août",
+                        "trois petits animaux",
+                        "février"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-011",
+        "topic":  "Compteurs — étages",
+        "kanji":  "一階",
+        "hiragana":  "いっかい",
+        "answer":  "1er étage",
+        "choices":  [
+                        "deux jours / le 2 du mois",
+                        "huit objets plats",
+                        "deux objets longs/cylindriques",
+                        "juin",
+                        "1er étage",
+                        "un objet plat"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-012",
+        "topic":  "Compteurs — étages",
+        "kanji":  "二階",
+        "hiragana":  "にかい",
+        "answer":  "2e étage",
+        "choices":  [
+                        "2e étage",
+                        "7e étage",
+                        "dix petits animaux",
+                        "huit petits animaux",
+                        "dix objets longs/cylindriques",
+                        "sept véhicules / appareils"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-013",
+        "topic":  "Compteurs — étages",
+        "kanji":  "三階",
+        "hiragana":  "さんがい",
+        "answer":  "3e étage",
+        "choices":  [
+                        "huit objets (petits/compacts)",
+                        "trois heures",
+                        "quatre objets plats",
+                        "une heure (durée)",
+                        "3e étage",
+                        "six livres / volumes"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-014",
+        "topic":  "Compteurs — étages",
+        "kanji":  "四階",
+        "hiragana":  "よんかい",
+        "answer":  "4e étage",
+        "choices":  [
+                        "dix véhicules / appareils",
+                        "huit objets longs/cylindriques",
+                        "six jours / le 6 du mois",
+                        "octobre",
+                        "4e étage",
+                        "cinq véhicules / appareils"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-015",
+        "topic":  "Compteurs — étages",
+        "kanji":  "五階",
+        "hiragana":  "ごかい",
+        "answer":  "5e étage",
+        "choices":  [
+                        "deux heures",
+                        "sept objets plats",
+                        "5e étage",
+                        "un petit animal",
+                        "quatre objets plats",
+                        "quatre ans (âge)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-016",
+        "topic":  "Compteurs — étages",
+        "kanji":  "六階",
+        "hiragana":  "ろっかい",
+        "answer":  "6e étage",
+        "choices":  [
+                        "neuf objets longs/cylindriques",
+                        "sept ans (âge)",
+                        "huit jours / le 8 du mois",
+                        "6e étage",
+                        "quatre ans (âge)",
+                        "quatre jours / le 4 du mois"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-017",
+        "topic":  "Compteurs — étages",
+        "kanji":  "七階",
+        "hiragana":  "ななかい",
+        "answer":  "7e étage",
+        "choices":  [
+                        "cinq petits animaux",
+                        "un objet (petit/compact)",
+                        "7e étage",
+                        "10e étage",
+                        "deux objets (petits/compacts)",
+                        "cinq livres / volumes"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-018",
+        "topic":  "Compteurs — étages",
+        "kanji":  "八階",
+        "hiragana":  "はっかい",
+        "answer":  "8e étage",
+        "choices":  [
+                        "huit objets longs/cylindriques",
+                        "neuf objets plats",
+                        "cinq objets longs/cylindriques",
+                        "trois objets (petits/compacts)",
+                        "un jour (durée)",
+                        "8e étage"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-019",
+        "topic":  "Compteurs — étages",
+        "kanji":  "九階",
+        "hiragana":  "きゅうかい",
+        "answer":  "9e étage",
+        "choices":  [
+                        "sept véhicules / appareils",
+                        "février",
+                        "3e étage",
+                        "9e étage",
+                        "huit personnes",
+                        "7e étage"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-020",
+        "topic":  "Compteurs — étages",
+        "kanji":  "十階",
+        "hiragana":  "じゅっかい",
+        "answer":  "10e étage",
+        "choices":  [
+                        "huit livres / volumes",
+                        "9e étage",
+                        "dix objets (petits/compacts)",
+                        "six objets plats",
+                        "10e étage",
+                        "quatre objets (petits/compacts)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-021",
+        "topic":  "Compteurs — mois",
+        "kanji":  "一月",
+        "hiragana":  "いちがつ",
+        "answer":  "janvier",
+        "choices":  [
+                        "six ans (âge)",
+                        "5e étage",
+                        "quatre objets longs/cylindriques",
+                        "janvier",
+                        "quatre petits animaux",
+                        "cinq ans (âge)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-022",
+        "topic":  "Compteurs — mois",
+        "kanji":  "二月",
+        "hiragana":  "にがつ",
+        "answer":  "février",
+        "choices":  [
+                        "février",
+                        "neuf objets longs/cylindriques",
+                        "neuf véhicules / appareils",
+                        "5e étage",
+                        "sept heures",
+                        "deux heures"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-023",
+        "topic":  "Compteurs — mois",
+        "kanji":  "三月",
+        "hiragana":  "さんがつ",
+        "answer":  "mars",
+        "choices":  [
+                        "juin",
+                        "six objets plats",
+                        "dix ans (âge)",
+                        "trois heures",
+                        "mars",
+                        "deux véhicules / appareils"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-024",
+        "topic":  "Compteurs — mois",
+        "kanji":  "四月",
+        "hiragana":  "しがつ",
+        "answer":  "avril",
+        "choices":  [
+                        "mai",
+                        "avril",
+                        "huit livres / volumes",
+                        "trois jours / le 3 du mois",
+                        "une personne",
+                        "cinq heures"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-025",
+        "topic":  "Compteurs — mois",
+        "kanji":  "五月",
+        "hiragana":  "ごがつ",
+        "answer":  "mai",
+        "choices":  [
+                        "mai",
+                        "une heure (durée)",
+                        "deux jours / le 2 du mois",
+                        "quatre petits animaux",
+                        "neuf petits animaux",
+                        "sept véhicules / appareils"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-026",
+        "topic":  "Compteurs — mois",
+        "kanji":  "六月",
+        "hiragana":  "ろくがつ",
+        "answer":  "juin",
+        "choices":  [
+                        "sept livres / volumes",
+                        "sept jours / le 7 du mois",
+                        "deux objets plats",
+                        "juin",
+                        "un objet long/cylindrique",
+                        "une personne"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-027",
+        "topic":  "Compteurs — mois",
+        "kanji":  "七月",
+        "hiragana":  "しちがつ",
+        "answer":  "juillet",
+        "choices":  [
+                        "trois heures",
+                        "juillet",
+                        "huit heures",
+                        "six véhicules / appareils",
+                        "un an (âge)",
+                        "dix heures"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-028",
+        "topic":  "Compteurs — mois",
+        "kanji":  "八月",
+        "hiragana":  "はちがつ",
+        "answer":  "août",
+        "choices":  [
+                        "août",
+                        "neuf heures",
+                        "quatre heures",
+                        "trois objets (petits/compacts)",
+                        "une personne",
+                        "neuf ans (âge)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-029",
+        "topic":  "Compteurs — mois",
+        "kanji":  "九月",
+        "hiragana":  "くがつ",
+        "answer":  "septembre",
+        "choices":  [
+                        "septembre",
+                        "cinq objets (petits/compacts)",
+                        "7e étage",
+                        "avril",
+                        "octobre",
+                        "deux véhicules / appareils"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-030",
+        "topic":  "Compteurs — mois",
+        "kanji":  "十月",
+        "hiragana":  "じゅうがつ",
+        "answer":  "octobre",
+        "choices":  [
+                        "4e étage",
+                        "six objets plats",
+                        "trois jours / le 3 du mois",
+                        "un an (âge)",
+                        "octobre",
+                        "six ans (âge)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-031",
+        "topic":  "Compteurs — mois",
+        "kanji":  "十一月",
+        "hiragana":  "じゅういちがつ",
+        "answer":  "novembre",
+        "choices":  [
+                        "novembre",
+                        "deux livres / volumes",
+                        "mars",
+                        "trois heures",
+                        "7e étage",
+                        "trois objets (petits/compacts)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-032",
+        "topic":  "Compteurs — mois",
+        "kanji":  "十二月",
+        "hiragana":  "じゅうにがつ",
+        "answer":  "décembre",
+        "choices":  [
+                        "quatre ans (âge)",
+                        "six heures",
+                        "huit personnes",
+                        "décembre",
+                        "neuf ans (âge)",
+                        "six objets longs/cylindriques"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-033",
+        "topic":  "Compteurs — heures et durées",
+        "kanji":  "一時間",
+        "hiragana":  "いちじかん",
+        "answer":  "une heure (durée)",
+        "choices":  [
+                        "une heure (durée)",
+                        "dix livres / volumes",
+                        "novembre",
+                        "neuf personnes",
+                        "sept livres / volumes",
+                        "cinq heures"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-034",
+        "topic":  "Compteurs — heures et durées",
+        "kanji":  "二時間",
+        "hiragana":  "にじかん",
+        "answer":  "deux heures",
+        "choices":  [
+                        "neuf personnes",
+                        "quatre objets plats",
+                        "deux heures",
+                        "huit véhicules / appareils",
+                        "un jour (durée)",
+                        "six objets plats"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-035",
+        "topic":  "Compteurs — heures et durées",
+        "kanji":  "三時間",
+        "hiragana":  "さんじかん",
+        "answer":  "trois heures",
+        "choices":  [
+                        "trois heures",
+                        "un jour (durée)",
+                        "six véhicules / appareils",
+                        "huit petits animaux",
+                        "six objets longs/cylindriques",
+                        "sept heures"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-036",
+        "topic":  "Compteurs — heures et durées",
+        "kanji":  "四時間",
+        "hiragana":  "よじかん",
+        "answer":  "quatre heures",
+        "choices":  [
+                        "quatre heures",
+                        "neuf objets longs/cylindriques",
+                        "mai",
+                        "trois heures",
+                        "huit jours / le 8 du mois",
+                        "juillet"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-037",
+        "topic":  "Compteurs — heures et durées",
+        "kanji":  "五時間",
+        "hiragana":  "ごじかん",
+        "answer":  "cinq heures",
+        "choices":  [
+                        "huit jours / le 8 du mois",
+                        "dix ans (âge)",
+                        "six ans (âge)",
+                        "cinq heures",
+                        "huit heures",
+                        "six objets plats"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-038",
+        "topic":  "Compteurs — heures et durées",
+        "kanji":  "六時間",
+        "hiragana":  "ろくじかん",
+        "answer":  "six heures",
+        "choices":  [
+                        "neuf ans (âge)",
+                        "cinq jours / le 5 du mois",
+                        "neuf heures",
+                        "deux personnes",
+                        "six heures",
+                        "quatre livres / volumes"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-039",
+        "topic":  "Compteurs — heures et durées",
+        "kanji":  "七時間",
+        "hiragana":  "しちじかん",
+        "answer":  "sept heures",
+        "choices":  [
+                        "sept heures",
+                        "deux objets plats",
+                        "huit petits animaux",
+                        "deux personnes",
+                        "cinq jours / le 5 du mois",
+                        "quatre jours / le 4 du mois"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-040",
+        "topic":  "Compteurs — heures et durées",
+        "kanji":  "八時間",
+        "hiragana":  "はちじかん",
+        "answer":  "huit heures",
+        "choices":  [
+                        "huit heures",
+                        "un véhicule / appareil",
+                        "trois ans (âge)",
+                        "dix livres / volumes",
+                        "cinq objets (petits/compacts)",
+                        "trois jours / le 3 du mois"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-041",
+        "topic":  "Compteurs — heures et durées",
+        "kanji":  "九時間",
+        "hiragana":  "くじかん",
+        "answer":  "neuf heures",
+        "choices":  [
+                        "trois ans (âge)",
+                        "neuf petits animaux",
+                        "six objets (petits/compacts)",
+                        "un petit animal",
+                        "un livre / volume",
+                        "neuf heures"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-042",
+        "topic":  "Compteurs — heures et durées",
+        "kanji":  "十時間",
+        "hiragana":  "じゅうじかん",
+        "answer":  "dix heures",
+        "choices":  [
+                        "trois véhicules / appareils",
+                        "six livres / volumes",
+                        "avril",
+                        "dix heures",
+                        "huit heures",
+                        "8e étage"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-043",
+        "topic":  "Compteurs — jours et dates",
+        "kanji":  "一日",
+        "hiragana":  "いちにち",
+        "answer":  "un jour (durée)",
+        "choices":  [
+                        "cinq personnes",
+                        "deux objets (petits/compacts)",
+                        "six heures",
+                        "cinq jours / le 5 du mois",
+                        "un jour (durée)",
+                        "quatre heures"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-044",
+        "topic":  "Compteurs — jours et dates",
+        "kanji":  "二日",
+        "hiragana":  "ふつか",
+        "answer":  "deux jours / le 2 du mois",
+        "choices":  [
+                        "cinq objets (petits/compacts)",
+                        "deux jours / le 2 du mois",
+                        "dix véhicules / appareils",
+                        "cinq petits animaux",
+                        "quatre objets plats",
+                        "trois objets (petits/compacts)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-045",
+        "topic":  "Compteurs — jours et dates",
+        "kanji":  "三日",
+        "hiragana":  "みっか",
+        "answer":  "trois jours / le 3 du mois",
+        "choices":  [
+                        "trois petits animaux",
+                        "deux véhicules / appareils",
+                        "huit jours / le 8 du mois",
+                        "trois jours / le 3 du mois",
+                        "trois ans (âge)",
+                        "cinq jours / le 5 du mois"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-046",
+        "topic":  "Compteurs — jours et dates",
+        "kanji":  "四日",
+        "hiragana":  "よっか",
+        "answer":  "quatre jours / le 4 du mois",
+        "choices":  [
+                        "huit heures",
+                        "dix véhicules / appareils",
+                        "huit petits animaux",
+                        "quatre objets plats",
+                        "septembre",
+                        "quatre jours / le 4 du mois"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-047",
+        "topic":  "Compteurs — jours et dates",
+        "kanji":  "五日",
+        "hiragana":  "いつか",
+        "answer":  "cinq jours / le 5 du mois",
+        "choices":  [
+                        "6e étage",
+                        "trois heures",
+                        "un an (âge)",
+                        "4e étage",
+                        "cinq jours / le 5 du mois",
+                        "dix véhicules / appareils"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-048",
+        "topic":  "Compteurs — jours et dates",
+        "kanji":  "六日",
+        "hiragana":  "むいか",
+        "answer":  "six jours / le 6 du mois",
+        "choices":  [
+                        "2e étage",
+                        "six jours / le 6 du mois",
+                        "10e étage",
+                        "huit jours / le 8 du mois",
+                        "dix véhicules / appareils",
+                        "juillet"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-049",
+        "topic":  "Compteurs — jours et dates",
+        "kanji":  "七日",
+        "hiragana":  "なのか",
+        "answer":  "sept jours / le 7 du mois",
+        "choices":  [
+                        "dix ans (âge)",
+                        "un livre / volume",
+                        "un objet (petit/compact)",
+                        "sept jours / le 7 du mois",
+                        "deux véhicules / appareils",
+                        "six objets longs/cylindriques"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-050",
+        "topic":  "Compteurs — jours et dates",
+        "kanji":  "八日",
+        "hiragana":  "ようか",
+        "answer":  "huit jours / le 8 du mois",
+        "choices":  [
+                        "trois ans (âge)",
+                        "huit jours / le 8 du mois",
+                        "10e étage",
+                        "juillet",
+                        "sept véhicules / appareils",
+                        "trois petits animaux"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-051",
+        "topic":  "Compteurs — jours et dates",
+        "kanji":  "九日",
+        "hiragana":  "ここのか",
+        "answer":  "neuf jours / le 9 du mois",
+        "choices":  [
+                        "décembre",
+                        "dix petits animaux",
+                        "quatre jours / le 4 du mois",
+                        "une heure (durée)",
+                        "neuf jours / le 9 du mois",
+                        "dix heures"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-052",
+        "topic":  "Compteurs — jours et dates",
+        "kanji":  "十日",
+        "hiragana":  "とおか",
+        "answer":  "dix jours / le 10 du mois",
+        "choices":  [
+                        "neuf livres / volumes",
+                        "mai",
+                        "dix jours / le 10 du mois",
+                        "cinq objets longs/cylindriques",
+                        "neuf objets plats",
+                        "novembre"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-053",
+        "topic":  "Compteurs — objets",
+        "kanji":  "一個",
+        "hiragana":  "いっこ",
+        "answer":  "un objet (petit/compact)",
+        "choices":  [
+                        "six objets plats",
+                        "un objet (petit/compact)",
+                        "six objets (petits/compacts)",
+                        "4e étage",
+                        "huit heures",
+                        "sept petits animaux"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-054",
+        "topic":  "Compteurs — objets",
+        "kanji":  "二個",
+        "hiragana":  "にこ",
+        "answer":  "deux objets (petits/compacts)",
+        "choices":  [
+                        "deux objets (petits/compacts)",
+                        "mai",
+                        "décembre",
+                        "septembre",
+                        "cinq objets longs/cylindriques",
+                        "deux livres / volumes"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-055",
+        "topic":  "Compteurs — objets",
+        "kanji":  "三個",
+        "hiragana":  "さんこ",
+        "answer":  "trois objets (petits/compacts)",
+        "choices":  [
+                        "une personne",
+                        "10e étage",
+                        "trois objets (petits/compacts)",
+                        "8e étage",
+                        "quatre heures",
+                        "trois ans (âge)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-056",
+        "topic":  "Compteurs — objets",
+        "kanji":  "四個",
+        "hiragana":  "よんこ",
+        "answer":  "quatre objets (petits/compacts)",
+        "choices":  [
+                        "quatre ans (âge)",
+                        "quatre petits animaux",
+                        "quatre objets (petits/compacts)",
+                        "neuf jours / le 9 du mois",
+                        "3e étage",
+                        "juillet"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-057",
+        "topic":  "Compteurs — objets",
+        "kanji":  "五個",
+        "hiragana":  "ごこ",
+        "answer":  "cinq objets (petits/compacts)",
+        "choices":  [
+                        "un objet (petit/compact)",
+                        "cinq objets (petits/compacts)",
+                        "dix véhicules / appareils",
+                        "trois livres / volumes",
+                        "dix objets plats",
+                        "deux heures"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-058",
+        "topic":  "Compteurs — objets",
+        "kanji":  "六個",
+        "hiragana":  "ろっこ",
+        "answer":  "six objets (petits/compacts)",
+        "choices":  [
+                        "trois heures",
+                        "1er étage",
+                        "9e étage",
+                        "sept ans (âge)",
+                        "six objets (petits/compacts)",
+                        "neuf heures"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-059",
+        "topic":  "Compteurs — objets",
+        "kanji":  "七個",
+        "hiragana":  "ななこ",
+        "answer":  "sept objets (petits/compacts)",
+        "choices":  [
+                        "mai",
+                        "un petit animal",
+                        "neuf ans (âge)",
+                        "quatre objets (petits/compacts)",
+                        "sept objets (petits/compacts)",
+                        "sept objets longs/cylindriques"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-060",
+        "topic":  "Compteurs — objets",
+        "kanji":  "八個",
+        "hiragana":  "はっこ",
+        "answer":  "huit objets (petits/compacts)",
+        "choices":  [
+                        "mai",
+                        "huit petits animaux",
+                        "un jour (durée)",
+                        "cinq jours / le 5 du mois",
+                        "huit objets (petits/compacts)",
+                        "2e étage"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-061",
+        "topic":  "Compteurs — objets",
+        "kanji":  "九個",
+        "hiragana":  "きゅうこ",
+        "answer":  "neuf objets (petits/compacts)",
+        "choices":  [
+                        "dix livres / volumes",
+                        "dix heures",
+                        "huit jours / le 8 du mois",
+                        "sept personnes",
+                        "dix petits animaux",
+                        "neuf objets (petits/compacts)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-062",
+        "topic":  "Compteurs — objets",
+        "kanji":  "十個",
+        "hiragana":  "じゅっこ",
+        "answer":  "dix objets (petits/compacts)",
+        "choices":  [
+                        "cinq véhicules / appareils",
+                        "cinq heures",
+                        "trois objets (petits/compacts)",
+                        "cinq jours / le 5 du mois",
+                        "dix objets (petits/compacts)",
+                        "1er étage"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-063",
+        "topic":  "Compteurs — objets plats",
+        "kanji":  "一枚",
+        "hiragana":  "いちまい",
+        "answer":  "un objet plat",
+        "choices":  [
+                        "huit véhicules / appareils",
+                        "un objet plat",
+                        "deux véhicules / appareils",
+                        "deux livres / volumes",
+                        "une heure (durée)",
+                        "septembre"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-064",
+        "topic":  "Compteurs — objets plats",
+        "kanji":  "二枚",
+        "hiragana":  "にまい",
+        "answer":  "deux objets plats",
+        "choices":  [
+                        "un jour (durée)",
+                        "deux objets plats",
+                        "neuf objets longs/cylindriques",
+                        "cinq objets plats",
+                        "trois heures",
+                        "quatre personnes"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-065",
+        "topic":  "Compteurs — objets plats",
+        "kanji":  "三枚",
+        "hiragana":  "さんまい",
+        "answer":  "trois objets plats",
+        "choices":  [
+                        "six livres / volumes",
+                        "trois objets plats",
+                        "1er étage",
+                        "un objet (petit/compact)",
+                        "août",
+                        "dix livres / volumes"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-066",
+        "topic":  "Compteurs — objets plats",
+        "kanji":  "四枚",
+        "hiragana":  "よんまい",
+        "answer":  "quatre objets plats",
+        "choices":  [
+                        "six objets longs/cylindriques",
+                        "deux objets longs/cylindriques",
+                        "huit personnes",
+                        "cinq livres / volumes",
+                        "quatre objets plats",
+                        "sept jours / le 7 du mois"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-067",
+        "topic":  "Compteurs — objets plats",
+        "kanji":  "五枚",
+        "hiragana":  "ごまい",
+        "answer":  "cinq objets plats",
+        "choices":  [
+                        "deux jours / le 2 du mois",
+                        "six véhicules / appareils",
+                        "novembre",
+                        "six ans (âge)",
+                        "cinq objets plats",
+                        "avril"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-068",
+        "topic":  "Compteurs — objets plats",
+        "kanji":  "六枚",
+        "hiragana":  "ろくまい",
+        "answer":  "six objets plats",
+        "choices":  [
+                        "sept ans (âge)",
+                        "six objets plats",
+                        "huit véhicules / appareils",
+                        "trois personnes",
+                        "7e étage",
+                        "1er étage"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-069",
+        "topic":  "Compteurs — objets plats",
+        "kanji":  "七枚",
+        "hiragana":  "ななまい",
+        "answer":  "sept objets plats",
+        "choices":  [
+                        "sept objets plats",
+                        "un petit animal",
+                        "quatre personnes",
+                        "six petits animaux",
+                        "neuf heures",
+                        "deux objets plats"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-070",
+        "topic":  "Compteurs — objets plats",
+        "kanji":  "八枚",
+        "hiragana":  "はちまい",
+        "answer":  "huit objets plats",
+        "choices":  [
+                        "dix objets plats",
+                        "huit objets plats",
+                        "neuf heures",
+                        "deux ans (âge)",
+                        "six livres / volumes",
+                        "trois personnes"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-071",
+        "topic":  "Compteurs — objets plats",
+        "kanji":  "九枚",
+        "hiragana":  "きゅうまい",
+        "answer":  "neuf objets plats",
+        "choices":  [
+                        "neuf objets plats",
+                        "dix livres / volumes",
+                        "un objet plat",
+                        "sept petits animaux",
+                        "un an (âge)",
+                        "quatre ans (âge)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-072",
+        "topic":  "Compteurs — objets plats",
+        "kanji":  "十枚",
+        "hiragana":  "じゅうまい",
+        "answer":  "dix objets plats",
+        "choices":  [
+                        "janvier",
+                        "3e étage",
+                        "neuf heures",
+                        "dix objets plats",
+                        "dix petits animaux",
+                        "9e étage"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-073",
+        "topic":  "Compteurs — objets longs",
+        "kanji":  "一本",
+        "hiragana":  "いっぽん",
+        "answer":  "un objet long/cylindrique",
+        "choices":  [
+                        "cinq objets plats",
+                        "6e étage",
+                        "8e étage",
+                        "quatre heures",
+                        "un objet long/cylindrique",
+                        "huit jours / le 8 du mois"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-074",
+        "topic":  "Compteurs — objets longs",
+        "kanji":  "二本",
+        "hiragana":  "にほん",
+        "answer":  "deux objets longs/cylindriques",
+        "choices":  [
+                        "cinq ans (âge)",
+                        "5e étage",
+                        "neuf véhicules / appareils",
+                        "deux objets longs/cylindriques",
+                        "huit objets plats",
+                        "six objets plats"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-075",
+        "topic":  "Compteurs — objets longs",
+        "kanji":  "三本",
+        "hiragana":  "さんぼん",
+        "answer":  "trois objets longs/cylindriques",
+        "choices":  [
+                        "décembre",
+                        "huit jours / le 8 du mois",
+                        "dix objets (petits/compacts)",
+                        "trois objets longs/cylindriques",
+                        "sept heures",
+                        "avril"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-076",
+        "topic":  "Compteurs — objets longs",
+        "kanji":  "四本",
+        "hiragana":  "よんほん",
+        "answer":  "quatre objets longs/cylindriques",
+        "choices":  [
+                        "quatre objets longs/cylindriques",
+                        "dix ans (âge)",
+                        "septembre",
+                        "février",
+                        "huit personnes",
+                        "neuf objets longs/cylindriques"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-077",
+        "topic":  "Compteurs — objets longs",
+        "kanji":  "五本",
+        "hiragana":  "ごほん",
+        "answer":  "cinq objets longs/cylindriques",
+        "choices":  [
+                        "cinq objets longs/cylindriques",
+                        "cinq livres / volumes",
+                        "six véhicules / appareils",
+                        "un an (âge)",
+                        "8e étage",
+                        "2e étage"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-078",
+        "topic":  "Compteurs — objets longs",
+        "kanji":  "六本",
+        "hiragana":  "ろっぽん",
+        "answer":  "six objets longs/cylindriques",
+        "choices":  [
+                        "un objet long/cylindrique",
+                        "six objets longs/cylindriques",
+                        "trois jours / le 3 du mois",
+                        "dix livres / volumes",
+                        "dix objets (petits/compacts)",
+                        "cinq petits animaux"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-079",
+        "topic":  "Compteurs — objets longs",
+        "kanji":  "七本",
+        "hiragana":  "ななほん",
+        "answer":  "sept objets longs/cylindriques",
+        "choices":  [
+                        "une personne",
+                        "neuf jours / le 9 du mois",
+                        "six objets plats",
+                        "4e étage",
+                        "sept objets plats",
+                        "sept objets longs/cylindriques"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-080",
+        "topic":  "Compteurs — objets longs",
+        "kanji":  "八本",
+        "hiragana":  "はっぽん",
+        "answer":  "huit objets longs/cylindriques",
+        "choices":  [
+                        "novembre",
+                        "cinq véhicules / appareils",
+                        "huit objets longs/cylindriques",
+                        "dix personnes",
+                        "mars",
+                        "juin"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-081",
+        "topic":  "Compteurs — objets longs",
+        "kanji":  "九本",
+        "hiragana":  "きゅうほん",
+        "answer":  "neuf objets longs/cylindriques",
+        "choices":  [
+                        "novembre",
+                        "neuf objets plats",
+                        "dix personnes",
+                        "dix jours / le 10 du mois",
+                        "neuf objets longs/cylindriques",
+                        "deux jours / le 2 du mois"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-082",
+        "topic":  "Compteurs — objets longs",
+        "kanji":  "十本",
+        "hiragana":  "じゅっぽん",
+        "answer":  "dix objets longs/cylindriques",
+        "choices":  [
+                        "cinq véhicules / appareils",
+                        "huit ans (âge)",
+                        "deux véhicules / appareils",
+                        "neuf petits animaux",
+                        "5e étage",
+                        "dix objets longs/cylindriques"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-083",
+        "topic":  "Compteurs — livres",
+        "kanji":  "一冊",
+        "hiragana":  "いっさつ",
+        "answer":  "un livre / volume",
+        "choices":  [
+                        "six heures",
+                        "dix livres / volumes",
+                        "huit personnes",
+                        "neuf véhicules / appareils",
+                        "cinq objets (petits/compacts)",
+                        "un livre / volume"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-084",
+        "topic":  "Compteurs — livres",
+        "kanji":  "二冊",
+        "hiragana":  "にさつ",
+        "answer":  "deux livres / volumes",
+        "choices":  [
+                        "dix objets (petits/compacts)",
+                        "huit jours / le 8 du mois",
+                        "deux livres / volumes",
+                        "trois objets plats",
+                        "3e étage",
+                        "sept jours / le 7 du mois"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-085",
+        "topic":  "Compteurs — livres",
+        "kanji":  "三冊",
+        "hiragana":  "さんさつ",
+        "answer":  "trois livres / volumes",
+        "choices":  [
+                        "janvier",
+                        "un an (âge)",
+                        "octobre",
+                        "dix petits animaux",
+                        "deux véhicules / appareils",
+                        "trois livres / volumes"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-086",
+        "topic":  "Compteurs — livres",
+        "kanji":  "四冊",
+        "hiragana":  "よんさつ",
+        "answer":  "quatre livres / volumes",
+        "choices":  [
+                        "dix jours / le 10 du mois",
+                        "quatre personnes",
+                        "7e étage",
+                        "5e étage",
+                        "sept objets longs/cylindriques",
+                        "quatre livres / volumes"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-087",
+        "topic":  "Compteurs — livres",
+        "kanji":  "五冊",
+        "hiragana":  "ごさつ",
+        "answer":  "cinq livres / volumes",
+        "choices":  [
+                        "cinq livres / volumes",
+                        "six objets longs/cylindriques",
+                        "octobre",
+                        "dix véhicules / appareils",
+                        "six véhicules / appareils",
+                        "juillet"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-088",
+        "topic":  "Compteurs — livres",
+        "kanji":  "六冊",
+        "hiragana":  "ろくさつ",
+        "answer":  "six livres / volumes",
+        "choices":  [
+                        "huit petits animaux",
+                        "sept objets longs/cylindriques",
+                        "deux objets (petits/compacts)",
+                        "neuf véhicules / appareils",
+                        "août",
+                        "six livres / volumes"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-089",
+        "topic":  "Compteurs — livres",
+        "kanji":  "七冊",
+        "hiragana":  "ななさつ",
+        "answer":  "sept livres / volumes",
+        "choices":  [
+                        "juin",
+                        "sept objets plats",
+                        "dix jours / le 10 du mois",
+                        "dix véhicules / appareils",
+                        "huit objets longs/cylindriques",
+                        "sept livres / volumes"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-090",
+        "topic":  "Compteurs — livres",
+        "kanji":  "八冊",
+        "hiragana":  "はっさつ",
+        "answer":  "huit livres / volumes",
+        "choices":  [
+                        "dix heures",
+                        "un jour (durée)",
+                        "dix objets longs/cylindriques",
+                        "septembre",
+                        "huit véhicules / appareils",
+                        "huit livres / volumes"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-091",
+        "topic":  "Compteurs — livres",
+        "kanji":  "九冊",
+        "hiragana":  "きゅうさつ",
+        "answer":  "neuf livres / volumes",
+        "choices":  [
+                        "huit véhicules / appareils",
+                        "huit personnes",
+                        "quatre petits animaux",
+                        "avril",
+                        "cinq objets (petits/compacts)",
+                        "neuf livres / volumes"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-092",
+        "topic":  "Compteurs — livres",
+        "kanji":  "十冊",
+        "hiragana":  "じゅっさつ",
+        "answer":  "dix livres / volumes",
+        "choices":  [
+                        "six objets (petits/compacts)",
+                        "quatre véhicules / appareils",
+                        "un objet long/cylindrique",
+                        "quatre livres / volumes",
+                        "deux petits animaux",
+                        "dix livres / volumes"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-093",
+        "topic":  "Compteurs — animaux",
+        "kanji":  "一匹",
+        "hiragana":  "いっぴき",
+        "answer":  "un petit animal",
+        "choices":  [
+                        "quatre personnes",
+                        "un petit animal",
+                        "dix objets plats",
+                        "neuf petits animaux",
+                        "quatre ans (âge)",
+                        "dix personnes"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-094",
+        "topic":  "Compteurs — animaux",
+        "kanji":  "二匹",
+        "hiragana":  "にひき",
+        "answer":  "deux petits animaux",
+        "choices":  [
+                        "deux ans (âge)",
+                        "deux petits animaux",
+                        "cinq heures",
+                        "cinq jours / le 5 du mois",
+                        "trois jours / le 3 du mois",
+                        "deux jours / le 2 du mois"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-095",
+        "topic":  "Compteurs — animaux",
+        "kanji":  "三匹",
+        "hiragana":  "さんびき",
+        "answer":  "trois petits animaux",
+        "choices":  [
+                        "neuf véhicules / appareils",
+                        "six ans (âge)",
+                        "neuf personnes",
+                        "huit petits animaux",
+                        "trois petits animaux",
+                        "deux petits animaux"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-096",
+        "topic":  "Compteurs — animaux",
+        "kanji":  "四匹",
+        "hiragana":  "よんひき",
+        "answer":  "quatre petits animaux",
+        "choices":  [
+                        "dix ans (âge)",
+                        "six jours / le 6 du mois",
+                        "trois livres / volumes",
+                        "quatre petits animaux",
+                        "un livre / volume",
+                        "six véhicules / appareils"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-097",
+        "topic":  "Compteurs — animaux",
+        "kanji":  "五匹",
+        "hiragana":  "ごひき",
+        "answer":  "cinq petits animaux",
+        "choices":  [
+                        "cinq petits animaux",
+                        "huit jours / le 8 du mois",
+                        "cinq jours / le 5 du mois",
+                        "trois petits animaux",
+                        "cinq objets plats",
+                        "six jours / le 6 du mois"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-098",
+        "topic":  "Compteurs — animaux",
+        "kanji":  "六匹",
+        "hiragana":  "ろっぴき",
+        "answer":  "six petits animaux",
+        "choices":  [
+                        "sept objets plats",
+                        "deux véhicules / appareils",
+                        "six petits animaux",
+                        "neuf jours / le 9 du mois",
+                        "trois véhicules / appareils",
+                        "un objet (petit/compact)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-099",
+        "topic":  "Compteurs — animaux",
+        "kanji":  "七匹",
+        "hiragana":  "ななひき",
+        "answer":  "sept petits animaux",
+        "choices":  [
+                        "quatre personnes",
+                        "neuf personnes",
+                        "neuf petits animaux",
+                        "sept petits animaux",
+                        "9e étage",
+                        "cinq personnes"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-100",
+        "topic":  "Compteurs — animaux",
+        "kanji":  "八匹",
+        "hiragana":  "はっぴき",
+        "answer":  "huit petits animaux",
+        "choices":  [
+                        "trois heures",
+                        "neuf personnes",
+                        "janvier",
+                        "1er étage",
+                        "neuf ans (âge)",
+                        "huit petits animaux"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-101",
+        "topic":  "Compteurs — animaux",
+        "kanji":  "九匹",
+        "hiragana":  "きゅうひき",
+        "answer":  "neuf petits animaux",
+        "choices":  [
+                        "neuf petits animaux",
+                        "cinq jours / le 5 du mois",
+                        "sept objets longs/cylindriques",
+                        "2e étage",
+                        "octobre",
+                        "une personne"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-102",
+        "topic":  "Compteurs — animaux",
+        "kanji":  "十匹",
+        "hiragana":  "じゅっぴき",
+        "answer":  "dix petits animaux",
+        "choices":  [
+                        "trois jours / le 3 du mois",
+                        "cinq personnes",
+                        "dix petits animaux",
+                        "trois véhicules / appareils",
+                        "neuf objets plats",
+                        "quatre jours / le 4 du mois"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-103",
+        "topic":  "Compteurs — appareils et véhicules",
+        "kanji":  "一台",
+        "hiragana":  "いちだい",
+        "answer":  "un véhicule / appareil",
+        "choices":  [
+                        "un véhicule / appareil",
+                        "quatre personnes",
+                        "avril",
+                        "dix véhicules / appareils",
+                        "quatre jours / le 4 du mois",
+                        "10e étage"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-104",
+        "topic":  "Compteurs — appareils et véhicules",
+        "kanji":  "二台",
+        "hiragana":  "にだい",
+        "answer":  "deux véhicules / appareils",
+        "choices":  [
+                        "cinq jours / le 5 du mois",
+                        "septembre",
+                        "deux ans (âge)",
+                        "deux véhicules / appareils",
+                        "2e étage",
+                        "quatre heures"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-105",
+        "topic":  "Compteurs — appareils et véhicules",
+        "kanji":  "三台",
+        "hiragana":  "さんだい",
+        "answer":  "trois véhicules / appareils",
+        "choices":  [
+                        "dix livres / volumes",
+                        "dix véhicules / appareils",
+                        "un objet plat",
+                        "trois véhicules / appareils",
+                        "un an (âge)",
+                        "dix jours / le 10 du mois"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-106",
+        "topic":  "Compteurs — appareils et véhicules",
+        "kanji":  "四台",
+        "hiragana":  "よんだい",
+        "answer":  "quatre véhicules / appareils",
+        "choices":  [
+                        "huit objets plats",
+                        "trois jours / le 3 du mois",
+                        "neuf livres / volumes",
+                        "quatre véhicules / appareils",
+                        "quatre objets longs/cylindriques",
+                        "neuf petits animaux"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-107",
+        "topic":  "Compteurs — appareils et véhicules",
+        "kanji":  "五台",
+        "hiragana":  "ごだい",
+        "answer":  "cinq véhicules / appareils",
+        "choices":  [
+                        "cinq véhicules / appareils",
+                        "six livres / volumes",
+                        "six heures",
+                        "4e étage",
+                        "un véhicule / appareil",
+                        "dix véhicules / appareils"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-108",
+        "topic":  "Compteurs — appareils et véhicules",
+        "kanji":  "六台",
+        "hiragana":  "ろくだい",
+        "answer":  "six véhicules / appareils",
+        "choices":  [
+                        "trois ans (âge)",
+                        "six véhicules / appareils",
+                        "deux livres / volumes",
+                        "huit véhicules / appareils",
+                        "sept livres / volumes",
+                        "cinq objets longs/cylindriques"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-109",
+        "topic":  "Compteurs — appareils et véhicules",
+        "kanji":  "七台",
+        "hiragana":  "ななだい",
+        "answer":  "sept véhicules / appareils",
+        "choices":  [
+                        "2e étage",
+                        "un véhicule / appareil",
+                        "un livre / volume",
+                        "six véhicules / appareils",
+                        "quatre ans (âge)",
+                        "sept véhicules / appareils"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-110",
+        "topic":  "Compteurs — appareils et véhicules",
+        "kanji":  "八台",
+        "hiragana":  "はちだい",
+        "answer":  "huit véhicules / appareils",
+        "choices":  [
+                        "six livres / volumes",
+                        "six véhicules / appareils",
+                        "neuf objets plats",
+                        "sept véhicules / appareils",
+                        "huit véhicules / appareils",
+                        "une personne"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-111",
+        "topic":  "Compteurs — appareils et véhicules",
+        "kanji":  "九台",
+        "hiragana":  "きゅうだい",
+        "answer":  "neuf véhicules / appareils",
+        "choices":  [
+                        "un véhicule / appareil",
+                        "cinq petits animaux",
+                        "neuf véhicules / appareils",
+                        "six jours / le 6 du mois",
+                        "cinq ans (âge)",
+                        "huit véhicules / appareils"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-112",
+        "topic":  "Compteurs — appareils et véhicules",
+        "kanji":  "十台",
+        "hiragana":  "じゅうだい",
+        "answer":  "dix véhicules / appareils",
+        "choices":  [
+                        "dix véhicules / appareils",
+                        "1er étage",
+                        "octobre",
+                        "dix livres / volumes",
+                        "huit objets (petits/compacts)",
+                        "six objets (petits/compacts)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-113",
+        "topic":  "Compteurs — âge",
+        "kanji":  "一歳",
+        "hiragana":  "いっさい",
+        "answer":  "un an (âge)",
+        "choices":  [
+                        "2e étage",
+                        "1er étage",
+                        "septembre",
+                        "un an (âge)",
+                        "octobre",
+                        "neuf objets (petits/compacts)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-114",
+        "topic":  "Compteurs — âge",
+        "kanji":  "二歳",
+        "hiragana":  "にさい",
+        "answer":  "deux ans (âge)",
+        "choices":  [
+                        "deux livres / volumes",
+                        "février",
+                        "deux ans (âge)",
+                        "huit objets longs/cylindriques",
+                        "4e étage",
+                        "neuf jours / le 9 du mois"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-115",
+        "topic":  "Compteurs — âge",
+        "kanji":  "三歳",
+        "hiragana":  "さんさい",
+        "answer":  "trois ans (âge)",
+        "choices":  [
+                        "dix heures",
+                        "un objet plat",
+                        "un objet (petit/compact)",
+                        "six heures",
+                        "huit objets (petits/compacts)",
+                        "trois ans (âge)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-116",
+        "topic":  "Compteurs — âge",
+        "kanji":  "四歳",
+        "hiragana":  "よんさい",
+        "answer":  "quatre ans (âge)",
+        "choices":  [
+                        "quatre ans (âge)",
+                        "huit heures",
+                        "9e étage",
+                        "trois véhicules / appareils",
+                        "neuf objets longs/cylindriques",
+                        "une personne"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-117",
+        "topic":  "Compteurs — âge",
+        "kanji":  "五歳",
+        "hiragana":  "ごさい",
+        "answer":  "cinq ans (âge)",
+        "choices":  [
+                        "deux ans (âge)",
+                        "six objets plats",
+                        "7e étage",
+                        "cinq ans (âge)",
+                        "sept heures",
+                        "sept objets longs/cylindriques"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-118",
+        "topic":  "Compteurs — âge",
+        "kanji":  "六歳",
+        "hiragana":  "ろくさい",
+        "answer":  "six ans (âge)",
+        "choices":  [
+                        "5e étage",
+                        "un jour (durée)",
+                        "six objets longs/cylindriques",
+                        "six ans (âge)",
+                        "deux jours / le 2 du mois",
+                        "neuf objets longs/cylindriques"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-119",
+        "topic":  "Compteurs — âge",
+        "kanji":  "七歳",
+        "hiragana":  "ななさい",
+        "answer":  "sept ans (âge)",
+        "choices":  [
+                        "six ans (âge)",
+                        "neuf ans (âge)",
+                        "sept ans (âge)",
+                        "neuf livres / volumes",
+                        "juin",
+                        "janvier"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-120",
+        "topic":  "Compteurs — âge",
+        "kanji":  "八歳",
+        "hiragana":  "はっさい",
+        "answer":  "huit ans (âge)",
+        "choices":  [
+                        "trois ans (âge)",
+                        "huit véhicules / appareils",
+                        "trois livres / volumes",
+                        "5e étage",
+                        "sept ans (âge)",
+                        "huit ans (âge)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-121",
+        "topic":  "Compteurs — âge",
+        "kanji":  "九歳",
+        "hiragana":  "きゅうさい",
+        "answer":  "neuf ans (âge)",
+        "choices":  [
+                        "neuf ans (âge)",
+                        "trois ans (âge)",
+                        "six ans (âge)",
+                        "cinq objets (petits/compacts)",
+                        "huit objets plats",
+                        "un objet plat"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    },
+    {
+        "id":  "wg-vocab-122",
+        "topic":  "Compteurs — âge",
+        "kanji":  "十歳",
+        "hiragana":  "じゅっさい",
+        "answer":  "dix ans (âge)",
+        "choices":  [
+                        "quatre objets (petits/compacts)",
+                        "sept petits animaux",
+                        "huit véhicules / appareils",
+                        "cinq objets (petits/compacts)",
+                        "sept personnes",
+                        "dix ans (âge)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "COUNTERS"
+    }
+]

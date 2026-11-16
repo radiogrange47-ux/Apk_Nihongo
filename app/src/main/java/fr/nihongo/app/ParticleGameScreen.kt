@@ -62,7 +62,8 @@ internal data class AnswerFeedback(
     val tone: FeedbackTone,
     val message: String,
     val frenchTranslation: String? = null,
-    val pedagogicalHint: String? = null
+    val pedagogicalHint: String? = null,
+    val kanjiBreakdown: String? = null
 )
 
 private val wordColorLegend = listOf(
@@ -239,7 +240,8 @@ internal fun ParticleGameScreen(
                                         tone = FeedbackTone.CORRECT,
                                         message = "✓",
                                         frenchTranslation = exercise.translation,
-                                        pedagogicalHint = concisePedagogicalHint(exercise.explanation)
+                                        pedagogicalHint = concisePedagogicalHint(exercise.explanation),
+                                        kanjiBreakdown = phraseKanjiBreakdown(exercise.tokens)
                                     )
                                     advanceToNextQuestion()
                                 } else {
@@ -254,7 +256,8 @@ internal fun ParticleGameScreen(
                                             tone = FeedbackTone.INCORRECT,
                                             message = "×  Réponse : ${answerToken.hiragana}",
                                             frenchTranslation = exercise.translation,
-                                            pedagogicalHint = concisePedagogicalHint(exercise.explanation)
+                                            pedagogicalHint = concisePedagogicalHint(exercise.explanation),
+                                            kanjiBreakdown = phraseKanjiBreakdown(exercise.tokens)
                                         )
                                     } else {
                                         AnswerFeedback(
@@ -402,6 +405,13 @@ internal fun AnswerFeedbackBanner(feedback: AnswerFeedback, eventKey: Int) {
                 color = foregroundColor,
                 style = MaterialTheme.typography.titleMedium
             )
+            feedback.kanjiBreakdown?.let { breakdown ->
+                Text(
+                    "Kanji : $breakdown",
+                    color = foregroundColor.copy(alpha = 0.9f),
+                    style = MaterialTheme.typography.bodySmall
+                )
+            }
             feedback.pedagogicalHint?.let { hint ->
                 Text(
                     hint,

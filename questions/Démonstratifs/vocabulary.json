@@ -1,0 +1,434 @@
+[
+    {
+        "id":  "wg-vocab-147",
+        "topic":  "Démonstratifs — objets",
+        "kanji":  "これ",
+        "hiragana":  "これ",
+        "answer":  "ceci / celui-ci (près de moi)",
+        "choices":  [
+                        "ceci / celui-ci (près de moi)",
+                        "quel… / lequel parmi…",
+                        "par là-bas / cette direction",
+                        "là-bas",
+                        "comment / de quelle manière",
+                        "ainsi / de cette manière-là-bas"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    },
+    {
+        "id":  "wg-vocab-148",
+        "topic":  "Démonstratifs — objets",
+        "kanji":  "それ",
+        "hiragana":  "それ",
+        "answer":  "cela / celui-là (près de toi)",
+        "choices":  [
+                        "cela / celui-là (près de toi)",
+                        "ceci / celui-ci (près de moi)",
+                        "là (près de toi)",
+                        "comme cela / ce genre de",
+                        "ce…-là (éloigné)",
+                        "quel genre de"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    },
+    {
+        "id":  "wg-vocab-149",
+        "topic":  "Démonstratifs — objets",
+        "kanji":  "あれ",
+        "hiragana":  "あれ",
+        "answer":  "cela / celui-là (loin de nous)",
+        "choices":  [
+                        "comment / de quelle manière",
+                        "comme cela là-bas",
+                        "cela / celui-là (loin de nous)",
+                        "lequel / lequel des objets",
+                        "ce…-là / cet…-là",
+                        "ainsi / de cette manière"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    },
+    {
+        "id":  "wg-vocab-150",
+        "topic":  "Démonstratifs — objets",
+        "kanji":  "どれ",
+        "hiragana":  "どれ",
+        "answer":  "lequel / lequel des objets",
+        "choices":  [
+                        "lequel / lequel des objets",
+                        "ainsi / de cette manière-là-bas",
+                        "où",
+                        "cela / celui-là (loin de nous)",
+                        "comme ceci / ce genre de",
+                        "là-bas"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    },
+    {
+        "id":  "wg-vocab-151",
+        "topic":  "Démonstratifs — déterminants",
+        "kanji":  "この",
+        "hiragana":  "この",
+        "answer":  "ce…-ci / cet…-ci",
+        "choices":  [
+                        "par là-bas / cette direction",
+                        "ce…-là / cet…-là",
+                        "ce…-ci / cet…-ci",
+                        "ainsi / de cette manière",
+                        "cela / celui-là (loin de nous)",
+                        "ainsi / de cette manière-là-bas"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    },
+    {
+        "id":  "wg-vocab-152",
+        "topic":  "Démonstratifs — déterminants",
+        "kanji":  "その",
+        "hiragana":  "その",
+        "answer":  "ce…-là / cet…-là",
+        "choices":  [
+                        "là-bas",
+                        "comme cela là-bas",
+                        "ce…-là / cet…-là",
+                        "ainsi / de cette manière-là",
+                        "quel… / lequel parmi…",
+                        "ici"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    },
+    {
+        "id":  "wg-vocab-153",
+        "topic":  "Démonstratifs — déterminants",
+        "kanji":  "あの",
+        "hiragana":  "あの",
+        "answer":  "ce…-là (éloigné)",
+        "choices":  [
+                        "par où / lequel des deux",
+                        "ce…-là (éloigné)",
+                        "où",
+                        "par ici / cette direction",
+                        "cela / celui-là (loin de nous)",
+                        "comment / de quelle manière"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    },
+    {
+        "id":  "wg-vocab-154",
+        "topic":  "Démonstratifs — déterminants",
+        "kanji":  "どの",
+        "hiragana":  "どの",
+        "answer":  "quel… / lequel parmi…",
+        "choices":  [
+                        "ainsi / de cette manière-là-bas",
+                        "quel… / lequel parmi…",
+                        "par où / lequel des deux",
+                        "là-bas",
+                        "ce…-là / cet…-là",
+                        "où"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    },
+    {
+        "id":  "wg-vocab-155",
+        "topic":  "Démonstratifs — lieux",
+        "kanji":  "ここ",
+        "hiragana":  "ここ",
+        "answer":  "ici",
+        "choices":  [
+                        "ce…-là / cet…-là",
+                        "ici",
+                        "comment / de quelle manière",
+                        "par là-bas / cette direction",
+                        "là-bas",
+                        "lequel / lequel des objets"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    },
+    {
+        "id":  "wg-vocab-156",
+        "topic":  "Démonstratifs — lieux",
+        "kanji":  "そこ",
+        "hiragana":  "そこ",
+        "answer":  "là (près de toi)",
+        "choices":  [
+                        "comme cela / ce genre de",
+                        "là (près de toi)",
+                        "ici",
+                        "quel… / lequel parmi…",
+                        "lequel / lequel des objets",
+                        "par là / cette direction"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    },
+    {
+        "id":  "wg-vocab-157",
+        "topic":  "Démonstratifs — lieux",
+        "kanji":  "あそこ",
+        "hiragana":  "あそこ",
+        "answer":  "là-bas",
+        "choices":  [
+                        "quel… / lequel parmi…",
+                        "ici",
+                        "par là / cette direction",
+                        "là-bas",
+                        "ceci / celui-ci (près de moi)",
+                        "ce…-là / cet…-là"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    },
+    {
+        "id":  "wg-vocab-158",
+        "topic":  "Démonstratifs — lieux",
+        "kanji":  "どこ",
+        "hiragana":  "どこ",
+        "answer":  "où",
+        "choices":  [
+                        "ceci / celui-ci (près de moi)",
+                        "ainsi / de cette manière",
+                        "comme cela là-bas",
+                        "cela / celui-là (loin de nous)",
+                        "où",
+                        "là (près de toi)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    },
+    {
+        "id":  "wg-vocab-159",
+        "topic":  "Démonstratifs — directions",
+        "kanji":  "こちら",
+        "hiragana":  "こちら",
+        "answer":  "par ici / cette direction",
+        "choices":  [
+                        "lequel / lequel des objets",
+                        "par là / cette direction",
+                        "ce…-là / cet…-là",
+                        "ce…-ci / cet…-ci",
+                        "ainsi / de cette manière-là",
+                        "par ici / cette direction"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    },
+    {
+        "id":  "wg-vocab-160",
+        "topic":  "Démonstratifs — directions",
+        "kanji":  "そちら",
+        "hiragana":  "そちら",
+        "answer":  "par là / cette direction",
+        "choices":  [
+                        "là (près de toi)",
+                        "par là / cette direction",
+                        "comme cela là-bas",
+                        "là-bas",
+                        "comme ceci / ce genre de",
+                        "lequel / lequel des objets"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    },
+    {
+        "id":  "wg-vocab-161",
+        "topic":  "Démonstratifs — directions",
+        "kanji":  "あちら",
+        "hiragana":  "あちら",
+        "answer":  "par là-bas / cette direction",
+        "choices":  [
+                        "par là-bas / cette direction",
+                        "par là / cette direction",
+                        "ce…-là (éloigné)",
+                        "comme ceci / ce genre de",
+                        "comme cela / ce genre de",
+                        "où"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    },
+    {
+        "id":  "wg-vocab-162",
+        "topic":  "Démonstratifs — directions",
+        "kanji":  "どちら",
+        "hiragana":  "どちら",
+        "answer":  "par où / lequel des deux",
+        "choices":  [
+                        "par où / lequel des deux",
+                        "là-bas",
+                        "quel genre de",
+                        "lequel / lequel des objets",
+                        "ce…-là (éloigné)",
+                        "où"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    },
+    {
+        "id":  "wg-vocab-163",
+        "topic":  "Démonstratifs — manière",
+        "kanji":  "こんな",
+        "hiragana":  "こんな",
+        "answer":  "comme ceci / ce genre de",
+        "choices":  [
+                        "où",
+                        "quel genre de",
+                        "là (près de toi)",
+                        "ainsi / de cette manière-là",
+                        "comme cela là-bas",
+                        "comme ceci / ce genre de"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    },
+    {
+        "id":  "wg-vocab-164",
+        "topic":  "Démonstratifs — manière",
+        "kanji":  "そんな",
+        "hiragana":  "そんな",
+        "answer":  "comme cela / ce genre de",
+        "choices":  [
+                        "quel… / lequel parmi…",
+                        "comme cela / ce genre de",
+                        "comme ceci / ce genre de",
+                        "où",
+                        "ce…-ci / cet…-ci",
+                        "quel genre de"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    },
+    {
+        "id":  "wg-vocab-165",
+        "topic":  "Démonstratifs — manière",
+        "kanji":  "あんな",
+        "hiragana":  "あんな",
+        "answer":  "comme cela là-bas",
+        "choices":  [
+                        "lequel / lequel des objets",
+                        "ce…-là (éloigné)",
+                        "ainsi / de cette manière-là",
+                        "là-bas",
+                        "comme cela là-bas",
+                        "ainsi / de cette manière-là-bas"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    },
+    {
+        "id":  "wg-vocab-166",
+        "topic":  "Démonstratifs — manière",
+        "kanji":  "どんな",
+        "hiragana":  "どんな",
+        "answer":  "quel genre de",
+        "choices":  [
+                        "par où / lequel des deux",
+                        "par ici / cette direction",
+                        "quel genre de",
+                        "comment / de quelle manière",
+                        "où",
+                        "par là-bas / cette direction"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    },
+    {
+        "id":  "wg-vocab-167",
+        "topic":  "Démonstratifs — manière",
+        "kanji":  "こう",
+        "hiragana":  "こう",
+        "answer":  "ainsi / de cette manière",
+        "choices":  [
+                        "ainsi / de cette manière",
+                        "lequel / lequel des objets",
+                        "par là-bas / cette direction",
+                        "là-bas",
+                        "ce…-là (éloigné)",
+                        "comme cela / ce genre de"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    },
+    {
+        "id":  "wg-vocab-168",
+        "topic":  "Démonstratifs — manière",
+        "kanji":  "そう",
+        "hiragana":  "そう",
+        "answer":  "ainsi / de cette manière-là",
+        "choices":  [
+                        "comme cela là-bas",
+                        "ainsi / de cette manière-là-bas",
+                        "ceci / celui-ci (près de moi)",
+                        "ainsi / de cette manière-là",
+                        "cela / celui-là (près de toi)",
+                        "cela / celui-là (loin de nous)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    },
+    {
+        "id":  "wg-vocab-169",
+        "topic":  "Démonstratifs — manière",
+        "kanji":  "ああ",
+        "hiragana":  "ああ",
+        "answer":  "ainsi / de cette manière-là-bas",
+        "choices":  [
+                        "là-bas",
+                        "ainsi / de cette manière-là-bas",
+                        "comme ceci / ce genre de",
+                        "ce…-là / cet…-là",
+                        "par là / cette direction",
+                        "ainsi / de cette manière"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    },
+    {
+        "id":  "wg-vocab-170",
+        "topic":  "Démonstratifs — manière",
+        "kanji":  "どう",
+        "hiragana":  "どう",
+        "answer":  "comment / de quelle manière",
+        "choices":  [
+                        "comment / de quelle manière",
+                        "où",
+                        "ce…-là (éloigné)",
+                        "lequel / lequel des objets",
+                        "comme ceci / ce genre de",
+                        "ici"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DEMONSTRATIVES"
+    }
+]

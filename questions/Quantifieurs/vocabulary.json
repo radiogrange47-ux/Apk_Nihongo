@@ -1,0 +1,452 @@
+[
+    {
+        "id":  "wg-vocab-196",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "ある",
+        "hiragana":  "ある",
+        "answer":  "un certain / il y a (non humain)",
+        "choices":  [
+                        "un par un / chacun",
+                        "rien (avec une négation)",
+                        "un certain / il y a (non humain)",
+                        "quelque chose",
+                        "nulle part (avec une négation)",
+                        "même / identique"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-197",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "とある",
+        "hiragana":  "とある",
+        "answer":  "un certain (quelque part)",
+        "choices":  [
+                        "un jour / à un moment donné",
+                        "un certain (quelque part)",
+                        "une personne à la fois / chacun",
+                        "personne (avec une négation)",
+                        "tout / la totalité",
+                        "un peu"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-198",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "一つ",
+        "hiragana":  "ひとつ",
+        "answer":  "un (compteur général)",
+        "choices":  [
+                        "un certain (quelque part)",
+                        "chaque (préfixe)",
+                        "un (compteur général)",
+                        "un autre / différent",
+                        "nulle part (avec une négation)",
+                        "un certain / il y a (non humain)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-199",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "二つ",
+        "hiragana":  "ふたつ",
+        "answer":  "deux (compteur général)",
+        "choices":  [
+                        "chaque (préfixe)",
+                        "beaucoup",
+                        "quelque chose",
+                        "deux (compteur général)",
+                        "tout le monde / tous",
+                        "les deux / tous les deux"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-200",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "いくつか",
+        "hiragana":  "いくつか",
+        "answer":  "quelques-uns / plusieurs",
+        "choices":  [
+                        "un certain / il y a (non humain)",
+                        "un (compteur général)",
+                        "les deux / tous les deux",
+                        "un peu",
+                        "quelques-uns / plusieurs",
+                        "une personne à la fois / chacun"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-201",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "たくさん",
+        "hiragana":  "たくさん",
+        "answer":  "beaucoup",
+        "choices":  [
+                        "un certain (quelque part)",
+                        "beaucoup",
+                        "une personne à la fois / chacun",
+                        "chaque (préfixe)",
+                        "autre / les autres",
+                        "un (compteur général)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-202",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "少し",
+        "hiragana":  "すこし",
+        "answer":  "un peu",
+        "choices":  [
+                        "quelque part",
+                        "chaque (préfixe)",
+                        "un autre / différent",
+                        "un peu",
+                        "tout le monde / tous",
+                        "une personne à la fois / chacun"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-203",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "全部",
+        "hiragana":  "ぜんぶ",
+        "answer":  "tout / la totalité",
+        "choices":  [
+                        "tout le monde / tous",
+                        "quelques-uns / plusieurs",
+                        "quelque part",
+                        "les deux / tous les deux",
+                        "tout / la totalité",
+                        "un (compteur général)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-204",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "みんな",
+        "hiragana":  "みんな",
+        "answer":  "tout le monde / tous",
+        "choices":  [
+                        "quelque part",
+                        "un (compteur général)",
+                        "une personne à la fois / chacun",
+                        "un par un / chacun",
+                        "un certain / il y a (non humain)",
+                        "tout le monde / tous"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-205",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "各",
+        "hiragana":  "かく",
+        "answer":  "chaque (préfixe)",
+        "choices":  [
+                        "beaucoup",
+                        "chaque (préfixe)",
+                        "autre / les autres",
+                        "même / identique",
+                        "deux (compteur général)",
+                        "une personne à la fois / chacun"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-206",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "同じ",
+        "hiragana":  "おなじ",
+        "answer":  "même / identique",
+        "choices":  [
+                        "même / identique",
+                        "quelque chose",
+                        "un peu",
+                        "un par un / chacun",
+                        "un autre / différent",
+                        "les deux / tous les deux"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-207",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "別の",
+        "hiragana":  "べつの",
+        "answer":  "un autre / différent",
+        "choices":  [
+                        "beaucoup",
+                        "un jour / à un moment donné",
+                        "même / identique",
+                        "un autre / différent",
+                        "quelque chose",
+                        "nulle part (avec une négation)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-208",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "多くの",
+        "hiragana":  "おおくの",
+        "answer":  "beaucoup de",
+        "choices":  [
+                        "quelque chose",
+                        "quelqu’un",
+                        "quelques-uns / plusieurs",
+                        "rien (avec une négation)",
+                        "tout le monde / tous",
+                        "beaucoup de"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-209",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "何か",
+        "hiragana":  "なにか",
+        "answer":  "quelque chose",
+        "choices":  [
+                        "une personne à la fois / chacun",
+                        "un jour / à un moment donné",
+                        "un peu",
+                        "quelque chose",
+                        "chaque (préfixe)",
+                        "un certain / il y a (non humain)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-210",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "誰か",
+        "hiragana":  "だれか",
+        "answer":  "quelqu’un",
+        "choices":  [
+                        "quelque chose",
+                        "autre / les autres",
+                        "tout / la totalité",
+                        "quelque part",
+                        "quelqu’un",
+                        "nulle part (avec une négation)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-211",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "どこか",
+        "hiragana":  "どこか",
+        "answer":  "quelque part",
+        "choices":  [
+                        "tout le monde / tous",
+                        "quelque part",
+                        "autre / les autres",
+                        "personne (avec une négation)",
+                        "même / identique",
+                        "rien (avec une négation)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-212",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "いつか",
+        "hiragana":  "いつか",
+        "answer":  "un jour / à un moment donné",
+        "choices":  [
+                        "chacun / respectivement",
+                        "autre / les autres",
+                        "un jour / à un moment donné",
+                        "chaque (préfixe)",
+                        "un certain (quelque part)",
+                        "même / identique"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-213",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "何も",
+        "hiragana":  "なにも",
+        "answer":  "rien (avec une négation)",
+        "choices":  [
+                        "rien (avec une négation)",
+                        "beaucoup",
+                        "nulle part (avec une négation)",
+                        "quelque chose",
+                        "les deux / tous les deux",
+                        "un jour / à un moment donné"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-214",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "誰も",
+        "hiragana":  "だれも",
+        "answer":  "personne (avec une négation)",
+        "choices":  [
+                        "quelque part",
+                        "beaucoup de",
+                        "tout / la totalité",
+                        "un peu",
+                        "personne (avec une négation)",
+                        "un par un / chacun"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-215",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "どこも",
+        "hiragana":  "どこも",
+        "answer":  "nulle part (avec une négation)",
+        "choices":  [
+                        "un jour / à un moment donné",
+                        "beaucoup de",
+                        "nulle part (avec une négation)",
+                        "un certain / il y a (non humain)",
+                        "deux (compteur général)",
+                        "personne (avec une négation)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-216",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "どちらも",
+        "hiragana":  "どちらも",
+        "answer":  "les deux / tous les deux",
+        "choices":  [
+                        "nulle part (avec une négation)",
+                        "chacun / respectivement",
+                        "rien (avec une négation)",
+                        "un (compteur général)",
+                        "quelque chose",
+                        "les deux / tous les deux"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-217",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "一人ずつ",
+        "hiragana":  "ひとりずつ",
+        "answer":  "une personne à la fois / chacun",
+        "choices":  [
+                        "quelque chose",
+                        "un certain / il y a (non humain)",
+                        "les deux / tous les deux",
+                        "tout le monde / tous",
+                        "même / identique",
+                        "une personne à la fois / chacun"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-218",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "一つずつ",
+        "hiragana":  "ひとつずつ",
+        "answer":  "un par un / chacun",
+        "choices":  [
+                        "nulle part (avec une négation)",
+                        "un certain / il y a (non humain)",
+                        "un par un / chacun",
+                        "un peu",
+                        "tout / la totalité",
+                        "quelque chose"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-219",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "他の",
+        "hiragana":  "ほかの",
+        "answer":  "autre / les autres",
+        "choices":  [
+                        "autre / les autres",
+                        "un autre / différent",
+                        "quelques-uns / plusieurs",
+                        "quelque part",
+                        "quelqu’un",
+                        "rien (avec une négation)"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    },
+    {
+        "id":  "wg-vocab-220",
+        "topic":  "Déterminants et quantifieurs",
+        "kanji":  "それぞれ",
+        "hiragana":  "それぞれ",
+        "answer":  "chacun / respectivement",
+        "choices":  [
+                        "chacun / respectivement",
+                        "un certain (quelque part)",
+                        "les deux / tous les deux",
+                        "un peu",
+                        "une personne à la fois / chacun",
+                        "quelqu’un"
+                    ],
+        "level":  "Vocabulaire thématique",
+        "source":  "Sélection pédagogique de mots outils, classificateurs et déterminants usuels en japonais.",
+        "bank":  "DETERMINERS"
+    }
+]

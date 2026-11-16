@@ -42,6 +42,8 @@ private val HomeBorder = Color(0xFF292929)
 @Composable
 internal fun HomeScreen(
     progress: ProgressSnapshot,
+    questionCatalog: QuestionCatalog,
+    masteryThreshold: Int,
     selectedGames: List<LearningGame>,
     playableGameCount: Int,
     selectedBanks: Set<QuestionBank>,
@@ -53,6 +55,15 @@ internal fun HomeScreen(
     onShowProgress: () -> Unit,
     onShowSettings: () -> Unit
 ) {
+    val masteredCounters = progress.questions.associate { it.questionId to it.masteryCounter }
+    val bankMasteryPercent = QuestionBank.values().associateWith { bank ->
+        val questions = LearningGame.values().flatMap { game ->
+            questionCatalog.questionsFor(game).filter { it.bank == bank }
+        }
+        if (questions.isEmpty()) 0 else {
+            questions.count { (masteredCounters[it.id] ?: 0) >= masteryThreshold } * 100 / questions.size
+        }
+    }
     val attempts = LearningGame.values().sumOf { game ->
         progress.questionsFor(game).sumOf { it.attempts }
     }
@@ -119,7 +130,16 @@ internal fun HomeScreen(
                 FilterChip(
                     selected = bank in selectedBanks,
                     onClick = { onBankSelectionChange(bank, bank !in selectedBanks) },
-                    label = { Text(bank.title) }
+                    label = {
+                        Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                            Text(bank.title)
+                            Text(
+                                "${bankMasteryPercent[bank] ?: 0}% maîtrisé",
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                style = MaterialTheme.typography.labelSmall
+                            )
+                        }
+                    }
                 )
             }
         }

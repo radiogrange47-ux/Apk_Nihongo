@@ -57,8 +57,18 @@ internal class LearningSettingsStore(context: Context) {
 
     fun selectedQuestionBanks(): Set<QuestionBank> {
         if (!preferences.contains(QUESTION_BANKS_KEY)) return setOf(QuestionBank.JLPT5)
-        return preferences.getString(QUESTION_BANKS_KEY, "").orEmpty().split(",").mapNotNull { name ->
-            QuestionBank.values().firstOrNull { it.name == name }
+        return preferences.getString(QUESTION_BANKS_KEY, "").orEmpty().split(",").flatMap { name ->
+            if (name == "WORDS_GRAMMAR") {
+                listOf(
+                    QuestionBank.COUNTERS,
+                    QuestionBank.CONNECTORS,
+                    QuestionBank.DEMONSTRATIVES,
+                    QuestionBank.INTERROGATIVES,
+                    QuestionBank.DETERMINERS
+                )
+            } else {
+                listOfNotNull(QuestionBank.values().firstOrNull { it.name == name })
+            }
         }.toSet()
     }
 
