@@ -44,7 +44,8 @@ internal fun CounterChallengeGameScreen(
     masteryThreshold: Int,
     masteredQuestionRepeatPercent: Int,
     completedQuestions: Int,
-    seriesTarget: Int
+    seriesTarget: Int,
+    allQuestionsMastered: Boolean
 ) {
     var masteryCounters by remember {
         mutableStateOf(progress.questionsFor(LearningGame.COUNTER_CHALLENGE)
@@ -191,6 +192,11 @@ internal fun CounterChallengeGameScreen(
         }
 
         feedback?.let { AnswerFeedbackBanner(it, feedbackEvent) }
+        SessionProgressFooter(
+            questionsCompleted = completedQuestions,
+            target = seriesTarget,
+            allQuestionsMastered = allQuestionsMastered
+        )
         saveError?.let { Text("Progression non enregistrée : $it", color = MaterialTheme.colorScheme.error) }
     }
 }

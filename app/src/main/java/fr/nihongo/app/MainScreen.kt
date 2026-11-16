@@ -309,7 +309,8 @@ internal fun MainScreen(
                                     masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
                                     completedQuestions = questionsCompleted,
                                     seriesTarget = storedSessionTargets[game]
-                                        ?: minOf(sessionQuestionCount, activeCatalog.pairingQuestions().size / 6)
+                                        ?: minOf(sessionQuestionCount, activeCatalog.pairingQuestions().size / 6),
+                                    allQuestionsMastered = allSelectedQuestionsMastered
                                 )
 
                                 LearningGame.COUNTER_CHALLENGE -> CounterChallengeGameScreen(
@@ -324,7 +325,8 @@ internal fun MainScreen(
                                     masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
                                     completedQuestions = questionsCompleted,
                                     seriesTarget = storedSessionTargets[game]
-                                        ?: minOf(sessionQuestionCount, activeCatalog.counterChallengeQuestions().size)
+                                        ?: minOf(sessionQuestionCount, activeCatalog.counterChallengeQuestions().size),
+                                    allQuestionsMastered = allSelectedQuestionsMastered
                                 )
                             }
                         }

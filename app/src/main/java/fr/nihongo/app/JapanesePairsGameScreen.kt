@@ -43,7 +43,8 @@ internal fun JapanesePairsGameScreen(
     masteryThreshold: Int,
     masteredQuestionRepeatPercent: Int,
     completedQuestions: Int,
-    seriesTarget: Int
+    seriesTarget: Int,
+    allQuestionsMastered: Boolean
 ) {
     var masteryCounters by remember {
         mutableStateOf(progress.questionsFor(LearningGame.PAIRS).associate { it.questionId to it.masteryCounter })
@@ -203,6 +204,11 @@ internal fun JapanesePairsGameScreen(
             Text("Pas cette paire, essaie encore.", color = Color(0xFFFF9999))
         }
         saveError?.let { Text("Progression non enregistrée : $it", color = MaterialTheme.colorScheme.error) }
+        SessionProgressFooter(
+            questionsCompleted = completedQuestions,
+            target = seriesTarget,
+            allQuestionsMastered = allQuestionsMastered
+        )
         Spacer(Modifier.heightIn(min = 4.dp))
     }
 }
