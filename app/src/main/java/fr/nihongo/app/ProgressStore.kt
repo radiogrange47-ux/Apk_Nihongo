@@ -130,6 +130,16 @@ internal class ProgressStore(context: Context) {
                 key.endsWith(MASTERY_SUFFIX)
         }
         val existingCounters = questionDataKeys.associateWith { preferences.getInt(it, 0) }
+            .toMutableMap()
+        catalog.legacyPairingIds().forEach { (stableId, legacyId) ->
+            listOf(ATTEMPTS_SUFFIX, CORRECT_SUFFIX, MASTERY_SUFFIX).forEach { suffix ->
+                val currentKey = questionKey(stableId, LearningGame.PAIRS, suffix)
+                val legacyKey = questionKey(legacyId, LearningGame.PAIRS, suffix)
+                if (currentKey !in existingCounters && legacyKey in existingCounters) {
+                    existingCounters[currentKey] = existingCounters.getValue(legacyKey)
+                }
+            }
+        }
         val reconciledCounters = QuestionCounterReconciliation.reconcile(
             existingCounters = existingCounters,
             expectedKeys = expectedKeys

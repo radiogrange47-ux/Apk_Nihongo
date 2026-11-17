@@ -87,7 +87,9 @@ internal fun ParticleGameScreen(
     masteredQuestionRepeatPercent: Int = 5,
     completedQuestions: Int,
     seriesTarget: Int,
-    allQuestionsMastered: Boolean
+    allQuestionsMastered: Boolean,
+    carryoverAnswer: AnswerFeedback?,
+    carryoverAnswerEvent: Int
 ) {
     var questionIndex by remember { mutableIntStateOf(0) }
     var wrongAnswers by remember { mutableIntStateOf(0) }
@@ -152,6 +154,7 @@ internal fun ParticleGameScreen(
             }
             QuestionSpeechButton(questionSpeech, spokenQuestionParts.first, spokenQuestionParts.second)
         }
+        carryoverAnswer?.let { AnswerFeedbackBanner(it, carryoverAnswerEvent) }
 
         Card(
             modifier = Modifier.fillMaxWidth(),

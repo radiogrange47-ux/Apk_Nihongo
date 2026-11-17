@@ -45,40 +45,40 @@ internal fun CounterChallengeGameScreen(
     masteredQuestionRepeatPercent: Int,
     completedQuestions: Int,
     seriesTarget: Int,
-    allQuestionsMastered: Boolean
+    allQuestionsMastered: Boolean,
+    carryoverAnswer: AnswerFeedback?,
+    carryoverAnswerEvent: Int
 ) {
     var masteryCounters by remember {
         mutableStateOf(progress.questionsFor(LearningGame.COUNTER_CHALLENGE)
             .associate { it.questionId to it.masteryCounter })
     }
-    var questionIndex by remember { mutableIntStateOf(completedQuestions) }
     var wrongAnswers by remember { mutableIntStateOf(0) }
     var feedback by remember { mutableStateOf<AnswerFeedback?>(null) }
     var feedbackEvent by remember { mutableIntStateOf(0) }
     var saveError by remember { mutableStateOf<String?>(null) }
     val questionDeck = remember(questions) { QuestionDeck(questions.shuffled()) }
-    var question by remember(questionDeck) {
-        mutableStateOf(
-            questionDeck.draw(
-                masteryCounters = masteryCounters,
-                masteryThreshold = masteryThreshold,
-                masteredQuestionRepeatPercent = masteredQuestionRepeatPercent
-            )
+
+    fun drawQuestion(): VocabularyQuestion {
+        val drawn = questionDeck.draw(
+            masteryCounters = masteryCounters,
+            masteryThreshold = masteryThreshold,
+            masteredQuestionRepeatPercent = masteredQuestionRepeatPercent
         )
+        return drawn.copy(choices = CounterChallengeQuestionRules.randomizedChoices(drawn, questions))
+    }
+
+    var question by remember(questionDeck) {
+        mutableStateOf(drawQuestion())
     }
     val displayedChoices = remember(question.id) { question.choices.shuffled() }
     val readingByCounter = remember(questions) { questions.associate { it.answer to it.hiragana } }
 
     fun advance() {
-        questionIndex++
         wrongAnswers = 0
         onQuestionCompleted(LearningGame.COUNTER_CHALLENGE)
-        if (questionIndex < seriesTarget) {
-            question = questionDeck.draw(
-                masteryCounters = masteryCounters,
-                masteryThreshold = masteryThreshold,
-                masteredQuestionRepeatPercent = masteredQuestionRepeatPercent
-            )
+        if (completedQuestions + 1 < seriesTarget) {
+            question = drawQuestion()
         }
     }
 
@@ -94,6 +94,7 @@ internal fun CounterChallengeGameScreen(
             TextButton(onClick = onBack) { Text("‹  Accueil") }
             QuestionSpeechButton(questionSpeech, questionText = "", speakOnEnable = false)
         }
+        carryoverAnswer?.let { AnswerFeedbackBanner(it, carryoverAnswerEvent) }
         Card(
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(24.dp),
@@ -107,7 +108,7 @@ internal fun CounterChallengeGameScreen(
             ) {
                 Text("Défi des compteurs", style = MaterialTheme.typography.titleLarge)
                 Text(
-                    "Question ${questionIndex + 1} / $seriesTarget · ${question.topic}",
+                    "Question ${completedQuestions + 1} / $seriesTarget · ${question.topic}",
                     color = MaterialTheme.colorScheme.primary,
                     textAlign = TextAlign.Center
                 )

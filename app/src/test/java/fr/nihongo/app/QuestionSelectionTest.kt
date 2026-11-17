@@ -42,6 +42,59 @@ class QuestionSelectionTest {
         assertTrue(runCatching { deck.draw(emptyMap(), masteryThreshold = 25) }.isFailure)
     }
 
+    @Test
+    fun counterChallengeChoicesStayValidAndVaryBetweenDraws() {
+        val questions = (0 until 10).map { index ->
+            val answer = "réponse-$index"
+            VocabularyQuestion(
+                id = "counter-$index",
+                topic = "Compteurs · animaux",
+                kanji = "mot-$index",
+                hiragana = "よみ$index",
+                answer = answer,
+                choices = listOf(answer, "leurre-a", "leurre-b", "leurre-c", "leurre-d", "leurre-e"),
+                bank = QuestionBank.COUNTERS
+            )
+        }
+
+        val target = questions.first()
+        val draws = (1..20).map { seed ->
+            CounterChallengeQuestionRules.randomizedChoices(target, questions, Random(seed))
+        }
+
+        assertTrue(draws.all { it.size == 6 && it.distinct().size == 6 && target.answer in it })
+        assertTrue(draws.map { it.toSet() }.distinct().size > 1)
+    }
+
+    @Test
+    fun pairQuestionIdsStayStableWhenBanksAreFiltered() {
+        fun duplicateQuestion(id: String, bank: QuestionBank) = VocabularyQuestion(
+            id = id,
+            topic = "Eau",
+            kanji = "水",
+            hiragana = "みず",
+            answer = "eau",
+            choices = listOf("eau", "feu", "arbre", "livre", "chat", "maison"),
+            bank = bank
+        )
+
+        val catalog = QuestionCatalog(
+            contentVersion = "1.0.0",
+            particles = emptyList(),
+            vocabulary = listOf(
+                duplicateQuestion("jlpt5-water", QuestionBank.JLPT5),
+                duplicateQuestion("course-water", QuestionBank.COURSE)
+            ),
+            verbs = emptyList(),
+            conjugation = emptyList()
+        )
+        val installedId = catalog.pairingQuestions().single().id
+        val filteredId = catalog.forBanks(setOf(QuestionBank.COURSE)).pairingQuestions().single().id
+
+        assertEquals(installedId, filteredId)
+        assertEquals("pairs-jlpt5-water", catalog.legacyPairingIds()[installedId])
+    }
+
     private fun question(id: String) = ParticleExercise(
         id = id,
         topic = "Particule",

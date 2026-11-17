@@ -33,6 +33,7 @@ import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -99,6 +100,9 @@ internal fun MainScreen(
     var questionsCompleted by rememberSaveable { mutableIntStateOf(0) }
     var sessionRound by rememberSaveable { mutableIntStateOf(0) }
     var sessionTargetCounts by rememberSaveable { mutableStateOf("") }
+    var latestSessionAnswer by remember { mutableStateOf<AnswerFeedback?>(null) }
+    var previousGameAnswer by remember { mutableStateOf<AnswerFeedback?>(null) }
+    var previousGameAnswerEvent by remember { mutableIntStateOf(0) }
     val selectedGames = LearningGame.values()
         .filter { it.name in selectedGameNames.split(",") && activeCatalog.questionsFor(it).isNotEmpty() }
     val eligibleQuestionCounts = LearningGame.values().associateWith { game ->
@@ -146,6 +150,8 @@ internal fun MainScreen(
         sessionGameIndex = 0
         questionsCompleted = 0
         sessionRound++
+        latestSessionAnswer = null
+        previousGameAnswer = null
         screen = AppScreen.SESSION
     }
 
@@ -158,7 +164,14 @@ internal fun MainScreen(
     }
 
     val sessionAnswer: (LearningQuestion, LearningGame, Boolean) -> String? =
-        { question, game, wasCorrect -> onAnswer(question, game, wasCorrect) }
+        { question, game, wasCorrect ->
+            val error = onAnswer(question, game, wasCorrect)
+            if (error == null) {
+                latestSessionAnswer = answerFeedbackForTransition(question, game, wasCorrect)
+                previousGameAnswer = null
+            }
+            error
+        }
 
     val completeSessionQuestion: (LearningGame) -> Unit = { game ->
         if (screen == AppScreen.SESSION &&
@@ -175,6 +188,9 @@ internal fun MainScreen(
             )
             questionsCompleted = update.questionsCompleted
             if (update.advanceToNextGame) {
+                previousGameAnswer = latestSessionAnswer
+                latestSessionAnswer = null
+                previousGameAnswerEvent++
                 sessionGameIndex = update.gameIndex
                 sessionRound++
             }
@@ -245,7 +261,9 @@ internal fun MainScreen(
                                     completedQuestions = questionsCompleted,
                                     seriesTarget = storedSessionTargets[game]
                                         ?: minOf(sessionQuestionCount, activeCatalog.particles.size),
-                                    allQuestionsMastered = allSelectedQuestionsMastered
+                                    allQuestionsMastered = allSelectedQuestionsMastered,
+                                    carryoverAnswer = previousGameAnswer,
+                                    carryoverAnswerEvent = previousGameAnswerEvent
                                 )
 
                                 LearningGame.VOCABULARY -> VocabularyGameScreen(
@@ -262,7 +280,9 @@ internal fun MainScreen(
                                     completedQuestions = questionsCompleted,
                                     seriesTarget = storedSessionTargets[game]
                                         ?: minOf(sessionQuestionCount, activeCatalog.vocabulary.size),
-                                    allQuestionsMastered = allSelectedQuestionsMastered
+                                    allQuestionsMastered = allSelectedQuestionsMastered,
+                                    carryoverAnswer = previousGameAnswer,
+                                    carryoverAnswerEvent = previousGameAnswerEvent
                                 )
 
                                 LearningGame.VERBS -> VocabularyGameScreen(
@@ -279,7 +299,9 @@ internal fun MainScreen(
                                     completedQuestions = questionsCompleted,
                                     seriesTarget = storedSessionTargets[game]
                                         ?: minOf(sessionQuestionCount, activeCatalog.verbs.size),
-                                    allQuestionsMastered = allSelectedQuestionsMastered
+                                    allQuestionsMastered = allSelectedQuestionsMastered,
+                                    carryoverAnswer = previousGameAnswer,
+                                    carryoverAnswerEvent = previousGameAnswerEvent
                                 )
 
                                 LearningGame.CONJUGATION -> ConjugationGameScreen(
@@ -295,7 +317,9 @@ internal fun MainScreen(
                                     completedQuestions = questionsCompleted,
                                     seriesTarget = storedSessionTargets[game]
                                         ?: minOf(sessionQuestionCount, activeCatalog.conjugation.size),
-                                    allQuestionsMastered = allSelectedQuestionsMastered
+                                    allQuestionsMastered = allSelectedQuestionsMastered,
+                                    carryoverAnswer = previousGameAnswer,
+                                    carryoverAnswerEvent = previousGameAnswerEvent
                                 )
 
                                 LearningGame.PAIRS -> JapanesePairsGameScreen(
@@ -310,7 +334,9 @@ internal fun MainScreen(
                                     completedQuestions = questionsCompleted,
                                     seriesTarget = storedSessionTargets[game]
                                         ?: minOf(sessionQuestionCount, activeCatalog.pairingQuestions().size / 6),
-                                    allQuestionsMastered = allSelectedQuestionsMastered
+                                    allQuestionsMastered = allSelectedQuestionsMastered,
+                                    carryoverAnswer = previousGameAnswer,
+                                    carryoverAnswerEvent = previousGameAnswerEvent
                                 )
 
                                 LearningGame.COUNTER_CHALLENGE -> CounterChallengeGameScreen(
@@ -326,7 +352,9 @@ internal fun MainScreen(
                                     completedQuestions = questionsCompleted,
                                     seriesTarget = storedSessionTargets[game]
                                         ?: minOf(sessionQuestionCount, activeCatalog.counterChallengeQuestions().size),
-                                    allQuestionsMastered = allSelectedQuestionsMastered
+                                    allQuestionsMastered = allSelectedQuestionsMastered,
+                                    carryoverAnswer = previousGameAnswer,
+                                    carryoverAnswerEvent = previousGameAnswerEvent
                                 )
                             }
                         }
@@ -794,4 +822,57 @@ private fun UpdateStatus(state: UpdateUiState) {
         is UpdateUiState.Error -> "La mise à jour a échoué : ${state.message}"
     }
     Text(message, style = MaterialTheme.typography.bodyMedium)
+}
+
+private fun answerFeedbackForTransition(
+    question: LearningQuestion,
+    game: LearningGame,
+    wasCorrect: Boolean
+): AnswerFeedback {
+    val tone = if (wasCorrect) FeedbackTone.CORRECT else FeedbackTone.INCORRECT
+    val prefix = if (wasCorrect) "✓ Réponse précédente :" else "Solution précédente :"
+    return when (game) {
+        LearningGame.PARTICLES -> {
+            val exercise = question as ParticleExercise
+            AnswerFeedback(
+                tone = tone,
+                message = "$prefix ${exercise.tokens.joinToString("") { it.japanese }}",
+                frenchTranslation = exercise.translation,
+                pedagogicalHint = concisePedagogicalHint(exercise.explanation),
+                kanjiBreakdown = phraseKanjiBreakdown(exercise.tokens)
+            )
+        }
+
+        LearningGame.VOCABULARY, LearningGame.VERBS, LearningGame.PAIRS -> {
+            val vocabulary = question as VocabularyQuestion
+            AnswerFeedback(
+                tone = tone,
+                message = "$prefix ${vocabulary.kanji} (${vocabulary.hiragana})",
+                frenchTranslation = vocabulary.answer,
+                kanjiBreakdown = kanjiBreakdown(vocabulary.kanji)
+            )
+        }
+
+        LearningGame.COUNTER_CHALLENGE -> {
+            val counter = question as VocabularyQuestion
+            AnswerFeedback(
+                tone = tone,
+                message = "$prefix ${counter.answer} (${counter.hiragana})",
+                frenchTranslation = counter.kanji,
+                kanjiBreakdown = kanjiBreakdown(counter.answer)
+            )
+        }
+
+        LearningGame.CONJUGATION -> {
+            val conjugation = question as ConjugationQuestion
+            val sentence = conjugation.completedJapaneseSentence()
+            AnswerFeedback(
+                tone = tone,
+                message = "$prefix $sentence",
+                frenchTranslation = conjugation.translation,
+                pedagogicalHint = concisePedagogicalHint(conjugation.explanation),
+                kanjiBreakdown = kanjiBreakdown(sentence)
+            )
+        }
+    }
 }

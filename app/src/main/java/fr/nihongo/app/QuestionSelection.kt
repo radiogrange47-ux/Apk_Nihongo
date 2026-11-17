@@ -73,6 +73,22 @@ internal object QuestionSelector {
 
 }
 
+internal object CounterChallengeQuestionRules {
+    fun randomizedChoices(
+        question: VocabularyQuestion,
+        questions: List<VocabularyQuestion>,
+        random: Random = Random.Default
+    ): List<String> {
+        val distractors = questions
+            .filter { it.topic == question.topic && it.id != question.id }
+            .map { it.answer }
+            .distinct()
+            .shuffled(random)
+            .take(5)
+        return (distractors + question.answer).distinct().shuffled(random)
+    }
+}
+
 internal class QuestionDeck<T : LearningQuestion>(
     private val questions: List<T>,
     private val random: Random = Random.Default

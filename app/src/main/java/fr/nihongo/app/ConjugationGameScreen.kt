@@ -55,7 +55,9 @@ internal fun ConjugationGameScreen(
     masteredQuestionRepeatPercent: Int = 5,
     completedQuestions: Int,
     seriesTarget: Int,
-    allQuestionsMastered: Boolean
+    allQuestionsMastered: Boolean,
+    carryoverAnswer: AnswerFeedback?,
+    carryoverAnswerEvent: Int
 ) {
     var masteryCounters by remember {
         mutableStateOf(
@@ -119,6 +121,7 @@ internal fun ConjugationGameScreen(
             Text("Accueil", color = MaterialTheme.colorScheme.onSurface)
         }
 
+        carryoverAnswer?.let { AnswerFeedbackBanner(it, carryoverAnswerEvent) }
         Card(
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(24.dp),
@@ -294,7 +297,7 @@ internal fun ConjugationGameScreen(
     }
 }
 
-private fun ConjugationQuestion.completedJapaneseSentence(): String =
+internal fun ConjugationQuestion.completedJapaneseSentence(): String =
     tokens.mapIndexed { index, token ->
         if (index == verbTokenIndex) token.japanese + answerEnding else token.japanese
     }.joinToString(separator = "") + punctuation

@@ -52,7 +52,9 @@ internal fun VocabularyGameScreen(
     masteredQuestionRepeatPercent: Int = 5,
     completedQuestions: Int,
     seriesTarget: Int,
-    allQuestionsMastered: Boolean
+    allQuestionsMastered: Boolean,
+    carryoverAnswer: AnswerFeedback?,
+    carryoverAnswerEvent: Int
 ) {
     var masteryCounters by remember {
         mutableStateOf(
@@ -109,6 +111,7 @@ internal fun VocabularyGameScreen(
             Text("Accueil", color = MaterialTheme.colorScheme.onSurface)
         }
 
+        carryoverAnswer?.let { AnswerFeedbackBanner(it, carryoverAnswerEvent) }
         Card(
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(24.dp),

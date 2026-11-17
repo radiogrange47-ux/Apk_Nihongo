@@ -22,6 +22,7 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -44,7 +45,9 @@ internal fun JapanesePairsGameScreen(
     masteredQuestionRepeatPercent: Int,
     completedQuestions: Int,
     seriesTarget: Int,
-    allQuestionsMastered: Boolean
+    allQuestionsMastered: Boolean,
+    carryoverAnswer: AnswerFeedback?,
+    carryoverAnswerEvent: Int
 ) {
     var masteryCounters by remember {
         mutableStateOf(progress.questionsFor(LearningGame.PAIRS).associate { it.questionId to it.masteryCounter })
@@ -85,6 +88,9 @@ internal fun JapanesePairsGameScreen(
     var matchedIds by remember(board) { mutableStateOf(emptySet<String>()) }
     var wrongPair by remember(board) { mutableStateOf<Pair<String, String>?>(null) }
     var saveError by remember(board) { mutableStateOf<String?>(null) }
+    var lastMatchedQuestion by remember { mutableStateOf<VocabularyQuestion?>(null) }
+    var previousAnswer by remember { mutableStateOf<AnswerFeedback?>(null) }
+    var previousAnswerEvent by remember { mutableIntStateOf(0) }
 
     fun tryPair(japaneseId: String, frenchId: String) {
         if (matchedIds.size >= 6 || japaneseId in matchedIds || frenchId in matchedIds) return
@@ -101,6 +107,7 @@ internal fun JapanesePairsGameScreen(
         }
         if (correct) {
             matchedIds = matchedIds + japaneseId
+            lastMatchedQuestion = question
             selectedJapaneseId = null
             selectedFrenchId = null
         } else {
@@ -120,8 +127,20 @@ internal fun JapanesePairsGameScreen(
     LaunchedEffect(matchedIds.size) {
         if (matchedIds.size == 6) {
             delay(700)
+            lastMatchedQuestion?.let { question ->
+                previousAnswer = AnswerFeedback(
+                    tone = FeedbackTone.CORRECT,
+                    message = "✓ Réponse précédente : ${question.kanji} (${question.hiragana})",
+                    frenchTranslation = question.answer,
+                    kanjiBreakdown = kanjiBreakdown(question.kanji)
+                )
+                previousAnswerEvent++
+            }
             onQuestionCompleted(LearningGame.PAIRS)
-            if (completedQuestions + 1 < seriesTarget) board = drawBoard()
+            if (completedQuestions + 1 < seriesTarget) {
+                lastMatchedQuestion = null
+                board = drawBoard()
+            }
         }
     }
 
@@ -141,11 +160,13 @@ internal fun JapanesePairsGameScreen(
                 speakOnEnable = false
             )
         }
+        carryoverAnswer?.let { AnswerFeedbackBanner(it, carryoverAnswerEvent) }
         Text("Paires japonaises", style = MaterialTheme.typography.headlineSmall)
         Text(
             "Grille ${completedQuestions + 1} / $seriesTarget · Associe les six mots et leur traduction.",
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
+        previousAnswer?.let { AnswerFeedbackBanner(it, previousAnswerEvent) }
         Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             Column(
                 modifier = Modifier.weight(1f),

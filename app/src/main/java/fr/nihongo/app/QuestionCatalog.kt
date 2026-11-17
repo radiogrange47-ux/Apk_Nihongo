@@ -2,6 +2,7 @@ package fr.nihongo.app
 
 import org.json.JSONArray
 import org.json.JSONObject
+import java.security.MessageDigest
 
 internal data class QuestionCatalog(
     val contentVersion: String,
@@ -27,7 +28,11 @@ internal data class QuestionCatalog(
 
     fun pairingQuestions(): List<VocabularyQuestion> = (vocabulary + verbs)
         .distinctBy { Triple(it.kanji, it.hiragana, it.answer) }
-        .map { it.copy(id = "pairs-${it.id}") }
+        .map { it.copy(id = stablePairId(it)) }
+
+    internal fun legacyPairingIds(): Map<String, String> = (vocabulary + verbs)
+        .distinctBy { Triple(it.kanji, it.hiragana, it.answer) }
+        .associate { stablePairId(it) to "pairs-${it.id}" }
 
     fun counterChallengeQuestions(): List<VocabularyQuestion> {
         val counterQuestions = vocabulary.filter { it.bank == QuestionBank.COUNTERS }
@@ -52,6 +57,13 @@ internal data class QuestionCatalog(
         LearningGame.values().associateWith { game ->
             questionsFor(game).mapTo(linkedSetOf()) { it.id }
         }
+
+    private fun stablePairId(question: VocabularyQuestion): String {
+        val identity = "${question.kanji}\u0000${question.hiragana}\u0000${question.answer}"
+        val digest = MessageDigest.getInstance("SHA-256")
+            .digest(identity.toByteArray(Charsets.UTF_8))
+        return "pairs-${digest.take(12).joinToString("") { byte -> "%02x".format(byte.toInt() and 0xff) }}"
+    }
 }
 
 internal object QuestionCatalogCodec {

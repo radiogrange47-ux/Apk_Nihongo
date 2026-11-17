@@ -38,6 +38,10 @@ private val HomeAccent = Color(0xFFE05252)
 private val HomePanel = Color(0xFF141414)
 private val HomeBorder = Color(0xFF292929)
 
+private data class BankMasterySummary(val mastered: Int, val total: Int) {
+    val percent: Int get() = if (total == 0) 0 else mastered * 100 / total
+}
+
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 internal fun HomeScreen(
@@ -56,26 +60,30 @@ internal fun HomeScreen(
     onShowSettings: () -> Unit
 ) {
     val masteredCounters = progress.questions.associate { it.questionId to it.masteryCounter }
-    val pairIds = questionCatalog.pairingQuestions().mapTo(hashSetOf()) { it.id.removePrefix("pairs-") }
+    val pairIdsByMeaning = questionCatalog.pairingQuestions().associate {
+        Triple(it.kanji, it.hiragana, it.answer) to it.id
+    }
     val counterIds = questionCatalog.counterChallengeQuestions().mapTo(hashSetOf()) {
         it.id.removePrefix("counter-")
     }
-    val bankMasteryPercent = QuestionBank.values().associateWith { bank ->
+    val bankMastery = QuestionBank.values().associateWith { bank ->
         val questions = LearningGame.values().filterNot {
             it == LearningGame.PAIRS || it == LearningGame.COUNTER_CHALLENGE
         }.flatMap { game ->
             questionCatalog.questionsFor(game).filter { it.bank == bank }
         }
-        if (questions.isEmpty()) 0 else {
-            questions.count { question ->
-                val masteredInOriginal = (masteredCounters[question.id] ?: 0) >= masteryThreshold
-                val masteredInPairs = question.id in pairIds &&
-                    (masteredCounters["pairs-${question.id}"] ?: 0) >= masteryThreshold
-                val masteredInCounters = question.id in counterIds &&
-                    (masteredCounters["counter-${question.id}"] ?: 0) >= masteryThreshold
-                masteredInOriginal || masteredInPairs || masteredInCounters
-            } * 100 / questions.size
+        val masteredCount = questions.count { question ->
+            val masteredInOriginal = (masteredCounters[question.id] ?: 0) >= masteryThreshold
+            val pairId = (question as? VocabularyQuestion)?.let {
+                pairIdsByMeaning[Triple(it.kanji, it.hiragana, it.answer)]
+            }
+            val masteredInPairs = pairId != null &&
+                (masteredCounters[pairId] ?: 0) >= masteryThreshold
+            val masteredInCounters = question.id in counterIds &&
+                (masteredCounters["counter-${question.id}"] ?: 0) >= masteryThreshold
+            masteredInOriginal || masteredInPairs || masteredInCounters
         }
+        BankMasterySummary(masteredCount, questions.size)
     }
     val attempts = LearningGame.values().sumOf { game ->
         progress.questionsFor(game).sumOf { it.attempts }
@@ -146,8 +154,9 @@ internal fun HomeScreen(
                     label = {
                         Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                             Text(bank.title)
+                            val mastery = bankMastery.getValue(bank)
                             Text(
-                                "${bankMasteryPercent[bank] ?: 0}% maîtrisé",
+                                "${mastery.percent}% · ${mastery.mastered}/${mastery.total}",
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                                 style = MaterialTheme.typography.labelSmall
                             )
