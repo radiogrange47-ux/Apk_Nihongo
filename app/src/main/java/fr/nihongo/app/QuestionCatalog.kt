@@ -11,6 +11,21 @@ internal data class QuestionCatalog(
     val verbs: List<VocabularyQuestion>,
     val conjugation: List<ConjugationQuestion>
 ) {
+    private val pairingCache: PairingQuestionCache by lazy {
+        val uniqueQuestions = (vocabulary + verbs)
+            .distinctBy { Triple(it.kanji, it.hiragana, it.answer) }
+        val legacyIds = linkedMapOf<String, String>()
+        val questions = uniqueQuestions.map { question ->
+            val stableId = stablePairId(question)
+            legacyIds[stableId] = "pairs-${question.id}"
+            question.copy(id = stableId)
+        }
+        PairingQuestionCache(questions, legacyIds)
+    }
+    private val counterChallengeCache: List<VocabularyQuestion> by lazy {
+        buildCounterChallengeQuestions()
+    }
+
     fun forBanks(banks: Set<QuestionBank>): QuestionCatalog = copy(
         particles = particles.filter { it.bank in banks },
         vocabulary = vocabulary.filter { it.bank in banks },
@@ -26,15 +41,13 @@ internal data class QuestionCatalog(
         LearningGame.COUNTER_CHALLENGE -> counterChallengeQuestions()
     }
 
-    fun pairingQuestions(): List<VocabularyQuestion> = (vocabulary + verbs)
-        .distinctBy { Triple(it.kanji, it.hiragana, it.answer) }
-        .map { it.copy(id = stablePairId(it)) }
+    fun pairingQuestions(): List<VocabularyQuestion> = pairingCache.questions
 
-    internal fun legacyPairingIds(): Map<String, String> = (vocabulary + verbs)
-        .distinctBy { Triple(it.kanji, it.hiragana, it.answer) }
-        .associate { stablePairId(it) to "pairs-${it.id}" }
+    internal fun legacyPairingIds(): Map<String, String> = pairingCache.legacyIds
 
-    fun counterChallengeQuestions(): List<VocabularyQuestion> {
+    fun counterChallengeQuestions(): List<VocabularyQuestion> = counterChallengeCache
+
+    private fun buildCounterChallengeQuestions(): List<VocabularyQuestion> {
         val counterQuestions = vocabulary.filter { it.bank == QuestionBank.COUNTERS }
         return counterQuestions.map { question ->
             val random = kotlin.random.Random(question.id.hashCode())
@@ -65,6 +78,11 @@ internal data class QuestionCatalog(
         return "pairs-${digest.take(12).joinToString("") { byte -> "%02x".format(byte.toInt() and 0xff) }}"
     }
 }
+
+private data class PairingQuestionCache(
+    val questions: List<VocabularyQuestion>,
+    val legacyIds: Map<String, String>
+)
 
 internal object QuestionCatalogCodec {
     const val SCHEMA_VERSION = 1

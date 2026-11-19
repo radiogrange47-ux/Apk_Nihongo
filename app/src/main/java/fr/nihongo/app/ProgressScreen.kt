@@ -39,6 +39,7 @@ private val ProgressSuccess = Color(0xFF8EE6B5)
 @Composable
 internal fun ProgressScreen(
     progress: ProgressSnapshot,
+    questionCatalog: QuestionCatalog,
     masteryThreshold: Int,
     onBack: () -> Unit
 ) {
@@ -49,6 +50,7 @@ internal fun ProgressScreen(
     if (selectedGame == null) {
         ProgressOverview(
             progress = progress,
+            questionCatalog = questionCatalog,
             masteryThreshold = masteryThreshold,
             onBack = onBack,
             onOpenGame = { selectedGameName = it.name }
@@ -66,21 +68,24 @@ internal fun ProgressScreen(
 @Composable
 private fun ProgressOverview(
     progress: ProgressSnapshot,
+    questionCatalog: QuestionCatalog,
     masteryThreshold: Int,
     onBack: () -> Unit,
     onOpenGame: (LearningGame) -> Unit
 ) {
-    val questionCount = progress.questions.size
-    val attemptedCount = progress.questions.count { it.attempts > 0 }
-    val masteredCount = progress.questions.count { it.masteryCounter >= masteryThreshold }
-    val remainingCount = (questionCount - masteredCount).coerceAtLeast(0)
-    val completion = if (questionCount == 0) 0f else masteredCount.toFloat() / questionCount
+    val exerciseCount = progress.questions.size
+    val attemptedExerciseCount = progress.questions.count { it.attempts > 0 }
+    val masteredExerciseCount = progress.questions.count { it.masteryCounter >= masteryThreshold }
+    val exerciseCompletion = if (exerciseCount == 0) 0f else masteredExerciseCount.toFloat() / exerciseCount
+    val concepts = LearningConceptProgress.from(questionCatalog, progress, masteryThreshold)
+    val remainingConceptCount = (concepts.total - concepts.mastered).coerceAtLeast(0)
+    val conceptCompletion = if (concepts.total == 0) 0f else concepts.mastered.toFloat() / concepts.total
     val encouragement = when {
-        questionCount == 0 -> "Aucune question n’est disponible pour le moment."
+        concepts.total == 0 -> "Aucune notion n’est disponible pour le moment."
         progress.totalAttempts == 0 -> "Ton parcours commence ici : choisis un exercice et lance-toi."
-        masteredCount == questionCount -> "Tout est maîtrisé. Tu peux continuer à entretenir tes acquis."
-        masteredCount == 0 -> "Bonne lancée : chaque réponse te rapproche de tes premières notions maîtrisées."
-        else -> "Tu avances bien. Il te reste $remainingCount notion(s) à consolider."
+        concepts.mastered == concepts.total -> "Toutes les notions sont maîtrisées. Tu peux continuer à entretenir tes acquis."
+        concepts.mastered == 0 -> "Bonne lancée : chaque réponse te rapproche de tes premières notions maîtrisées."
+        else -> "Tu avances bien. Il te reste $remainingConceptCount notion(s) à consolider."
     }
 
     Column(
@@ -97,29 +102,35 @@ private fun ProgressOverview(
         ProgressCard {
             Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
                 Text(encouragement, style = MaterialTheme.typography.titleMedium)
+                Text("Notions uniques", style = MaterialTheme.typography.titleSmall)
                 LinearProgressIndicator(
-                    progress = { completion.coerceIn(0f, 1f) },
+                    progress = { conceptCompletion.coerceIn(0f, 1f) },
                     modifier = Modifier.fillMaxWidth(),
                     color = ProgressSuccess
+                )
+                Text(
+                    "${concepts.mastered} / ${concepts.total} notions maîtrisées  ·  ${concepts.attempted} découvertes",
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    style = MaterialTheme.typography.bodySmall
+                )
+                Text("Exercices", style = MaterialTheme.typography.titleSmall)
+                LinearProgressIndicator(
+                    progress = { exerciseCompletion.coerceIn(0f, 1f) },
+                    modifier = Modifier.fillMaxWidth(),
+                    color = MaterialTheme.colorScheme.primary
+                )
+                Text(
+                    "$masteredExerciseCount / $exerciseCount exercices maîtrisés  ·  $attemptedExerciseCount découverts",
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    style = MaterialTheme.typography.bodySmall
                 )
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
-                    ProgressMetric("$masteredCount / $questionCount", "maîtrisées", Modifier.weight(1f))
-                    ProgressMetric("$attemptedCount", "découvertes", Modifier.weight(1f))
                     ProgressMetric("${progress.totalAttempts}", "réponses", Modifier.weight(1f))
+                    ProgressMetric(progress.accuracyLabel(), "réussite tous exercices", Modifier.weight(1f))
                 }
-                Text(
-                    "Il te reste $remainingCount question(s) à maîtriser.",
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    style = MaterialTheme.typography.bodySmall
-                )
-                Text(
-                    "Réussite globale : ${progress.accuracyLabel()}",
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    style = MaterialTheme.typography.bodyMedium
-                )
             }
         }
 

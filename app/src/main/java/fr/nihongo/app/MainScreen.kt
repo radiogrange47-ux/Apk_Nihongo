@@ -94,7 +94,9 @@ internal fun MainScreen(
     val activeBanks = selectedBankNames.split(",").mapNotNull { name ->
         QuestionBank.values().firstOrNull { it.name == name }
     }.toSet()
-    val activeCatalog = questionCatalog.forBanks(activeBanks)
+    val activeCatalog = remember(questionCatalog, activeBanks) {
+        questionCatalog.forBanks(activeBanks)
+    }
     var sessionGameNames by rememberSaveable { mutableStateOf("") }
     var sessionGameIndex by rememberSaveable { mutableIntStateOf(0) }
     var questionsCompleted by rememberSaveable { mutableIntStateOf(0) }
@@ -363,6 +365,7 @@ internal fun MainScreen(
 
                 AppScreen.PROGRESS -> ProgressScreen(
                     progress = progress,
+                    questionCatalog = questionCatalog,
                     masteryThreshold = questionMasteryThreshold,
                     onBack = { screen = AppScreen.HOME }
                 )
