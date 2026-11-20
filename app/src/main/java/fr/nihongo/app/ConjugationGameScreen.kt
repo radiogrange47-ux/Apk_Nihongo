@@ -19,7 +19,10 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -41,6 +44,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.ui.text.input.KeyboardType
 
 @Composable
 internal fun ConjugationGameScreen(
@@ -54,6 +59,8 @@ internal fun ConjugationGameScreen(
     masteryThreshold: Int,
     masteredQuestionRepeatPercent: Int = 5,
     completedQuestions: Int,
+    blockQuestionsCompleted: Int,
+    blockTarget: Int,
     seriesTarget: Int,
     allQuestionsMastered: Boolean,
     carryoverAnswer: AnswerFeedback?,
@@ -75,6 +82,9 @@ internal fun ConjugationGameScreen(
     var feedbackEvent by remember { mutableIntStateOf(0) }
     var saveError by remember { mutableStateOf<String?>(null) }
     val questionDeck = remember(questions) { QuestionDeck(questions) }
+    val modeOffset = remember(questions) {
+        kotlin.random.Random.nextInt(ConjugationQuestionMode.values().size)
+    }
     var question by remember(questionDeck) {
         mutableStateOf(
             questionDeck.draw(
@@ -84,6 +94,7 @@ internal fun ConjugationGameScreen(
             )
         )
     }
+    var typedEnding by remember(question.id) { mutableStateOf("") }
     val spokenQuestion = remember(question.id) {
         val beforeGap = question.tokens.take(question.verbTokenIndex + 1)
             .joinToString(separator = "") { it.hiragana }
@@ -91,8 +102,20 @@ internal fun ConjugationGameScreen(
             .joinToString(separator = "") { it.hiragana }
         beforeGap to afterGap
     }
-    LaunchedEffect(question.id) {
-        questionSpeech.speakQuestionWithGap(spokenQuestion.first, spokenQuestion.second)
+    val questionMode = ConjugationQuestionMode.forQuestionIndex(questionIndex, modeOffset)
+    val displayedChoices = remember(question.id, questionMode, questions) {
+        when (questionMode) {
+            ConjugationQuestionMode.CHOOSE_ENDING ->
+                AnswerChoiceRules.four(question.choices, question.answerEnding)
+            ConjugationQuestionMode.TYPE_ENDING -> emptyList()
+            ConjugationQuestionMode.FRENCH_TO_JAPANESE ->
+                conjugationSentenceChoices(question, questions)
+        }
+    }
+    LaunchedEffect(question.id, questionMode) {
+        if (questionMode != ConjugationQuestionMode.FRENCH_TO_JAPANESE) {
+            questionSpeech.speakQuestionWithGap(spokenQuestion.first, spokenQuestion.second)
+        }
     }
 
     fun advance() {
@@ -106,6 +129,49 @@ internal fun ConjugationGameScreen(
                 masteredQuestionRepeatPercent = masteredQuestionRepeatPercent
             )
         }
+    }
+
+    fun submitAnswer(response: String) {
+        val expected = when (questionMode) {
+            ConjugationQuestionMode.CHOOSE_ENDING,
+            ConjugationQuestionMode.TYPE_ENDING -> question.answerEnding
+            ConjugationQuestionMode.FRENCH_TO_JAPANESE -> question.completedJapaneseSentence()
+        }
+        val correct = response.trim() == expected
+        saveError = onAnswer(question, LearningGame.CONJUGATION, correct)
+        if (saveError != null) return
+
+        feedbackEvent++
+        masteryCounters = masteryCounters + (
+            question.id to QuestionMasteryRules.updateCounter(
+                current = masteryCounters[question.id] ?: 0,
+                wasCorrect = correct
+            )
+        )
+        selectedToken = null
+        if (correct) {
+            feedbackCorrect = true
+            feedback = "✓  ${question.completedJapaneseSentence()}"
+            feedbackHint = concisePedagogicalHint(question.explanation)
+            feedbackKanji = kanjiBreakdown(question.completedJapaneseSentence())
+            advance()
+            return
+        }
+
+        feedbackCorrect = false
+        val shouldAdvance = ParticleAnswerRules.shouldAdvanceAfterWrongAnswer(
+            previousWrongAnswers = wrongAnswers,
+            extraAttempts = extraAttempts
+        )
+        wrongAnswers++
+        feedback = if (shouldAdvance) {
+            "Réponse : ${question.completedJapaneseSentence()}"
+        } else {
+            "Ce n’est pas « $response ». Réessaie."
+        }
+        feedbackHint = if (shouldAdvance) concisePedagogicalHint(question.explanation) else null
+        feedbackKanji = if (shouldAdvance) kanjiBreakdown(question.completedJapaneseSentence()) else null
+        if (shouldAdvance) advance()
     }
 
     Column(
@@ -136,13 +202,15 @@ internal fun ConjugationGameScreen(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    Text("Conjugaison", style = MaterialTheme.typography.titleMedium)
+                    Text("Conjugaison · ${questionMode.title}", style = MaterialTheme.typography.titleMedium)
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text(
                             "Question ${questionIndex + 1} / $seriesTarget",
                             color = MaterialTheme.colorScheme.primary
                         )
-                        QuestionSpeechButton(questionSpeech, spokenQuestion.first, spokenQuestion.second)
+                        if (questionMode != ConjugationQuestionMode.FRENCH_TO_JAPANESE) {
+                            QuestionSpeechButton(questionSpeech, spokenQuestion.first, spokenQuestion.second)
+                        }
                     }
                 }
                 if (feedback != null) {
@@ -166,71 +234,54 @@ internal fun ConjugationGameScreen(
                     color = MaterialTheme.colorScheme.onSurface,
                     fontStyle = FontStyle.Italic
                 )
-                ConjugationPhrase(
-                    question = question,
-                    questionSpeech = questionSpeech,
-                    onSelectToken = { selectedToken = it }
-                )
+                Text(questionMode.instruction, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                if (questionMode != ConjugationQuestionMode.FRENCH_TO_JAPANESE) {
+                    ConjugationPhrase(
+                        question = question,
+                        questionSpeech = questionSpeech,
+                        onSelectToken = { selectedToken = it }
+                    )
+                }
             }
         }
 
-        question.choices.chunked(2).forEach { choices ->
+        if (questionMode == ConjugationQuestionMode.TYPE_ENDING) {
+            OutlinedTextField(
+                value = typedEnding,
+                onValueChange = { typedEnding = it },
+                modifier = Modifier.fillMaxWidth(),
+                label = { Text("Terminaison en japonais") },
+                singleLine = true,
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
+            )
+            Button(
+                onClick = { submitAnswer(typedEnding) },
+                enabled = typedEnding.isNotBlank(),
+                modifier = Modifier.fillMaxWidth().height(54.dp),
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFE05252))
+            ) {
+                Text("Valider")
+            }
+        } else {
+        displayedChoices.chunked(2).forEach { choices ->
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                choices.forEach { ending ->
+                choices.forEach { choice ->
                     Card(
                         modifier = Modifier
                             .weight(1f)
-                            .height(76.dp)
+                            .height(
+                                if (questionMode == ConjugationQuestionMode.FRENCH_TO_JAPANESE) 92.dp
+                                else 76.dp
+                            )
                             .semantics {
-                                contentDescription = "Choisir la terminaison $ending"
+                                contentDescription = "Choisir $choice"
                             }
                             .clickable {
-                                questionSpeech.speakQuestion(ending)
-                                val correct = ending == question.answerEnding
-                                saveError = onAnswer(question, LearningGame.CONJUGATION, correct)
-                                if (saveError == null) feedbackEvent++
-                                if (saveError == null) {
-                                    masteryCounters = masteryCounters + (
-                                        question.id to QuestionMasteryRules.updateCounter(
-                                            current = masteryCounters[question.id] ?: 0,
-                                            wasCorrect = correct
-                                        )
-                                    )
-                                }
-                                selectedToken = null
-                                if (correct) {
-                                    feedbackCorrect = true
-                                    feedback = "✓  ${question.completedJapaneseSentence()}"
-                                    feedbackHint = concisePedagogicalHint(question.explanation)
-                                    feedbackKanji = kanjiBreakdown(question.completedJapaneseSentence())
-                                    advance()
-                                } else {
-                                    feedbackCorrect = false
-                                    val shouldAdvance = ParticleAnswerRules.shouldAdvanceAfterWrongAnswer(
-                                        previousWrongAnswers = wrongAnswers,
-                                        extraAttempts = extraAttempts
-                                    )
-                                    wrongAnswers++
-                                    feedback = if (shouldAdvance) {
-                                        "Réponse : ${question.completedJapaneseSentence()}"
-                                    } else {
-                                        "Ce n’est pas « $ending ». Réessaie. "
-                                    }
-                                    feedbackHint = if (shouldAdvance) {
-                                        concisePedagogicalHint(question.explanation)
-                                    } else {
-                                        null
-                                    }
-                                    feedbackKanji = if (shouldAdvance) {
-                                        kanjiBreakdown(question.completedJapaneseSentence())
-                                    } else {
-                                        null
-                                    }
-                                    if (shouldAdvance) advance()
-                                }
+                                questionSpeech.speakQuestion(choice)
+                                submitAnswer(choice)
                             },
                         shape = RoundedCornerShape(16.dp),
                         colors = CardDefaults.cardColors(containerColor = Color(0xFF080808)),
@@ -241,8 +292,12 @@ internal fun ConjugationGameScreen(
                             contentAlignment = Alignment.Center
                         ) {
                             Text(
-                                ending,
-                                color = Color(0xFFFFB74D),
+                                choice,
+                                color = if (questionMode == ConjugationQuestionMode.FRENCH_TO_JAPANESE) {
+                                    Color(0xFF64B5F6)
+                                } else {
+                                    Color(0xFFFFB74D)
+                                },
                                 textAlign = TextAlign.Center,
                                 style = MaterialTheme.typography.titleLarge
                             )
@@ -251,6 +306,7 @@ internal fun ConjugationGameScreen(
                 }
                 if (choices.size == 1) Spacer(modifier = Modifier.weight(1f))
             }
+        }
         }
 
         saveError?.let { message ->
@@ -261,8 +317,8 @@ internal fun ConjugationGameScreen(
             )
         }
         SessionProgressFooter(
-            questionsCompleted = completedQuestions,
-            target = seriesTarget,
+            questionsCompleted = blockQuestionsCompleted,
+            target = blockTarget,
             allQuestionsMastered = allQuestionsMastered
         )
     }
@@ -297,9 +353,9 @@ internal fun ConjugationGameScreen(
     }
 }
 
-internal fun ConjugationQuestion.completedJapaneseSentence(): String =
+internal fun ConjugationQuestion.completedJapaneseSentence(ending: String = answerEnding): String =
     tokens.mapIndexed { index, token ->
-        if (index == verbTokenIndex) token.japanese + answerEnding else token.japanese
+        if (index == verbTokenIndex) token.japanese + ending else token.japanese
     }.joinToString(separator = "") + punctuation
 
 @OptIn(ExperimentalLayoutApi::class)

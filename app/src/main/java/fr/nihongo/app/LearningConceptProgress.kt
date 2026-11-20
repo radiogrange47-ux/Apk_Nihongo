@@ -16,7 +16,8 @@ internal data class LearningConceptProgress(
         fun from(
             catalog: QuestionCatalog,
             progress: ProgressSnapshot,
-            masteryThreshold: Int
+            masteryThreshold: Int,
+            includeAuxiliaryModes: Boolean = true
         ): LearningConceptProgress {
             require(masteryThreshold > 0)
 
@@ -33,7 +34,11 @@ internal data class LearningConceptProgress(
                         second = normalize(question.topic),
                         third = normalize((question as ParticleExercise).answer)
                     )
-                    LearningGame.VOCABULARY, LearningGame.VERBS -> {
+                    LearningGame.VOCABULARY,
+                    LearningGame.VOCABULARY_AUDIO,
+                    LearningGame.VOCABULARY_FRENCH_TO_JAPANESE,
+                    LearningGame.VOCABULARY_WRITE,
+                    LearningGame.VERBS -> {
                         val vocabulary = question as VocabularyQuestion
                         ConceptKey(
                             kind = "word",
@@ -54,7 +59,7 @@ internal data class LearningConceptProgress(
 
                 val refs = concepts.getOrPut(key) { linkedSetOf() }
                 refs += QuestionRef(game, question.id)
-                if (question is VocabularyQuestion) {
+                if (question is VocabularyQuestion && includeAuxiliaryModes) {
                     pairIdsByMeaning[Triple(question.kanji, question.hiragana, question.answer)]
                         ?.let { refs += QuestionRef(LearningGame.PAIRS, it) }
                     if (question.bank == QuestionBank.COUNTERS) {
@@ -64,8 +69,13 @@ internal data class LearningConceptProgress(
             }
 
             catalog.particles.forEach { register(it, LearningGame.PARTICLES) }
-            catalog.vocabulary.forEach { register(it, LearningGame.VOCABULARY) }
-            catalog.verbs.forEach { register(it, LearningGame.VERBS) }
+            catalog.vocabulary.forEach { question ->
+                VOCABULARY_FORMAT_GAMES.forEach { game -> register(question, game) }
+            }
+            catalog.verbs.forEach { question ->
+                VOCABULARY_FORMAT_GAMES.forEach { game -> register(question, game) }
+                register(question, LearningGame.VERBS)
+            }
             catalog.conjugation.forEach { register(it, LearningGame.CONJUGATION) }
 
             val progressByQuestion = progress.questions.associateBy { QuestionRef(it.game, it.questionId) }

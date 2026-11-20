@@ -25,7 +25,7 @@ internal fun SessionProgressFooter(
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Text(
-            "$questionsCompleted / $target questions",
+            "$questionsCompleted / $target questions du bloc",
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             style = MaterialTheme.typography.bodySmall
         )

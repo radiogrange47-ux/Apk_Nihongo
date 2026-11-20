@@ -72,6 +72,17 @@ internal class LearningSettingsStore(context: Context) {
         }.toSet()
     }
 
+    fun selectedLearningTrack(): LearningTrack =
+        preferences.getString(LEARNING_TRACK_KEY, null)
+            ?.let { name -> LearningTrack.values().firstOrNull { it.name == name } }
+            ?: LearningTrack.VOCABULARY
+
+    fun setSelectedLearningTrack(track: LearningTrack) {
+        check(preferences.edit().putString(LEARNING_TRACK_KEY, track.name).commit()) {
+            "Impossible d’enregistrer le parcours sélectionné."
+        }
+    }
+
     fun setSelectedQuestionBanks(banks: Set<QuestionBank>) {
         check(preferences.edit().putString(QUESTION_BANKS_KEY, banks.joinToString(",") { it.name }).commit()) {
             "Impossible d’enregistrer les banques sélectionnées."
@@ -85,6 +96,7 @@ internal class LearningSettingsStore(context: Context) {
         const val MASTERED_REPEAT_PERCENT_KEY = "mastered_question_repeat_percent"
         const val SESSION_QUESTION_COUNT_KEY = "session_question_count"
         const val QUESTION_BANKS_KEY = "selected_question_banks"
+        const val LEARNING_TRACK_KEY = "learning_track"
         const val LEGACY_SESSION_STREAK_KEY = "session_correct_streak"
         const val DEFAULT_EXTRA_ATTEMPTS = 1
         const val DEFAULT_MASTERY_THRESHOLD = 25

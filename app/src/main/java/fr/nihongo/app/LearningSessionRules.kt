@@ -7,6 +7,20 @@ internal data class SessionProgressUpdate(
 )
 
 internal object LearningSessionRules {
+    fun allocateQuestionTargets(
+        games: List<LearningGame>,
+        eligibleCounts: Map<LearningGame, Int>,
+        questionsPerGame: Int
+    ): Map<LearningGame, Int> {
+        require(games.distinct().size == games.size)
+        require(questionsPerGame > 0)
+        games.forEach { require((eligibleCounts[it] ?: 0) >= 0) }
+
+        return games.associateWith { game ->
+            minOf(questionsPerGame, eligibleCounts[game] ?: 0)
+        }.filterValues { it > 0 }
+    }
+
     fun afterQuestion(
         questionsCompleted: Int,
         gameIndex: Int,

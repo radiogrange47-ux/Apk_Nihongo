@@ -1,5 +1,49 @@
 # Projet : application Android pour apprendre le japonais
 
+## État actuel — refonte 2.0
+
+La version de travail du projet est l’application **2.0.0** (`versionCode` 2). La cible est une seule application Android, organisée en trois parcours sélectionnables depuis l’accueil. Le menu principal affiche ces parcours, l’accès aux réglages et la version installée. Le clic sur un parcours ouvre son écran de préparation, où seules les banques installées et pertinentes pour ce parcours sont proposées, puis les mini-jeux disponibles pour ce parcours peuvent être cochés. Cette section décrit le comportement actuel et prévaut sur les exigences de la spécification initiale plus bas lorsqu’elles se contredisent.
+
+### Parcours et contenu
+
+- **Vocabulaire** : mots à traduire, verbes, compteurs et paires japonaises. Les interrogatifs, démonstratifs et connecteurs sont du vocabulaire lorsqu’ils sont travaillés par leur traduction.
+- **Grammaire** : exercices d’application en contexte, comme choisir le bon mot ou la bonne particule dans une phrase.
+- **Conjugaison** : exercices pour choisir ou écrire la conjugaison attendue.
+
+Le parcours détermine le type de travail : traduction en Vocabulaire, application d’une règle en contexte en Grammaire, conjugaison en Conjugaison. Les banques de questions restent sélectionnables dans l’écran du parcours, mais seules celles qui contiennent des questions adaptées sont affichées. Le catalogue est filtré à partir des banques cochées ; les données ne sont pas dupliquées par parcours. Le parcours sélectionné est mémorisé sur l’appareil. Les banques de mots outils ne sont donc pas des exercices de grammaire tant que leurs questions ne demandent qu’une traduction.
+
+### Mini-jeux par parcours
+
+Jeux actuellement proposés :
+
+- **Vocabulaire** : quatre jeux sélectionnables sur le même ensemble de mots et de verbes : écoute puis traduction, japonais vers français, français vers japonais, et rappel écrit en japonais. Les compteurs y sont révisés comme du vocabulaire, avec des choix limités aux autres compteurs. Le jeu d’associations s’appelle **Paires**. L’ancienne maîtrise des verbes et du défi des compteurs est conservée dans le tirage et les statistiques du vocabulaire.
+- **Grammaire** : choisir la particule qui complète une phrase.
+- **Conjugaison** : choisir ou écrire une terminaison, ou choisir la phrase japonaise correspondant à une consigne française.
+
+Pistes de mini-jeux à concevoir ultérieurement, sans implémentation dans le cadre actuel :
+
+- **Vocabulaire — Mot mystère** : retrouver un mot à partir d’un indice ou d’une courte définition.
+- **Grammaire — Phrase à trous** : choisir dans une phrase le connecteur, la particule ou le mot grammatical qui convient ; **Puzzle de phrase** : remettre les segments dans l’ordre ; **Chasse à l’erreur** : repérer puis corriger une erreur grammaticale dans une phrase.
+- **Conjugaison — Transformation** : transformer une forme donnée selon une consigne (passé, négation, forme en て) ; **La bonne forme en contexte** : choisir la conjugaison adaptée à une situation ; **Atelier d’écriture** : saisir le verbe conjugué ou la phrase complète.
+
+### Formats de questions
+
+Les questions à choix multiples affichent **quatre propositions**, dont la bonne réponse et trois distracteurs tirés au hasard. Les fichiers de contenu gardent six propositions sources afin de varier les distracteurs. Le jeu des paires conserve six paires par grille, car il s’agit d’associations à cliquer plutôt que de QCM.
+
+Chaque format de Vocabulaire est un mini-jeu sélectionnable distinct et utilise le même ensemble de mots et de verbes. Si la lecture vocale est désactivée, le jeu d’écoute affiche le mot japonais. En Conjugaison, le jeu conserve ses formats alternés : choix de terminaison, saisie de terminaison et choix de la phrase japonaise correspondant à une consigne française. Les choix sont mélangés. Les différents formats de vocabulaire partagent la maîtrise des notions ; leurs réponses et séries restent consultables par mini-jeu.
+
+### Séances et progression
+
+Une séance suit l’ordre d’affichage des mini-jeux sélectionnés et pose le nombre configuré dans les réglages (10 par défaut) pour chacun avant de passer au suivant. Le bilan s’affiche après le dernier mini-jeu ; la personne peut démarrer une nouvelle séance ou changer de parcours. Si un jeu a moins de questions disponibles que le nombre demandé, il utilise celles disponibles. Les questions de chaque jeu sont tirées aléatoirement et pondérées par leur maîtrise, avec le taux de réapparition configuré pour les questions maîtrisées. Une mauvaise réponse peut être retentée selon le réglage des tentatives ; elle ne fait avancer le compteur qu’une fois résolue.
+
+La progression et les préférences restent enregistrées localement. Les parcours partagent le catalogue et les mécanismes existants de correction, d’indices, de lecture vocale et de statistiques. Les notions affichées dans le résumé de parcours sont calculées à partir des banques actuellement cochées.
+
+### Ajouter des questions
+
+Les contenus sont rangés par banque et par type de jeu dans `questions/`; les formats de données, identifiants de banques et étapes pour déclarer une nouvelle banque sont documentés dans `questions/README.md`. Ajouter ou modifier une question doit conserver un identifiant stable et renseigner sa banque. La procédure détaillée de mise à jour du manifeste et de validation du paquet est décrite dans ce README.
+
+La compilation et l’installation de l’APK de développement sont faites par le propriétaire du projet dans Android Studio, avec son téléphone en mode debug. Aucune compilation n’est requise pour la préparation des changements de cette version.
+
 ## Présentation
 
 L’objectif est de développer une application Android qui aide à apprendre le japonais au moyen de jeux courts et progressifs. Elle doit pouvoir être utilisée hors ligne et suivre les progrès de chaque personne afin de distinguer les notions maîtrisées de celles qui restent à travailler.
@@ -102,7 +146,7 @@ Les données de contenu japonais doivent pouvoir inclure les éléments ou unit�
 
 ### Jeu de particules — première version
 
-Le jeu présente une phrase japonaise contenant une particule manquante et six propositions. La personne choisit la particule qui convient.
+Le jeu présente une phrase japonaise contenant une particule manquante et quatre propositions. La personne choisit la particule qui convient.
 
 Pour chaque question, l’application doit :
 
@@ -118,17 +162,17 @@ Les exercices doivent inclure la particule attendue, les choix proposés et une 
 
 ### Jeu de vocabulaire — deuxième mode
 
-Le deuxième mode propose un mot japonais présenté en kanji et en hiragana. La personne choisit sa traduction française parmi six propositions. Les mots, lectures et traductions sont disponibles hors ligne ; les règles communes de sélection aléatoire, de progression par jeu, de compteur de maîtrise et de présentation du japonais s’appliquent également à ce mode.
+Le deuxième mode propose un mot japonais présenté en kanji et en hiragana. La personne choisit sa traduction française parmi quatre propositions. Les mots, lectures et traductions sont disponibles hors ligne ; les règles communes de sélection aléatoire, de progression par jeu, de compteur de maîtrise et de présentation du japonais s’appliquent également à ce mode.
 
 Les premières données du jeu comprennent un petit ensemble de mots courants afin de valider le parcours et de permettre son extension ultérieure.
 
 ### Jeu de vocabulaire des verbes — troisième mode
 
-Le troisième mode reprend le format du jeu de vocabulaire, mais présente des verbes japonais. Chaque verbe est affiché en kanji et en hiragana ; la personne choisit sa traduction française parmi six propositions. Les verbes, leurs lectures et leurs traductions sont disponibles hors ligne. La progression et les statistiques de ce mini-jeu restent séparées de celles des autres jeux.
+Le troisième mode reprend le format du jeu de vocabulaire, mais présente des verbes japonais. Chaque verbe est affiché en kanji et en hiragana ; la personne choisit sa traduction française parmi quatre propositions. Les verbes, leurs lectures et leurs traductions sont disponibles hors ligne. La progression et les statistiques de ce mini-jeu restent séparées de celles des autres jeux.
 
 ### Jeu de conjugaison — quatrième mode
 
-Le quatrième mode présente une phrase japonaise accompagnée d’un contexte suffisamment clair pour comprendre la situation et déterminer la conjugaison attendue. Une partie du verbe est à compléter ; la personne choisit la bonne terminaison ou forme conjuguée parmi six propositions.
+Le quatrième mode présente une phrase japonaise accompagnée d’un contexte suffisamment clair pour comprendre la situation et déterminer la conjugaison attendue. Une partie du verbe est à compléter ; la personne choisit la bonne terminaison ou forme conjuguée parmi quatre propositions.
 
 Les questions doivent préciser le verbe et le contexte utiles à la réponse, fournir une correction après chaque choix et enregistrer les résultats dans la progression propre au jeu de conjugaison. Les phrases, lectures, contextes et explications nécessaires sont disponibles hors ligne.
 
@@ -183,7 +227,7 @@ Les statistiques étant calculées à partir des questions actuellement install�
 
 Les fiches de cours sont une source de préparation du contenu, et non un format que l’application doit interpréter directement. Le processus prévu est : fournir ou sélectionner une source, transformer les notions en questions JSON adaptées aux quatre schémas, renseigner le niveau et la provenance lorsqu’ils sont connus, lancer la validation automatique, relire les réponses et distracteurs, puis publier une nouvelle version du contenu. L’assistance par IA peut accélérer la structuration, mais le contenu pédagogique doit être relu avant publication. Les sources protégées ne sont utilisées que dans les limites de leurs droits ; les ressources ouvertes ou les fiches fournies par la personne sont privilégiées.
 
-Les quatre schémas sont contrôlés automatiquement : identifiants non vides et uniques dans tout le jeu de données, six choix distincts avec la bonne réponse incluse, champs nécessaires présents et indices des éléments grammaticaux valides. Une question de vocabulaire peut par exemple inclure `id`, `topic`, `kanji`, `hiragana`, `answer`, `choices`, ainsi que les champs facultatifs `level` et `source`. Une question de phrase décrit chaque élément japonais séparément afin de permettre sa coloration et sa traduction au toucher. Une modification du contenu ne change pas `schemaVersion` ; une évolution incompatible du format exige une version de logiciel qui prend en charge le nouveau schéma.
+Les quatre schémas sont contrôlés automatiquement : identifiants non vides et uniques dans tout le jeu de données, six choix sources distincts avec la bonne réponse incluse, champs nécessaires présents et indices des éléments grammaticaux valides. Le jeu en affiche quatre et sélectionne aléatoirement trois distracteurs dans cette réserve. Une question de vocabulaire peut par exemple inclure `id`, `topic`, `kanji`, `hiragana`, `answer`, `choices`, ainsi que les champs facultatifs `level` et `source`. Une question de phrase décrit chaque élément japonais séparément afin de permettre sa coloration et sa traduction au toucher. Une modification du contenu ne change pas `schemaVersion` ; une évolution incompatible du format exige une version de logiciel qui prend en charge le nouveau schéma.
 
 ### Contenus pédagogiques
 
@@ -215,10 +259,10 @@ La première livraison doit comprendre :
 - quatre mini-jeux sélectionnables : particules, vocabulaire, vocabulaire des verbes et conjugaison ;
 - un jeu de vocabulaire proposant un mot en kanji et hiragana avec six traductions françaises possibles ;
 - un jeu de vocabulaire des verbes, de même format, avec six traductions françaises possibles ;
-- un jeu de conjugaison proposant une phrase en contexte et six terminaisons ou formes conjuguées au choix ;
+- un jeu de conjugaison proposant une phrase en contexte et quatre terminaisons ou formes conjuguées au choix ;
 - une banque hors ligne de questions N5 pour chacun des quatre mini-jeux (version de contenu initiale `1.1.0`) ;
 - un écran de progression consultable indépendamment pour chaque mode ;
-- six propositions de réponse pour chaque question de l’application ;
+- quatre propositions affichées pour chaque question à choix multiples ;
 - des tirages aléatoires pondérés par les compteurs de maîtrise, sans répétition d’une question dans une même série ;
 - un réglage du seuil de maîtrise (25 par défaut) et une commande pour réinitialiser tous les compteurs ;
 - un réglage distinct du nombre X de questions distinctes par mini-jeu avant de passer au suivant, avec une barre de progression ;
@@ -244,14 +288,14 @@ La première livraison doit comprendre :
 - Les quatre mini-jeux — particules, vocabulaire, vocabulaire des verbes et conjugaison — peuvent être sélectionnés depuis l’écran d’accueil.
 - Le mode vocabulaire affiche un mot en kanji et hiragana et propose six traductions possibles.
 - Le mode vocabulaire des verbes affiche un verbe en kanji et hiragana et propose six traductions possibles.
-- Le mode conjugaison présente une phrase avec un contexte compréhensible et propose six terminaisons ou formes conjuguées.
+- Le mode conjugaison présente une phrase avec un contexte compréhensible et propose quatre terminaisons ou formes conjuguées.
 - L’écran d’accueil permet de cocher un ou plusieurs mini-jeux, de tout sélectionner ou tout désélectionner, puis de démarrer la séance.
 - Les mini-jeux sélectionnés s’enchaînent continuellement ; chaque série présente X questions distinctes au maximum une fois, puis passe au jeu suivant, et la barre indique la progression.
 - Une mauvaise réponse conserve la question en cours pendant les tentatives supplémentaires configurées ; une fois la question résolue, elle n’est pas tirée de nouveau dans la série.
 - Si la banque contient moins de X questions, toutes ses questions sont présentées une seule fois avant le passage au mini-jeu suivant.
 - La maîtrise de toutes les questions sélectionnées affiche une information sans interrompre l’enchaînement.
 - La progression et les statistiques sont distinctes et consultables par jeu, avec les notions à réviser ; les compteurs individuels des questions ne sont pas affichés.
-- Chaque question de tous les modes propose exactement six choix de réponse distincts.
+- Chaque question à choix multiples affiche exactement quatre propositions distinctes, dont la bonne réponse ; le jeu des paires garde ses six paires par grille.
 - Chaque réponse correcte augmente le compteur de sa question, chaque réponse incorrecte le diminue sans passer sous zéro ; à partir du seuil réglé, le poids de la question est réduit à 5 %.
 - Les questions sont tirées au hasard sans remise dans une série de X questions distinctes ; le seuil de maîtrise reste réglable (25 par défaut) et la réinitialisation remet tous les compteurs à zéro sans effacer l’historique des réponses.
 - Les questions N5 sont réparties entre les quatre jeux et renseignent leur niveau et leur provenance ; la couverture est pédagogique, évolutive et ne constitue pas une liste officielle exhaustive du JLPT.

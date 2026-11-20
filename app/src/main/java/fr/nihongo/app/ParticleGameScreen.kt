@@ -86,6 +86,8 @@ internal fun ParticleGameScreen(
     masteryThreshold: Int,
     masteredQuestionRepeatPercent: Int = 5,
     completedQuestions: Int,
+    blockQuestionsCompleted: Int,
+    blockTarget: Int,
     seriesTarget: Int,
     allQuestionsMastered: Boolean,
     carryoverAnswer: AnswerFeedback?,
@@ -111,7 +113,9 @@ internal fun ParticleGameScreen(
             )
         )
     }
-    val displayedChoices = remember(exercise.id) { exercise.choices.shuffled() }
+    val displayedChoices = remember(exercise.id) {
+        AnswerChoiceRules.four(exercise.choices, exercise.answer)
+    }
     val spokenQuestionParts = remember(exercise.id) {
         val beforeGap = exercise.tokens.take(exercise.missingTokenIndex)
             .joinToString(separator = "") { it.hiragana }
@@ -228,15 +232,12 @@ internal fun ParticleGameScreen(
                                 questionSpeech.speakQuestion(choice)
                                 val correct = choice == exercise.answer
                                 saveError = onAnswer(exercise, LearningGame.PARTICLES, correct)
-                                if (saveError == null) feedbackEvent++
-                                val updatedCounter = if (saveError == null) {
-                                    QuestionMasteryRules.updateCounter(
-                                        current = masteryCounters[exercise.id] ?: 0,
-                                        wasCorrect = correct
-                                    )
-                                } else {
-                                    masteryCounters[exercise.id] ?: 0
-                                }
+                                if (saveError != null) return@clickable
+                                feedbackEvent++
+                                val updatedCounter = QuestionMasteryRules.updateCounter(
+                                    current = masteryCounters[exercise.id] ?: 0,
+                                    wasCorrect = correct
+                                )
                                 masteryCounters = masteryCounters + (exercise.id to updatedCounter)
                                 selectedToken = null
 
@@ -303,8 +304,8 @@ internal fun ParticleGameScreen(
             )
         }
         SessionProgressFooter(
-            questionsCompleted = completedQuestions,
-            target = seriesTarget,
+            questionsCompleted = blockQuestionsCompleted,
+            target = blockTarget,
             allQuestionsMastered = allQuestionsMastered
         )
     }

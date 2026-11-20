@@ -10,10 +10,13 @@ internal enum class WordCategory {
 
 internal enum class LearningGame(val title: String) {
     PARTICLES("Jeu des particules"),
-    VOCABULARY("Vocabulaire"),
+    VOCABULARY("Japonais → français"),
+    VOCABULARY_AUDIO("Écoute et traduction"),
+    VOCABULARY_FRENCH_TO_JAPANESE("Français → japonais"),
+    VOCABULARY_WRITE("Écrire en japonais"),
     VERBS("Vocabulaire des verbes"),
     CONJUGATION("Conjugaison"),
-    PAIRS("Paires japonaises"),
+    PAIRS("Paires"),
     COUNTER_CHALLENGE("Défi des compteurs")
 }
 

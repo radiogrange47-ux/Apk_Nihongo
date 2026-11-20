@@ -51,7 +51,9 @@ private val NihongoBorder = Color(0xFF292929)
 
 private enum class AppScreen {
     HOME,
+    TRACK_SETUP,
     SESSION,
+    BLOCK_SUMMARY,
     PROGRESS,
     SETTINGS,
     UPDATES,
@@ -69,9 +71,11 @@ internal fun MainScreen(
     questionMasteryThreshold: Int,
     masteredQuestionRepeatPercent: Int,
     sessionQuestionCount: Int,
+    selectedLearningTrack: LearningTrack,
     selectedQuestionBanks: Set<QuestionBank>,
     questionSpeech: JapaneseQuestionSpeech,
     onQuestionBanksChange: (Set<QuestionBank>) -> Unit,
+    onLearningTrackChange: (LearningTrack) -> Unit,
     onCheckUpdates: () -> Unit,
     onDownloadUpdate: (GitHubRelease) -> Unit,
     onCheckQuestionUpdates: () -> Unit,
@@ -91,26 +95,43 @@ internal fun MainScreen(
     var selectedBankNames by rememberSaveable {
         mutableStateOf(selectedQuestionBanks.joinToString(",") { it.name })
     }
+    var selectedTrackName by rememberSaveable {
+        mutableStateOf(selectedLearningTrack.name)
+    }
+    val activeTrack = LearningTrack.values().firstOrNull { it.name == selectedTrackName }
+        ?: LearningTrack.VOCABULARY
     val activeBanks = selectedBankNames.split(",").mapNotNull { name ->
         QuestionBank.values().firstOrNull { it.name == name }
     }.toSet()
     val activeCatalog = remember(questionCatalog, activeBanks) {
         questionCatalog.forBanks(activeBanks)
     }
+    val trackCatalog = remember(activeCatalog, activeTrack) {
+        activeCatalog.forTrack(activeTrack)
+    }
+    val trackGames = remember(questionCatalog, activeTrack) {
+        activeTrack.gamesIn(questionCatalog.forTrack(activeTrack))
+    }
     var sessionGameNames by rememberSaveable { mutableStateOf("") }
     var sessionGameIndex by rememberSaveable { mutableIntStateOf(0) }
     var questionsCompleted by rememberSaveable { mutableIntStateOf(0) }
+    var blockQuestionsCompleted by rememberSaveable { mutableIntStateOf(0) }
+    var blockCorrectAnswers by rememberSaveable { mutableIntStateOf(0) }
+    var blockTarget by rememberSaveable { mutableIntStateOf(sessionQuestionCount) }
     var sessionRound by rememberSaveable { mutableIntStateOf(0) }
     var sessionTargetCounts by rememberSaveable { mutableStateOf("") }
     var latestSessionAnswer by remember { mutableStateOf<AnswerFeedback?>(null) }
     var previousGameAnswer by remember { mutableStateOf<AnswerFeedback?>(null) }
     var previousGameAnswerEvent by remember { mutableIntStateOf(0) }
-    val selectedGames = LearningGame.values()
-        .filter { it.name in selectedGameNames.split(",") && activeCatalog.questionsFor(it).isNotEmpty() }
+    val selectedGames = trackGames.filter { it.name in selectedGameNames.split(",") }
     val eligibleQuestionCounts = LearningGame.values().associateWith { game ->
-        val masteryCounters = progress.questionsFor(game).associate { it.questionId to it.masteryCounter }
+        val masteryCounters = if (game in VOCABULARY_FORMAT_GAMES) {
+            progress.vocabularyMasteryCounters()
+        } else {
+            progress.questionsFor(game).associate { it.questionId to it.masteryCounter }
+        }
         val eligibleQuestions = QuestionSelector.countEligibleQuestions(
-            questions = activeCatalog.questionsFor(game),
+            questions = trackCatalog.questionsFor(game),
             masteryCounters = masteryCounters,
             masteryThreshold = questionMasteryThreshold,
             masteredQuestionRepeatPercent = masteredQuestionRepeatPercent
@@ -143,14 +164,30 @@ internal fun MainScreen(
         onQuestionBanksChange(updated)
     }
 
+    fun selectTrack(track: LearningTrack) {
+        selectedTrackName = track.name
+        selectedGameNames = track.gamesIn(questionCatalog.forTrack(track))
+            .joinToString(",") { it.name }
+        onLearningTrackChange(track)
+    }
+
     fun startSession() {
         if (playableGames.isEmpty()) return
-        sessionGameNames = playableGames.joinToString(",") { it.name }
-        sessionTargetCounts = playableGames.joinToString(",") { game ->
-            "${game.name}:${minOf(sessionQuestionCount, eligibleQuestionCounts.getValue(game))}"
+        val targets = LearningSessionRules.allocateQuestionTargets(
+            games = playableGames,
+            eligibleCounts = eligibleQuestionCounts,
+            questionsPerGame = sessionQuestionCount
+        )
+        if (targets.isEmpty()) return
+        sessionGameNames = targets.keys.joinToString(",") { it.name }
+        sessionTargetCounts = targets.entries.joinToString(",") { (game, target) ->
+            "${game.name}:$target"
         }
+        blockTarget = targets.values.sum()
         sessionGameIndex = 0
         questionsCompleted = 0
+        blockQuestionsCompleted = 0
+        blockCorrectAnswers = 0
         sessionRound++
         latestSessionAnswer = null
         previousGameAnswer = null
@@ -158,7 +195,7 @@ internal fun MainScreen(
     }
 
     fun selectAllGames() {
-        selectedGameNames = LearningGame.values().joinToString(",") { it.name }
+        selectedGameNames = trackGames.joinToString(",") { it.name }
     }
 
     fun selectNoGames() {
@@ -171,6 +208,7 @@ internal fun MainScreen(
             if (error == null) {
                 latestSessionAnswer = answerFeedbackForTransition(question, game, wasCorrect)
                 previousGameAnswer = null
+                if (wasCorrect) blockCorrectAnswers++
             }
             error
         }
@@ -181,7 +219,7 @@ internal fun MainScreen(
             sessionGames.getOrNull(sessionGameIndex) == game
         ) {
             val target = storedSessionTargets[game]
-                ?: minOf(sessionQuestionCount, activeCatalog.questionsFor(game).size)
+                ?: minOf(sessionQuestionCount, trackCatalog.questionsFor(game).size)
             val update = LearningSessionRules.afterQuestion(
                 questionsCompleted = questionsCompleted,
                 gameIndex = sessionGameIndex,
@@ -189,25 +227,35 @@ internal fun MainScreen(
                 target = target
             )
             questionsCompleted = update.questionsCompleted
+            blockQuestionsCompleted++
             if (update.advanceToNextGame) {
-                previousGameAnswer = latestSessionAnswer
-                latestSessionAnswer = null
-                previousGameAnswerEvent++
-                sessionGameIndex = update.gameIndex
-                sessionRound++
+                if (blockQuestionsCompleted >= blockTarget) {
+                    screen = AppScreen.BLOCK_SUMMARY
+                } else {
+                    previousGameAnswer = latestSessionAnswer
+                    latestSessionAnswer = null
+                    previousGameAnswerEvent++
+                    sessionGameIndex = update.gameIndex
+                    sessionRound++
+                }
             }
         }
     }
 
     val allSelectedQuestionsMastered = sessionGames.isNotEmpty() &&
         sessionGames.all { game ->
-            val selectedIds = activeCatalog.questionsFor(game).mapTo(hashSetOf()) { it.id }
-            val gameQuestions = progress.questionsFor(game).filter { it.questionId in selectedIds }
-            gameQuestions.isNotEmpty() &&
-                gameQuestions.all { it.masteryCounter >= questionMasteryThreshold }
+            val selectedIds = trackCatalog.questionsFor(game).mapTo(hashSetOf()) { it.id }
+            val masteryByQuestion = if (game in VOCABULARY_FORMAT_GAMES) {
+                progress.vocabularyMasteryCounters()
+            } else {
+                progress.questionsFor(game).associate { it.questionId to it.masteryCounter }
+            }
+            selectedIds.isNotEmpty() && selectedIds.all {
+                (masteryByQuestion[it] ?: 0) >= questionMasteryThreshold
+            }
         }
     BackHandler(enabled = screen != AppScreen.HOME) {
-        screen = AppScreen.HOME
+        screen = if (screen == AppScreen.TRACK_SETUP) AppScreen.HOME else AppScreen.HOME
     }
 
     MaterialTheme(
@@ -231,16 +279,33 @@ internal fun MainScreen(
                     progress = progress,
                     questionCatalog = questionCatalog,
                     masteryThreshold = questionMasteryThreshold,
+                    appVersion = appVersion,
+                    selectedTrack = activeTrack,
+                    onTrackSelectionChange = { track ->
+                        selectTrack(track)
+                        screen = AppScreen.TRACK_SETUP
+                    },
+                    onShowProgress = { screen = AppScreen.PROGRESS },
+                    onShowSettings = { screen = AppScreen.SETTINGS }
+                )
+
+                AppScreen.TRACK_SETUP -> TrackSetupScreen(
+                    track = activeTrack,
+                    questionCatalog = questionCatalog.forTrack(activeTrack),
+                    masteryThreshold = questionMasteryThreshold,
+                    progress = progress,
+                    availableBanks = QuestionBank.values().filter { bank ->
+                        questionCatalog.forTrack(activeTrack).questionsForBank(bank).isNotEmpty()
+                    },
                     selectedGames = selectedGames,
                     playableGameCount = playableGames.size,
                     selectedBanks = activeBanks,
+                    onBack = { screen = AppScreen.HOME },
                     onBankSelectionChange = ::updateBankSelection,
                     onGameSelectionChange = ::updateGameSelection,
                     onSelectAll = ::selectAllGames,
                     onSelectNone = ::selectNoGames,
-                    onStart = ::startSession,
-                    onShowProgress = { screen = AppScreen.PROGRESS },
-                    onShowSettings = { screen = AppScreen.SETTINGS },
+                    onStart = ::startSession
                 )
 
                 AppScreen.SESSION -> {
@@ -251,7 +316,7 @@ internal fun MainScreen(
                         key(sessionRound, game) {
                             when (game) {
                                 LearningGame.PARTICLES -> ParticleGameScreen(
-                                    questions = activeCatalog.particles,
+                                    questions = trackCatalog.particles,
                                     questionSpeech = questionSpeech,
                                     onBack = { screen = AppScreen.HOME },
                                     onAnswer = sessionAnswer,
@@ -261,16 +326,21 @@ internal fun MainScreen(
                                     masteryThreshold = questionMasteryThreshold,
                                     masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
                                     completedQuestions = questionsCompleted,
+                                    blockQuestionsCompleted = blockQuestionsCompleted,
+                                    blockTarget = blockTarget,
                                     seriesTarget = storedSessionTargets[game]
-                                        ?: minOf(sessionQuestionCount, activeCatalog.particles.size),
+                                        ?: minOf(sessionQuestionCount, trackCatalog.particles.size),
                                     allQuestionsMastered = allSelectedQuestionsMastered,
                                     carryoverAnswer = previousGameAnswer,
                                     carryoverAnswerEvent = previousGameAnswerEvent
                                 )
 
-                                LearningGame.VOCABULARY -> VocabularyGameScreen(
+                                LearningGame.VOCABULARY,
+                                LearningGame.VOCABULARY_AUDIO,
+                                LearningGame.VOCABULARY_FRENCH_TO_JAPANESE,
+                                LearningGame.VOCABULARY_WRITE -> VocabularyGameScreen(
                                     game = game,
-                                    questions = activeCatalog.vocabulary,
+                                    questions = trackCatalog.vocabulary + trackCatalog.verbs,
                                     questionSpeech = questionSpeech,
                                     onBack = { screen = AppScreen.HOME },
                                     onAnswer = sessionAnswer,
@@ -280,8 +350,13 @@ internal fun MainScreen(
                                     masteryThreshold = questionMasteryThreshold,
                                     masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
                                     completedQuestions = questionsCompleted,
+                                    blockQuestionsCompleted = blockQuestionsCompleted,
+                                    blockTarget = blockTarget,
                                     seriesTarget = storedSessionTargets[game]
-                                        ?: minOf(sessionQuestionCount, activeCatalog.vocabulary.size),
+                                        ?: minOf(
+                                            sessionQuestionCount,
+                                            trackCatalog.vocabulary.size + trackCatalog.verbs.size
+                                        ),
                                     allQuestionsMastered = allSelectedQuestionsMastered,
                                     carryoverAnswer = previousGameAnswer,
                                     carryoverAnswerEvent = previousGameAnswerEvent
@@ -289,7 +364,7 @@ internal fun MainScreen(
 
                                 LearningGame.VERBS -> VocabularyGameScreen(
                                     game = game,
-                                    questions = activeCatalog.verbs,
+                                    questions = trackCatalog.verbs,
                                     questionSpeech = questionSpeech,
                                     onBack = { screen = AppScreen.HOME },
                                     onAnswer = sessionAnswer,
@@ -299,15 +374,17 @@ internal fun MainScreen(
                                     masteryThreshold = questionMasteryThreshold,
                                     masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
                                     completedQuestions = questionsCompleted,
+                                    blockQuestionsCompleted = blockQuestionsCompleted,
+                                    blockTarget = blockTarget,
                                     seriesTarget = storedSessionTargets[game]
-                                        ?: minOf(sessionQuestionCount, activeCatalog.verbs.size),
+                                        ?: minOf(sessionQuestionCount, trackCatalog.verbs.size),
                                     allQuestionsMastered = allSelectedQuestionsMastered,
                                     carryoverAnswer = previousGameAnswer,
                                     carryoverAnswerEvent = previousGameAnswerEvent
                                 )
 
                                 LearningGame.CONJUGATION -> ConjugationGameScreen(
-                                    questions = activeCatalog.conjugation,
+                                    questions = trackCatalog.conjugation,
                                     questionSpeech = questionSpeech,
                                     onBack = { screen = AppScreen.HOME },
                                     onAnswer = sessionAnswer,
@@ -317,15 +394,17 @@ internal fun MainScreen(
                                     masteryThreshold = questionMasteryThreshold,
                                     masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
                                     completedQuestions = questionsCompleted,
+                                    blockQuestionsCompleted = blockQuestionsCompleted,
+                                    blockTarget = blockTarget,
                                     seriesTarget = storedSessionTargets[game]
-                                        ?: minOf(sessionQuestionCount, activeCatalog.conjugation.size),
+                                        ?: minOf(sessionQuestionCount, trackCatalog.conjugation.size),
                                     allQuestionsMastered = allSelectedQuestionsMastered,
                                     carryoverAnswer = previousGameAnswer,
                                     carryoverAnswerEvent = previousGameAnswerEvent
                                 )
 
                                 LearningGame.PAIRS -> JapanesePairsGameScreen(
-                                    questions = activeCatalog.pairingQuestions(),
+                                    questions = trackCatalog.pairingQuestions(),
                                     questionSpeech = questionSpeech,
                                     onBack = { screen = AppScreen.HOME },
                                     onAnswer = sessionAnswer,
@@ -334,15 +413,17 @@ internal fun MainScreen(
                                     masteryThreshold = questionMasteryThreshold,
                                     masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
                                     completedQuestions = questionsCompleted,
+                                    blockQuestionsCompleted = blockQuestionsCompleted,
+                                    blockTarget = blockTarget,
                                     seriesTarget = storedSessionTargets[game]
-                                        ?: minOf(sessionQuestionCount, activeCatalog.pairingQuestions().size / 6),
+                                        ?: minOf(sessionQuestionCount, trackCatalog.pairingQuestions().size / 6),
                                     allQuestionsMastered = allSelectedQuestionsMastered,
                                     carryoverAnswer = previousGameAnswer,
                                     carryoverAnswerEvent = previousGameAnswerEvent
                                 )
 
                                 LearningGame.COUNTER_CHALLENGE -> CounterChallengeGameScreen(
-                                    questions = activeCatalog.counterChallengeQuestions(),
+                                    questions = trackCatalog.counterChallengeQuestions(),
                                     questionSpeech = questionSpeech,
                                     onBack = { screen = AppScreen.HOME },
                                     onAnswer = sessionAnswer,
@@ -352,8 +433,10 @@ internal fun MainScreen(
                                     masteryThreshold = questionMasteryThreshold,
                                     masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
                                     completedQuestions = questionsCompleted,
+                                    blockQuestionsCompleted = blockQuestionsCompleted,
+                                    blockTarget = blockTarget,
                                     seriesTarget = storedSessionTargets[game]
-                                        ?: minOf(sessionQuestionCount, activeCatalog.counterChallengeQuestions().size),
+                                        ?: minOf(sessionQuestionCount, trackCatalog.counterChallengeQuestions().size),
                                     allQuestionsMastered = allSelectedQuestionsMastered,
                                     carryoverAnswer = previousGameAnswer,
                                     carryoverAnswerEvent = previousGameAnswerEvent
@@ -362,6 +445,15 @@ internal fun MainScreen(
                         }
                     }
                 }
+
+                AppScreen.BLOCK_SUMMARY -> SessionBlockSummaryScreen(
+                    track = activeTrack,
+                    correctAnswers = blockCorrectAnswers,
+                    totalQuestions = blockTarget,
+                    nextBlockQuestionCount = sessionQuestionCount,
+                    onContinue = ::startSession,
+                    onHome = { screen = AppScreen.HOME }
+                )
 
                 AppScreen.PROGRESS -> ProgressScreen(
                     progress = progress,
@@ -552,7 +644,7 @@ private fun LearningSettingsScreen(
             ) {
                 Text("Enchaînement des mini-jeux", style = MaterialTheme.typography.titleLarge)
                 Text(
-                    "Chaque mini-jeu propose des questions différentes, sans répétition dans la série. La séance passe ensuite au jeu suivant.",
+                    "Chaque mini-jeu sélectionné pose le nombre choisi de questions, puis la séance passe au suivant. Un bilan s’affiche après le dernier jeu.",
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
                 OutlinedTextField(
@@ -846,7 +938,12 @@ private fun answerFeedbackForTransition(
             )
         }
 
-        LearningGame.VOCABULARY, LearningGame.VERBS, LearningGame.PAIRS -> {
+        LearningGame.VOCABULARY,
+        LearningGame.VOCABULARY_AUDIO,
+        LearningGame.VOCABULARY_FRENCH_TO_JAPANESE,
+        LearningGame.VOCABULARY_WRITE,
+        LearningGame.VERBS,
+        LearningGame.PAIRS -> {
             val vocabulary = question as VocabularyQuestion
             AnswerFeedback(
                 tone = tone,

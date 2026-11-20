@@ -44,6 +44,8 @@ internal fun CounterChallengeGameScreen(
     masteryThreshold: Int,
     masteredQuestionRepeatPercent: Int,
     completedQuestions: Int,
+    blockQuestionsCompleted: Int,
+    blockTarget: Int,
     seriesTarget: Int,
     allQuestionsMastered: Boolean,
     carryoverAnswer: AnswerFeedback?,
@@ -71,7 +73,9 @@ internal fun CounterChallengeGameScreen(
     var question by remember(questionDeck) {
         mutableStateOf(drawQuestion())
     }
-    val displayedChoices = remember(question.id) { question.choices.shuffled() }
+    val displayedChoices = remember(question.id) {
+        AnswerChoiceRules.four(question.choices, question.answer)
+    }
     val readingByCounter = remember(questions) { questions.associate { it.answer to it.hiragana } }
 
     fun advance() {
@@ -131,14 +135,13 @@ internal fun CounterChallengeGameScreen(
                                 questionSpeech.speakQuestion(readingByCounter[choice].orEmpty())
                                 val correct = choice == question.answer
                                 saveError = onAnswer(question, LearningGame.COUNTER_CHALLENGE, correct)
-                                if (saveError == null) {
-                                    masteryCounters = masteryCounters + (
-                                        question.id to QuestionMasteryRules.updateCounter(
-                                            current = masteryCounters[question.id] ?: 0,
-                                            wasCorrect = correct
-                                        )
+                                if (saveError != null) return@clickable
+                                masteryCounters = masteryCounters + (
+                                    question.id to QuestionMasteryRules.updateCounter(
+                                        current = masteryCounters[question.id] ?: 0,
+                                        wasCorrect = correct
                                     )
-                                }
+                                )
                                 feedbackEvent++
                                 if (correct) {
                                     feedback = AnswerFeedback(
@@ -194,8 +197,8 @@ internal fun CounterChallengeGameScreen(
 
         feedback?.let { AnswerFeedbackBanner(it, feedbackEvent) }
         SessionProgressFooter(
-            questionsCompleted = completedQuestions,
-            target = seriesTarget,
+            questionsCompleted = blockQuestionsCompleted,
+            target = blockTarget,
             allQuestionsMastered = allQuestionsMastered
         )
         saveError?.let { Text("Progression non enregistrée : $it", color = MaterialTheme.colorScheme.error) }

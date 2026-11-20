@@ -63,6 +63,30 @@ internal data class ProgressSnapshot(
         get() = topics.count { it.isMastered }
 }
 
+internal val VOCABULARY_FORMAT_GAMES = listOf(
+    LearningGame.VOCABULARY,
+    LearningGame.VOCABULARY_AUDIO,
+    LearningGame.VOCABULARY_FRENCH_TO_JAPANESE,
+    LearningGame.VOCABULARY_WRITE
+)
+
+internal fun ProgressSnapshot.vocabularyMasteryCounters(): Map<String, Int> {
+    val currentFormatProgress = VOCABULARY_FORMAT_GAMES
+        .flatMap { game -> questionsFor(game) }
+        .groupBy { it.questionId }
+    val legacyProgress = (questionsFor(LearningGame.VERBS) + questionsFor(LearningGame.COUNTER_CHALLENGE))
+        .groupBy { it.questionId.removePrefix("counter-") }
+    return (currentFormatProgress.keys + legacyProgress.keys).associateWith { questionId ->
+        val currentRows = currentFormatProgress[questionId].orEmpty()
+        val rows = if (currentRows.any { it.attempts > 0 }) {
+            currentRows
+        } else {
+            legacyProgress[questionId].orEmpty()
+        }
+        rows.maxOfOrNull { it.masteryCounter } ?: 0
+    }
+}
+
 internal object QuestionCounterReconciliation {
     fun reconcile(
         existingCounters: Map<String, Int>,
@@ -85,21 +109,27 @@ internal class ProgressStore(context: Context) {
         }
         val attemptsKey = attemptsKey(question, game)
         val correctKey = correctKey(question, game)
-        val masteryKey = masteryKey(question, game)
         val attempts = preferences.getInt(attemptsKey, 0) + 1
         val correctAnswers = preferences.getInt(correctKey, 0) + if (wasCorrect) 1 else 0
+        val sharesVocabularyMastery = game in VOCABULARY_FORMAT_GAMES && question is VocabularyQuestion
+        val currentMasteryCounter = if (sharesVocabularyMastery) {
+            vocabularyMasteryCounter(question as VocabularyQuestion)
+        } else {
+            preferences.getInt(masteryKey(question, game), 0)
+        }
         val masteryCounter = QuestionMasteryRules.updateCounter(
-            current = preferences.getInt(masteryKey, 0),
+            current = currentMasteryCounter,
             wasCorrect = wasCorrect
         )
 
-        check(
-            preferences.edit()
-                .putInt(attemptsKey, attempts)
-                .putInt(correctKey, correctAnswers)
-                .putInt(masteryKey, masteryCounter)
-                .commit()
-        ) { "Impossible d’enregistrer la réponse sur cet appareil." }
+        val editor = preferences.edit()
+            .putInt(attemptsKey, attempts)
+            .putInt(correctKey, correctAnswers)
+        val masteryGames = if (sharesVocabularyMastery) VOCABULARY_FORMAT_GAMES else listOf(game)
+        masteryGames.forEach { masteryGame ->
+            editor.putInt(masteryKey(question, masteryGame), masteryCounter)
+        }
+        check(editor.commit()) { "Impossible d’enregistrer la réponse sur cet appareil." }
 
         return snapshot(catalog)
     }
@@ -175,6 +205,17 @@ internal class ProgressStore(context: Context) {
             correctAnswers = preferences.getInt(correctKey(question, game), 0),
             masteryCounter = preferences.getInt(masteryKey(question, game), 0)
         )
+
+    private fun vocabularyMasteryCounter(question: VocabularyQuestion): Int {
+        val keys = VOCABULARY_FORMAT_GAMES.map { game -> masteryKey(question, game) } +
+            masteryKey(question, LearningGame.VERBS) +
+            if (question.bank == QuestionBank.COUNTERS) {
+                listOf(questionKey("counter-${question.id}", LearningGame.COUNTER_CHALLENGE, MASTERY_SUFFIX))
+            } else {
+                emptyList()
+            }
+        return keys.maxOfOrNull { key -> preferences.getInt(key, 0) } ?: 0
+    }
 
     private fun attemptsKey(question: LearningQuestion, game: LearningGame) =
         questionKey(question.id, game, ATTEMPTS_SUFFIX)

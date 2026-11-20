@@ -47,6 +47,7 @@ class MainActivity : ComponentActivity() {
     private var questionMasteryThreshold by mutableStateOf(25)
     private var masteredQuestionRepeatPercent by mutableStateOf(5)
     private var sessionQuestionCount by mutableStateOf(10)
+    private var selectedLearningTrack by mutableStateOf(LearningTrack.VOCABULARY)
     private var pendingInstallerUri: Uri? = null
     private var pendingInstallRelease: GitHubRelease? = null
     private val releaseClient = GitHubReleaseClient()
@@ -67,6 +68,7 @@ class MainActivity : ComponentActivity() {
         questionMasteryThreshold = learningSettingsStore.questionMasteryThreshold()
         masteredQuestionRepeatPercent = learningSettingsStore.masteredQuestionRepeatPercent()
         sessionQuestionCount = learningSettingsStore.sessionQuestionCount()
+        selectedLearningTrack = learningSettingsStore.selectedLearningTrack()
         setContent {
             MainScreen(
                 appVersion = BuildConfig.VERSION_NAME,
@@ -78,9 +80,11 @@ class MainActivity : ComponentActivity() {
                 questionMasteryThreshold = questionMasteryThreshold,
                 masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
                 sessionQuestionCount = sessionQuestionCount,
+                selectedLearningTrack = selectedLearningTrack,
                 selectedQuestionBanks = learningSettingsStore.selectedQuestionBanks(),
                 questionSpeech = questionSpeech,
                 onQuestionBanksChange = ::setSelectedQuestionBanks,
+                onLearningTrackChange = ::persistSelectedLearningTrack,
                 onCheckUpdates = ::checkForUpdates,
                 onDownloadUpdate = ::downloadUpdate,
                 onCheckQuestionUpdates = ::checkForQuestionUpdates,
@@ -304,6 +308,11 @@ class MainActivity : ComponentActivity() {
 
     private fun setSelectedQuestionBanks(value: Set<QuestionBank>) {
         learningSettingsStore.setSelectedQuestionBanks(value)
+    }
+
+    private fun persistSelectedLearningTrack(value: LearningTrack) {
+        learningSettingsStore.setSelectedLearningTrack(value)
+        selectedLearningTrack = value
     }
 
     private fun resetMasteryCounters(): String? =

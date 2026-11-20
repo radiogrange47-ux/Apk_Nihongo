@@ -34,12 +34,18 @@ internal data class QuestionCatalog(
     )
     fun questionsFor(game: LearningGame): List<LearningQuestion> = when (game) {
         LearningGame.PARTICLES -> particles
-        LearningGame.VOCABULARY -> vocabulary
+        LearningGame.VOCABULARY -> vocabulary + verbs
+        LearningGame.VOCABULARY_AUDIO,
+        LearningGame.VOCABULARY_FRENCH_TO_JAPANESE,
+        LearningGame.VOCABULARY_WRITE -> vocabulary + verbs
         LearningGame.VERBS -> verbs
         LearningGame.CONJUGATION -> conjugation
         LearningGame.PAIRS -> pairingQuestions()
         LearningGame.COUNTER_CHALLENGE -> counterChallengeQuestions()
     }
+
+    fun questionsForBank(bank: QuestionBank): List<LearningQuestion> =
+        (particles + vocabulary + verbs + conjugation).filter { it.bank == bank }
 
     fun pairingQuestions(): List<VocabularyQuestion> = pairingCache.questions
 
@@ -152,8 +158,11 @@ internal object QuestionCatalogCodec {
         if ('/' in name) name else "JLPT5/$name"
 
     private fun validateCatalog(catalog: QuestionCatalog) {
-        val allQuestions = LearningGame.values().flatMap(catalog::questionsFor)
-        require(allQuestions.map { it.id }.distinct().size == allQuestions.size) {
+        val sourceQuestionIds = catalog.particles.map { it.id } +
+            catalog.vocabulary.map { it.id } +
+            catalog.verbs.map { it.id } +
+            catalog.conjugation.map { it.id }
+        require(sourceQuestionIds.distinct().size == sourceQuestionIds.size) {
             "Les identifiants des questions doivent être uniques dans tout le contenu."
         }
         LearningGame.values().forEach { game ->

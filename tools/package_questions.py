@@ -28,7 +28,7 @@ def text(value, field):
 
 def choices(question, answer_field, label):
     options = question.get("choices")
-    require(isinstance(options, list) and len(options) == 6, f"{label} must have six choices")
+    require(isinstance(options, list) and len(options) == 6, f"{label} must have six source choices")
     require(all(isinstance(option, str) and option.strip() for option in options),
             f"{label} choices must be non-empty strings")
     require(len(set(options)) == 6, f"{label} choices must be unique")

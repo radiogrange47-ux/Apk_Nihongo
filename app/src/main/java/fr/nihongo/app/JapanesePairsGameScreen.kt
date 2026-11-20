@@ -44,6 +44,8 @@ internal fun JapanesePairsGameScreen(
     masteryThreshold: Int,
     masteredQuestionRepeatPercent: Int,
     completedQuestions: Int,
+    blockQuestionsCompleted: Int,
+    blockTarget: Int,
     seriesTarget: Int,
     allQuestionsMastered: Boolean,
     carryoverAnswer: AnswerFeedback?,
@@ -97,14 +99,13 @@ internal fun JapanesePairsGameScreen(
         val question = board.firstOrNull { it.id == japaneseId } ?: return
         val correct = japaneseId == frenchId
         saveError = onAnswer(question, LearningGame.PAIRS, correct)
-        if (saveError == null) {
-            masteryCounters = masteryCounters + (
-                question.id to QuestionMasteryRules.updateCounter(
-                    current = masteryCounters[question.id] ?: 0,
-                    wasCorrect = correct
-                )
+        if (saveError != null) return
+        masteryCounters = masteryCounters + (
+            question.id to QuestionMasteryRules.updateCounter(
+                current = masteryCounters[question.id] ?: 0,
+                wasCorrect = correct
             )
-        }
+        )
         if (correct) {
             matchedIds = matchedIds + japaneseId
             lastMatchedQuestion = question
@@ -161,7 +162,7 @@ internal fun JapanesePairsGameScreen(
             )
         }
         carryoverAnswer?.let { AnswerFeedbackBanner(it, carryoverAnswerEvent) }
-        Text("Paires japonaises", style = MaterialTheme.typography.headlineSmall)
+        Text("Paires", style = MaterialTheme.typography.headlineSmall)
         Text(
             "Grille ${completedQuestions + 1} / $seriesTarget · Associe les six mots et leur traduction.",
             color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -226,8 +227,8 @@ internal fun JapanesePairsGameScreen(
         }
         saveError?.let { Text("Progression non enregistrée : $it", color = MaterialTheme.colorScheme.error) }
         SessionProgressFooter(
-            questionsCompleted = completedQuestions,
-            target = seriesTarget,
+            questionsCompleted = blockQuestionsCompleted,
+            target = blockTarget,
             allQuestionsMastered = allQuestionsMastered
         )
         Spacer(Modifier.heightIn(min = 4.dp))

@@ -45,6 +45,7 @@ internal fun ProgressScreen(
 ) {
     var selectedGameName by rememberSaveable { mutableStateOf("") }
     val selectedGame = LearningGame.values().firstOrNull { it.name == selectedGameName }
+        ?.takeUnless { it == LearningGame.COUNTER_CHALLENGE || it == LearningGame.VERBS }
     BackHandler(enabled = selectedGame != null) { selectedGameName = "" }
 
     if (selectedGame == null) {
@@ -59,6 +60,7 @@ internal fun ProgressScreen(
         GameProgressDetails(
             game = selectedGame,
             progress = progress,
+            questionCatalog = questionCatalog,
             masteryThreshold = masteryThreshold,
             onBack = { selectedGameName = "" }
         )
@@ -73,9 +75,10 @@ private fun ProgressOverview(
     onBack: () -> Unit,
     onOpenGame: (LearningGame) -> Unit
 ) {
-    val exerciseCount = progress.questions.size
-    val attemptedExerciseCount = progress.questions.count { it.attempts > 0 }
-    val masteredExerciseCount = progress.questions.count { it.masteryCounter >= masteryThreshold }
+    val visibleQuestions = progress.visibleQuestions(questionCatalog)
+    val exerciseCount = visibleQuestions.size
+    val attemptedExerciseCount = visibleQuestions.count { it.attempts > 0 }
+    val masteredExerciseCount = visibleQuestions.count { it.masteryCounter >= masteryThreshold }
     val exerciseCompletion = if (exerciseCount == 0) 0f else masteredExerciseCount.toFloat() / exerciseCount
     val concepts = LearningConceptProgress.from(questionCatalog, progress, masteryThreshold)
     val remainingConceptCount = (concepts.total - concepts.mastered).coerceAtLeast(0)
@@ -135,8 +138,10 @@ private fun ProgressOverview(
         }
 
         Text("Tes exercices", style = MaterialTheme.typography.titleLarge)
-        LearningGame.values().forEach { game ->
-            val questions = progress.questionsFor(game)
+        LearningGame.values().filterNot {
+            it == LearningGame.COUNTER_CHALLENGE || it == LearningGame.VERBS
+        }.forEach { game ->
+            val questions = visibleQuestions.filter { it.game == game }
             val started = questions.count { it.attempts > 0 }
             val mastered = questions.count { it.masteryCounter >= masteryThreshold }
             val remaining = (questions.size - mastered).coerceAtLeast(0)
@@ -174,11 +179,12 @@ private fun ProgressOverview(
 private fun GameProgressDetails(
     game: LearningGame,
     progress: ProgressSnapshot,
+    questionCatalog: QuestionCatalog,
     masteryThreshold: Int,
     onBack: () -> Unit
 ) {
     var expandedTopic by rememberSaveable(game.name) { mutableStateOf("") }
-    val questions = progress.questionsFor(game)
+    val questions = progress.visibleQuestions(questionCatalog).filter { it.game == game }
     val topics = questions.groupBy { it.topic }.map { (name, entries) ->
         TopicDetail(name, entries, masteryThreshold)
     }.sortedWith(
@@ -346,11 +352,56 @@ private fun List<QuestionProgress>.accuracyLabel(): String {
 private fun ProgressSnapshot.accuracyLabel(): String =
     if (totalAttempts == 0) "—" else "$overallAccuracyPercent %"
 
+private fun ProgressSnapshot.visibleQuestions(catalog: QuestionCatalog): List<QuestionProgress> {
+    val vocabularyById = catalog.vocabulary.associateBy { it.id }
+    val currentVocabularyIds = VOCABULARY_FORMAT_GAMES
+        .flatMap { game -> questionsFor(game) }
+        .filter { it.attempts > 0 }
+        .mapTo(hashSetOf()) { it.questionId }
+    val legacyWordHistory = questionsFor(LearningGame.VERBS).map { question ->
+        question.copy(game = LearningGame.VOCABULARY)
+    }
+    val legacyCounterHistory = questionsFor(LearningGame.COUNTER_CHALLENGE).map { question ->
+        val questionId = question.questionId.removePrefix("counter-")
+        val source = vocabularyById[questionId]
+        question.copy(
+            game = LearningGame.VOCABULARY,
+            questionId = questionId,
+            topic = source?.topic ?: question.topic,
+            prompt = source?.prompt ?: question.prompt
+        )
+    }
+    return (
+        questions.filter {
+            it.game != LearningGame.COUNTER_CHALLENGE && it.game != LearningGame.VERBS
+        } + legacyWordHistory + legacyCounterHistory
+    )
+        .groupBy { it.game to it.questionId }
+        .values
+        .map { rows ->
+            val primary = rows.firstOrNull { it.game == LearningGame.VOCABULARY } ?: rows.first()
+            val sharedMastery = if (primary.questionId in currentVocabularyIds) {
+                rows.filter { it.game in VOCABULARY_FORMAT_GAMES }
+                    .maxOfOrNull { it.masteryCounter }
+            } else {
+                null
+            }
+            primary.copy(
+                attempts = rows.sumOf { it.attempts },
+                correctAnswers = rows.sumOf { it.correctAnswers },
+                masteryCounter = sharedMastery ?: rows.maxOf { it.masteryCounter }
+            )
+        }
+}
+
 private fun LearningGame.progressTitle(): String = when (this) {
     LearningGame.PARTICLES -> "Particules"
-    LearningGame.VOCABULARY -> "Vocabulaire"
+    LearningGame.VOCABULARY -> "Japonais → français"
+    LearningGame.VOCABULARY_AUDIO -> "Écoute et traduction"
+    LearningGame.VOCABULARY_FRENCH_TO_JAPANESE -> "Français → japonais"
+    LearningGame.VOCABULARY_WRITE -> "Écrire en japonais"
     LearningGame.VERBS -> "Verbes"
     LearningGame.CONJUGATION -> "Conjugaison"
-    LearningGame.PAIRS -> "Paires japonaises"
+    LearningGame.PAIRS -> "Paires"
     LearningGame.COUNTER_CHALLENGE -> "Défi des compteurs"
 }
