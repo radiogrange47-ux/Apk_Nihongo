@@ -4,6 +4,16 @@
 
 La version de travail du projet est l’application **2.0.0** (`versionCode` 2). La cible est une seule application Android, organisée en trois parcours sélectionnables depuis l’accueil. Le menu principal affiche ces parcours, l’accès aux réglages et la version installée. Le clic sur un parcours ouvre son écran de préparation, où seules les banques installées et pertinentes pour ce parcours sont proposées, puis les mini-jeux disponibles pour ce parcours peuvent être cochés. Cette section décrit le comportement actuel et prévaut sur les exigences de la spécification initiale plus bas lorsqu’elles se contredisent.
 
+### Progression par groupe roulant de notions
+
+Les séances conservent le changement de mini-jeu toutes les 10 questions par défaut. Indépendamment de ce rythme, le joueur travaille un groupe actif de **15 notions au maximum**, constitué à partir des banques et mini-jeux sélectionnés. Les formats qui portent sur une même notion partagent son groupe : répondre au même mot en écoute, en traduction ou dans Paires ne crée pas plusieurs notions.
+
+Les notions non acquises restent dans le groupe actif et sont tirées aléatoirement. Lorsqu’une notion atteint le seuil d’acquisition, sa place est renouvelée au début du mini-jeu suivant, après la série en cours ; s’il n’y a plus de mini-jeu dans le cycle, le renouvellement a lieu au démarrage du cycle suivant. La sélection est recalculée à partir du catalogue et de la progression enregistrée : elle reste cohérente après fermeture ou redémarrage de l’application.
+
+Les notions acquises restent consultables dans les statistiques. Le réglage de réapparition leur permet d’être proposées en révision ; le tirage de révision est plafonné à 15 notions acquises à la fois pour que les notions en cours restent prioritaires. Les séries de questions par mini-jeu gardent leur nombre configuré (10 par défaut) et ne sont pas interrompues quand une notion est acquise.
+
+Le menu de préparation du parcours indique le nombre de notions présentes dans le groupe actif et le nombre de notions non acquises restant dans la sélection. Les notions grammaticales sont regroupées par banque, thème et réponse ; les notions de conjugaison par banque et thème ; le vocabulaire par forme japonaise. Une erreur réduit le compteur d’un point et une bonne réponse l’augmente jusqu’au seuil réglé, fixé à 5 par défaut et ajustable de 4 à 10. Les statistiques affichent les étapes de découverte, de progression, de consolidation et d’acquisition.
+
 ### Parcours et contenu
 
 - **Vocabulaire** : mots à traduire, verbes, compteurs et paires japonaises. Les interrogatifs, démonstratifs et connecteurs sont du vocabulaire lorsqu’ils sont travaillés par leur traduction.
@@ -34,7 +44,7 @@ Chaque format de Vocabulaire est un mini-jeu sélectionnable distinct et utilise
 
 ### Séances et progression
 
-Une séance suit l’ordre d’affichage des mini-jeux sélectionnés et pose le nombre configuré dans les réglages (10 par défaut) pour chacun avant de passer au suivant. Le bilan s’affiche après le dernier mini-jeu ; la personne peut démarrer une nouvelle séance ou changer de parcours. Si un jeu a moins de questions disponibles que le nombre demandé, il utilise celles disponibles. Les questions de chaque jeu sont tirées aléatoirement et pondérées par leur maîtrise, avec le taux de réapparition configuré pour les questions maîtrisées. Une mauvaise réponse peut être retentée selon le réglage des tentatives ; elle ne fait avancer le compteur qu’une fois résolue.
+La séance enchaîne les mini-jeux sélectionnés avec le nombre configuré (10 par défaut) pour chacun. Le groupe actif est stable pendant une série ; il est actualisé au changement de mini-jeu, sans interrompre la série en cours. Jusqu’à 15 notions acquises peuvent revenir en révision, selon le pourcentage réglé. Les questions sont tirées au hasard dans le groupe et une mauvaise réponse peut être retentée selon le réglage des tentatives.
 
 La progression et les préférences restent enregistrées localement. Les parcours partagent le catalogue et les mécanismes existants de correction, d’indices, de lecture vocale et de statistiques. Les notions affichées dans le résumé de parcours sont calculées à partir des banques actuellement cochées.
 

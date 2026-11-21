@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
     private var questionCatalog by mutableStateOf<QuestionCatalog?>(null)
     private var progressSnapshot by mutableStateOf<ProgressSnapshot?>(null)
     private var extraAttempts by mutableStateOf(1)
-    private var questionMasteryThreshold by mutableStateOf(25)
+    private var questionMasteryThreshold by mutableStateOf(5)
     private var masteredQuestionRepeatPercent by mutableStateOf(5)
     private var sessionQuestionCount by mutableStateOf(10)
     private var selectedLearningTrack by mutableStateOf(LearningTrack.VOCABULARY)
@@ -264,7 +264,7 @@ class MainActivity : ComponentActivity() {
         try {
             val catalog = questionCatalog
                 ?: return "Les questions ne sont pas encore chargées."
-            progressSnapshot = progressStore.recordAnswer(question, game, wasCorrect, catalog)
+            progressSnapshot = progressStore.recordAnswer(question, game, wasCorrect, catalog, questionMasteryThreshold)
             null
         } catch (exception: Exception) {
             exception.message ?: "La réponse n’a pas pu être enregistrée."

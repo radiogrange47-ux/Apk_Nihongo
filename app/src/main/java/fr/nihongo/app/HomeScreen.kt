@@ -39,9 +39,7 @@ private val HomeAccent = Color(0xFFE05252)
 private val HomePanel = Color(0xFF141414)
 private val HomeBorder = Color(0xFF292929)
 
-private data class BankMasterySummary(val mastered: Int, val total: Int) {
-    val percent: Int get() = if (total == 0) 0 else mastered * 100 / total
-}
+private data class BankMasterySummary(val mastered: Int, val learning: Int, val percent: Int)
 
 @Composable
 internal fun HomeScreen(
@@ -106,8 +104,8 @@ internal fun HomeScreen(
                             Text(track.description, color = MaterialTheme.colorScheme.onSurfaceVariant)
                         }
                         Column(horizontalAlignment = Alignment.End) {
-                            Text("${summary.mastered}/${summary.total}", color = HomeAccent)
-                            Text("notions", style = MaterialTheme.typography.labelSmall,
+                            Text("${summary.mastered} acquises", color = HomeAccent)
+                            Text("${summary.learning + summary.discovered + summary.nearlyReady} en cours · ${summary.total} notions", style = MaterialTheme.typography.labelSmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant)
                         }
                     }
@@ -138,6 +136,8 @@ internal fun TrackSetupScreen(
     availableBanks: List<QuestionBank>,
     selectedGames: List<LearningGame>,
     playableGameCount: Int,
+    activeNotionCount: Int,
+    remainingNotionCount: Int,
     selectedBanks: Set<QuestionBank>,
     onBack: () -> Unit,
     onBankSelectionChange: (QuestionBank, Boolean) -> Unit,
@@ -151,6 +151,9 @@ internal fun TrackSetupScreen(
             .groupBy { it.questionId }
             .mapValues { (_, rows) -> rows.maxOf { it.masteryCounter } }
     }
+    val attemptsByQuestion = remember(progress) {
+        progress.questions.groupBy { it.questionId }.mapValues { (_, rows) -> rows.sumOf { it.attempts } }
+    }
     val vocabularyMastery = remember(progress) { progress.vocabularyMasteryCounters() }
     val pairIdsByMeaning = remember(questionCatalog) {
         questionCatalog.pairingQuestions().associate {
@@ -159,20 +162,38 @@ internal fun TrackSetupScreen(
     }
     val bankMastery = availableBanks.associateWith { bank ->
         val questions = questionCatalog.questionsForBank(bank)
-        val mastered = questions.count { question ->
+        val counters = questions.map { question ->
             val directCounter = if (question is VocabularyQuestion) {
                 vocabularyMastery[question.id] ?: 0
             } else {
                 masteredCounters[question.id] ?: 0
             }
-            val direct = directCounter >= masteryThreshold
             val pairId = (question as? VocabularyQuestion)?.let {
                 pairIdsByMeaning[Triple(it.kanji, it.hiragana, it.answer)]
             }
-            val paired = pairId != null && (masteredCounters[pairId] ?: 0) >= masteryThreshold
-            direct || paired
+            maxOf(directCounter, pairId?.let { masteredCounters[it] ?: 0 } ?: 0)
         }
-        BankMasterySummary(mastered, questions.size)
+        val stages = questions.mapIndexed { index, question ->
+            val pairId = (question as? VocabularyQuestion)?.let {
+                pairIdsByMeaning[Triple(it.kanji, it.hiragana, it.answer)]
+            }
+            val attempts = (attemptsByQuestion[question.id] ?: 0) +
+                (pairId?.let { attemptsByQuestion[it] ?: 0 } ?: 0)
+            MasteryStage.from(counters[index], masteryThreshold, attempts)
+        }
+        BankMasterySummary(
+            mastered = stages.count { it == MasteryStage.MASTERED },
+            learning = stages.count { it == MasteryStage.FIRST_WIN || it == MasteryStage.LEARNING || it == MasteryStage.NEARLY_READY },
+            percent = if (stages.isEmpty()) 0 else (stages.sumOf {
+                when (it) {
+                    MasteryStage.DISCOVER -> 0.0
+                    MasteryStage.FIRST_WIN -> 0.25
+                    MasteryStage.LEARNING -> 0.5
+                    MasteryStage.NEARLY_READY -> 0.75
+                    MasteryStage.MASTERED -> 1.0
+                }
+            } * 100 / stages.size).toInt()
+        )
     }
     val gamePresentation = mapOf(
         LearningGame.PARTICLES to ("助" to "Particules"),
@@ -224,7 +245,7 @@ internal fun TrackSetupScreen(
                                 Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                                     Text(bank.title)
                                     Text(
-                                        "${mastery.percent}% · ${mastery.mastered}/${mastery.total}",
+                                        "${mastery.percent}% - ${mastery.mastered} acquises - ${mastery.learning} en cours",
                                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                                         style = MaterialTheme.typography.labelSmall
                                     )
@@ -242,8 +263,13 @@ internal fun TrackSetupScreen(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Column {
+                Column(modifier = Modifier.weight(1f)) {
                     Text("Mini-jeux", style = MaterialTheme.typography.titleLarge)
+                    Text(
+                        "$activeNotionCount notion(s) dans le groupe actif sur ${ActiveLearningPool.MAX_ACTIVE_NOTIONS} - $remainingNotionCount à apprendre",
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        style = MaterialTheme.typography.bodySmall
+                    )
                     Text("Choisis les jeux de cette séance", color = MaterialTheme.colorScheme.onSurfaceVariant)
                 }
                 Row {

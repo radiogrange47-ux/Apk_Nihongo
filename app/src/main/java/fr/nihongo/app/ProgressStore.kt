@@ -102,7 +102,8 @@ internal class ProgressStore(context: Context) {
         question: LearningQuestion,
         game: LearningGame,
         wasCorrect: Boolean,
-        catalog: QuestionCatalog
+        catalog: QuestionCatalog,
+        masteryThreshold: Int
     ): ProgressSnapshot {
         require(catalog.questionsFor(game).any { it.id == question.id }) {
             "Cette question ne fait pas partie du contenu installé."
@@ -119,7 +120,8 @@ internal class ProgressStore(context: Context) {
         }
         val masteryCounter = QuestionMasteryRules.updateCounter(
             current = currentMasteryCounter,
-            wasCorrect = wasCorrect
+            wasCorrect = wasCorrect,
+            threshold = masteryThreshold
         )
 
         val editor = preferences.edit()

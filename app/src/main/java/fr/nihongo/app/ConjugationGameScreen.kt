@@ -145,7 +145,8 @@ internal fun ConjugationGameScreen(
         masteryCounters = masteryCounters + (
             question.id to QuestionMasteryRules.updateCounter(
                 current = masteryCounters[question.id] ?: 0,
-                wasCorrect = correct
+                wasCorrect = correct,
+                threshold = masteryThreshold
             )
         )
         selectedToken = null

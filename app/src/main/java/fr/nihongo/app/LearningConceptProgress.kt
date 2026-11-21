@@ -5,7 +5,11 @@ import java.text.Normalizer
 internal data class LearningConceptProgress(
     val total: Int,
     val mastered: Int,
-    val attempted: Int
+    val attempted: Int,
+    val discovered: Int,
+    val learning: Int,
+    val nearlyReady: Int,
+    val completion: Float
 ) {
     companion object {
         /**
@@ -79,13 +83,32 @@ internal data class LearningConceptProgress(
             catalog.conjugation.forEach { register(it, LearningGame.CONJUGATION) }
 
             val progressByQuestion = progress.questions.associateBy { QuestionRef(it.game, it.questionId) }
-            val statuses = concepts.values.map { refs ->
+            val conceptRows = concepts.values.map { refs ->
                 refs.mapNotNull { ref -> progressByQuestion[ref] }
             }
+            val stages = conceptRows.map { rows ->
+                MasteryStage.from(
+                    counter = rows.maxOfOrNull { it.masteryCounter } ?: 0,
+                    threshold = masteryThreshold,
+                    attempts = rows.sumOf { it.attempts }
+                )
+            }
             return LearningConceptProgress(
-                total = statuses.size,
-                mastered = statuses.count { rows -> rows.any { it.masteryCounter >= masteryThreshold } },
-                attempted = statuses.count { rows -> rows.any { it.attempts > 0 } }
+                total = stages.size,
+                mastered = stages.count { it == MasteryStage.MASTERED },
+                attempted = conceptRows.count { rows -> rows.any { it.attempts > 0 } },
+                discovered = stages.count { it == MasteryStage.FIRST_WIN },
+                learning = stages.count { it == MasteryStage.LEARNING },
+                nearlyReady = stages.count { it == MasteryStage.NEARLY_READY },
+                completion = if (stages.isEmpty()) 0f else stages.sumOf {
+                    when (it) {
+                        MasteryStage.DISCOVER -> 0.0
+                        MasteryStage.FIRST_WIN -> 0.25
+                        MasteryStage.LEARNING -> 0.5
+                        MasteryStage.NEARLY_READY -> 0.75
+                        MasteryStage.MASTERED -> 1.0
+                    }
+                }.toFloat() / stages.size
             )
         }
 

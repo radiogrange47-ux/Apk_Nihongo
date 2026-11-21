@@ -78,11 +78,13 @@ private fun ProgressOverview(
     val visibleQuestions = progress.visibleQuestions(questionCatalog)
     val exerciseCount = visibleQuestions.size
     val attemptedExerciseCount = visibleQuestions.count { it.attempts > 0 }
-    val masteredExerciseCount = visibleQuestions.count { it.masteryCounter >= masteryThreshold }
-    val exerciseCompletion = if (exerciseCount == 0) 0f else masteredExerciseCount.toFloat() / exerciseCount
+    val exerciseStages = visibleQuestions.map { MasteryStage.from(it.masteryCounter, masteryThreshold, it.attempts) }
+    val masteredExerciseCount = exerciseStages.count { it == MasteryStage.MASTERED }
+    val learningExerciseCount = exerciseStages.count { it == MasteryStage.FIRST_WIN || it == MasteryStage.LEARNING || it == MasteryStage.NEARLY_READY }
+    val exerciseCompletion = if (exerciseCount == 0) 0f else exerciseStages.sumOf { it.progressWeight() }.toFloat() / exerciseCount
     val concepts = LearningConceptProgress.from(questionCatalog, progress, masteryThreshold)
     val remainingConceptCount = (concepts.total - concepts.mastered).coerceAtLeast(0)
-    val conceptCompletion = if (concepts.total == 0) 0f else concepts.mastered.toFloat() / concepts.total
+    val conceptCompletion = concepts.completion
     val encouragement = when {
         concepts.total == 0 -> "Aucune notion n’est disponible pour le moment."
         progress.totalAttempts == 0 -> "Ton parcours commence ici : choisis un exercice et lance-toi."
@@ -112,7 +114,7 @@ private fun ProgressOverview(
                     color = ProgressSuccess
                 )
                 Text(
-                    "${concepts.mastered} / ${concepts.total} notions maîtrisées  ·  ${concepts.attempted} découvertes",
+                    "${concepts.mastered} acquises · ${concepts.nearlyReady} presque acquises · ${concepts.learning + concepts.discovered} en cours · ${concepts.total - concepts.attempted} à découvrir",
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     style = MaterialTheme.typography.bodySmall
                 )
@@ -123,7 +125,7 @@ private fun ProgressOverview(
                     color = MaterialTheme.colorScheme.primary
                 )
                 Text(
-                    "$masteredExerciseCount / $exerciseCount exercices maîtrisés  ·  $attemptedExerciseCount découverts",
+                    "$masteredExerciseCount acquises · $learningExerciseCount en cours · ${exerciseCount - attemptedExerciseCount} à découvrir",
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     style = MaterialTheme.typography.bodySmall
                 )
@@ -142,9 +144,9 @@ private fun ProgressOverview(
             it == LearningGame.COUNTER_CHALLENGE || it == LearningGame.VERBS
         }.forEach { game ->
             val questions = visibleQuestions.filter { it.game == game }
-            val started = questions.count { it.attempts > 0 }
-            val mastered = questions.count { it.masteryCounter >= masteryThreshold }
-            val remaining = (questions.size - mastered).coerceAtLeast(0)
+            val stages = questions.map { MasteryStage.from(it.masteryCounter, masteryThreshold, it.attempts) }
+            val mastered = stages.count { it == MasteryStage.MASTERED }
+            val learning = stages.count { it == MasteryStage.FIRST_WIN || it == MasteryStage.LEARNING || it == MasteryStage.NEARLY_READY }
             ProgressCard(
                 modifier = Modifier.clickable { onOpenGame(game) }
             ) {
@@ -159,13 +161,13 @@ private fun ProgressOverview(
                     }
                     LinearProgressIndicator(
                         progress = {
-                            if (questions.isEmpty()) 0f else mastered.toFloat() / questions.size
+                            if (questions.isEmpty()) 0f else stages.sumOf { it.progressWeight() }.toFloat() / questions.size
                         },
                         modifier = Modifier.fillMaxWidth(),
                         color = ProgressSuccess
                     )
                     Text(
-                        "$mastered / ${questions.size} maîtrisées  ·  $remaining à maîtriser  ·  $started découvertes  ·  réussite ${questions.accuracyLabel()}",
+                        "$mastered acquises \u00b7 $learning en cours \u00b7 ${questions.size - mastered - learning} \u00e0 d\u00e9couvrir",
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         style = MaterialTheme.typography.bodySmall
                     )
@@ -193,8 +195,10 @@ private fun GameProgressDetails(
             .thenBy { it.name }
     )
     val attempted = questions.count { it.attempts > 0 }
-    val mastered = questions.count { it.masteryCounter >= masteryThreshold }
-    val completion = if (questions.isEmpty()) 0f else mastered.toFloat() / questions.size
+    val stages = questions.map { MasteryStage.from(it.masteryCounter, masteryThreshold, it.attempts) }
+    val mastered = stages.count { it == MasteryStage.MASTERED }
+    val learning = stages.count { it == MasteryStage.FIRST_WIN || it == MasteryStage.LEARNING || it == MasteryStage.NEARLY_READY }
+    val completion = if (questions.isEmpty()) 0f else stages.sumOf { it.progressWeight() }.toFloat() / questions.size
 
     Column(
         modifier = Modifier
@@ -211,7 +215,7 @@ private fun GameProgressDetails(
             Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 Text(
                     if (questions.isEmpty()) "Aucune question dans cet exercice."
-                    else "$mastered question(s) maîtrisée(s) sur ${questions.size}",
+                    else "$mastered acquises \u00b7 $learning en cours \u00b7 ${questions.size - mastered - learning} \u00e0 d\u00e9couvrir",
                     style = MaterialTheme.typography.titleMedium
                 )
                 LinearProgressIndicator(
@@ -247,7 +251,7 @@ private fun GameProgressDetails(
                             Column(modifier = Modifier.weight(1f)) {
                                 Text(topic.name, style = MaterialTheme.typography.titleMedium)
                                 Text(
-                                    "${topic.masteredCount} / ${topic.questions.size} maîtrisées  ·  ${topic.attemptedCount} découvertes",
+                                    "${topic.masteredCount} acquises · ${topic.learningCount} en cours · ${topic.questions.size - topic.masteredCount - topic.learningCount} à découvrir",
                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                                     style = MaterialTheme.typography.bodySmall
                                 )
@@ -282,10 +286,10 @@ private data class TopicDetail(
 ) {
     val masteredCount: Int
         get() = questions.count { it.masteryCounter >= masteryThreshold }
-    val attemptedCount: Int
-        get() = questions.count { it.attempts > 0 }
+    val learningCount: Int
+        get() = questions.count { MasteryStage.from(it.masteryCounter, masteryThreshold, it.attempts) in listOf(MasteryStage.FIRST_WIN, MasteryStage.LEARNING, MasteryStage.NEARLY_READY) }
     val completionPercent: Int
-        get() = if (questions.isEmpty()) 0 else masteredCount * 100 / questions.size
+        get() = if (questions.isEmpty()) 0 else (questions.sumOf { MasteryStage.from(it.masteryCounter, masteryThreshold, it.attempts).progressWeight() } * 100 / questions.size).toInt()
     val accuracyPercent: Int?
         get() {
             val attempts = questions.sumOf { it.attempts }
@@ -295,7 +299,7 @@ private data class TopicDetail(
 
 @Composable
 private fun QuestionProgressRow(question: QuestionProgress, masteryThreshold: Int) {
-    val isMastered = question.masteryCounter >= masteryThreshold
+    val stage = MasteryStage.from(question.masteryCounter, masteryThreshold, question.attempts)
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -309,12 +313,8 @@ private fun QuestionProgressRow(question: QuestionProgress, masteryThreshold: In
             overflow = TextOverflow.Ellipsis
         )
         Text(
-            when {
-                isMastered -> "Maîtrisée · ${question.attempts} réponses · ${question.accuracyPercent}% de réussite"
-                question.attempts == 0 -> "À découvrir · compteur ${question.masteryCounter} / $masteryThreshold"
-                else -> "À renforcer · ${question.attempts} réponses · ${question.accuracyPercent}% · compteur ${question.masteryCounter} / $masteryThreshold"
-            },
-            color = if (isMastered) ProgressSuccess else MaterialTheme.colorScheme.onSurfaceVariant,
+            "${stage.label} · ${question.masteryCounter.coerceAtMost(masteryThreshold)} / $masteryThreshold · ${question.attempts} réponses · ${question.accuracyPercent}%",
+            color = if (stage == MasteryStage.MASTERED) ProgressSuccess else MaterialTheme.colorScheme.onSurfaceVariant,
             style = MaterialTheme.typography.bodySmall
         )
     }
@@ -347,6 +347,14 @@ private fun List<QuestionProgress>.accuracyLabel(): String {
     val attempts = sumOf { it.attempts }
     if (attempts == 0) return "—"
     return "${sumOf { it.correctAnswers } * 100 / attempts} %"
+}
+
+private fun MasteryStage.progressWeight(): Double = when (this) {
+    MasteryStage.DISCOVER -> 0.0
+    MasteryStage.FIRST_WIN -> 0.25
+    MasteryStage.LEARNING -> 0.5
+    MasteryStage.NEARLY_READY -> 0.75
+    MasteryStage.MASTERED -> 1.0
 }
 
 private fun ProgressSnapshot.accuracyLabel(): String =

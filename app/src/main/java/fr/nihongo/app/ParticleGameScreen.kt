@@ -236,7 +236,8 @@ internal fun ParticleGameScreen(
                                 feedbackEvent++
                                 val updatedCounter = QuestionMasteryRules.updateCounter(
                                     current = masteryCounters[exercise.id] ?: 0,
-                                    wasCorrect = correct
+                                    wasCorrect = correct,
+                                    threshold = masteryThreshold
                                 )
                                 masteryCounters = masteryCounters + (exercise.id to updatedCounter)
                                 selectedToken = null

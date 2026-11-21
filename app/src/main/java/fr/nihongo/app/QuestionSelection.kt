@@ -3,12 +3,32 @@ package fr.nihongo.app
 import kotlin.random.Random
 
 internal object QuestionMasteryRules {
-    fun updateCounter(current: Int, wasCorrect: Boolean): Int {
+    fun updateCounter(current: Int, wasCorrect: Boolean, threshold: Int = 5): Int {
         require(current >= 0)
+        require(threshold > 0)
+        val normalizedCurrent = current.coerceAtMost(threshold)
         return if (wasCorrect) {
-            if (current == Int.MAX_VALUE) current else current + 1
+            (normalizedCurrent + 1).coerceAtMost(threshold)
         } else {
-            (current - 1).coerceAtLeast(0)
+            (normalizedCurrent - 1).coerceAtLeast(0)
+        }
+    }
+}
+
+internal enum class MasteryStage(val label: String) {
+    DISCOVER("À découvrir"),
+    FIRST_WIN("Découverte"),
+    LEARNING("En cours"),
+    NEARLY_READY("Presque acquis"),
+    MASTERED("Acquise");
+
+    companion object {
+        fun from(counter: Int, threshold: Int, attempts: Int = counter): MasteryStage {
+            require(threshold > 0)
+            if (counter <= 0) return if (attempts > 0) LEARNING else DISCOVER
+            if (counter >= threshold) return MASTERED
+            if (counter == 1) return FIRST_WIN
+            return if (counter < threshold - 1) LEARNING else NEARLY_READY
         }
     }
 }

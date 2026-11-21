@@ -15,12 +15,14 @@ internal class LearningSettingsStore(context: Context) {
         }
     }
 
-    fun questionMasteryThreshold(): Int =
-        preferences.getInt(MASTERY_THRESHOLD_KEY, DEFAULT_MASTERY_THRESHOLD)
-            .coerceAtLeast(MIN_MASTERY_THRESHOLD)
+    fun questionMasteryThreshold(): Int {
+        val savedValue = preferences.getInt(MASTERY_THRESHOLD_KEY, DEFAULT_MASTERY_THRESHOLD)
+        return savedValue.takeIf { it in MIN_MASTERY_THRESHOLD..MAX_MASTERY_THRESHOLD }
+            ?: DEFAULT_MASTERY_THRESHOLD
+    }
 
     fun setQuestionMasteryThreshold(value: Int) {
-        require(value >= MIN_MASTERY_THRESHOLD)
+        require(value in MIN_MASTERY_THRESHOLD..MAX_MASTERY_THRESHOLD)
         check(preferences.edit().putInt(MASTERY_THRESHOLD_KEY, value).commit()) {
             "Impossible d’enregistrer le seuil de maîtrise des questions."
         }
@@ -99,11 +101,12 @@ internal class LearningSettingsStore(context: Context) {
         const val LEARNING_TRACK_KEY = "learning_track"
         const val LEGACY_SESSION_STREAK_KEY = "session_correct_streak"
         const val DEFAULT_EXTRA_ATTEMPTS = 1
-        const val DEFAULT_MASTERY_THRESHOLD = 25
+        const val DEFAULT_MASTERY_THRESHOLD = 5
         const val DEFAULT_SESSION_QUESTION_COUNT = 10
         const val MIN_EXTRA_ATTEMPTS = 0
         const val MAX_EXTRA_ATTEMPTS = 5
-        const val MIN_MASTERY_THRESHOLD = 1
+        const val MIN_MASTERY_THRESHOLD = 4
+        const val MAX_MASTERY_THRESHOLD = 10
         const val DEFAULT_MASTERED_REPEAT_PERCENT = 5
         const val MIN_MASTERED_REPEAT_PERCENT = 0
         const val MAX_MASTERED_REPEAT_PERCENT = 100

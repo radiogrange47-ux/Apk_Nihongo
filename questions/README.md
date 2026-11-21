@@ -30,6 +30,14 @@ L’accueil propose trois parcours dans une seule application :
 
 Le parcours détermine le type de travail : traduire les mots dans Vocabulaire, appliquer une règle en contexte dans Grammaire, et produire la forme verbale dans Conjugaison. Les banques affichées sont limitées à celles qui contiennent des questions adaptées au parcours.
 
+### Groupe actif de notions
+
+La séance continue de passer au mini-jeu suivant après 10 questions par défaut. En parallèle, elle travaille au plus 15 notions actives choisies dans l’ensemble des banques sélectionnées et des mini-jeux cochés. Les notions partagées entre plusieurs formats (par exemple un mot vu en traduction, à l’écoute et dans Paires) ne comptent qu’une fois.
+
+Le groupe actif est déterminé par la progression persistée : les notions non acquises y restent, et le groupe est renouvelé au début du mini-jeu suivant, après la série en cours. Si le cycle se termine, le groupe est renouvelé au démarrage du cycle suivant. L’ordre de sélection est pseudo-aléatoire mais stable pour un même choix de parcours, banques et jeux, afin que le groupe ne change pas à chaque recomposition de l’écran. Les questions à l’intérieur du groupe restent tirées aléatoirement.
+
+Les notions acquises restent consultables et peuvent revenir en révision selon le pourcentage configuré. Pour préserver la priorité des notions à apprendre, le tirage présente au maximum 15 notions acquises en révision à la fois. Ce quota de révision est distinct des 15 notions actives.
+
 ### Mini-jeux disponibles et pistes à développer
 
 Jeux actuellement proposés par parcours :
