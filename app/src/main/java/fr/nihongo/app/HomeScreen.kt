@@ -135,6 +135,7 @@ internal fun TrackSetupScreen(
     masteryThreshold: Int,
     availableBanks: List<QuestionBank>,
     selectedGames: List<LearningGame>,
+    evaluationMode: Boolean,
     playableGameCount: Int,
     activeNotionCount: Int,
     remainingNotionCount: Int,
@@ -142,6 +143,7 @@ internal fun TrackSetupScreen(
     onBack: () -> Unit,
     onBankSelectionChange: (QuestionBank, Boolean) -> Unit,
     onGameSelectionChange: (LearningGame, Boolean) -> Unit,
+    onEvaluationModeChange: (Boolean) -> Unit,
     onSelectAll: () -> Unit,
     onSelectNone: () -> Unit,
     onStart: () -> Unit
@@ -208,6 +210,7 @@ internal fun TrackSetupScreen(
     val startLabel = when {
         selectedGames.isEmpty() -> "Choisis un mini-jeu"
         playableGameCount == 0 -> "Aucune question disponible"
+        evaluationMode -> "Démarrer l’évaluation · $playableGameCount jeu${if (playableGameCount > 1) "x" else ""}"
         else -> "Démarrer la séance · $playableGameCount jeu${if (playableGameCount > 1) "x" else ""}"
     }
 
@@ -257,6 +260,36 @@ internal fun TrackSetupScreen(
             }
         }
 
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(18.dp),
+            colors = CardDefaults.cardColors(containerColor = HomePanel),
+            border = androidx.compose.foundation.BorderStroke(1.dp, HomeBorder)
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable { onEvaluationModeChange(!evaluationMode) }
+                    .padding(12.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(10.dp)
+            ) {
+                Checkbox(
+                    checked = evaluationMode,
+                    onCheckedChange = onEvaluationModeChange
+                )
+                Column(verticalArrangement = Arrangement.spacedBy(3.dp)) {
+                    Text("Mode évaluation", style = MaterialTheme.typography.titleMedium)
+                    Text(
+                        "Chaque notion des banques sélectionnées est posée une fois. " +
+                            "Le résultat et les notions à revoir s’affichent à la fin.",
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        style = MaterialTheme.typography.bodySmall
+                    )
+                }
+            }
+        }
+
         Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -270,7 +303,11 @@ internal fun TrackSetupScreen(
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         style = MaterialTheme.typography.bodySmall
                     )
-                    Text("Choisis les jeux de cette séance", color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Text(
+                if (evaluationMode) "Choisis les jeux à inclure dans l’évaluation"
+                else "Choisis les jeux de cette séance",
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
                 }
                 Row {
                     TextButton(onClick = onSelectAll) { Text("Tout") }

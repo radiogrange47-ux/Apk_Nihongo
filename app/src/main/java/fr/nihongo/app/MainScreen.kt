@@ -2,6 +2,7 @@ package fr.nihongo.app
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
@@ -43,6 +44,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.delay
 import kotlin.math.roundToInt
 
 private val NihongoBackground = Color(0xFF080808)
@@ -55,10 +57,26 @@ private enum class AppScreen {
     TRACK_SETUP,
     SESSION,
     BLOCK_SUMMARY,
+    EVALUATION_SUMMARY,
     PROGRESS,
     SETTINGS,
     UPDATES,
     QUESTION_DATA_UPDATES
+}
+
+private fun sessionQuestionsFor(
+    game: LearningGame,
+    evaluationMode: Boolean,
+    evaluationQuestionsByGame: Map<LearningGame, List<LearningQuestion>>,
+    learningPool: ActiveLearningPool
+): List<LearningQuestion> =
+    if (evaluationMode) evaluationQuestionsByGame[game].orEmpty() else learningPool.questionsFor(game)
+
+private fun evaluationLabel(question: LearningQuestion): String = when (question) {
+    is VocabularyQuestion -> "${question.kanji} (${question.hiragana}) — ${question.answer}"
+    is ParticleExercise -> "${question.topic} — ${question.answer}"
+    is ConjugationQuestion -> "${question.topic} — ${question.answerEnding}"
+    else -> question.topic
 }
 
 @Composable
@@ -122,6 +140,12 @@ internal fun MainScreen(
     var sessionRound by rememberSaveable { mutableIntStateOf(0) }
     var poolCycle by rememberSaveable { mutableIntStateOf(0) }
     var sessionTargetCounts by rememberSaveable { mutableStateOf("") }
+    var evaluationMode by rememberSaveable { mutableStateOf(false) }
+    var evaluationStartedAtMillis by rememberSaveable { mutableStateOf(0L) }
+    var evaluationElapsedSeconds by rememberSaveable { mutableStateOf(0L) }
+    var evaluationNotionCount by rememberSaveable { mutableIntStateOf(0) }
+    var evaluationErrorCount by rememberSaveable { mutableIntStateOf(0) }
+    var evaluationMistakes by remember { mutableStateOf(emptyList<EvaluationMistake>()) }
     var latestSessionAnswer by remember { mutableStateOf<AnswerFeedback?>(null) }
     var previousGameAnswer by remember { mutableStateOf<AnswerFeedback?>(null) }
     var previousGameAnswerEvent by remember { mutableIntStateOf(0) }
@@ -144,6 +168,9 @@ internal fun MainScreen(
             masteredQuestionRepeatPercent = masteredQuestionRepeatPercent
         )
     }
+    val evaluationQuestionsByGame = remember(trackCatalog, selectedGames) {
+        selectedGames.associateWith { game -> trackCatalog.questionsFor(game) }
+    }
 
     fun questionCountersFor(game: LearningGame): Map<String, Int> =
         if (game in VOCABULARY_FORMAT_GAMES || game == LearningGame.VERBS) {
@@ -164,7 +191,14 @@ internal fun MainScreen(
 
     val eligibleQuestionCounts = eligibleQuestionCountsFor(activeLearningPool)
     val playableGames = selectedGames.filter { (eligibleQuestionCounts[it] ?: 0) > 0 }
-    val sessionEligibleQuestionCounts = eligibleQuestionCountsFor(sessionLearningPool)
+    val evaluationPlayableGameCount = selectedGames.count { evaluationQuestionsByGame[it].orEmpty().isNotEmpty() }
+    val sessionEligibleQuestionCounts = if (evaluationMode) {
+        LearningGame.values().associateWith { game ->
+            val count = evaluationQuestionsByGame[game].orEmpty().size
+            if (game == LearningGame.PAIRS) (count + 5) / 6 else count
+        }
+    } else eligibleQuestionCountsFor(sessionLearningPool)
+    val sessionRepeatPercent = if (evaluationMode) 100 else masteredQuestionRepeatPercent
     val sessionGames = sessionGameNames.split(",")
         .mapNotNull { name -> LearningGame.values().firstOrNull { it.name == name } }
     val storedSessionTargets = sessionTargetCounts.split(",").mapNotNull { entry ->
@@ -175,7 +209,7 @@ internal fun MainScreen(
     }.toMap()
 
     LaunchedEffect(poolCycle) {
-        if (screen == AppScreen.SESSION && sessionGames.isNotEmpty()) {
+        if (!evaluationMode && screen == AppScreen.SESSION && sessionGames.isNotEmpty()) {
             val completedGames = sessionGames.take(sessionGameIndex)
             val remainingGames = sessionGames.drop(sessionGameIndex)
             val remainingTargets = LearningSessionRules.allocateQuestionTargets(
@@ -223,7 +257,13 @@ internal fun MainScreen(
     }
 
     fun startSession() {
-        if (playableGames.isEmpty()) return
+        val gamesToPlay = if (evaluationMode) {
+            selectedGames.filter { game ->
+                val count = evaluationQuestionsByGame[game].orEmpty().size
+                count > 0
+            }
+        } else playableGames
+        if (gamesToPlay.isEmpty()) return
         val nextPool = ActiveLearningPool.build(
             catalog = trackCatalog,
             games = selectedGames,
@@ -231,8 +271,10 @@ internal fun MainScreen(
             masteryThreshold = questionMasteryThreshold,
             masteredQuestionRepeatPercent = masteredQuestionRepeatPercent
         )
-        val targets = LearningSessionRules.allocateQuestionTargets(
-            games = playableGames,
+        val targets = if (evaluationMode) {
+            gamesToPlay.associateWith { game -> sessionEligibleQuestionCounts.getValue(game) }
+        } else LearningSessionRules.allocateQuestionTargets(
+            games = gamesToPlay,
             eligibleCounts = eligibleQuestionCountsFor(nextPool),
             questionsPerGame = sessionQuestionCount
         )
@@ -250,6 +292,13 @@ internal fun MainScreen(
         poolCycle++
         latestSessionAnswer = null
         previousGameAnswer = null
+        evaluationMistakes = emptyList()
+        evaluationStartedAtMillis = if (evaluationMode) System.currentTimeMillis() else 0L
+        evaluationElapsedSeconds = 0L
+        evaluationErrorCount = 0
+        evaluationNotionCount = if (evaluationMode) {
+            gamesToPlay.sumOf { evaluationQuestionsByGame[it].orEmpty().size }
+        } else 0
         screen = AppScreen.SESSION
     }
 
@@ -268,6 +317,13 @@ internal fun MainScreen(
                 latestSessionAnswer = answerFeedbackForTransition(question, game, wasCorrect)
                 previousGameAnswer = null
                 if (wasCorrect) blockCorrectAnswers++
+                if (evaluationMode && !wasCorrect) {
+                    evaluationErrorCount++
+                    val label = evaluationLabel(question)
+                    if (evaluationMistakes.none { it.label == label }) {
+                        evaluationMistakes = evaluationMistakes + EvaluationMistake(label)
+                    }
+                }
             }
             error
         }
@@ -289,7 +345,8 @@ internal fun MainScreen(
             blockQuestionsCompleted++
             if (update.advanceToNextGame) {
                 if (blockQuestionsCompleted >= blockTarget) {
-                    screen = AppScreen.BLOCK_SUMMARY
+                    evaluationElapsedSeconds = (System.currentTimeMillis() - evaluationStartedAtMillis) / 1_000
+                    screen = if (evaluationMode) AppScreen.EVALUATION_SUMMARY else AppScreen.BLOCK_SUMMARY
                 } else {
                     previousGameAnswer = latestSessionAnswer
                     latestSessionAnswer = null
@@ -358,19 +415,29 @@ internal fun MainScreen(
                         questionCatalog.forTrack(activeTrack).questionsForBank(bank).isNotEmpty()
                     },
                     selectedGames = selectedGames,
-                    playableGameCount = playableGames.size,
+                    evaluationMode = evaluationMode,
+                    playableGameCount = if (evaluationMode) evaluationPlayableGameCount else playableGames.size,
                     activeNotionCount = activeLearningPool.activeNotionCount,
                     remainingNotionCount = activeLearningPool.remainingNotionCount,
                     selectedBanks = activeBanks,
                     onBack = { screen = AppScreen.HOME },
                     onBankSelectionChange = ::updateBankSelection,
                     onGameSelectionChange = ::updateGameSelection,
+                    onEvaluationModeChange = { evaluationMode = it },
                     onSelectAll = ::selectAllGames,
                     onSelectNone = ::selectNoGames,
                     onStart = ::startSession
                 )
 
-                AppScreen.SESSION -> {
+                AppScreen.SESSION -> Box(modifier = Modifier.fillMaxSize()) {
+                    LaunchedEffect(evaluationMode, evaluationStartedAtMillis) {
+                        if (evaluationMode) {
+                            while (true) {
+                                evaluationElapsedSeconds = (System.currentTimeMillis() - evaluationStartedAtMillis) / 1_000
+                                delay(1_000)
+                            }
+                        }
+                    }
                     val game = sessionGames.getOrNull(sessionGameIndex)
                     if (game == null) {
                         SideEffect { screen = AppScreen.HOME }
@@ -380,15 +447,15 @@ internal fun MainScreen(
                         key(sessionRound, game) {
                             when (game) {
                                 LearningGame.PARTICLES -> ParticleGameScreen(
-                                    questions = sessionLearningPool.questionsFor(game).filterIsInstance<ParticleExercise>(),
+                                    questions = sessionQuestionsFor(game, evaluationMode, evaluationQuestionsByGame, sessionLearningPool).filterIsInstance<ParticleExercise>(),
                                     questionSpeech = questionSpeech,
                                     onBack = { screen = AppScreen.HOME },
                                     onAnswer = sessionAnswer,
                                     onQuestionCompleted = completeSessionQuestion,
-                                    extraAttempts = extraAttempts,
+                                    extraAttempts = if (evaluationMode) 0 else extraAttempts,
                                     progress = progress,
                                     masteryThreshold = questionMasteryThreshold,
-                                    masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
+                                    masteredQuestionRepeatPercent = sessionRepeatPercent,
                                     completedQuestions = questionsCompleted,
                                     blockQuestionsCompleted = blockQuestionsCompleted,
                                     blockTarget = blockTarget,
@@ -404,15 +471,15 @@ internal fun MainScreen(
                                 LearningGame.VOCABULARY_FRENCH_TO_JAPANESE,
                                 LearningGame.VOCABULARY_WRITE -> VocabularyGameScreen(
                                     game = game,
-                                    questions = sessionLearningPool.questionsFor(game).filterIsInstance<VocabularyQuestion>(),
+                                    questions = sessionQuestionsFor(game, evaluationMode, evaluationQuestionsByGame, sessionLearningPool).filterIsInstance<VocabularyQuestion>(),
                                     questionSpeech = questionSpeech,
                                     onBack = { screen = AppScreen.HOME },
                                     onAnswer = sessionAnswer,
                                     onQuestionCompleted = completeSessionQuestion,
-                                    extraAttempts = extraAttempts,
+                                    extraAttempts = if (evaluationMode) 0 else extraAttempts,
                                     progress = progress,
                                     masteryThreshold = questionMasteryThreshold,
-                                    masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
+                                    masteredQuestionRepeatPercent = sessionRepeatPercent,
                                     completedQuestions = questionsCompleted,
                                     blockQuestionsCompleted = blockQuestionsCompleted,
                                     blockTarget = blockTarget,
@@ -428,15 +495,15 @@ internal fun MainScreen(
 
                                 LearningGame.VERBS -> VocabularyGameScreen(
                                     game = game,
-                                    questions = sessionLearningPool.questionsFor(game).filterIsInstance<VocabularyQuestion>(),
+                                    questions = sessionQuestionsFor(game, evaluationMode, evaluationQuestionsByGame, sessionLearningPool).filterIsInstance<VocabularyQuestion>(),
                                     questionSpeech = questionSpeech,
                                     onBack = { screen = AppScreen.HOME },
                                     onAnswer = sessionAnswer,
                                     onQuestionCompleted = completeSessionQuestion,
-                                    extraAttempts = extraAttempts,
+                                    extraAttempts = if (evaluationMode) 0 else extraAttempts,
                                     progress = progress,
                                     masteryThreshold = questionMasteryThreshold,
-                                    masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
+                                    masteredQuestionRepeatPercent = sessionRepeatPercent,
                                     completedQuestions = questionsCompleted,
                                     blockQuestionsCompleted = blockQuestionsCompleted,
                                     blockTarget = blockTarget,
@@ -448,15 +515,15 @@ internal fun MainScreen(
                                 )
 
                                 LearningGame.CONJUGATION -> ConjugationGameScreen(
-                                    questions = sessionLearningPool.questionsFor(game).filterIsInstance<ConjugationQuestion>(),
+                                    questions = sessionQuestionsFor(game, evaluationMode, evaluationQuestionsByGame, sessionLearningPool).filterIsInstance<ConjugationQuestion>(),
                                     questionSpeech = questionSpeech,
                                     onBack = { screen = AppScreen.HOME },
                                     onAnswer = sessionAnswer,
                                     onQuestionCompleted = completeSessionQuestion,
-                                    extraAttempts = extraAttempts,
+                                    extraAttempts = if (evaluationMode) 0 else extraAttempts,
                                     progress = progress,
                                     masteryThreshold = questionMasteryThreshold,
-                                    masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
+                                    masteredQuestionRepeatPercent = sessionRepeatPercent,
                                     completedQuestions = questionsCompleted,
                                     blockQuestionsCompleted = blockQuestionsCompleted,
                                     blockTarget = blockTarget,
@@ -468,14 +535,15 @@ internal fun MainScreen(
                                 )
 
                                 LearningGame.PAIRS -> JapanesePairsGameScreen(
-                                    questions = sessionLearningPool.questionsFor(game).filterIsInstance<VocabularyQuestion>(),
+                                    questions = sessionQuestionsFor(game, evaluationMode, evaluationQuestionsByGame, sessionLearningPool).filterIsInstance<VocabularyQuestion>(),
                                     questionSpeech = questionSpeech,
                                     onBack = { screen = AppScreen.HOME },
                                     onAnswer = sessionAnswer,
                                     onQuestionCompleted = completeSessionQuestion,
                                     progress = progress,
                                     masteryThreshold = questionMasteryThreshold,
-                                    masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
+                                    masteredQuestionRepeatPercent = sessionRepeatPercent,
+                                    evaluationMode = evaluationMode,
                                     completedQuestions = questionsCompleted,
                                     blockQuestionsCompleted = blockQuestionsCompleted,
                                     blockTarget = blockTarget,
@@ -487,15 +555,15 @@ internal fun MainScreen(
                                 )
 
                                 LearningGame.COUNTER_CHALLENGE -> CounterChallengeGameScreen(
-                                    questions = sessionLearningPool.questionsFor(game).filterIsInstance<VocabularyQuestion>(),
+                                    questions = sessionQuestionsFor(game, evaluationMode, evaluationQuestionsByGame, sessionLearningPool).filterIsInstance<VocabularyQuestion>(),
                                     questionSpeech = questionSpeech,
                                     onBack = { screen = AppScreen.HOME },
                                     onAnswer = sessionAnswer,
                                     onQuestionCompleted = completeSessionQuestion,
-                                    extraAttempts = extraAttempts,
+                                    extraAttempts = if (evaluationMode) 0 else extraAttempts,
                                     progress = progress,
                                     masteryThreshold = questionMasteryThreshold,
-                                    masteredQuestionRepeatPercent = masteredQuestionRepeatPercent,
+                                    masteredQuestionRepeatPercent = sessionRepeatPercent,
                                     completedQuestions = questionsCompleted,
                                     blockQuestionsCompleted = blockQuestionsCompleted,
                                     blockTarget = blockTarget,
@@ -508,6 +576,12 @@ internal fun MainScreen(
                             }
                         }
                     }
+                    if (evaluationMode) {
+                        EvaluationTimer(
+                            elapsedSeconds = evaluationElapsedSeconds,
+                            modifier = Modifier.align(Alignment.TopCenter).padding(top = 8.dp)
+                        )
+                    }
                 }
 
                 AppScreen.BLOCK_SUMMARY -> SessionBlockSummaryScreen(
@@ -516,6 +590,15 @@ internal fun MainScreen(
                     totalQuestions = blockTarget,
                     nextBlockQuestionCount = sessionQuestionCount,
                     onContinue = ::startSession,
+                    onHome = { screen = AppScreen.HOME }
+                )
+
+                AppScreen.EVALUATION_SUMMARY -> EvaluationSummaryScreen(
+                    track = activeTrack,
+                    totalQuestions = evaluationNotionCount,
+                    mistakes = evaluationMistakes,
+                    errorCount = evaluationErrorCount,
+                    elapsedSeconds = evaluationElapsedSeconds,
                     onHome = { screen = AppScreen.HOME }
                 )
 

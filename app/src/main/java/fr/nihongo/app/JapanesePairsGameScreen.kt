@@ -43,6 +43,7 @@ internal fun JapanesePairsGameScreen(
     progress: ProgressSnapshot,
     masteryThreshold: Int,
     masteredQuestionRepeatPercent: Int,
+    evaluationMode: Boolean,
     completedQuestions: Int,
     blockQuestionsCompleted: Int,
     blockTarget: Int,
@@ -58,17 +59,17 @@ internal fun JapanesePairsGameScreen(
 
     fun drawBoard(): List<VocabularyQuestion> {
         var available = questions.filter { it.id !in seenIds }
-        if (available.size < 6) {
+        if (available.isEmpty()) {
             seenIds.clear()
             available = questions
         }
         if (masteredQuestionRepeatPercent == 0) {
             available = available.filter { (masteryCounters[it.id] ?: 0) < masteryThreshold }
         }
-        require(available.size >= 6) { "Il faut six paires encore révisables pour commencer une grille." }
+        require(available.isNotEmpty()) { "Il faut au moins une paire encore révisable pour commencer une grille." }
 
         val selected = mutableListOf<VocabularyQuestion>()
-        repeat(6) {
+        repeat(minOf(6, available.size)) {
             val remaining = available.filterNot { candidate -> selected.any { it.id == candidate.id } }
             val question = QuestionSelector.draw(
                 questions = remaining,
@@ -84,6 +85,7 @@ internal fun JapanesePairsGameScreen(
     }
 
     var board by remember(questions) { mutableStateOf(drawBoard()) }
+    val pairCount = board.size
     val frenchColumn = remember(board) { board.shuffled() }
     var selectedJapaneseId by remember(board) { mutableStateOf<String?>(null) }
     var selectedFrenchId by remember(board) { mutableStateOf<String?>(null) }
@@ -95,7 +97,7 @@ internal fun JapanesePairsGameScreen(
     var previousAnswerEvent by remember { mutableIntStateOf(0) }
 
     fun tryPair(japaneseId: String, frenchId: String) {
-        if (matchedIds.size >= 6 || japaneseId in matchedIds || frenchId in matchedIds) return
+        if (matchedIds.size >= pairCount || japaneseId in matchedIds || frenchId in matchedIds) return
         val question = board.firstOrNull { it.id == japaneseId } ?: return
         val correct = japaneseId == frenchId
         saveError = onAnswer(question, LearningGame.PAIRS, correct)
@@ -114,6 +116,10 @@ internal fun JapanesePairsGameScreen(
             selectedFrenchId = null
         } else {
             wrongPair = japaneseId to frenchId
+            if (evaluationMode) {
+                // Une erreur clôt cette notion en évaluation : elle ne peut pas être reposée.
+                matchedIds = matchedIds + japaneseId
+            }
         }
     }
 
@@ -127,7 +133,7 @@ internal fun JapanesePairsGameScreen(
     }
 
     LaunchedEffect(matchedIds.size) {
-        if (matchedIds.size == 6) {
+        if (matchedIds.size == pairCount) {
             delay(700)
             lastMatchedQuestion?.let { question ->
                 previousAnswer = AnswerFeedback(
@@ -165,7 +171,7 @@ internal fun JapanesePairsGameScreen(
         carryoverAnswer?.let { AnswerFeedbackBanner(it, carryoverAnswerEvent) }
         Text("Paires", style = MaterialTheme.typography.headlineSmall)
         Text(
-            "Grille ${completedQuestions + 1} / $seriesTarget · Associe les six mots et leur traduction.",
+            "Grille ${completedQuestions + 1} / $seriesTarget · Associe les $pairCount mots et leur traduction.",
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
         previousAnswer?.let { AnswerFeedbackBanner(it, previousAnswerEvent) }
@@ -217,9 +223,9 @@ internal fun JapanesePairsGameScreen(
                 }
             }
         }
-        if (matchedIds.size == 6) {
+        if (matchedIds.size == pairCount) {
             Text(
-                "✓ Six paires trouvées !",
+                "✓ $pairCount paires trouvées !",
                 color = Color(0xFF8EE6B5),
                 style = MaterialTheme.typography.titleMedium
             )
